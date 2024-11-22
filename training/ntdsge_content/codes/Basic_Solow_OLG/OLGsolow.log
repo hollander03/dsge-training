@@ -1,0 +1,71 @@
+Starting Dynare (version 4.5.6).
+Starting preprocessing of the model file ...
+Found 6 equation(s).
+Evaluating expressions...done
+Computing static model derivatives:
+ - order 1
+Computing dynamic model derivatives:
+ - order 1
+Processing outputs ...
+done
+Preprocessing completed.
+
+STEADY-STATE RESULTS:
+
+y 		 0
+c 		 0
+k 		 0
+a 		 0
+r 		 0
+s 		 0
+
+MODEL SUMMARY
+
+  Number of variables:         6
+  Number of stochastic shocks: 1
+  Number of state variables:   1
+  Number of jumpers:           1
+  Number of static variables:  4
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables           e
+e            0.000100
+
+POLICY AND TRANSITION FUNCTIONS
+                                   y               c               k               a               r               s
+a(-1)                       0.470503        0.470503       -1.453023        0.950000       -0.023525        0.470503
+e                           0.495266        0.495266       -1.529497        1.000000       -0.024763        0.495266
+
+
+THEORETICAL MOMENTS
+VARIABLE         MEAN  STD. DEV.   VARIANCE
+y              0.0000     0.0159     0.0003
+c              0.0000     0.0159     0.0003
+k              0.0000     0.0490     0.0024
+a              0.0000     0.0320     0.0010
+r              0.0000     0.0008     0.0000
+s              0.0000     0.0159     0.0003
+
+
+
+MATRIX OF CORRELATIONS
+Variables         y       c       k       a       r       s
+y            1.0000  1.0000 -1.0000  1.0000 -1.0000  1.0000
+c            1.0000  1.0000 -1.0000  1.0000 -1.0000  1.0000
+k           -1.0000 -1.0000  1.0000 -1.0000  1.0000 -1.0000
+a            1.0000  1.0000 -1.0000  1.0000 -1.0000  1.0000
+r           -1.0000 -1.0000  1.0000 -1.0000  1.0000 -1.0000
+s            1.0000  1.0000 -1.0000  1.0000 -1.0000  1.0000
+
+
+
+COEFFICIENTS OF AUTOCORRELATION
+Order         1       2       3       4       5
+y        0.9500  0.9025  0.8574  0.8145  0.7738
+c        0.9500  0.9025  0.8574  0.8145  0.7738
+k        0.9500  0.9025  0.8574  0.8145  0.7738
+a        0.9500  0.9025  0.8574  0.8145  0.7738
+r        0.9500  0.9025  0.8574  0.8145  0.7738
+s        0.9500  0.9025  0.8574  0.8145  0.7738
+Total computing time : 0h00m01s

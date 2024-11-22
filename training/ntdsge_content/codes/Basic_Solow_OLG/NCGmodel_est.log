@@ -1,0 +1,154 @@
+Starting Dynare (version 4.5.6).
+Starting preprocessing of the model file ...
+Found 4 equation(s).
+Evaluating expressions...done
+Computing static model derivatives:
+ - order 1
+Computing dynamic model derivatives:
+ - order 1
+ - order 2
+Processing outputs ...
+done
+Preprocessing completed.
+
+STEADY-STATE RESULTS:
+
+c   		 0.960711
+k   		 54.6155
+lab 		 0.543738
+z   		 0
+
+EIGENVALUES:
+         Modulus             Real        Imaginary
+
+            0.95             0.95                0
+          0.9832           0.9832                0
+           1.015            1.015                0
+             Inf              Inf                0
+
+
+There are 2 eigenvalue(s) larger than 1 in modulus 
+for 2 forward-looking variable(s)
+
+The rank condition is verified.
+
+
+You did not declare endogenous variables after the estimation/calib_smoother command.
+Initial value of the log posterior (or likelihood): 3540.4104
+-----------------
+f at the beginning of new iteration,     -3540.4104306432
+Predicted improvement:        7.554537933
+lambda =          1; f =        -3543.6913049
+lambda =    0.33333; f =        -3544.1935555
+lambda =    0.64439; f =        -3545.3849585
+Norm of dx    0.03887
+----
+Improvement on iteration 1 =        4.974527903
+-----------------
+f at the beginning of new iteration,     -3545.3849585458
+Predicted improvement:        0.434210656
+lambda =          1; f =        -3546.1389017
+lambda =     1.9332; f =        -3546.6423007
+lambda =     3.7372; f =        -3547.0996154
+Norm of dx  0.0095896
+----
+Improvement on iteration 2 =        1.714656880
+-----------------
+f at the beginning of new iteration,     -3547.0996154256
+Predicted improvement:        0.020054336
+lambda =          1; f =        -3547.1210048
+Norm of dx  0.0038116
+----
+Improvement on iteration 3 =        0.021389375
+-----------------
+f at the beginning of new iteration,     -3547.1210048005
+Predicted improvement:        0.000141571
+lambda =          1; f =        -3547.1211494
+Norm of dx 0.00037061
+----
+Improvement on iteration 4 =        0.000144612
+-----------------
+f at the beginning of new iteration,     -3547.1211494123
+Predicted improvement:        0.000000082
+lambda =          1; f =        -3547.1211495
+Norm of dx 7.4406e-06
+----
+Improvement on iteration 5 =        0.000000074
+improvement < crit termination
+
+Final value of minus the log posterior (or likelihood):-3547.121149 
+
+RESULTS FROM POSTERIOR ESTIMATION
+parameters
+  prior mean     mode    s.d. prior pstdev
+
+rho   0.930   0.9520  0.0077 beta  0.0200 
+the   0.300   0.3000  0.0500 norm  0.0500 
+tau   2.100   2.1000  0.3000 norm  0.3000 
+
+standard deviation of shocks
+  prior mean     mode    s.d. prior pstdev
+
+e     0.950   0.9975  0.0223 invg     Inf 
+
+
+Log data density [Laplace approximation] is 3537.929069.
+
+Estimation::mcmc: Multiple chains mode.
+Estimation::mcmc: Old mh-files successfully erased!
+Estimation::mcmc: Old metropolis.log file successfully erased!
+Estimation::mcmc: Creation of a new metropolis.log file.
+Estimation::mcmc: Searching for initial values...
+Estimation::mcmc: Initial values found!
+
+Estimation::mcmc: Write details about the MCMC... Ok!
+Estimation::mcmc: Details about the MCMC are available in NCGmodel_est/metropolis\NCGmodel_est_mh_history_0.mat
+
+
+Estimation::mcmc: Number of mh files: 1 per block.
+Estimation::mcmc: Total number of generated files: 2.
+Estimation::mcmc: Total number of iterations: 10000.
+Estimation::mcmc: Current acceptance ratio per chain: 
+                                                       Chain  1: 41.41%
+                                                       Chain  2: 41.88%
+Estimation::mcmc: Total number of MH draws per chain: 10000.
+Estimation::mcmc: Total number of generated MH files: 1.
+Estimation::mcmc: I'll use mh-files 1 to 1.
+Estimation::mcmc: In MH-file number 1 I'll start at line 5001.
+Estimation::mcmc: Finally I keep 5000 draws per chain.
+
+
+
+MCMC Inefficiency factors per block
+Parameter       Block 1     Block 2
+SE_e              9.478      18.542
+rho              12.541      20.270
+the              15.387      18.759
+tau              11.572      14.637
+
+Estimation::mcmc::diagnostics: Univariate convergence diagnostic, Brooks and Gelman (1998):
+    Parameter 1...  Done! 
+    Parameter 2...  Done! 
+    Parameter 3...  Done! 
+    Parameter 4...  Done! 
+
+Estimation::marginal density: I'm computing the posterior mean and covariance...  Done!
+Estimation::marginal density: I'm computing the posterior log marginal density (modified harmonic mean)... Done!
+
+
+ESTIMATION RESULTS
+
+Log data density is 3537.941811.
+
+parameters
+      prior mean   post. mean        90% HPD interval    prior       pstdev
+
+rho        0.930       0.9512      0.9385      0.9637   beta        0.0200
+the        0.300       0.3004      0.2222      0.3811   norm        0.0500
+tau        2.100       2.1028      1.5985      2.5754   norm        0.3000
+
+standard deviation of shocks
+      prior mean   post. mean        90% HPD interval    prior       pstdev
+
+e          0.950       0.9992      0.9639      1.0357   invg           Inf
+Total computing time : 0h00m58s

@@ -1,0 +1,104 @@
+Starting Dynare (version 4.5.6).
+Starting preprocessing of the model file ...
+Found 62 equation(s).
+Evaluating expressions...done
+Computing static model derivatives:
+ - order 1
+Computing dynamic model derivatives:
+ - order 1
+Processing outputs ...
+done
+Preprocessing completed.
+[Warning: Some of the parameters have no value (ccs, cinvs, crdpi, rstar, std_r_quart) when using
+stoch_simul. If these parameters are not initialized in a steadystate file or a
+steady_state_model-block, Dynare may not be able to solve the model...] 
+
+MODEL SUMMARY
+
+  Number of variables:         62
+  Number of stochastic shocks: 9
+  Number of state variables:   27
+  Number of jumpers:           12
+  Number of static variables:  29
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables          ea        eb        eg       eqs        em     epinf        ew        et   fiscal_
+ea           0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000
+eb           0.000000  0.000100  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000
+eg           0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000
+eqs          0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000
+em           0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000
+epinf        0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000
+ew           0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000
+et           0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000
+fiscal_      0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000100
+
+POLICY AND TRANSITION FUNCTIONS
+                              output      inflationq        interest       outputgap
+ewma(-1)                    6.027421      -25.725358       -6.633299        6.027421
+epinfma(-1)                 3.278843      -17.040901       -4.750917        3.278843
+a(-1)                       0.120034       -0.596817       -0.504255       -0.560898
+b(-1)                       0.328010        0.041625        0.179615        0.328010
+g(-1)                       0.882694        0.049982        0.150563        0.263639
+qs(-1)                      0.548808        0.218367        0.159544        0.155313
+spinf(-1)                  -4.233714       22.003588        6.134488       -4.233714
+sw(-1)                     -6.603547       28.184293        7.267337       -6.603547
+kpf(-1)                     0.002726        0.016193        0.023898        0.035651
+kp(-1)                     -0.096112       -0.114774       -0.091097       -0.096112
+debt(-1)                   -0.008484       -0.006059       -0.006514       -0.008484
+t(-1)                      -0.248869       -0.011245       -0.128651       -0.248869
+debtf(-1)                  -0.001101       -0.001835        0.004768        0.010913
+pinflag1(-1)               -0.134044       -0.020086        1.425445       -0.134044
+pinflag2(-1)               -0.065476       -0.005945        1.465032       -0.065476
+invef(-1)                   0.009095        0.007488       -0.056768       -0.119152
+inve(-1)                    0.173929        0.013312        0.091957        0.173929
+pinf(-1)                   -0.226587        0.987965        1.757193       -0.226587
+w(-1)                       0.131176        0.359622        0.200446        0.131176
+c_nlc(-1)                   0.375288        0.023344        0.196398        0.375288
+c_nlcf(-1)                  0.010781       -0.000005       -0.131998       -0.263993
+ea                          0.125009       -0.621555       -0.525157       -0.584147
+eb                          1.476193        0.187332        0.808346        1.476193
+eg                          1.176926        0.066643        0.200750        0.351519
+eqs                         0.778010        0.309565        0.226175        0.220177
+epinf                      -1.501238        8.930323        2.598252       -1.501238
+ew                         -0.348792        3.164589        1.012325       -0.348792
+et                         -0.331825       -0.014993       -0.171535       -0.331825
+fiscal_                     1.176926        0.066643        0.200750        0.351519
+
+
+THEORETICAL MOMENTS
+VARIABLE           MEAN  STD. DEV.   VARIANCE
+output           0.0000     0.0289     0.0008
+inflationq       0.0000     0.0044     0.0000
+interest         0.0000     0.0171     0.0003
+outputgap        0.0000     0.0249     0.0006
+
+
+
+VARIANCE DECOMPOSITION (in percent)
+                   ea       eb       eg      eqs       em    epinf       ew       et  fiscal_
+output           0.00    68.03     0.00     0.00     0.00     0.00     0.00     0.00    31.97
+inflationq       0.00    91.19     0.00     0.00     0.00     0.00     0.00     0.00     8.81
+interest         0.00    91.01     0.00     0.00     0.00     0.00     0.00     0.00     8.99
+outputgap        0.00    91.52     0.00     0.00     0.00     0.00     0.00     0.00     8.48
+
+
+
+MATRIX OF CORRELATIONS
+Variables         output  inflationq    interest   outputgap
+output            1.0000      0.9036      0.9091      0.9442
+inflationq        0.9036      1.0000      0.9946      0.9485
+interest          0.9091      0.9946      1.0000      0.9673
+outputgap         0.9442      0.9485      0.9673      1.0000
+
+
+
+COEFFICIENTS OF AUTOCORRELATION
+Order              1       2       3       4       5
+output        0.7506  0.5143  0.3355  0.2094  0.1231
+inflationq    0.8821  0.7251  0.5782  0.4520  0.3471
+interest      0.8669  0.7037  0.5503  0.4093  0.2974
+outputgap     0.7850  0.5504  0.3677  0.2376  0.1483
+Total computing time : 0h00m01s
+Note: warning(s) encountered in MATLAB/Octave code

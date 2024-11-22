@@ -1,0 +1,102 @@
+Starting Dynare (version 4.5.6).
+Starting preprocessing of the model file ...
+Substitution of endo lags >= 2: added 2 auxiliary variables and equations.
+Found 44 equation(s).
+Evaluating expressions...done
+Computing static model derivatives:
+ - order 1
+Computing dynamic model derivatives:
+ - order 1
+ - order 2
+Processing outputs ...
+done
+Preprocessing completed.
+[Warning: Some of the parameters have no value (ccs, cinvs, crdpi) when using stoch_simul. If
+these parameters are not initialized in a steadystate file or a steady_state_model-block, Dynare
+may not be able to solve the model...] 
+
+MODEL SUMMARY
+
+  Number of variables:         44
+  Number of stochastic shocks: 7
+  Number of state variables:   22
+  Number of jumpers:           12
+  Number of static variables:  16
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables          ea        eb       eqs        eg        em     epinf        ew
+ea           0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000
+eb           0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000
+eqs          0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000
+eg           0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000
+em           0.000000  0.000000  0.000000  0.000000  0.059976  0.000000  0.000000
+epinf        0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000
+ew           0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                   y            pinf               r       outputgap
+ewma(-1)                    1.689363       -3.140137       -0.809891        1.689363
+epinfma(-1)                 1.773069       -3.111844       -0.778710        1.773069
+yf(-1)                     -0.149026       -0.032033        0.176298       -0.149026
+y(-1)                       0.149026        0.032033       -0.176298        0.149026
+r(-1)                      -0.537408       -0.115516        0.635755       -0.537408
+a(-1)                       0.223826       -0.128492       -0.164546       -0.475149
+b(-1)                      -0.047975       -0.002358       -0.012497       -0.047975
+g(-1)                       0.922302        0.027233        0.051312        0.168788
+qs(-1)                      0.470636        0.057978        0.052428        0.124026
+ms(-1)                     -0.113362       -0.025498        0.110643       -0.113362
+spinf(-1)                  -2.249849        3.948624        0.988106       -2.249849
+sw(-1)                     -1.924797        3.577754        0.922760       -1.924797
+kpf(-1)                     0.009928        0.004864        0.006852        0.020568
+kp(-1)                     -0.075976       -0.025046       -0.028056       -0.075976
+cf(-1)                      0.015432       -0.002295       -0.081610       -0.334340
+invef(-1)                   0.008995        0.000569       -0.024599       -0.102805
+c(-1)                       0.489232        0.014670        0.123805        0.489232
+inve(-1)                    0.153804        0.005759        0.039366        0.153804
+pinf(-1)                   -0.062970        0.252775        0.082824       -0.062970
+w(-1)                       0.024312        0.067229        0.031941        0.024312
+ea                          0.723523       -0.119705       -0.144563       -0.406497
+eb                         -0.218662       -0.010746       -0.056960       -0.218662
+eqs                         0.661656        0.081510        0.073707        0.174365
+eg                          0.944304        0.027882        0.052536        0.172815
+em                         -0.766478       -0.172399        0.748091       -0.766478
+epinf                      -0.846737        1.800194        0.493693       -0.846737
+ew                         -0.200410        0.569528        0.172480       -0.200410
+
+
+THEORETICAL MOMENTS
+VARIABLE          MEAN  STD. DEV.   VARIANCE
+y               0.0000     0.8351     0.6974
+pinf            0.0000     0.1278     0.0163
+r               0.0000     0.2503     0.0626
+outputgap       0.0000     0.8351     0.6974
+
+
+
+VARIANCE DECOMPOSITION (in percent)
+                 ea      eb     eqs      eg      em   epinf      ew
+y              0.00    0.00    0.00    0.00  100.00    0.00    0.00
+pinf           0.00    0.00    0.00    0.00  100.00    0.00    0.00
+r              0.00    0.00    0.00    0.00  100.00    0.00    0.00
+outputgap      0.00    0.00    0.00    0.00  100.00    0.00    0.00
+
+
+
+MATRIX OF CORRELATIONS
+Variables            y       pinf          r  outputgap
+y               1.0000     0.9896    -0.5141     1.0000
+pinf            0.9896     1.0000    -0.6185     0.9896
+r              -0.5141    -0.6185     1.0000    -0.5141
+outputgap       1.0000     0.9896    -0.5141     1.0000
+
+
+
+COEFFICIENTS OF AUTOCORRELATION
+Order             1       2       3       4       5
+y            0.9598  0.8742  0.7674  0.6552  0.5468
+pinf         0.9372  0.8401  0.7350  0.6315  0.5337
+r            0.6703  0.3744  0.1726  0.0448 -0.0321
+outputgap    0.9598  0.8742  0.7674  0.6552  0.5468
+Total computing time : 0h00m01s
+Note: warning(s) encountered in MATLAB/Octave code

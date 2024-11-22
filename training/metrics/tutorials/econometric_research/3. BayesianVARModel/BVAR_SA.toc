@@ -1,0 +1,11 @@
+\contentsline {section}{Bayesian VAR modeling in MATLAB}{1}{Doc-Start}%
+\contentsline {section}{New features in Econometrics - MATLAB}{1}{section*.2}%
+\contentsline {subsection}{Interactive workflows for multivariate models}{1}{section*.3}%
+\contentsline {subsection}{Bayesian VAR models}{1}{section*.4}%
+\contentsline {subsection}{Bayesian State Spate Models}{1}{section*.5}%
+\contentsline {section}{BVAR models}{2}{section*.6}%
+\contentsline {subsection}{Monetary Policy in a Trivariate VAR}{3}{section*.7}%
+\contentsline {subsubsection}{Impulse response functions}{6}{section*.8}%
+\contentsline {paragraph}{Computing IRF intervals by Monte Carlo}{8}{section*.9}%
+\contentsline {section}{Other resources}{10}{section*.10}%
+\contentsline {section}{References}{17}{section*.11}%

@@ -1,0 +1,45 @@
+Starting Dynare (version 6.0).
+Calling Dynare with arguments: none
+Starting preprocessing of the model file ... 
+Found 19 equation(s). 
+Evaluating expressions... 
+Computing static model derivatives (order 1). 
+Normalizing the static model... 
+Finding the optimal block decomposition of the static model... 
+8 block(s) found: 
+  7 recursive block(s) and 1 simultaneous block(s). 
+  the largest simultaneous block has 11 equation(s) 
+                                 and 11 feedback variable(s). 
+Computing dynamic model derivatives (order 1). 
+Normalizing the dynamic model... 
+Finding the optimal block decomposition of the dynamic model... 
+5 block(s) found: 
+  4 recursive block(s) and 1 simultaneous block(s). 
+  the largest simultaneous block has 14 equation(s) 
+                                 and 14 feedback variable(s). 
+Preprocessing completed. 
+Preprocessing time: 0h00m00s.
+
+
+Residuals of the static equations:
+Equation number  1: 1      :       0.000000
+Equation number  2: 2      :       0.000000
+Equation number  3: q      :       0.000000
+Equation number  4: W      :       0.000000
+Equation number  5: 5      :       0.000000
+Equation number  6: Y      :       0.000000
+Equation number  7: L_e    :       0.000000
+Equation number  8: 8      :       0.000000
+Equation number  9: 9      :       0.000000
+Equation number 10: 10     :       0.000000
+Equation number 11: D      :       0.000000
+Equation number 12: 12     :       0.000000
+Equation number 13: 13     :       0.000000
+Equation number 14: kappa  :       0.000000
+Equation number 15: Sprd   :       0.000000
+Equation number 16: C      :      -0.321257
+Equation number 17: 17     :       0.000000
+Equation number 18: vareps :       0.000000
+Equation number 19: 19     :       0.000000
+
+

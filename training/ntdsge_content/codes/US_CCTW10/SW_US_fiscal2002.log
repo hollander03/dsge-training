@@ -1,0 +1,99 @@
+Starting Dynare (version 4.5.6).
+Starting preprocessing of the model file ...
+Found 51 equation(s).
+Evaluating expressions...done
+Computing static model derivatives:
+ - order 1
+Computing dynamic model derivatives:
+ - order 1
+Processing outputs ...
+done
+Preprocessing completed.
+[Warning: Some of the parameters have no value (ccs, cinvs, crdpi) when using stoch_simul. If
+these parameters are not initialized in a steadystate file or a steady_state_model-block, Dynare
+may not be able to solve the model...] 
+
+MODEL SUMMARY
+
+  Number of variables:         51
+  Number of stochastic shocks: 8
+  Number of state variables:   23
+  Number of jumpers:           12
+  Number of static variables:  22
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables          ea        eb        eg       eqs        em     epinf        ew   fiscal_
+ea           0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000
+eb           0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000
+eg           0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000
+eqs          0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000
+em           0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000
+epinf        0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000
+ew           0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000
+fiscal_      0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000100
+
+POLICY AND TRANSITION FUNCTIONS
+                                   g               y            inve               c
+ewma(-1)                           0        3.319655        5.931004        3.447738
+epinfma(-1)                        0        2.322442        5.733273        1.338515
+a(-1)                              0        0.218177        0.819505        0.224778
+b(-1)                              0        0.398188        0.317768        0.486722
+g(-1)                       0.976700        0.925657       -0.223486       -0.107003
+qs(-1)                             0        0.491087        2.774052       -0.025843
+spinf(-1)                          0       -2.946950       -7.274958       -1.698444
+sw(-1)                             0       -3.782291       -6.757564       -3.928224
+kpf(-1)                            0        0.006388        0.010957        0.006373
+kp(-1)                             0       -0.072105       -0.028102        0.048906
+pinflag1(-1)                       0       -0.131126       -0.119346       -0.156122
+pinflag2(-1)                       0       -0.065145       -0.044130       -0.081851
+cf(-1)                             0        0.013835        0.013281        0.016249
+invef(-1)                          0        0.007328        0.009400        0.007997
+c(-1)                              0        0.495100       -0.088330        0.737634
+inve(-1)                           0        0.157977        0.843170        0.005758
+pinf(-1)                           0       -0.262332       -0.351221       -0.310533
+w(-1)                              0        0.016530       -0.089716       -0.044924
+ea                                 0        0.227814        0.855702        0.234706
+eb                                 0        1.814895        1.448351        2.218424
+eg                          1.000000        0.947739       -0.228817       -0.109556
+eqs                                0        0.690407        3.899974       -0.036332
+epinf                              0       -1.010669       -2.072743       -0.654429
+ew                                 0       -0.448566       -1.010405       -0.574689
+fiscal_                     1.000000        0.947739       -0.228817       -0.109556
+
+
+THEORETICAL MOMENTS
+VARIABLE         MEAN  STD. DEV.   VARIANCE
+g              0.0000     0.0466     0.0022
+y              0.0000     0.0229     0.0005
+inve           0.0000     0.0532     0.0028
+c              0.0000     0.0333     0.0011
+
+
+
+VARIANCE DECOMPOSITION (in percent)
+             ea       eb       eg      eqs       em    epinf       ew  fiscal_
+g          0.00     0.00     0.00     0.00     0.00     0.00     0.00   100.00
+y          0.00     0.00     0.00     0.00     0.00     0.00     0.00   100.00
+inve       0.00     0.00     0.00     0.00     0.00     0.00     0.00   100.00
+c          0.00     0.00     0.00     0.00     0.00     0.00     0.00   100.00
+
+
+
+MATRIX OF CORRELATIONS
+Variables         g       y    inve       c
+g            1.0000  0.9326 -0.9619 -0.9345
+y            0.9326  1.0000 -0.8089 -0.7523
+inve        -0.9619 -0.8089  1.0000  0.9634
+c           -0.9345 -0.7523  0.9634  1.0000
+
+
+
+COEFFICIENTS OF AUTOCORRELATION
+Order         1       2       3       4       5
+g        0.9767  0.9539  0.9317  0.9100  0.8888
+y        0.9094  0.8335  0.7706  0.7188  0.6759
+inve     0.9970  0.9890  0.9770  0.9620  0.9446
+c        0.9982  0.9933  0.9861  0.9770  0.9665
+Total computing time : 0h00m01s
+Note: warning(s) encountered in MATLAB/Octave code

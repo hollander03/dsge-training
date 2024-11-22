@@ -1,0 +1,63 @@
+\documentclass[12pt]{article} 
+\usepackage[margin=2cm]{geometry} 
+\usepackage{psfrag} 
+\usepackage{graphicx} 
+\usepackage{epstopdf} 
+\usepackage{longtable,booktabs} 
+\usepackage{amsmath,amsfonts} 
+\usepackage{breqn} 
+\usepackage{float,morefloats,caption} 
+
+\usepackage{mathtools} %% previously \usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb} % http://www.ctan.org/tex-archive/macros/latex/required/psnfss/psnfss2e.pdf
+%\usepackage[official]{eurosym}
+\usepackage{helvet}
+\usepackage{natbib}
+\usepackage{lscape, longtable, array, booktabs, multirow, tabularx, graphics, epstopdf}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage {tikz}
+%\usepackage{listings}
+%\usepackage{breqn}
+%\usepackage{multicol}
+
+\usepackage[lighttt]{lmodern}
+\lstset{basicstyle=\ttfamily}
+%\lstset{stringstyle=\normal}
+
+
+\begin{document} 
+\include{basicrbc2015_dynamic_content} 
+
+
+% \pagebreak
+
+\section{Impulse response functions}
+
+\begin{figure}[hpb]\centering \vskip-1in
+\includegraphics[width=0.75\textwidth]{basicrbc_fig.pdf}
+\end{figure}
+
+
+\section{\texttt{DYNARE} and \LaTeX ~definitions}
+\nopagebreak
+
+{\footnotesize
+\include{basicrbc2015_latex_definitions} 
+%\include{basicrbc2015_latex_parameters} 
+}
+
+
+\section{The full \texttt{DYNARE} \texttt{.mod} file}
+
+\nopagebreak
+{\footnotesize
+\lstinputlisting{basicrbc2015binder.mod}
+% [language=Matlab]
+}
+
+
+
+
+\end{document} 

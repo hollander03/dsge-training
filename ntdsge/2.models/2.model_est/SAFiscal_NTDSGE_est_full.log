@@ -1,0 +1,737 @@
+Starting Dynare (version 4.5.7).
+Starting preprocessing of the model file ...
+Found 125 equation(s).
+Evaluating expressions...done
+Computing static model derivatives:
+ - order 1
+Computing dynamic model derivatives:
+ - order 1
+ - order 2
+Processing outputs ...
+done
+Preprocessing completed.
+ 
+Parameters and Steady States:
+-----------------------------
+ 
+ztilde            =0
+rhoepsG           =0.8
+rhoepsiG          =0.8
+rhoepstr          =0.8
+rhoepstauC        =0.8
+rhoepstauN        =0.8
+rhoepstauK        =0.8
+Rbar              =1.0227
+kappa             =0.7
+chiW              =0.75
+chiH              =0.2
+chiX              =0.2
+chiM              =0.2
+thetaW            =0.75
+thetaH            =0.9
+thetaX            =0.6
+thetaM            =0.7
+varphiWbar        =1.05
+varphiHbar        =1.1
+sigmaL            =5
+psi               =0.23856
+omega             =0.233
+gammaI            =8
+gammaB            =0.05
+gammaBstar        =0.005
+gammau2           =0.0043924
+gammau1           =0.043924
+betta             =0.9947
+betastar          =0.9947
+alfa              =0.3
+alphaG            =0.75
+alphaK            =0.9
+nuG               =1
+nuK               =1
+delta             =0.015
+deltaG            =0.008
+phiR              =0.9
+phiPi             =1.7
+phiY              =0.1
+phiDPi            =0.3
+phiDY             =0.15
+PiYstarbar        =1.0054
+Pibar             =1.0112
+rKbar             =0.043924
+Rstarbar          =1.0108
+pIbar             =1
+pHbar             =1
+pIMbar            =1
+pCbar             =1
+pYbar             =1
+pGbar             =1
+pIGbar            =1
+pXbar             =1
+tauCbar           =0.091009
+tauKbar           =0.29056
+tauNbar           =0.11443
+trbar             =0.13479
+gzbar             =1.006
+sbar              =1
+ybar              =2.3856
+kbar              =14.3996
+ktildebar         =19.1391
+kSbar             =14.3996
+kGbar             =9.5997
+ibar              =0.30059
+cbar              =1.5151
+cIbar             =1.5892
+cJbar             =1.2713
+cItildebar        =2.0186
+gbar              =0.43633
+iGbar             =0.13359
+bbar              =4.7712
+nuCbar            =0.6473
+nuIbar            =0.52381
+muC               =1.5
+muI               =1.5
+mustar            =1.25
+hbar              =1.7081
+hCbar             =0.98073
+hIbar             =0.15745
+hGbar             =0.43633
+hIGbar            =0.13359
+imCbar            =0.53438
+imIbar            =0.14314
+xbar              =0.67751
+qCbar             =1.5151
+qIbar             =0.30059
+imbar             =0.67751
+wbar              =1.4518
+Nbar              =1.1227
+xiE               =0.35
+rhoRPG            =0.8
+rhoRPstar         =0.9
+rhogz             =0.7
+rhoepsilon        =0.9
+rhoI              =0.7
+rhoIM             =0.9
+rhoX              =0.9
+rhovarphiW        =0.5
+rhovarphiH        =0.6
+rhovarphiX        =0.5
+rhovarmustar      =0.5
+rhovarphistar     =0.8
+rhopiC            =0
+rhoC              =0.8
+rhoN              =0.75
+rhog              =0.8
+thetaGB           =0.02
+thetaGY           =0.1
+rhoiG             =0.7
+thetaiGB          =0.2
+thetaiGY          =0.1
+rhotr             =0.187
+thetatrB          =0.35
+thetatrY          =0.204
+rhotauC           =0.9
+thetatauCB        =0.1
+thetatauCY        =0.1
+rhotauN           =0.8
+thetatauNB        =0.2
+thetatauNY        =0.05
+rhotauK           =0.8
+thetatauKB        =0.05
+thetatauKY        =0.1
+sigmastar         =1
+kappastar         =0.5
+sigmastarn        =1.5
+thetastar         =0.7
+chistar           =0.2
+rhorstar          =0.8
+rhopiYstar        =0.8
+rhoYstar          =0.8
+rhopiYstarpiYstar =0.9947
+rhopiYstarYstar   =0.1944
+piYstarbar        =1.0056
+rhoepsrstar       =0.75
+kappapistar       =1.5
+kappaystar        =0.125
+epsRPstarbar      =1
+lamRPstar         =1
+tauNrevYbar_target=0.0801
+tauCrevYbar_target=0.0578
+tauKrevYbar_target=0.0523
+tauKrevYbar       =0.050424
+tauNrevYbar       =0.078185
+tauCrevYbar       =0.0578
+given_alphaG      =1
+given_alphaK      =1
+alphaG_target     =0.75
+alphaK_target     =0.9
+cJcISSratio       =0.8
+cJcIbar           =0.8
+tr2rot            =1
+sC                =0.6351
+sIMC              =0.224
+sIMI              =0.06
+sX                =0.284
+sI                =0.126
+sG                =0.1829
+sIG               =0.056
+sTR               =0.0565
+sBbar             =2
+GovRSpread        =0
+epsRPGbar         =1
+CorpGovSpread     =3.7051
+epsRPKbar         =0.99102
+Rgovbar           =1.0227
+
+STEADY-STATE RESULTS:
+
+piC            		 -1.50189e-19
+piI            		 -1.50189e-19
+piH            		 -1.50189e-19
+piIM           		 -1.50189e-19
+piX            		 -1.50189e-19
+piY            		 -1.34544e-18
+piCbar         		 0
+mc             		 4.93611e-16
+rK             		 3.78232e-17
+w              		 6.14315e-16
+N              		 -1.10134e-16
+k              		 3.87327e-16
+kS             		 4.66724e-16
+kG             		 2.42597e-17
+ktilde         		 4.22478e-16
+u              		 7.93976e-17
+y              		 1.16257e-17
+c              		 7.11691e-17
+cI             		 -9.25966e-17
+cJ             		 7.45033e-16
+i              		 4.06073e-16
+iG             		 9.23652e-17
+im             		 -8.3567e-17
+imC            		 -1.63792e-16
+imI            		 2.15938e-16
+x              		 -4.21711e-16
+cItilde        		 -6.10803e-17
+tb             		 -7.93125e-19
+tby            		 -1.24188e-17
+r              		 4.68029e-19
+g              		 3.34683e-17
+tr             		 5.92307e-17
+trI            		 0
+trJ            		 5.92307e-17
+trJwelf        		 -2.46377e-16
+trJgap         		 3.05608e-16
+tauC           		 2.00148e-17
+tauK           		 -3.02773e-17
+tauN           		 -1.52573e-16
+b              		 -1.44361e-16
+pbud           		 -3.72704e-17
+pbudtest       		 -6.17412e-17
+govbudbal      		 8.26847e-19
+govdsc         		 -2.53355e-17
+pbudsus        		 -1.90929e-16
+susgap         		 1.53658e-16
+susgapgdp      		 1.70637e-16
+by             		 -1.55986e-16
+ystar          		 5.07195e-20
+rstar          		 -2.22045e-18
+piYstar        		 3.89252e-18
+bstar          		 9.70042e-16
+epsilonrstar   		 -1.09036e-18
+pY             		 1e-16
+pIM            		 1.5664e-16
+pI             		 2.98834e-17
+pH             		 -8.53502e-17
+pX             		 4.93614e-16
+lambda         		 9.00866e-17
+Q              		 5.92095e-17
+s              		 5.62041e-17
+gz             		 3.67388e-19
+epsilonRPG     		 -2.45296e-18
+epsilonRPstar  		 0
+epsilon        		 -3.89702e-17
+epsilonN       		 0
+epsilonC       		 0
+epsilonI       		 -1.81492e-18
+epsilonYstar   		 6.84312e-19
+epsilonpiYstar 		 0
+varphiW        		 5.46999e-19
+varphiH        		 -4.68091e-18
+varphiX        		 0
+epsilonmustar  		 0
+varphistar     		 0
+E              		 -1.10134e-16
+epsilonG       		 4.96902e-18
+epsiloniG      		 0
+epsilontr      		 0
+epsilontauC    		 8.08839e-18
+epsilontauN    		 6.47156e-18
+epsilontauK    		 0
+piW            		 0
+dy             		 0
+rrp            		 -5.43081e-18
+rpsa           		 -9.36829e-18
+rrpstar        		 -1.92851e-19
+gyratio        		 -2.99637e-17
+iGyratio       		 -6.40795e-18
+tryratio       		 -3.7622e-18
+tauCyratio     		 1.33936e-17
+tauNyratio     		 -7.35554e-17
+tauKyratio     		 1.21635e-17
+ndy            		 -6.43679e-18
+ndc            		 -6.0867e-18
+ndi            		 -3.39563e-18
+ndg            		 -7.06981e-19
+ndiG           		 -7.06981e-19
+ndex           		 -7.06981e-19
+ndim           		 -2.08543e-18
+dy_            		 0.598207
+dc_            		 0.717246
+dg_            		 0.51437
+db_            		 1.31646
+gdebtgdp_      		 40
+dx_            		 0.573815
+dim_           		 1.10165
+dsr_           		 0.249216
+dE_            		 0.085
+dw_            		 0.406825
+R_             		 2.24834
+di_            		 0.850425
+diG_           		 0.574432
+dtr_           		 1.56763
+pi_im_         		 1.11872
+pi_x_          		 1.11872
+pi_c_          		 1.11872
+pi_cbar_       		 1.11872
+pi_h_          		 1.11872
+dtauC_         		 0.0140461
+dtauN_         		 0.0441115
+dtauK_         		 0.0557249
+dy_star_       		 0.618204
+R_star_        		 0.5
+pi_Ystar_      		 0.623468
+
+EIGENVALUES:
+         Modulus             Real        Imaginary
+
+               0                0                0
+               0                0                0
+       1.755e-17       -1.755e-17                0
+       3.755e-17       -3.755e-17                0
+       1.093e-16       -1.093e-16                0
+       3.737e-15       -3.737e-15                0
+       8.885e-15        8.885e-15                0
+       6.573e-14        6.573e-14                0
+       7.295e-11        7.295e-11                0
+       7.302e-11       -7.302e-11                0
+           0.186            0.186                0
+          0.1915           0.1915                0
+          0.1994           0.1994                0
+          0.2097           0.2097                0
+          0.2219           0.2219                0
+            0.35             0.35                0
+             0.5              0.5                0
+             0.5              0.5                0
+             0.5              0.5                0
+          0.5023           0.4396            0.243
+          0.5023           0.4396           -0.243
+          0.5233           0.5233                0
+             0.6              0.6                0
+          0.6377           0.6375          0.01677
+          0.6377           0.6375         -0.01677
+             0.7              0.7                0
+             0.7              0.7                0
+          0.7008           0.7008                0
+            0.75             0.75                0
+            0.75             0.75                0
+           0.779            0.779                0
+             0.8              0.8                0
+             0.8              0.8                0
+             0.8              0.8                0
+             0.8              0.8                0
+             0.8              0.8                0
+             0.8              0.8                0
+             0.8              0.8                0
+             0.8              0.8                0
+             0.8              0.8                0
+             0.8              0.8                0
+             0.8              0.8                0
+             0.8              0.8                0
+          0.8695           0.8695                0
+             0.9              0.9                0
+             0.9              0.9                0
+           0.907           0.9068          0.01945
+           0.907           0.9068         -0.01945
+          0.9296           0.9266           0.0746
+          0.9296           0.9266          -0.0746
+          0.9401           0.8927           0.2948
+          0.9401           0.8927          -0.2948
+          0.9648           0.9648                0
+          0.9863           0.9863                0
+           1.011            1.009          0.06617
+           1.011            1.009         -0.06617
+            1.03             1.03                0
+           1.078            1.078                0
+           1.089            1.087           0.0571
+           1.089            1.087          -0.0571
+           1.108            1.108                0
+           1.457            1.457                0
+           1.503            1.503                0
+           1.739            1.739                0
+           2.872            2.872                0
+       1.367e+16       -1.367e+16                0
+       2.189e+16        2.189e+16                0
+       1.067e+17       -1.067e+17                0
+       1.207e+17        1.207e+17                0
+       3.795e+17        3.795e+17                0
+       4.934e+17       -4.934e+17                0
+       1.285e+18       -1.285e+18                0
+        3.13e+18         3.13e+18                0
+
+
+There are 19 eigenvalue(s) larger than 1 in modulus 
+for 19 forward-looking variable(s)
+
+The rank condition is verified.
+
+
+Initial value of the log posterior (or likelihood): -3846.2742
+
+MODE CHECK
+
+Fval obtained by the minimization routine (minus the posterior/likelihood)): 3846.274214
+
+RESULTS FROM POSTERIOR ESTIMATION
+parameters
+            prior mean     mode    s.d. prior pstdev
+
+omega           0.250   0.0848  0.0205 beta  0.1000 
+kappa           0.650   0.6832  0.0368 beta  0.1000 
+sigmaL          3.000   2.7918  0.5014 gamm  0.5000 
+muC             1.500   0.5871  0.0195 gamm  0.2000 
+mustar          1.250   0.4180  0.0429 gamm  0.2000 
+thetaH          0.800   0.8308  0.0426 beta  0.0500 
+chiH            0.750   0.4003  0.0759 beta  0.1000 
+thetaX          0.800   0.8685  0.0498 beta  0.0500 
+chiX            0.750   0.3187  0.0833 beta  0.1000 
+thetaM          0.800   0.8181  0.0323 beta  0.0500 
+chiM            0.750   0.4868  0.0894 beta  0.1000 
+thetaW          0.750   0.3804  0.0502 beta  0.1000 
+chiW            0.500   0.3690  0.0857 beta  0.1000 
+gammaI          8.000   5.5791  0.8798 gamm  1.5000 
+gammaB          0.050   0.0381  0.0038 gamm  0.0050 
+gammaBstar      0.050   0.0366  0.0046 gamm  0.0050 
+phiR            0.750   0.9032  0.0096 beta  0.1000 
+phiPi           1.500   1.6196  0.0864 norm  0.1000 
+phiDY           0.350   0.2954  0.0466 norm  0.0500 
+thetatrY        0.200   0.0650  0.0755 gamm  0.1000 
+thetaGY         0.200   0.1306  0.0394 gamm  0.1000 
+thetaiGY        0.200   0.1075  0.0556 gamm  0.1000 
+thetatauCY      0.500   0.1944  0.0402 gamm  0.3000 
+thetatauNY      0.500   0.0494  0.0249 gamm  0.3000 
+thetatauKY      0.500   0.1818  0.0669 gamm  0.3000 
+thetaGB         0.400   0.1873  0.0434 gamm  0.2000 
+thetaiGB        0.400   0.1618  0.1063 gamm  0.2000 
+thetatrB        0.400   0.4373  0.1336 gamm  0.2000 
+thetatauNB      0.400   0.1546  0.0274 gamm  0.2000 
+thetatauKB      0.400   0.1023  0.0484 gamm  0.2000 
+thetatauCB      0.400   0.1655  0.0359 gamm  0.2000 
+rhoepsG         0.750   0.7881  0.0841 beta  0.1000 
+rhoepsiG        0.750   0.5803  0.1339 beta  0.1000 
+rhoepstr        0.750   0.5061  0.1146 beta  0.1000 
+rhoepstauC      0.750   0.3897  0.0869 beta  0.1000 
+rhoepstauN      0.750   0.3396  0.0879 beta  0.1000 
+rhoepstauK      0.750   0.3394  0.0774 beta  0.1000 
+xiE             0.500   0.6072  0.0286 beta  0.1000 
+rhoRPG          0.750   0.6876  0.0531 beta  0.1000 
+rhoRPstar       0.750   0.9958  0.0129 beta  0.1000 
+rhoYstar        0.750   0.8584  0.0203 beta  0.1000 
+rhoepsrstar     0.750   0.5271  0.0422 beta  0.1000 
+rhogz           0.750   0.9445  0.0166 beta  0.1000 
+rhoepsilon      0.750   0.8733  0.1014 beta  0.1000 
+rhoN            0.750   0.8269  0.0918 beta  0.1000 
+rhoC            0.750   0.8001  0.1091 beta  0.1000 
+rhoI            0.750   0.3758  0.0903 beta  0.1000 
+rhovarphiW      0.750   0.3694  0.0792 beta  0.1000 
+rhovarphiH      0.750   0.3401  0.0945 beta  0.1000 
+rhovarphiX      0.750   0.3428  0.1138 beta  0.1000 
+rhovarmustar    0.750   0.9539  0.0249 beta  0.1000 
+rhovarphistar   0.750   0.3383  0.0782 beta  0.1000 
+rhog            0.750   0.7437  0.0669 beta  0.1000 
+rhoiG           0.750   0.9042  0.1184 beta  0.1000 
+rhotr           0.750   0.3612  0.1147 beta  0.1000 
+rhotauC         0.750   0.2233  0.0543 beta  0.1000 
+rhotauN         0.750   0.3637  0.0831 beta  0.1000 
+rhotauK         0.750   0.3744  0.0842 beta  0.1000 
+rhopiYstar      0.750   0.9839  0.0100 beta  0.1000 
+rhopiC          0.750   0.9630  0.0137 beta  0.1000 
+
+standard deviation of shocks
+            prior mean     mode    s.d. prior pstdev
+
+etaYstar        0.010   0.0022  0.0003 invg     Inf 
+etaPiYstar      0.010   0.0109  0.0008 invg     Inf 
+etaRstar        0.010   0.0019  0.0001 invg     Inf 
+etag            0.010   0.0068  0.0006 invg     Inf 
+etaiG           0.010   0.0397  0.0028 invg     Inf 
+etatr           0.010   0.0861  0.0060 invg     Inf 
+etaR            0.010   0.0021  0.0002 invg     Inf 
+etaRPG          0.010   0.0097  0.0012 invg     Inf 
+etaRPstar       0.010   0.0063  0.0009 invg     Inf 
+etagz           0.010   0.0068  0.0010 invg     Inf 
+etaepsilon      0.010   0.0122  0.0045 invg     Inf 
+etaN            0.010   0.0150  0.0043 invg     Inf 
+etaC            0.010   0.0043  0.0062 invg     Inf 
+etaI            0.010   0.0102  0.0014 invg     Inf 
+etavarphiH      0.010   0.0123  0.0012 invg     Inf 
+etavarphiX      0.010   0.0246  0.0026 invg     Inf 
+etamustar       0.010   0.0140  0.0046 invg     Inf 
+etavarphistar   0.010   0.0224  0.0023 invg     Inf 
+etavarphiW      0.010   0.0083  0.0008 invg     Inf 
+etatauC         0.010   0.0086  0.0007 invg     Inf 
+etatauN         0.010   0.0089  0.0007 invg     Inf 
+etatauK         0.010   0.0220  0.0017 invg     Inf 
+etapiCbar       0.010   0.0012  0.0000 invg     Inf 
+
+
+Log data density [Laplace approximation] is -4120.173559.
+
+Estimation::mcmc: Total number of MH draws per chain: 200000.
+Estimation::mcmc: Total number of generated MH files: 2.
+Estimation::mcmc: I'll use mh-files 1 to 2.
+Estimation::mcmc: In MH-file number 1 I'll start at line 100001.
+Estimation::mcmc: Finally I keep 100000 draws per chain.
+
+
+
+MCMC Inefficiency factors per block
+Parameter              Block 1     Block 2
+SE_etaYstar            441.720     474.378
+SE_etaPiYstar          455.007     412.838
+SE_etaRstar            425.327     456.175
+SE_etag                343.618     424.906
+SE_etaiG               439.143     404.686
+SE_etatr               404.877     452.993
+SE_etaR                463.016     476.879
+SE_etaRPG              369.300     415.042
+SE_etaRPstar           431.507     449.818
+SE_etagz               534.402     458.650
+SE_etaepsilon          613.526     617.849
+SE_etaN                627.817     618.157
+SE_etaC                605.420     580.852
+SE_etaI                424.597     454.360
+SE_etavarphiH          372.196     402.257
+SE_etavarphiX          473.125     447.300
+SE_etamustar           406.631     453.881
+SE_etavarphistar       451.289     504.321
+SE_etavarphiW          412.069     413.013
+SE_etatauC             376.281     419.944
+SE_etatauN             466.499     436.882
+SE_etatauK             409.020     429.697
+SE_etapiCbar           558.323     391.910
+omega                  453.429     439.853
+kappa                  527.560     527.206
+sigmaL                 519.135     443.310
+muC                    737.386     745.973
+mustar                 421.255     396.894
+thetaH                 542.139     486.768
+chiH                   488.450     473.385
+thetaX                 581.640     422.007
+chiX                   471.434     486.916
+thetaM                 376.468     409.990
+chiM                   414.308     448.654
+thetaW                 409.895     391.938
+chiW                   391.951     426.569
+gammaI                 460.271     497.678
+gammaB                 437.456     435.060
+gammaBstar             437.628     458.842
+phiR                   514.208     505.236
+phiPi                  443.616     412.834
+phiDY                  463.569     437.253
+thetatrY               460.700     502.522
+thetaGY                606.523     610.922
+thetaiGY               470.156     550.372
+thetatauCY             419.300     521.303
+thetatauNY             430.408     489.074
+thetatauKY             467.177     507.069
+thetaGB                500.140     496.594
+thetaiGB               422.453     492.060
+thetatrB               431.258     405.910
+thetatauNB             459.808     421.314
+thetatauKB             497.361     533.410
+thetatauCB             494.736     478.130
+rhoepsG                440.191     464.748
+rhoepsiG               506.435     561.739
+rhoepstr               477.227     507.320
+rhoepstauC             418.447     411.273
+rhoepstauN             448.797     483.837
+rhoepstauK             380.296     361.011
+xiE                    505.570     491.761
+rhoRPG                 439.977     479.115
+rhoRPstar              377.363     598.331
+rhoYstar               426.118     463.722
+rhoepsrstar            422.194     500.333
+rhogz                  368.165     374.705
+rhoepsilon             651.731     659.841
+rhoN                   531.780     515.073
+rhoC                   516.220     505.152
+rhoI                   435.964     399.088
+rhovarphiW             433.442     395.308
+rhovarphiH             634.307     657.459
+rhovarphiX             517.469     445.093
+rhovarmustar           626.534     714.236
+rhovarphistar          398.720     452.664
+rhog                   504.491     433.018
+rhoiG                  516.757     593.205
+rhotr                  428.315     492.835
+rhotauC                369.847     427.700
+rhotauN                463.492     454.501
+rhotauK                441.279     464.335
+rhopiYstar             386.629     450.687
+rhopiC                 451.930     455.582
+
+Estimation::mcmc::diagnostics: Univariate convergence diagnostic, Brooks and Gelman (1998):
+    Parameter 1...  Done! 
+    Parameter 2...  Done! 
+    Parameter 3...  Done! 
+    Parameter 4...  Done! 
+    Parameter 5...  Done! 
+    Parameter 6...  Done! 
+    Parameter 7...  Done! 
+    Parameter 8...  Done! 
+    Parameter 9...  Done! 
+    Parameter 10...  Done! 
+    Parameter 11...  Done! 
+    Parameter 12...  Done! 
+    Parameter 13...  Done! 
+    Parameter 14...  Done! 
+    Parameter 15...  Done! 
+    Parameter 16...  Done! 
+    Parameter 17...  Done! 
+    Parameter 18...  Done! 
+    Parameter 19...  Done! 
+    Parameter 20...  Done! 
+    Parameter 21...  Done! 
+    Parameter 22...  Done! 
+    Parameter 23...  Done! 
+    Parameter 24...  Done! 
+    Parameter 25...  Done! 
+    Parameter 26...  Done! 
+    Parameter 27...  Done! 
+    Parameter 28...  Done! 
+    Parameter 29...  Done! 
+    Parameter 30...  Done! 
+    Parameter 31...  Done! 
+    Parameter 32...  Done! 
+    Parameter 33...  Done! 
+    Parameter 34...  Done! 
+    Parameter 35...  Done! 
+    Parameter 36...  Done! 
+    Parameter 37...  Done! 
+    Parameter 38...  Done! 
+    Parameter 39...  Done! 
+    Parameter 40...  Done! 
+    Parameter 41...  Done! 
+    Parameter 42...  Done! 
+    Parameter 43...  Done! 
+    Parameter 44...  Done! 
+    Parameter 45...  Done! 
+    Parameter 46...  Done! 
+    Parameter 47...  Done! 
+    Parameter 48...  Done! 
+    Parameter 49...  Done! 
+    Parameter 50...  Done! 
+    Parameter 51...  Done! 
+    Parameter 52...  Done! 
+    Parameter 53...  Done! 
+    Parameter 54...  Done! 
+    Parameter 55...  Done! 
+    Parameter 56...  Done! 
+    Parameter 57...  Done! 
+    Parameter 58...  Done! 
+    Parameter 59...  Done! 
+    Parameter 60...  Done! 
+    Parameter 61...  Done! 
+    Parameter 62...  Done! 
+    Parameter 63...  Done! 
+    Parameter 64...  Done! 
+    Parameter 65...  Done! 
+    Parameter 66...  Done! 
+    Parameter 67...  Done! 
+    Parameter 68...  Done! 
+    Parameter 69...  Done! 
+    Parameter 70...  Done! 
+    Parameter 71...  Done! 
+    Parameter 72...  Done! 
+    Parameter 73...  Done! 
+    Parameter 74...  Done! 
+    Parameter 75...  Done! 
+    Parameter 76...  Done! 
+    Parameter 77...  Done! 
+    Parameter 78...  Done! 
+    Parameter 79...  Done! 
+    Parameter 80...  Done! 
+    Parameter 81...  Done! 
+    Parameter 82...  Done! 
+    Parameter 83...  Done! 
+
+Estimation::marginal density: I'm computing the posterior mean and covariance...  Done!
+Estimation::marginal density: I'm computing the posterior log marginal density (modified harmonic mean)... Done!
+
+
+ESTIMATION RESULTS
+
+Log data density is -4106.169553.
+
+parameters
+                prior mean   post. mean        90% HPD interval    prior       pstdev
+
+omega                0.250       0.0752      0.0426      0.1089   beta        0.1000
+kappa                0.650       0.6528      0.5939      0.7137   beta        0.1000
+sigmaL               3.000       2.9925      2.2007      3.8165   gamm        0.5000
+muC                  1.500       0.6046      0.5727      0.6353   gamm        0.2000
+mustar               1.250       0.4211      0.3628      0.4802   gamm        0.2000
+thetaH               0.800       0.8013      0.7367      0.8647   beta        0.0500
+chiH                 0.750       0.3373      0.2159      0.4629   beta        0.1000
+thetaX               0.800       0.8443      0.7744      0.9164   beta        0.0500
+chiX                 0.750       0.3297      0.1886      0.4624   beta        0.1000
+thetaM               0.800       0.8241      0.7715      0.8758   beta        0.0500
+chiM                 0.750       0.4015      0.2543      0.5504   beta        0.1000
+thetaW               0.750       0.3804      0.2946      0.4573   beta        0.1000
+chiW                 0.500       0.4032      0.2618      0.5452   beta        0.1000
+gammaI               8.000       5.6331      4.2213      7.0655   gamm        1.5000
+gammaB               0.050       0.0389      0.0325      0.0450   gamm        0.0050
+gammaBstar           0.050       0.0412      0.0331      0.0483   gamm        0.0050
+phiR                 0.750       0.9034      0.8879      0.9190   beta        0.1000
+phiPi                1.500       1.6013      1.4580      1.7391   norm        0.1000
+phiDY                0.350       0.3679      0.2920      0.4460   norm        0.0500
+thetatrY             0.200       0.1544      0.0394      0.2717   gamm        0.1000
+thetaGY              0.200       0.1230      0.0575      0.1861   gamm        0.1000
+thetaiGY             0.200       0.1172      0.0288      0.1999   gamm        0.1000
+thetatauCY           0.500       0.1747      0.1075      0.2391   gamm        0.3000
+thetatauNY           0.500       0.0564      0.0157      0.0943   gamm        0.3000
+thetatauKY           0.500       0.1841      0.0712      0.2888   gamm        0.3000
+thetaGB              0.400       0.1692      0.0941      0.2364   gamm        0.2000
+thetaiGB             0.400       0.3110      0.1386      0.4779   gamm        0.2000
+thetatrB             0.400       0.3324      0.1161      0.5375   gamm        0.2000
+thetatauNB           0.400       0.1110      0.0657      0.1529   gamm        0.2000
+thetatauKB           0.400       0.1138      0.0363      0.1883   gamm        0.2000
+thetatauCB           0.400       0.1494      0.0919      0.2092   gamm        0.2000
+rhoepsG              0.750       0.7528      0.6164      0.8887   beta        0.1000
+rhoepsiG             0.750       0.6679      0.4699      0.8981   beta        0.1000
+rhoepstr             0.750       0.4419      0.2660      0.6354   beta        0.1000
+rhoepstauC           0.750       0.3434      0.2010      0.4823   beta        0.1000
+rhoepstauN           0.750       0.3332      0.1946      0.4715   beta        0.1000
+rhoepstauK           0.750       0.3237      0.1959      0.4480   beta        0.1000
+xiE                  0.500       0.5663      0.5199      0.6129   beta        0.1000
+rhoRPG               0.750       0.6645      0.5846      0.7538   beta        0.1000
+rhoRPstar            0.750       0.9860      0.9737      0.9983   beta        0.1000
+rhoYstar             0.750       0.8734      0.8413      0.9083   beta        0.1000
+rhoepsrstar          0.750       0.4966      0.4292      0.5677   beta        0.1000
+rhogz                0.750       0.9366      0.9102      0.9639   beta        0.1000
+rhoepsilon           0.750       0.7917      0.6258      0.9396   beta        0.1000
+rhoN                 0.750       0.8533      0.7223      0.9639   beta        0.1000
+rhoC                 0.750       0.7524      0.5756      0.9198   beta        0.1000
+rhoI                 0.750       0.4090      0.2564      0.5433   beta        0.1000
+rhovarphiW           0.750       0.3842      0.2499      0.5099   beta        0.1000
+rhovarphiH           0.750       0.4273      0.2675      0.5728   beta        0.1000
+rhovarphiX           0.750       0.4205      0.2390      0.5992   beta        0.1000

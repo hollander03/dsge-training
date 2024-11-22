@@ -1,0 +1,112 @@
+Starting Dynare (version 4.5.6).
+Starting preprocessing of the model file ...
+Found 14 equation(s).
+Evaluating expressions...done
+Computing static model derivatives:
+ - order 1
+Computing dynamic model derivatives:
+ - order 1
+ - order 2
+Processing outputs ...
+done
+Preprocessing completed.
+
+STEADY-STATE RESULTS:
+
+a          		 0
+lambda     		 0
+y          		 0
+z          		 0
+r          		 0
+pi         		 0
+e          		 0
+g          		 0
+q          		 0
+x          		 0
+inflationq 		 0
+interest   		 0
+output     		 0
+Z_au       		 0
+
+EIGENVALUES:
+         Modulus             Real        Imaginary
+
+               0                0                0
+               0                0                0
+          0.3536           0.3536                0
+          0.3886           0.3886                0
+          0.6762           0.6762                0
+          0.9797           0.9797                0
+               1                1                0
+           1.303            1.284            0.223
+           1.303            1.284           -0.223
+           2.469            2.469                0
+           2.577            2.577                0
+
+
+There are 4 eigenvalue(s) larger than 1 in modulus 
+for 4 forward-looking variable(s)
+
+The rank condition is verified.
+
+
+MODEL SUMMARY
+
+  Number of variables:         14
+  Number of stochastic shocks: 4
+  Number of state variables:   7
+  Number of jumpers:           4
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables         epsa       epse       epsz       epsr
+epsa         75.342400   0.000000   0.000000   0.000000
+epse          0.000000   0.000000   0.000000   0.000000
+epsz          0.000000   0.000000   0.000000   0.000000
+epsr          0.000000   0.000000   0.000000   0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                              output      inflationq        interest               x
+a(-1)                       0.032587        0.054318        0.039112        0.024973
+r(-1)                      -1.390685       -3.226352        1.953628       -1.390685
+Z_au(-1)                    1.000000               0               0               0
+y(-1)                       0.541387        0.385708       -0.072791        0.541387
+q(-1)                              0               0               0       -0.388612
+epsa                        0.033262        0.055444        0.039923        0.025490
+epse                       -0.577551        2.660096        0.811342       -0.577551
+epsz                        0.458613       -0.385708        0.072791       -0.152775
+epsr                       -1.390685       -3.226352        1.953628       -1.390685
+
+
+THEORETICAL MOMENTS
+VARIABLE           MEAN  STD. DEV.   VARIANCE
+output              NaN        NaN        NaN
+inflationq       0.0000     0.6293     0.3960
+interest         0.0000     3.2344    10.4612
+x                0.0000     0.4057     0.1646
+
+
+
+VARIANCE DECOMPOSITION (in percent)
+                epsa    epse    epsz    epsr
+inflationq    100.00    0.00    0.00    0.00
+interest      100.00    0.00    0.00    0.00
+x             100.00    0.00    0.00    0.00
+
+
+
+MATRIX OF CORRELATIONS
+Variables     inflationq    interest           x
+inflationq        1.0000      0.1113      0.9195
+interest          0.1113      1.0000      0.3831
+x                 0.9195      0.3831      1.0000
+
+
+
+COEFFICIENTS OF AUTOCORRELATION
+Order              1       2       3       4       5
+inflationq    0.6399  0.4096  0.2588  0.1587  0.0919
+interest      0.9929  0.9799  0.9642  0.9472  0.9297
+x             0.8276  0.6104  0.4285  0.2934  0.1979
+Total computing time : 0h00m03s

@@ -1,0 +1,117 @@
+Starting Dynare (version 4.5.6).
+Starting preprocessing of the model file ...
+Found 9 equation(s).
+Evaluating expressions...done
+Computing static model derivatives:
+ - order 1
+Computing dynamic model derivatives:
+ - order 1
+Processing outputs ...
+done
+Preprocessing completed.
+
+
+
+
+Residuals of the static equations:
+
+Equation number 1 : 0.0056111
+Equation number 2 : 0.09
+Equation number 3 : -0.05
+Equation number 4 : -0.05
+Equation number 5 : 0.031619
+Equation number 6 : 0
+Equation number 7 : -0.09
+Equation number 8 : -0.005
+Equation number 9 : 0
+
+
+
+STEADY-STATE RESULTS:
+
+y  		 1.21132
+c  		 0.909361
+k  		 12.0783
+l  		 0.351132
+a  		 1
+r  		 0.035101
+w  		 2.24233
+iv 		 0.301957
+mc 		 1
+
+EIGENVALUES:
+         Modulus             Real        Imaginary
+
+             0.9              0.9                0
+          0.9507           0.9507                0
+            1.06             1.06                0
+
+
+There are 1 eigenvalue(s) larger than 1 in modulus 
+for 1 forward-looking variable(s)
+
+The rank condition is verified.
+
+
+MODEL SUMMARY
+
+  Number of variables:         9
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           1
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables        epsa
+epsa         1.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                   y               c               k               l               a               r               w              iv              mc
+Constant                    1.211318        0.909361       12.078282        0.351132        1.000000        0.035101        2.242335        0.301957        1.000000
+k(-1)                       0.018815        0.043114        0.950701       -0.007263               0       -0.002361        0.081212       -0.024299               0
+a(-1)                       1.690015        0.201060        1.488955        0.267502        0.900000        0.048973        1.420205        1.488955               0
+epsa                        1.877794        0.223400        1.654394        0.297224        1.000000        0.054414        1.578005        1.654394               0
+
+
+MOMENTS OF SIMULATED VARIABLES
+VARIABLE              MEAN       STD. DEV.        VARIANCE        SKEWNESS        KURTOSIS
+y                -1.117133        3.714190       13.795206       -0.382562        0.266941
+c                 0.309760        0.914597        0.836488       -1.402240        1.886579
+k                 2.654761       15.450056      238.704242       -1.327918        1.891879
+l                 0.063400        0.515685        0.265931        0.133221       -0.344660
+a                -0.160919        1.897470        3.600394       -0.232121        0.073678
+r                -0.009437        0.089727        0.008051        0.346180       -0.537665
+w                -0.230522        3.745741       14.030574       -0.885973        0.986494
+iv               -1.426893        2.967171        8.804103       -0.007456       -0.193379
+mc                1.000000        0.000000        0.000000       -1.935721        2.238133
+
+
+CORRELATION OF SIMULATED VARIABLES
+VARIABLE         y       c       k       l       a       r       w      iv      mc
+y           1.0000  0.8578  0.7186  0.9736  0.9982  0.9280  0.9796  0.9874  0.4860
+c           0.8578  1.0000  0.9739  0.7177  0.8250  0.6045  0.9435  0.7655  0.7821
+k           0.7186  0.9739  1.0000  0.5407  0.6750  0.4078  0.8436  0.5993  0.8434
+l           0.9736  0.7177  0.5407  1.0000  0.9856  0.9886  0.9079  0.9975  0.3109
+a           0.9982  0.8250  0.6750  0.9856  1.0000  0.9489  0.9656  0.9952  0.4420
+r           0.9280  0.6045  0.4078  0.9886  0.9489  1.0000  0.8343  0.9753  0.1863
+w           0.9796  0.9435  0.8436  0.9079  0.9656  0.8343  1.0000  0.9354  0.6188
+iv          0.9874  0.7655  0.5993  0.9975  0.9952  0.9753  0.9354  1.0000  0.3673
+mc          0.4860  0.7821  0.8434  0.3109  0.4420  0.1863  0.6188  0.3673  1.0000
+
+
+AUTOCORRELATION OF SIMULATED VARIABLES
+VARIABLE         1       2       3       4       5
+y           0.8262  0.6977  0.5277  0.4764  0.3730
+c           0.9428  0.8908  0.8126  0.7418  0.6408
+k           0.9693  0.9224  0.8479  0.7490  0.6280
+l           0.7701  0.6059  0.3978  0.3584  0.2556
+a           0.8113  0.6730  0.4922  0.4435  0.3397
+r           0.7351  0.5507  0.3224  0.2932  0.1932
+w           0.8745  0.7792  0.6474  0.5904  0.4907
+iv          0.7873  0.6336  0.4365  0.3928  0.2892
+mc          1.4290  1.3349  1.1987  1.0463  0.8624
+Current plot held
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) 
+entering extended mode 
+Total computing time : 0h00m03s
