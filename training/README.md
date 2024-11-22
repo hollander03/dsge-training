@@ -6,13 +6,13 @@ Repository for training material and capacity building on Modern Macroeconomic T
 
 ## Overview
 - Session blocks under [`Schedule`](#schedule) indicate Sections by bullet numbering. 1 Session = 2 Hours. 
-- Additional Q&A sessions scheduled to ensure everyone is on track.
-- We will aim to follow a [Socratic approach](https://en.wikipedia.org/wiki/Socratic_method) to the training so that we can have you all engage. 
-- Prescribed resources should therefore be familiarized with before contact sessions --- i.e., watch tutorial videos and read through prescribed slides & notes so that we focus on challenges and practical aspects.
+- Additional practical/Q&A sessions scheduled to ensure everyone is on track.
+- We will aim to include as much practical training so that we can have you all engage. 
+- Prescribed resources should therefore be familiarised with before contact sessions --- i.e., watch tutorial videos and read through prescribed slides & notes so that we focus on challenges and practical aspects.
 - So look to prepare questions on what you struggled with, the insights/revelations that you experienced, and the critiques that you may have on the underlying assumptions/presuppositions.
-- It would be ideal for the **NT-DSGE Team** to post these remarks on the [National Treasure Slack Channel](https://national-treasure.slack.com) *before each contact session*.
-- If the content is not all covered within the designated session, the **NT-DSGE Team** should post questions on the [National Treasure Slack Channel](https://national-treasure.slack.com) *before the following contact session*.
-- We will look to split Q&A sessions into 1 hour recap and engagement (Q&A), and 1-hour hands on (e.g., run the code, interpret, adjust). 
+- It may be useful for the **participants** to post these remarks online via a [Slack Channel](https://slack.com/) *(to be confirmed)*.
+- If the content is not all covered within the designated session, the **participants** should post questions on the [Slack Channel](https://slack.com/) *before the following contact session* *(to be confirmed)*.
+- We will look to split Q&A sessions into 1 hour of recap and engagement (Q&A), and 1 hour of practical work (e.g., run the code, interpret, adjust). 
 
 ## Resources
 - Our sessions will follow closely to the [DYNARE TUTORIALS by Willi Mutschler](https://mutschler.eu/dynare/)
@@ -21,9 +21,9 @@ Repository for training material and capacity building on Modern Macroeconomic T
 - See also the `readers` folder (there is a huge amount of literature, so we've tried to be as focused as possible on the DSGE and empirical topics identified). We will add more to supplement the above core resources.
 
 ## Schedule
-### First Semester - DSGE training and tutorial sessions
+### DSGE training and tutorial sessions
 
-Below follows the high-level outline. See the ``2023_WorkSchedule_NT-SA-TIED.docx`` in `admin` folder for more details.
+Below follows the high-level outline. See the ``2024 DSGE Training Schedule.docx`` in `admin` folder for more details.
 
 - **[Block 1]** Introduction to DSGE models and Dynare
 1. Slack, GitHub, & Matlab/Octave installation – with Dynare (0.5 session)
@@ -46,9 +46,7 @@ Below follows the high-level outline. See the ``2023_WorkSchedule_NT-SA-TIED.doc
 12. Financial accelerator (1 session)
 13. Medium-scale DSGE Model (1 session)
 
-### Second Semester Schedule
-
-Weekly Practical DSGE and empirical sessions scheduled.
+Above includes: Practical DSGE and empirical sessions [`Tutorials`](#tutorials).
 
 ## Tutorials
 
