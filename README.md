@@ -7,4 +7,4 @@
 
 ## Model codes
 - Repository containing resources and replication files for DSGE models are in the `ntdsge` folder: [ntdsge](https://github.com/hollander03/dsge-training/tree/main/ntdsge).
-- *Note:* this folder has mostly been emptied for the UNU-WIDER DSGE training workshop for 02 - 06 December 2024.
+- *Note:* this folder has mostly been emptied for the SA-TIED DSGE training workshop for 02 - 06 December 2024.
