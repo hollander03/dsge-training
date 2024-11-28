@@ -1,4 +1,4 @@
-# National Treasury DSGE - Training
+# DSGE - Training
 
 [`Overview`](#overview) | [`Resources`](#resources) | [`Schedule`](#schedule) | [`Tutorials`](#tutorials) |
 
