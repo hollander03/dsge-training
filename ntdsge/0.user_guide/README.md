@@ -1,4 +1,4 @@
-# NT-DSGE User Guide
+# DSGE User Guide
 
 This folder contains the user guide, the Dynare Manual, and additional resources to understand and the implementation of the NT-DSGE model.
 The other folder contains:
