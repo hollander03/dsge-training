@@ -23,7 +23,7 @@ Repository for training material and capacity building on Modern Macroeconomic T
 ## Schedule
 ### DSGE training and tutorial sessions
 
-Below follows the high-level outline. See the ``2024 DSGE Training Schedule.docx`` in `admin` folder for more details.
+Below follows the high-level outline. See the ``2024 DSGE Training Schedule.docx`` (or [Google Sheets](https://docs.google.com/spreadsheets/d/13zqYkf0Z0ncbDcjvZigb51Z2zR6nLJpCXLYeAWW-1cs/edit?usp=sharing)) in `admin` folder for more details.
 
 - **[Block 1]** Introduction to DSGE models and Dynare
 1. Slack, GitHub, & Matlab/Octave installation – with Dynare (0.5 session)
