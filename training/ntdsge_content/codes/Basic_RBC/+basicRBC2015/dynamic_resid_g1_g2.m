@@ -5,9 +5,9 @@ function [residual, g1, g2] = dynamic_resid_g1_g2(T, y, x, params, steady_state,
 %
 
     if T_flag
-        T = basicRBC2015.dynamic_g2_tt(T, y, x, params, steady_state, it_);
+        T = basicrbc2015.dynamic_g2_tt(T, y, x, params, steady_state, it_);
     end
-    [residual, g1] = basicRBC2015.dynamic_resid_g1(T, y, x, params, steady_state, it_, false);
-    g2       = basicRBC2015.dynamic_g2(T, y, x, params, steady_state, it_, false);
+    [residual, g1] = basicrbc2015.dynamic_resid_g1(T, y, x, params, steady_state, it_, false);
+    g2       = basicrbc2015.dynamic_g2(T, y, x, params, steady_state, it_, false);
 
 end

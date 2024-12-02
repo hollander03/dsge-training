@@ -15,7 +15,7 @@ function T = static_g1_tt(T, y, x, params)
 
 assert(length(T) >= 2);
 
-T = basicRBC2015.static_resid_tt(T, y, x, params);
+T = basicrbc2015.static_resid_tt(T, y, x, params);
 
 
 end

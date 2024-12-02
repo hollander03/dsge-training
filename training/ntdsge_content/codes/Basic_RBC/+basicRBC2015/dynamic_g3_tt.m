@@ -20,7 +20,7 @@ function T = dynamic_g3_tt(T, y, x, params, steady_state, it_)
 
 assert(length(T) >= 2);
 
-T = basicRBC2015.dynamic_g2_tt(T, y, x, params, steady_state, it_);
+T = basicrbc2015.dynamic_g2_tt(T, y, x, params, steady_state, it_);
 
 
 end

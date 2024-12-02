@@ -20,29 +20,15 @@ function residual = dynamic_resid(T, y, x, params, steady_state, it_, T_flag)
 %
 
 if T_flag
-    T = basicRBC2015.dynamic_resid_tt(T, y, x, params, steady_state, it_);
+    T = basicrbc2015.dynamic_resid_tt(T, y, x, params, steady_state, it_);
 end
 residual = zeros(7, 1);
-lhs = y(3);
-rhs = y(4)*(1-T(2))+y(6)*T(2);
-residual(1) = lhs - rhs;
-lhs = 1/params(5)*y(11);
-rhs = y(10)-y(4);
-residual(2) = lhs - rhs;
-lhs = y(4)*params(5);
-rhs = y(3)-y(5);
-residual(3) = lhs - rhs;
-lhs = y(8);
-rhs = (y(3)-y(1))*params(1)*1/T(1);
-residual(4) = lhs - rhs;
-lhs = y(7);
-rhs = (1-params(3))*y(1)+params(3)*y(6);
-residual(5) = lhs - rhs;
-lhs = y(3);
-rhs = y(9)+params(1)*y(1)+y(5)*(1-params(1));
-residual(6) = lhs - rhs;
-lhs = y(9);
-rhs = params(4)*y(2)+x(it_, 1);
-residual(7) = lhs - rhs;
+    residual(1) = (y(3)) - (y(4)*(1-T(2))+y(6)*T(2));
+    residual(2) = (1/params(5)*y(11)) - (y(10)-y(4));
+    residual(3) = (y(4)*params(5)) - (y(3)-y(5));
+    residual(4) = (y(8)) - ((y(3)-y(1))*params(1)*1/T(1));
+    residual(5) = (y(7)) - ((1-params(3))*y(1)+params(3)*y(6));
+    residual(6) = (y(3)) - (y(9)+params(1)*y(1)+y(5)*(1-params(1)));
+    residual(7) = (y(9)) - (params(4)*y(2)+x(it_, 1));
 
 end

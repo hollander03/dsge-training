@@ -16,29 +16,15 @@ function residual = static_resid(T, y, x, params, T_flag)
 %
 
 if T_flag
-    T = basicRBC2015.static_resid_tt(T, y, x, params);
+    T = basicrbc2015.static_resid_tt(T, y, x, params);
 end
 residual = zeros(7, 1);
-lhs = y(1);
-rhs = (1-T(2))*y(2)+T(2)*y(4);
-residual(1) = lhs - rhs;
+    residual(1) = (y(1)) - ((1-T(2))*y(2)+T(2)*y(4));
 residual(2) = 1/params(5)*y(6);
-lhs = y(2)*params(5);
-rhs = y(1)-y(3);
-residual(3) = lhs - rhs;
-lhs = y(6);
-rhs = (y(1)-y(5))*params(1)*1/T(1);
-residual(4) = lhs - rhs;
-lhs = y(5);
-rhs = (1-params(3))*y(5)+params(3)*y(4);
-residual(5) = lhs - rhs;
-lhs = y(1);
-rhs = y(7)+params(1)*y(5)+y(3)*(1-params(1));
-residual(6) = lhs - rhs;
-lhs = y(7);
-rhs = y(7)*params(4)+x(1);
-residual(7) = lhs - rhs;
-if ~isreal(residual)
-  residual = real(residual)+imag(residual).^2;
-end
+    residual(3) = (y(2)*params(5)) - (y(1)-y(3));
+    residual(4) = (y(6)) - ((y(1)-y(5))*params(1)*1/T(1));
+    residual(5) = (y(5)) - ((1-params(3))*y(5)+params(3)*y(4));
+    residual(6) = (y(1)) - (y(7)+params(1)*y(5)+y(3)*(1-params(1)));
+    residual(7) = (y(7)) - (y(7)*params(4)+x(1));
+
 end

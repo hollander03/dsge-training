@@ -16,7 +16,7 @@ function g1 = static_g1(T, y, x, params, T_flag)
 %
 
 if T_flag
-    T = basicRBC2015.static_g1_tt(T, y, x, params);
+    T = basicrbc2015.static_g1_tt(T, y, x, params);
 end
 g1 = zeros(7, 7);
 g1(1,1)=1;
@@ -36,7 +36,5 @@ g1(6,3)=(-(1-params(1)));
 g1(6,5)=(-params(1));
 g1(6,7)=(-1);
 g1(7,7)=1-params(4);
-if ~isreal(g1)
-    g1 = real(g1)+2*imag(g1);
-end
+
 end

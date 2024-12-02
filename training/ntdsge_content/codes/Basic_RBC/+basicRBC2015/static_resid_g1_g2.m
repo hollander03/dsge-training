@@ -5,9 +5,9 @@ function [residual, g1, g2] = static_resid_g1_g2(T, y, x, params, T_flag)
 %
 
     if T_flag
-        T = basicRBC2015.static_g2_tt(T, y, x, params);
+        T = basicrbc2015.static_g2_tt(T, y, x, params);
     end
-    [residual, g1] = basicRBC2015.static_resid_g1(T, y, x, params, false);
-    g2       = basicRBC2015.static_g2(T, y, x, params, false);
+    [residual, g1] = basicrbc2015.static_resid_g1(T, y, x, params, false);
+    g2       = basicrbc2015.static_g2(T, y, x, params, false);
 
 end

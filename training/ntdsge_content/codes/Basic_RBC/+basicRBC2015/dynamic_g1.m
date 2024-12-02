@@ -20,7 +20,7 @@ function g1 = dynamic_g1(T, y, x, params, steady_state, it_, T_flag)
 %
 
 if T_flag
-    T = basicRBC2015.dynamic_g1_tt(T, y, x, params, steady_state, it_);
+    T = basicrbc2015.dynamic_g1_tt(T, y, x, params, steady_state, it_);
 end
 g1 = zeros(7, 12);
 g1(1,3)=1;
