@@ -41,12 +41,12 @@ estimated_params;
 %rho,beta_pdf,0.9,0.05;
 %the,normal_pdf,0.3,0.1;
 %tau,normal_pdf,2,0.1;
-stderr e,inv_gamma_pdf, 0.95,inf;
-rho,beta_pdf,0.93,0.02;
-the,normal_pdf,0.3,0.05;
-tau,normal_pdf,2.1,0.3;
+stderr e,inv_gamma_pdf, 0.5,inf;
+rho,beta_pdf,0.5,0.1;
+the,normal_pdf,0.7,0.1;
+tau,normal_pdf,4,1;
 end;
 
 varobs z;
 
-estimation(datafile=simudata,mh_replic=10000, mh_jscale=0.9); % , mode_compute=4 , mode_compute=5
+estimation(datafile=simudata,mh_replic=10000, mh_jscale=0.9, mode_compute=5); % , mode_compute=4 

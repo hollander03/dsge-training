@@ -20,8 +20,8 @@ function g3 = dynamic_g3(T, y, x, params, steady_state, it_, T_flag)
 %
 
 if T_flag
-    T = basicRBC2015_est.dynamic_g3_tt(T, y, x, params, steady_state, it_);
+    T = basicrbc2015_est.dynamic_g3_tt(T, y, x, params, steady_state, it_);
 end
-g3 = sparse([],[],[],8,2744);
+g3 = sparse([],[],[],10,5832);
 
 end

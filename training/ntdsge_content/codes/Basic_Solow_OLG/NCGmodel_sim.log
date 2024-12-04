@@ -1,15 +1,24 @@
-Starting Dynare (version 4.5.6).
+Starting Dynare (version 6.1).
+Calling Dynare with arguments: none
 Starting preprocessing of the model file ...
 Found 4 equation(s).
-Evaluating expressions...done
-Computing static model derivatives:
- - order 1
-Computing dynamic model derivatives:
- - order 1
- - order 2
-Processing outputs ...
-done
+Evaluating expressions...
+Computing static model derivatives (order 1).
+Normalizing the static model...
+Finding the optimal block decomposition of the static model...
+2 block(s) found:
+  1 recursive block(s) and 1 simultaneous block(s).
+  the largest simultaneous block has 3 equation(s)
+                                 and 3 feedback variable(s).
+Computing dynamic model derivatives (order 2).
+Normalizing the dynamic model...
+Finding the optimal block decomposition of the dynamic model...
+2 block(s) found:
+  1 recursive block(s) and 1 simultaneous block(s).
+  the largest simultaneous block has 3 equation(s)
+                                 and 3 feedback variable(s).
 Preprocessing completed.
+Preprocessing time: 0h00m00s.
 
 STEADY-STATE RESULTS:
 
@@ -20,16 +29,12 @@ z   		 0
 
 EIGENVALUES:
          Modulus             Real        Imaginary
-
             0.95             0.95                0
           0.9779           0.9779                0
            1.035            1.035                0
              Inf              Inf                0
 
-
-There are 2 eigenvalue(s) larger than 1 in modulus 
-for 2 forward-looking variable(s)
-
+There are 2 eigenvalue(s) larger than 1 in modulus for 2 forward-looking variable(s)
 The rank condition is verified.
 
 
@@ -83,4 +88,3 @@ c           0.9954  0.9878  0.9791  0.9698  0.9603
 k           0.9982  0.9961  0.9927  0.9882  0.9826
 lab         0.8703  0.8070  0.7375  0.6816  0.6323
 z           0.9496  0.8989  0.8467  0.8006  0.7597
-Total computing time : 0h00m01s

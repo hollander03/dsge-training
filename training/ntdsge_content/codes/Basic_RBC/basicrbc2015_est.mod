@@ -7,7 +7,9 @@ var y ${y}$ (long_name='output')
     k ${k}$ (long_name='capital')
     r ${r}$ (long_name='real rate') 
     z ${z}$ (long_name='TFP')
-    y_obs ${\Delta y}$ (long_name='output growth');
+    y_obs ${\Delta y}$ (long_name='output growth')
+    dc ${\Delta c^mod}$
+    dv ${\Delta v^mod}$;
 
 
 varexo epsilon ${\epsilon_z}$ (long_name='TFP shock');
@@ -64,6 +66,9 @@ z = psi*z(-1) + epsilon;                    // AR(1) Technology stochastic proce
 [name='Output growth (observed)']
 y_obs = y - y(-1) + y_ss;
 
+dc = c - c(-1);
+dv = v - v(-1);
+
 end;
 
 steady;
@@ -88,7 +93,7 @@ varobs y_obs ;
 
 %estimation(datafile=data9519);
 % The estimation uses Dynare version 6. For dynare version 4.6 use mode_compute=4
-estimation(datafile=data9519, mh_nblocks=3, mh_replic=50000, mh_drop=0.5, mh_jscale=0.99,
-           mode_compute=5, mode_check, // load_mh_file,  mode_file=, 
-           bayesian_irf, irf=40, // moments_varendo, conditional_variance_decomposition=[1:20],
-           graph_format=(fig,pdf)) y_obs y c n v k r z ;
+estimation(datafile=data9519, mh_nblocks=3, mh_replic=100000, mh_drop=0.5, mh_jscale=0.99,
+           mode_compute=0, mode_check, mode_file=basicrbc2015_est_mode, // load_mh_file,  mode_file=, 
+           bayesian_irf, irf=40, moments_varendo, conditional_variance_decomposition=[1:20],
+           graph_format=(fig,pdf), nodisplay) y_obs dc dv y c n v k r z ;

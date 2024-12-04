@@ -16,9 +16,9 @@ function g1 = static_g1(T, y, x, params, T_flag)
 %
 
 if T_flag
-    T = basicRBC2015_est.static_g1_tt(T, y, x, params);
+    T = basicrbc2015_est.static_g1_tt(T, y, x, params);
 end
-g1 = zeros(8, 8);
+g1 = zeros(10, 10);
 g1(1,1)=1;
 g1(1,2)=(-(1-T(2)));
 g1(1,4)=(-T(2));
@@ -37,5 +37,7 @@ g1(6,5)=(-params(1));
 g1(6,7)=(-1);
 g1(7,7)=1-params(4);
 g1(8,8)=1;
+g1(9,9)=1;
+g1(10,10)=1;
 
 end

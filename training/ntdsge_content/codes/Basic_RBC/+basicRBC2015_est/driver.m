@@ -10,10 +10,10 @@ tic0 = tic;
 % Define global variables.
 global M_ options_ oo_ estim_params_ bayestopt_ dataset_ dataset_info estimation_info
 options_ = [];
-M_.fname = 'basicRBC2015_est';
-M_.dynare_version = '6.0';
-oo_.dynare_version = '6.0';
-options_.dynare_version = '6.0';
+M_.fname = 'basicrbc2015_est';
+M_.dynare_version = '6.1';
+oo_.dynare_version = '6.1';
+options_.dynare_version = '6.1';
 %
 % Some global variables initialization
 %
@@ -24,9 +24,9 @@ M_.exo_names_long = cell(1,1);
 M_.exo_names(1) = {'epsilon'};
 M_.exo_names_tex(1) = {'{\epsilon_z}'};
 M_.exo_names_long(1) = {'TFP shock'};
-M_.endo_names = cell(8,1);
-M_.endo_names_tex = cell(8,1);
-M_.endo_names_long = cell(8,1);
+M_.endo_names = cell(10,1);
+M_.endo_names_tex = cell(10,1);
+M_.endo_names_long = cell(10,1);
 M_.endo_names(1) = {'y'};
 M_.endo_names_tex(1) = {'{y}'};
 M_.endo_names_long(1) = {'output'};
@@ -51,6 +51,12 @@ M_.endo_names_long(7) = {'TFP'};
 M_.endo_names(8) = {'y_obs'};
 M_.endo_names_tex(8) = {'{\Delta y}'};
 M_.endo_names_long(8) = {'output growth'};
+M_.endo_names(9) = {'dc'};
+M_.endo_names_tex(9) = {'{\Delta c^mod}'};
+M_.endo_names_long(9) = {'dc'};
+M_.endo_names(10) = {'dv'};
+M_.endo_names_tex(10) = {'{\Delta v^mod}'};
+M_.endo_names_long(10) = {'dv'};
 M_.endo_partitions = struct();
 M_.param_names = cell(7,1);
 M_.param_names_tex = cell(7,1);
@@ -79,9 +85,9 @@ M_.param_names_long(7) = {'y_ss'};
 M_.param_partitions = struct();
 M_.exo_det_nbr = 0;
 M_.exo_nbr = 1;
-M_.endo_nbr = 8;
+M_.endo_nbr = 10;
 M_.param_nbr = 7;
-M_.orig_endo_nbr = 8;
+M_.orig_endo_nbr = 10;
 M_.aux_vars = [];
 options_.varobs = cell(1, 1);
 options_.varobs(1)  = {'y_obs'};
@@ -107,7 +113,7 @@ options_.ramsey_policy = false;
 options_.discretionary_policy = false;
 M_.nonzero_hessian_eqs = [];
 M_.hessian_eq_zero = isempty(M_.nonzero_hessian_eqs);
-M_.eq_nbr = 8;
+M_.eq_nbr = 10;
 M_.ramsey_orig_eq_nbr = 0;
 M_.ramsey_orig_endo_nbr = 0;
 M_.set_auxiliary_variables = exist(['./+' M_.fname '/set_auxiliary_variables.m'], 'file') == 2;
@@ -123,21 +129,23 @@ M_.orig_maximum_lag = 1;
 M_.orig_maximum_lead = 1;
 M_.orig_maximum_lag_with_diffs_expanded = 1;
 M_.lead_lag_incidence = [
- 1 4 0;
- 0 5 12;
- 0 6 0;
- 0 7 0;
- 2 8 0;
- 0 9 13;
- 3 10 0;
- 0 11 0;]';
-M_.nstatic = 3;
-M_.nfwrd   = 2;
-M_.npred   = 3;
-M_.nboth   = 0;
+ 1 6 0;
+ 2 7 16;
+ 0 8 0;
+ 3 9 0;
+ 4 10 0;
+ 0 11 17;
+ 5 12 0;
+ 0 13 0;
+ 0 14 0;
+ 0 15 0;]';
+M_.nstatic = 4;
+M_.nfwrd   = 1;
+M_.npred   = 4;
+M_.nboth   = 1;
 M_.nsfwrd   = 2;
-M_.nspred   = 3;
-M_.ndynamic   = 5;
+M_.nspred   = 5;
+M_.ndynamic   = 6;
 M_.dynamic_tmp_nbr = [2; 0; 0; 0; ];
 M_.equations_tags = {
   1 , 'name' , 'Resource constraint' ;
@@ -148,15 +156,19 @@ M_.equations_tags = {
   6 , 'name' , 'production function' ;
   7 , 'name' , 'exogenous TFP process' ;
   8 , 'name' , 'Output growth (observed)' ;
+  9 , 'name' , 'dc' ;
+  10 , 'name' , 'dv' ;
 };
 M_.mapping.y.eqidx = [1 3 4 6 8 ];
-M_.mapping.c.eqidx = [1 2 3 ];
+M_.mapping.c.eqidx = [1 2 3 9 ];
 M_.mapping.n.eqidx = [3 6 ];
-M_.mapping.v.eqidx = [1 5 ];
+M_.mapping.v.eqidx = [1 5 10 ];
 M_.mapping.k.eqidx = [4 5 6 ];
 M_.mapping.r.eqidx = [2 4 ];
 M_.mapping.z.eqidx = [6 7 ];
 M_.mapping.y_obs.eqidx = [8 ];
+M_.mapping.dc.eqidx = [9 ];
+M_.mapping.dv.eqidx = [10 ];
 M_.mapping.epsilon.eqidx = [7 ];
 M_.static_and_dynamic_models_differ = false;
 M_.has_external_function = false;
@@ -178,13 +190,13 @@ M_.block_structure.block(2).is_linear = true;
 M_.block_structure.block(2).NNZDerivatives = 18;
 M_.block_structure.block(2).bytecode_jacob_cols_to_sparse = [4 7 8 9 10 11 12 17 18 ];
 M_.block_structure.block(3).Simulation_Type = 1;
-M_.block_structure.block(3).endo_nbr = 1;
-M_.block_structure.block(3).mfs = 1;
-M_.block_structure.block(3).equation = [ 8];
-M_.block_structure.block(3).variable = [ 8];
+M_.block_structure.block(3).endo_nbr = 3;
+M_.block_structure.block(3).mfs = 3;
+M_.block_structure.block(3).equation = [ 10 9 8];
+M_.block_structure.block(3).variable = [ 10 9 8];
 M_.block_structure.block(3).is_linear = true;
-M_.block_structure.block(3).NNZDerivatives = 1;
-M_.block_structure.block(3).bytecode_jacob_cols_to_sparse = [2 ];
+M_.block_structure.block(3).NNZDerivatives = 3;
+M_.block_structure.block(3).bytecode_jacob_cols_to_sparse = [4 5 6 ];
 M_.block_structure.block(1).g1_sparse_rowval = int32([]);
 M_.block_structure.block(1).g1_sparse_colval = int32([]);
 M_.block_structure.block(1).g1_sparse_colptr = int32([]);
@@ -194,8 +206,8 @@ M_.block_structure.block(2).g1_sparse_colptr = int32([1 1 1 1 4 4 4 8 10 12 13 1
 M_.block_structure.block(3).g1_sparse_rowval = int32([]);
 M_.block_structure.block(3).g1_sparse_colval = int32([]);
 M_.block_structure.block(3).g1_sparse_colptr = int32([]);
-M_.block_structure.variable_reordered = [ 7 1 3 4 5 2 6 8];
-M_.block_structure.equation_reordered = [ 7 3 6 1 5 2 4 8];
+M_.block_structure.variable_reordered = [ 7 1 3 4 5 2 6 10 9 8];
+M_.block_structure.equation_reordered = [ 7 3 6 1 5 2 4 10 9 8];
 M_.block_structure.incidence(1).lead_lag = -1;
 M_.block_structure.incidence(1).sparse_IM = [
  4 5;
@@ -203,6 +215,8 @@ M_.block_structure.incidence(1).sparse_IM = [
  6 5;
  7 7;
  8 1;
+ 9 2;
+ 10 4;
 ];
 M_.block_structure.incidence(2).lead_lag = 0;
 M_.block_structure.incidence(2).sparse_IM = [
@@ -223,6 +237,10 @@ M_.block_structure.incidence(2).sparse_IM = [
  7 7;
  8 1;
  8 8;
+ 9 2;
+ 9 9;
+ 10 4;
+ 10 10;
 ];
 M_.block_structure.incidence(3).lead_lag = 1;
 M_.block_structure.incidence(3).sparse_IM = [
@@ -230,21 +248,21 @@ M_.block_structure.incidence(3).sparse_IM = [
  2 6;
 ];
 M_.block_structure.dyn_tmp_nbr = 1;
-M_.state_var = [7 1 5 ];
+M_.state_var = [7 1 4 5 2 ];
 M_.maximum_lag = 1;
 M_.maximum_lead = 1;
 M_.maximum_endo_lag = 1;
 M_.maximum_endo_lead = 1;
-oo_.steady_state = zeros(8, 1);
+oo_.steady_state = zeros(10, 1);
 M_.maximum_exo_lag = 0;
 M_.maximum_exo_lead = 0;
 oo_.exo_steady_state = zeros(1, 1);
 M_.params = NaN(7, 1);
-M_.endo_trends = struct('deflator', cell(8, 1), 'log_deflator', cell(8, 1), 'growth_factor', cell(8, 1), 'log_growth_factor', cell(8, 1));
-M_.NNZDerivatives = [25; 0; -1; ];
-M_.dynamic_g1_sparse_rowval = int32([8 4 5 6 7 1 3 4 6 8 1 2 3 3 6 1 5 5 4 6 7 8 2 2 7 ]);
-M_.dynamic_g1_sparse_colval = int32([1 5 5 5 7 9 9 9 9 9 10 10 10 11 11 12 12 13 14 15 15 16 18 22 25 ]);
-M_.dynamic_g1_sparse_colptr = int32([1 2 2 2 2 5 5 6 6 11 14 16 18 19 20 22 23 23 24 24 24 24 25 25 25 26 ]);
+M_.endo_trends = struct('deflator', cell(10, 1), 'log_deflator', cell(10, 1), 'growth_factor', cell(10, 1), 'log_growth_factor', cell(10, 1));
+M_.NNZDerivatives = [31; 0; -1; ];
+M_.dynamic_g1_sparse_rowval = int32([8 9 10 4 5 6 7 1 3 4 6 8 1 2 3 9 3 6 1 5 10 5 4 6 7 8 9 10 2 2 7 ]);
+M_.dynamic_g1_sparse_colval = int32([1 2 4 5 5 5 7 11 11 11 11 11 12 12 12 12 13 13 14 14 14 15 16 17 17 18 19 20 22 26 31 ]);
+M_.dynamic_g1_sparse_colptr = int32([1 2 3 3 4 7 7 8 8 8 8 13 17 19 22 23 24 26 27 28 29 29 30 30 30 30 31 31 31 31 31 32 ]);
 M_.dynamic_g2_sparse_indices = int32([]);
 M_.lhs = {
 'y'; 
@@ -255,6 +273,8 @@ M_.lhs = {
 'y'; 
 'z'; 
 'y_obs'; 
+'dc'; 
+'dv'; 
 };
 M_.static_tmp_nbr = [2; 0; 0; 0; ];
 M_.block_structure_stat.block(1).Simulation_Type = 3;
@@ -268,17 +288,17 @@ M_.block_structure_stat.block(2).mfs = 1;
 M_.block_structure_stat.block(2).equation = [ 7];
 M_.block_structure_stat.block(2).variable = [ 7];
 M_.block_structure_stat.block(3).Simulation_Type = 1;
-M_.block_structure_stat.block(3).endo_nbr = 1;
-M_.block_structure_stat.block(3).mfs = 1;
-M_.block_structure_stat.block(3).equation = [ 8];
-M_.block_structure_stat.block(3).variable = [ 8];
+M_.block_structure_stat.block(3).endo_nbr = 3;
+M_.block_structure_stat.block(3).mfs = 3;
+M_.block_structure_stat.block(3).equation = [ 8 9 10];
+M_.block_structure_stat.block(3).variable = [ 8 9 10];
 M_.block_structure_stat.block(4).Simulation_Type = 6;
 M_.block_structure_stat.block(4).endo_nbr = 5;
 M_.block_structure_stat.block(4).mfs = 5;
-M_.block_structure_stat.block(4).equation = [ 4 5 6 1 3];
-M_.block_structure_stat.block(4).variable = [ 5 4 1 2 3];
-M_.block_structure_stat.variable_reordered = [ 6 7 8 5 4 1 2 3];
-M_.block_structure_stat.equation_reordered = [ 2 7 8 4 5 6 1 3];
+M_.block_structure_stat.block(4).equation = [ 6 1 3 4 5];
+M_.block_structure_stat.block(4).variable = [ 1 2 3 5 4];
+M_.block_structure_stat.variable_reordered = [ 6 7 8 9 10 1 2 3 5 4];
+M_.block_structure_stat.equation_reordered = [ 2 7 8 9 10 6 1 3 4 5];
 M_.block_structure_stat.incidence.sparse_IM = [
  1 1;
  1 2;
@@ -298,6 +318,8 @@ M_.block_structure_stat.incidence.sparse_IM = [
  6 7;
  7 7;
  8 8;
+ 9 9;
+ 10 10;
 ];
 M_.block_structure_stat.tmp_nbr = 1;
 M_.block_structure_stat.block(1).g1_sparse_rowval = int32([1 ]);
@@ -309,12 +331,12 @@ M_.block_structure_stat.block(2).g1_sparse_colptr = int32([1 2 ]);
 M_.block_structure_stat.block(3).g1_sparse_rowval = int32([]);
 M_.block_structure_stat.block(3).g1_sparse_colval = int32([]);
 M_.block_structure_stat.block(3).g1_sparse_colptr = int32([]);
-M_.block_structure_stat.block(4).g1_sparse_rowval = int32([1 2 3 2 4 1 3 4 5 4 5 3 5 ]);
-M_.block_structure_stat.block(4).g1_sparse_colval = int32([1 1 1 2 2 3 3 3 3 4 4 5 5 ]);
-M_.block_structure_stat.block(4).g1_sparse_colptr = int32([1 4 6 10 12 14 ]);
-M_.static_g1_sparse_rowval = int32([1 3 4 6 1 3 3 6 1 5 4 5 6 2 4 6 7 8 ]);
-M_.static_g1_sparse_colval = int32([1 1 1 1 2 2 3 3 4 4 5 5 5 6 6 7 7 8 ]);
-M_.static_g1_sparse_colptr = int32([1 5 7 9 11 14 16 18 19 ]);
+M_.block_structure_stat.block(4).g1_sparse_rowval = int32([1 2 3 4 2 3 1 3 1 4 5 2 5 ]);
+M_.block_structure_stat.block(4).g1_sparse_colval = int32([1 1 1 1 2 2 3 3 4 4 4 5 5 ]);
+M_.block_structure_stat.block(4).g1_sparse_colptr = int32([1 5 7 9 12 14 ]);
+M_.static_g1_sparse_rowval = int32([1 3 4 6 1 3 3 6 1 5 4 5 6 2 4 6 7 8 9 10 ]);
+M_.static_g1_sparse_colval = int32([1 1 1 1 2 2 3 3 4 4 5 5 5 6 6 7 7 8 9 10 ]);
+M_.static_g1_sparse_colptr = int32([1 5 7 9 11 14 16 18 19 20 21 ]);
 M_.params(1) = 0.33;
 rho = M_.params(1);
 M_.params(2) = 0.99;
@@ -356,17 +378,21 @@ if ~isempty(find(estim_params_.var_exo(:,1)==1))
 end
 estim_params_.var_exo = [estim_params_.var_exo; 1, NaN, (-Inf), Inf, 4, 0.01, Inf, NaN, NaN, NaN ];
 options_.bayesian_irf = true;
+options_.conditional_variance_decomposition = [1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;];
 options_.datafile = 'data9519';
 options_.graph_format = {'fig';'pdf'};
 options_.irf = 40;
 options_.mh_drop = 0.5;
 options_.mh_jscale = 0.99;
 options_.mh_nblck = 3;
-options_.mh_replic = 50000;
+options_.mh_replic = 100000;
 options_.mode_check.status = true;
-options_.mode_compute = 5;
+options_.mode_compute = 0;
+options_.mode_file = 'basicrbc2015_est_mode';
+options_.moments_varendo = true;
+options_.nodisplay = true;
 options_.order = 1;
-var_list_ = {'y_obs';'y';'c';'n';'v';'k';'r';'z'};
+var_list_ = {'y_obs';'dc';'dv';'y';'c';'n';'v';'k';'r';'z'};
 oo_recursive_=dynare_estimation(var_list_);
 
 
@@ -375,27 +401,27 @@ disp(['Total computing time : ' dynsec2hms(oo_.time) ]);
 if ~exist([M_.dname filesep 'Output'],'dir')
     mkdir(M_.dname,'Output');
 end
-save([M_.dname filesep 'Output' filesep 'basicRBC2015_est_results.mat'], 'oo_', 'M_', 'options_');
+save([M_.dname filesep 'Output' filesep 'basicrbc2015_est_results.mat'], 'oo_', 'M_', 'options_');
 if exist('estim_params_', 'var') == 1
-  save([M_.dname filesep 'Output' filesep 'basicRBC2015_est_results.mat'], 'estim_params_', '-append');
+  save([M_.dname filesep 'Output' filesep 'basicrbc2015_est_results.mat'], 'estim_params_', '-append');
 end
 if exist('bayestopt_', 'var') == 1
-  save([M_.dname filesep 'Output' filesep 'basicRBC2015_est_results.mat'], 'bayestopt_', '-append');
+  save([M_.dname filesep 'Output' filesep 'basicrbc2015_est_results.mat'], 'bayestopt_', '-append');
 end
 if exist('dataset_', 'var') == 1
-  save([M_.dname filesep 'Output' filesep 'basicRBC2015_est_results.mat'], 'dataset_', '-append');
+  save([M_.dname filesep 'Output' filesep 'basicrbc2015_est_results.mat'], 'dataset_', '-append');
 end
 if exist('estimation_info', 'var') == 1
-  save([M_.dname filesep 'Output' filesep 'basicRBC2015_est_results.mat'], 'estimation_info', '-append');
+  save([M_.dname filesep 'Output' filesep 'basicrbc2015_est_results.mat'], 'estimation_info', '-append');
 end
 if exist('dataset_info', 'var') == 1
-  save([M_.dname filesep 'Output' filesep 'basicRBC2015_est_results.mat'], 'dataset_info', '-append');
+  save([M_.dname filesep 'Output' filesep 'basicrbc2015_est_results.mat'], 'dataset_info', '-append');
 end
 if exist('oo_recursive_', 'var') == 1
-  save([M_.dname filesep 'Output' filesep 'basicRBC2015_est_results.mat'], 'oo_recursive_', '-append');
+  save([M_.dname filesep 'Output' filesep 'basicrbc2015_est_results.mat'], 'oo_recursive_', '-append');
 end
 if exist('options_mom_', 'var') == 1
-  save([M_.dname filesep 'Output' filesep 'basicRBC2015_est_results.mat'], 'options_mom_', '-append');
+  save([M_.dname filesep 'Output' filesep 'basicrbc2015_est_results.mat'], 'options_mom_', '-append');
 end
 if ~isempty(lastwarn)
   disp('Note: warning(s) encountered in MATLAB/Octave code')

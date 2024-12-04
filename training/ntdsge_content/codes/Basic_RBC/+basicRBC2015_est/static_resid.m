@@ -16,9 +16,9 @@ function residual = static_resid(T, y, x, params, T_flag)
 %
 
 if T_flag
-    T = basicRBC2015_est.static_resid_tt(T, y, x, params);
+    T = basicrbc2015_est.static_resid_tt(T, y, x, params);
 end
-residual = zeros(8, 1);
+residual = zeros(10, 1);
     residual(1) = (y(1)) - ((1-T(2))*y(2)+T(2)*y(4));
 residual(2) = 1/params(5)*y(6);
     residual(3) = (y(2)*params(5)) - (y(1)-y(3));
@@ -27,5 +27,7 @@ residual(2) = 1/params(5)*y(6);
     residual(6) = (y(1)) - (y(7)+params(1)*y(5)+y(3)*(1-params(1)));
     residual(7) = (y(7)) - (y(7)*params(4)+x(1));
     residual(8) = (y(8)) - (params(7));
+residual(9) = y(9);
+residual(10) = y(10);
 
 end

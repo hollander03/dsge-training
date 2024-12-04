@@ -43,4 +43,4 @@ stoch_simul(periods=1000);  % order=2
 
 %datasaver('simudata',[]);
 
-save simudata c k lab z
+save simudata c k lab z %% Exercise ... fix the mod file ... tidy it up ... do applications from userguide and examples yesterday

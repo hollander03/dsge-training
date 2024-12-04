@@ -1,15 +1,24 @@
-Starting Dynare (version 4.5.6).
+Starting Dynare (version 6.1).
+Calling Dynare with arguments: none
 Starting preprocessing of the model file ...
 Found 4 equation(s).
-Evaluating expressions...done
-Computing static model derivatives:
- - order 1
-Computing dynamic model derivatives:
- - order 1
- - order 2
-Processing outputs ...
-done
+Evaluating expressions...
+Computing static model derivatives (order 1).
+Normalizing the static model...
+Finding the optimal block decomposition of the static model...
+2 block(s) found:
+  1 recursive block(s) and 1 simultaneous block(s).
+  the largest simultaneous block has 3 equation(s)
+                                 and 3 feedback variable(s).
+Computing dynamic model derivatives (order 2).
+Normalizing the dynamic model...
+Finding the optimal block decomposition of the dynamic model...
+2 block(s) found:
+  1 recursive block(s) and 1 simultaneous block(s).
+  the largest simultaneous block has 3 equation(s)
+                                 and 3 feedback variable(s).
 Preprocessing completed.
+Preprocessing time: 0h00m00s.
 
 STEADY-STATE RESULTS:
 
@@ -20,79 +29,402 @@ z   		 0
 
 EIGENVALUES:
          Modulus             Real        Imaginary
-
             0.95             0.95                0
           0.9832           0.9832                0
            1.015            1.015                0
-             Inf              Inf                0
+        5.43e+15        -5.43e+15                0
 
-
-There are 2 eigenvalue(s) larger than 1 in modulus 
-for 2 forward-looking variable(s)
-
+There are 2 eigenvalue(s) larger than 1 in modulus for 2 forward-looking variable(s)
 The rank condition is verified.
 
 
 You did not declare endogenous variables after the estimation/calib_smoother command.
-Initial value of the log posterior (or likelihood): 3540.4104
------------------
-f at the beginning of new iteration,     -3540.4104306432
-Predicted improvement:        7.554537933
-lambda =          1; f =        -3543.6913049
-lambda =    0.33333; f =        -3544.1935555
-lambda =    0.64439; f =        -3545.3849585
-Norm of dx    0.03887
-----
-Improvement on iteration 1 =        4.974527903
------------------
-f at the beginning of new iteration,     -3545.3849585458
-Predicted improvement:        0.434210656
-lambda =          1; f =        -3546.1389017
-lambda =     1.9332; f =        -3546.6423007
-lambda =     3.7372; f =        -3547.0996154
-Norm of dx  0.0095896
-----
-Improvement on iteration 2 =        1.714656880
------------------
-f at the beginning of new iteration,     -3547.0996154256
-Predicted improvement:        0.020054336
-lambda =          1; f =        -3547.1210048
-Norm of dx  0.0038116
-----
-Improvement on iteration 3 =        0.021389375
------------------
-f at the beginning of new iteration,     -3547.1210048005
-Predicted improvement:        0.000141571
-lambda =          1; f =        -3547.1211494
-Norm of dx 0.00037061
-----
-Improvement on iteration 4 =        0.000144612
------------------
-f at the beginning of new iteration,     -3547.1211494123
-Predicted improvement:        0.000000082
-lambda =          1; f =        -3547.1211495
-Norm of dx 7.4406e-06
-----
-Improvement on iteration 5 =        0.000000074
-improvement < crit termination
+Initial value of the log posterior (or likelihood): -2223.6618
+[Warning: Matrix is singular to working precision.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('mr_hessian', '/Applications/Dynare/6.1-arm64/matlab/optimization/mr_hessian.m', 258)" style="font-weight:bold">mr_hessian</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/optimization/mr_hessian.m',258,0)">line 258</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('newrat', '/Applications/Dynare/6.1-arm64/matlab/optimization/newrat.m', 97)" style="font-weight:bold">newrat</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/optimization/newrat.m',97,0)">line 97</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('dynare_minimize_objective', '/Applications/Dynare/6.1-arm64/matlab/optimization/dynare_minimize_objective.m', 340)" style="font-weight:bold">dynare_minimize_objective</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/optimization/dynare_minimize_objective.m',340,0)">line 340</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('dynare_estimation_1', '/Applications/Dynare/6.1-arm64/matlab/estimation/dynare_estimation_1.m', 238)" style="font-weight:bold">dynare_estimation_1</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/estimation/dynare_estimation_1.m',238,0)">line 238</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('dynare_estimation', '/Applications/Dynare/6.1-arm64/matlab/estimation/dynare_estimation.m', 105)" style="font-weight:bold">dynare_estimation</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/estimation/dynare_estimation.m',105,0)">line 105</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('NCGmodel_est.driver', '/Users/hyltonhollander/Library/CloudStorage/OneDrive-UniversityofCapeTown/GitHub/dsge-training/training/ntdsge_content/codes/Basic_Solow_OLG/+NCGmodel_est/driver.m', 344)" style="font-weight:bold">NCGmodel_est.driver</a> (<a href="matlab: opentoline('/Users/hyltonhollander/Library/CloudStorage/OneDrive-UniversityofCapeTown/GitHub/dsge-training/training/ntdsge_content/codes/Basic_Solow_OLG/+NCGmodel_est/driver.m',344,0)">line 344</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('dynare', '/Applications/Dynare/6.1-arm64/matlab/dynare.m', 310)" style="font-weight:bold">dynare</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/dynare.m',310,0)">line 310</a>)
+] 
+Gradient norm  33746.3191
+Minimum Hessian eigenvalue 0
+Maximum Hessian eigenvalue 4004251.6054
+ 
+Iteration 1
+Predicted improvement:                NaN
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda =          1; f =         2223.7618136
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda =    0.33333; f =         2223.7618136
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda =    0.11111; f =         2223.7618136
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda =   0.037037; f =         2223.7618136
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda =   0.012346; f =         2223.7618136
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda =  0.0041152; f =         2223.7618136
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda =  0.0013717; f =         2223.7618136
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda = 0.00045725; f =         2223.7618136
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda = 0.00015242; f =         2223.7618136
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda = 5.0805e-05; f =         2223.7618136
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda = 1.6935e-05; f =         2223.7618136
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda =  5.645e-06; f =         2223.7618136
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda = 1.8817e-06; f =         2223.7618136
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda = 6.2723e-07; f =         2223.7618136
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda = 2.0908e-07; f =         2223.7618136
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda = 6.9692e-08; f =         2223.7618136
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda = 2.3231e-08; f =         2223.7618136
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda = 7.7435e-09; f =         2223.7618136
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda = 2.5812e-09; f =         2223.7618136
 
-Final value of minus the log posterior (or likelihood):-3547.121149 
+lambda =
+
+  -6.2723e-07
+
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda = -6.2723e-07; f =         2223.7618136
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda = -2.0908e-07; f =         2223.7618136
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda = -6.9692e-08; f =         2223.7618136
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda = -2.3231e-08; f =         2223.7618136
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda = -7.7435e-09; f =         2223.7618136
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+lambda = -2.5812e-09; f =         2223.7618136
+Norm of dx        NaN
+Predicted improvement: 569407026.441593409
+lambda =          1; f =    471063966.8221430
+lambda =    0.33333; f =     52338049.1087841
+lambda =    0.11111; f =      5815859.4205008
+lambda =   0.037037; f =       647697.9928697
+lambda =   0.012346; f =        73781.4208960
+lambda =  0.0041152; f =        10120.7751162
+lambda =  0.0013717; f =         3083.3241020
+lambda = 0.00045725; f =         2313.3697913
+lambda = 0.00015242; f =         2231.8142092
+lambda = 5.0805e-05; f =         2224.0841102
+lambda = 1.6935e-05; f =        -3476.3077284
+lambda =  5.645e-06; f =        -1688.7253781
+Norm of dx      33746
+Gradient step!!
+Predicted improvement:        0.005434250
+lambda =          1; f =        -3476.3185940
+lambda =     1.9332; f =        -3476.3287286
+lambda =     3.7372; f =        -3476.3483070
+lambda =     7.2247; f =        -3476.3861042
+lambda =     13.967; f =        -3476.4589820
+lambda =         27; f =        -3476.5991547
+lambda =     52.196; f =        -3476.8674763
+lambda =      100.9; f =        -3477.3763202
+lambda =     195.07; f =        -3478.3235565
+lambda =      377.1; f =        -3480.0216045
+lambda =        729; f =        -3482.8281829
+lambda =     1409.3; f =        -3486.6185548
+Norm of dx 4.2304e-05
+Done for param e =   0.9972; f = -3486.6186
+Predicted improvement:        0.058428943
+lambda =          1; f =        -3486.7353269
+lambda =     1.9332; f =        -3486.8441416
+lambda =     3.7372; f =        -3487.0540762
+lambda =     7.2247; f =        -3487.4583329
+lambda =     13.967; f =        -3488.2339086
+lambda =         27; f =        -3489.7110749
+lambda =     52.196; f =        -3492.4837580
+lambda =      100.9; f =        -3497.5329300
+lambda =     195.07; f =        -3506.1241799
+lambda =      377.1; f =        -3518.2873137
+lambda =        729; f =        -3524.1105847
+Norm of dx 0.00011678
+Done for param rho =   0.9527; f = -3524.1106
+Sequence of univariate steps!!
+Actual dxnorm 0.67244
+FVAL          -3524.1106
+Improvement   5747.7724
+Ftol          1e-05
+Htol          1e-05
+[Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.687906e-24.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('mr_hessian', '/Applications/Dynare/6.1-arm64/matlab/optimization/mr_hessian.m', 258)" style="font-weight:bold">mr_hessian</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/optimization/mr_hessian.m',258,0)">line 258</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('newrat', '/Applications/Dynare/6.1-arm64/matlab/optimization/newrat.m', 275)" style="font-weight:bold">newrat</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/optimization/newrat.m',275,0)">line 275</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('dynare_minimize_objective', '/Applications/Dynare/6.1-arm64/matlab/optimization/dynare_minimize_objective.m', 340)" style="font-weight:bold">dynare_minimize_objective</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/optimization/dynare_minimize_objective.m',340,0)">line 340</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('dynare_estimation_1', '/Applications/Dynare/6.1-arm64/matlab/estimation/dynare_estimation_1.m', 238)" style="font-weight:bold">dynare_estimation_1</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/estimation/dynare_estimation_1.m',238,0)">line 238</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('dynare_estimation', '/Applications/Dynare/6.1-arm64/matlab/estimation/dynare_estimation.m', 105)" style="font-weight:bold">dynare_estimation</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/estimation/dynare_estimation.m',105,0)">line 105</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('NCGmodel_est.driver', '/Users/hyltonhollander/Library/CloudStorage/OneDrive-UniversityofCapeTown/GitHub/dsge-training/training/ntdsge_content/codes/Basic_Solow_OLG/+NCGmodel_est/driver.m', 344)" style="font-weight:bold">NCGmodel_est.driver</a> (<a href="matlab: opentoline('/Users/hyltonhollander/Library/CloudStorage/OneDrive-UniversityofCapeTown/GitHub/dsge-training/training/ntdsge_content/codes/Basic_Solow_OLG/+NCGmodel_est/driver.m',344,0)">line 344</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('dynare', '/Applications/Dynare/6.1-arm64/matlab/dynare.m', 310)" style="font-weight:bold">dynare</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/dynare.m',310,0)">line 310</a>)
+] 
+Elapsed time for iteration 0.71626 s.
+ 
+Iteration 2
+Correct for low angle: 1.26995e-13
+Predicted improvement: 49331375687.960128784
+lambda =          1; f = 342298002817149888.0000000
+lambda =    0.33333; f = 38033110884223984.0000000
+lambda =    0.11111; f = 4225901029388231.0000000
+lambda =   0.037037; f = 469544498828854.0000000
+lambda =   0.012346; f = 52171590981566.3359375
+lambda =  0.0041152; f = 5796836773859.8876953
+lambda =  0.0013717; f = 644090749963.9686279
+lambda = 0.00045725; f =  71564895184.5388641
+lambda = 0.00015242; f =   7951405056.4931736
+lambda = 5.0805e-05; f =    883404065.4887702
+lambda = 1.6935e-05; f =     98125481.6366549
+lambda =  5.645e-06; f =     10890592.1840258
+lambda = 1.8817e-06; f =      1203922.1996024
+lambda = 6.2723e-07; f =       129657.3714375
+lambda = 2.0908e-07; f =        10971.8916762
+lambda = 6.9692e-08; f =        -1989.6242116
+lambda = 2.3231e-08; f =        -3369.1775246
+lambda = 7.7435e-09; f =        -3511.5409485
+lambda = 2.5812e-09; f =        -3523.7763997
+
+lambda =
+
+  -6.2723e-07
+
+lambda = -6.2723e-07; f =   5199020595.1622133
+lambda = -2.0908e-07; f =    577645436.8875797
+lambda = -6.9692e-08; f =     64172898.8220021
+lambda = -2.3231e-08; f =      7124924.8030279
+lambda = -7.7435e-09; f =       787771.0933201
+lambda = -2.5812e-09; f =        84146.2600786
+Norm of dx 1.1496e+11
+Predicted improvement:    14731.736116815
+lambda =          1; f =        25629.3051665
+lambda =    0.33333; f =         -353.1965961
+lambda =    0.11111; f =        -3194.0856761
+lambda =   0.037037; f =        -3494.3881649
+lambda =   0.012346; f =        -3522.6378236
+lambda =  0.0041152; f =         -525.4718482
+lambda =  0.0013717; f =        -3197.0086611
+lambda = 0.00045725; f =        -3492.9919440
+lambda = 0.00015242; f =        -3523.2195734
+lambda = 5.0805e-05; f =        -3524.9793909
+Norm of dx     171.65
+Predicted improvement:        0.240318696
+lambda =          1; f =        -3525.0040391
+lambda =    0.33333; f =        -3525.0010726
+lambda =    0.11111; f =        -3524.9881265
+lambda =   0.037037; f =        -3524.9824709
+lambda =   0.012346; f =        -3524.9804362
+lambda =  0.0041152; f =        -3524.9797414
+lambda =  0.0013717; f =        -3524.9795080
+lambda = 0.00045725; f =        -3524.9794300
+lambda = 0.00015242; f =        -3524.9794039
+lambda = 5.0805e-05; f =        -3524.9793952
+lambda = 1.6935e-05; f =        -3524.9793924
+lambda =  5.645e-06; f =        -3524.9793914
+lambda = 1.8817e-06; f =        -3524.9793911
+lambda = 6.2723e-07; f =        -3524.9793910
+lambda = 2.0908e-07; f =        -3524.9793909
+lambda = 6.9692e-08; f =        -3524.9793909
+lambda = 2.3231e-08; f =        -3524.9793909
+lambda = 7.7435e-09; f =        -3524.9793909
+lambda = 2.5812e-09; f =        -3524.9793909
+Norm of dx  0.0030066
+Predicted improvement:        0.000153274
+lambda =          1; f =        -3525.0041925
+Norm of dx 0.00039003
+Done for param e =   0.9987; f = -3525.0042
+Predicted improvement:        0.005321377
+lambda =          1; f =        -3525.0096148
+Norm of dx 0.00082734
+Done for param rho =   0.9420; f = -3525.0096
+Sequence of univariate steps!!
+Actual dxnorm 0.010796
+FVAL          -3525.0096
+Improvement   0.89903
+Ftol          1e-05
+Htol          1e-05
+[Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.800949e-25.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('mr_hessian', '/Applications/Dynare/6.1-arm64/matlab/optimization/mr_hessian.m', 258)" style="font-weight:bold">mr_hessian</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/optimization/mr_hessian.m',258,0)">line 258</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('newrat', '/Applications/Dynare/6.1-arm64/matlab/optimization/newrat.m', 275)" style="font-weight:bold">newrat</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/optimization/newrat.m',275,0)">line 275</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('dynare_minimize_objective', '/Applications/Dynare/6.1-arm64/matlab/optimization/dynare_minimize_objective.m', 340)" style="font-weight:bold">dynare_minimize_objective</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/optimization/dynare_minimize_objective.m',340,0)">line 340</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('dynare_estimation_1', '/Applications/Dynare/6.1-arm64/matlab/estimation/dynare_estimation_1.m', 238)" style="font-weight:bold">dynare_estimation_1</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/estimation/dynare_estimation_1.m',238,0)">line 238</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('dynare_estimation', '/Applications/Dynare/6.1-arm64/matlab/estimation/dynare_estimation.m', 105)" style="font-weight:bold">dynare_estimation</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/estimation/dynare_estimation.m',105,0)">line 105</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('NCGmodel_est.driver', '/Users/hyltonhollander/Library/CloudStorage/OneDrive-UniversityofCapeTown/GitHub/dsge-training/training/ntdsge_content/codes/Basic_Solow_OLG/+NCGmodel_est/driver.m', 344)" style="font-weight:bold">NCGmodel_est.driver</a> (<a href="matlab: opentoline('/Users/hyltonhollander/Library/CloudStorage/OneDrive-UniversityofCapeTown/GitHub/dsge-training/training/ntdsge_content/codes/Basic_Solow_OLG/+NCGmodel_est/driver.m',344,0)">line 344</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('dynare', '/Applications/Dynare/6.1-arm64/matlab/dynare.m', 310)" style="font-weight:bold">dynare</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/dynare.m',310,0)">line 310</a>)
+] 
+Elapsed time for iteration 0.27611 s.
+ 
+Iteration 3
+Correct for low angle: 7.71938e-11
+Predicted improvement: 190826380.668154955
+lambda =          1; f = 626758414894568320.0000000
+lambda =    0.33333; f = 69639823313976064.0000000
+lambda =    0.11111; f = 7737757958262548.0000000
+lambda =   0.037037; f = 859750821671064.3750000
+lambda =   0.012346; f = 95527848212388.5937500
+lambda =  0.0041152; f = 10614198400809.6132812
+lambda =  0.0013717; f = 1179353057095.8618164
+lambda = 0.00045725; f = 131038452911.1916656
+lambda = 0.00015242; f =  14559567485.1809692
+lambda = 5.0805e-05; f =   1617640784.1640069
+lambda = 1.6935e-05; f =    179706155.0457529
+lambda =  5.645e-06; f =     19954716.2160459
+lambda = 1.8817e-06; f =      2210914.8516671
+lambda = 6.2723e-07; f =       241500.8685989
+lambda = 2.0908e-07; f =        23383.5933234
+lambda = 6.9692e-08; f =         -616.5028194
+lambda = 2.3231e-08; f =        -3223.9788666
+lambda = 7.7435e-09; f =        -3498.4171078
+lambda = 2.5812e-09; f =        -3523.8164725
+
+lambda =
+
+  -6.2723e-07
+
+lambda = -6.2723e-07; f =  14938341450.0137367
+lambda = -2.0908e-07; f =   1659777885.6799011
+lambda = -6.9692e-08; f =    184405066.5658625
+lambda = -2.3231e-08; f =     20482464.1571727
+lambda = -7.7435e-09; f =      2271411.9427194
+lambda = -2.5812e-09; f =       248818.4551361
+Norm of dx 1.9486e+11
+Predicted improvement:        0.000023385
+lambda =          1; f =        -3525.0096413
+Norm of dx 0.00014181
+Sequence of univariate steps!!
+Actual dxnorm 0.00014181
+FVAL          -3525.0096
+Improvement   2.6521e-05
+Ftol          1e-05
+Htol          1e-05
+[Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.426596e-25.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('mr_hessian', '/Applications/Dynare/6.1-arm64/matlab/optimization/mr_hessian.m', 258)" style="font-weight:bold">mr_hessian</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/optimization/mr_hessian.m',258,0)">line 258</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('newrat', '/Applications/Dynare/6.1-arm64/matlab/optimization/newrat.m', 275)" style="font-weight:bold">newrat</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/optimization/newrat.m',275,0)">line 275</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('dynare_minimize_objective', '/Applications/Dynare/6.1-arm64/matlab/optimization/dynare_minimize_objective.m', 340)" style="font-weight:bold">dynare_minimize_objective</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/optimization/dynare_minimize_objective.m',340,0)">line 340</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('dynare_estimation_1', '/Applications/Dynare/6.1-arm64/matlab/estimation/dynare_estimation_1.m', 238)" style="font-weight:bold">dynare_estimation_1</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/estimation/dynare_estimation_1.m',238,0)">line 238</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('dynare_estimation', '/Applications/Dynare/6.1-arm64/matlab/estimation/dynare_estimation.m', 105)" style="font-weight:bold">dynare_estimation</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/estimation/dynare_estimation.m',105,0)">line 105</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('NCGmodel_est.driver', '/Users/hyltonhollander/Library/CloudStorage/OneDrive-UniversityofCapeTown/GitHub/dsge-training/training/ntdsge_content/codes/Basic_Solow_OLG/+NCGmodel_est/driver.m', 344)" style="font-weight:bold">NCGmodel_est.driver</a> (<a href="matlab: opentoline('/Users/hyltonhollander/Library/CloudStorage/OneDrive-UniversityofCapeTown/GitHub/dsge-training/training/ntdsge_content/codes/Basic_Solow_OLG/+NCGmodel_est/driver.m',344,0)">line 344</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('dynare', '/Applications/Dynare/6.1-arm64/matlab/dynare.m', 310)" style="font-weight:bold">dynare</a> (<a href="matlab: opentoline('/Applications/Dynare/6.1-arm64/matlab/dynare.m',310,0)">line 310</a>)
+] 
+Elapsed time for iteration 0.059546 s.
+ 
+Iteration 4
+Correct for low angle: 2.51157e-10
+Predicted improvement: 126298847.329211071
+lambda =          1; f = 159292497505048704.0000000
+lambda =    0.33333; f = 17699165735664774.0000000
+lambda =    0.11111; f = 1966573752698995.7500000
+lambda =   0.037037; f = 218508122098793.8125000
+lambda =   0.012346; f = 24278656015955.2421875
+lambda =  0.0041152; f = 2697620371738.1674805
+lambda =  0.0013717; f = 299732903302.3783569
+lambda = 0.00045725; f =  33302756005.6228333
+lambda = 0.00015242; f =   3700004186.1681147
+lambda = 5.0805e-05; f =    411008832.9569655
+lambda = 1.6935e-05; f =     45631335.9540372
+lambda =  5.645e-06; f =      5055979.9975930
+lambda = 1.8817e-06; f =       554988.3503929
+lambda = 6.2723e-07; f =        57338.5796538
+lambda = 2.0908e-07; f =         2864.2981105
+lambda = 6.9692e-08; f =        -2915.0206962
+lambda = 2.3231e-08; f =        -3470.9451463
+lambda = 7.7435e-09; f =        -3521.6811104
+lambda = 2.5812e-09; f =       681731.1844762
+
+lambda =
+
+  -6.2723e-07
+
+lambda = -6.2723e-07; f =  40525649521.4516296
+lambda = -2.0908e-07; f =   4502789509.1826353
+lambda = -6.9692e-08; f =    500287711.4027047
+lambda = -2.3231e-08; f =     55578023.9549205
+lambda = -7.7435e-09; f =      6170081.3033102
+lambda = -2.5812e-09; f =       681724.8451050
+Norm of dx 3.2095e+11
+Norm of dx          0
+Sequence of univariate steps!!
+Try diagonal Hessian
+Correct for low angle: 4.51209e-07
+Predicted improvement:     5542.579051533
+lambda =          1; f = 198381142606821.7812500
+lambda =    0.33333; f = 22042309347519.1054688
+lambda =    0.11111; f = 2449132203987.7402344
+lambda =   0.037037; f = 272121372022.0454102
+lambda =   0.012346; f =  30234229797.7128601
+lambda =  0.0041152; f =   3358864067.1093493
+lambda =  0.0013717; f =    373040121.0756618
+lambda = 0.00045725; f =     41391172.1200786
+lambda = 0.00015242; f =      4577711.3262523
+lambda = 5.0805e-05; f =       499467.5806983
+lambda = 1.6935e-05; f =        50375.8907469
+lambda =  5.645e-06; f =         1825.5711314
+lambda = 1.8817e-06; f =        -3119.3231440
+lambda = 6.2723e-07; f =        -3518.8939473
+lambda = 2.0908e-07; f =        -3525.0096290
+lambda = 6.9692e-08; f =        -3524.3514374
+lambda = 2.3231e-08; f =        -3524.9368750
+lambda = 7.7435e-09; f =        -3525.0016203
+lambda = 2.5812e-09; f =        -3525.0087694
+
+lambda =
+
+  -6.2723e-07
+
+lambda = -6.2723e-07; f =        -3518.8939465
+lambda = -2.0908e-07; f =        -3519.1569388
+lambda = -6.9692e-08; f =        -3524.3548080
+lambda = -2.3231e-08; f =        -3524.9365412
+lambda = -7.7435e-09; f =        -3525.0014553
+lambda = -2.5812e-09; f =        -3525.0087124
+Norm of dx 1.4085e+07
+Try gradient direction
+Predicted improvement:        0.000001239
+lambda =          1; f =        -3525.0096420
+lambda =    0.33333; f =        -3525.0096420
+lambda =    0.64439; f =        -3525.0096422
+Norm of dx 1.5741e-05
+No further improvement is possible!
+Actual dxnorm 1.0143e-05
+FVAL          -3525.0096
+Improvement   8.5145e-07
+Ftol          1e-05
+Htol          1e-05
+Gradient norm  0.15741
+Minimum Hessian eigenvalue -6.2724e-12
+Maximum Hessian eigenvalue 44524.7928
+Estimation successful.
+
+Final value of minus the log posterior (or likelihood):-3525.009642 
 
 RESULTS FROM POSTERIOR ESTIMATION
 parameters
-  prior mean     mode    s.d. prior pstdev
+    prior mean     mode    s.d.  prior pstdev
 
-rho   0.930   0.9520  0.0077 beta  0.0200 
-the   0.300   0.3000  0.0500 norm  0.0500 
-tau   2.100   2.1000  0.3000 norm  0.3000 
+rho     0.5000   0.9420  0.0081   beta 0.1000 
+the     0.7000   0.7000  0.1000   norm 0.1000 
+tau     4.0000   4.0000  1.0000   norm 1.0000 
 
 standard deviation of shocks
-  prior mean     mode    s.d. prior pstdev
+    prior mean     mode    s.d.  prior pstdev
 
-e     0.950   0.9975  0.0223 invg     Inf 
+e       0.5000   0.9986  0.0223   invg    Inf 
 
 
-Log data density [Laplace approximation] is 3537.929069.
+Log data density [Laplace approximation] is 3517.763073.
 
 Estimation::mcmc: Multiple chains mode.
 Estimation::mcmc: Old mh-files successfully erased!
@@ -102,15 +434,15 @@ Estimation::mcmc: Searching for initial values...
 Estimation::mcmc: Initial values found!
 
 Estimation::mcmc: Write details about the MCMC... Ok!
-Estimation::mcmc: Details about the MCMC are available in NCGmodel_est/metropolis\NCGmodel_est_mh_history_0.mat
+Estimation::mcmc: Details about the MCMC are available in NCGmodel_est/metropolis/NCGmodel_est_mh_history_0.mat
 
 
 Estimation::mcmc: Number of mh files: 1 per block.
 Estimation::mcmc: Total number of generated files: 2.
 Estimation::mcmc: Total number of iterations: 10000.
-Estimation::mcmc: Current acceptance ratio per chain: 
-                                                       Chain  1: 41.41%
-                                                       Chain  2: 41.88%
+Estimation::mcmc: Current acceptance ratio per chain:
+                                                       Chain  1: 39.95%
+                                                       Chain  2: 39.72%
 Estimation::mcmc: Total number of MH draws per chain: 10000.
 Estimation::mcmc: Total number of generated MH files: 1.
 Estimation::mcmc: I'll use mh-files 1 to 1.
@@ -121,34 +453,60 @@ Estimation::mcmc: Finally I keep 5000 draws per chain.
 
 MCMC Inefficiency factors per block
 Parameter       Block 1     Block 2
-SE_e              9.478      18.542
-rho              12.541      20.270
-the              15.387      18.759
-tau              11.572      14.637
+SE_e             10.341      16.909
+rho              10.702      13.457
+the              21.100       8.672
+tau              18.101      27.054
 
-Estimation::mcmc::diagnostics: Univariate convergence diagnostic, Brooks and Gelman (1998):
+
+
+Convergence diagnostics results for chain 1.
+
+Geweke (1992) Convergence Tests, based on means of draws 5000 to 6000 vs 7500 to 10000 for chain 1.
+p-values are for Chi2-test for equality of means.
+Parameter         Post. Mean        Post. Std   p-val No Taper   p-val 4% Taper   p-val 8% Taper  p-val 15% Taper
+SE_e                   1.000            0.022            0.769            0.933            0.936            0.928
+rho                    0.940            0.007            0.002            0.393            0.454            0.482
+the                    0.700            0.094            0.909            0.973            0.976            0.977
+tau                    3.979            0.981            0.151            0.682            0.698            0.681
+
+
+
+
+Convergence diagnostics results for chain 2.
+
+Geweke (1992) Convergence Tests, based on means of draws 5000 to 6000 vs 7500 to 10000 for chain 2.
+p-values are for Chi2-test for equality of means.
+Parameter         Post. Mean        Post. Std   p-val No Taper   p-val 4% Taper   p-val 8% Taper  p-val 15% Taper
+SE_e                   1.000            0.023            0.000            0.027            0.030            0.034
+rho                    0.940            0.007            0.330            0.774            0.783            0.779
+the                    0.701            0.100            0.078            0.641            0.652            0.628
+tau                    3.984            1.021            0.000            0.001            0.001            0.001
+
+
+Univariate convergence diagnostic, Brooks and Gelman (1998):
     Parameter 1...  Done! 
     Parameter 2...  Done! 
     Parameter 3...  Done! 
     Parameter 4...  Done! 
 
-Estimation::marginal density: I'm computing the posterior mean and covariance...  Done!
-Estimation::marginal density: I'm computing the posterior log marginal density (modified harmonic mean)... Done!
+marginal density: I'm computing the posterior mean and covariance...  Done!
+marginal density: I'm computing the posterior log marginal density (modified harmonic mean)... Done!
 
 
 ESTIMATION RESULTS
 
-Log data density is 3537.941811.
-
+Log data density (Modified Harmonic Mean) is 3517.673863.
 parameters
       prior mean   post. mean        90% HPD interval    prior       pstdev
 
-rho        0.930       0.9512      0.9385      0.9637   beta        0.0200
-the        0.300       0.3004      0.2222      0.3811   norm        0.0500
-tau        2.100       2.1028      1.5985      2.5754   norm        0.3000
+rho        0.500       0.9401      0.9299      0.9521     beta       0.1000
+the        0.700       0.6983      0.5356      0.8570     norm       0.1000
+tau        4.000       3.9468      2.3887      5.6491     norm       1.0000
 
 standard deviation of shocks
       prior mean   post. mean        90% HPD interval    prior       pstdev
 
-e          0.950       0.9992      0.9639      1.0357   invg           Inf
-Total computing time : 0h00m58s
+e          0.500       1.0006      0.9590      1.0327     invg          Inf
+Total computing time : 0h00m33s
+Note: warning(s) encountered in MATLAB/Octave code

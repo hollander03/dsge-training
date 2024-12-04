@@ -20,8 +20,8 @@ function g2 = dynamic_g2(T, y, x, params, steady_state, it_, T_flag)
 %
 
 if T_flag
-    T = basicRBC2015_est.dynamic_g2_tt(T, y, x, params, steady_state, it_);
+    T = basicrbc2015_est.dynamic_g2_tt(T, y, x, params, steady_state, it_);
 end
-g2 = sparse([],[],[],8,196);
+g2 = sparse([],[],[],10,324);
 
 end

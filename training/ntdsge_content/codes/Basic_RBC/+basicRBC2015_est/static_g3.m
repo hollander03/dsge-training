@@ -16,8 +16,8 @@ function g3 = static_g3(T, y, x, params, T_flag)
 %
 
 if T_flag
-    T = basicRBC2015_est.static_g3_tt(T, y, x, params);
+    T = basicrbc2015_est.static_g3_tt(T, y, x, params);
 end
-g3 = sparse([],[],[],8,512);
+g3 = sparse([],[],[],10,1000);
 
 end
