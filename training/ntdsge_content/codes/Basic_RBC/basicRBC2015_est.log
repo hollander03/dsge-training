@@ -49,10 +49,6 @@ The rank condition is verified.
 
 Initial value of the log posterior (or likelihood): 374.222
 
-MODE CHECK
-
-Fval obtained by the optimization routine: -374.222034
-
 RESULTS FROM POSTERIOR ESTIMATION
 parameters
         prior mean     mode    s.d.  prior pstdev
@@ -68,23 +64,6 @@ epsilon     0.0100   0.0024  0.0003   invg    Inf
 
 Log data density [Laplace approximation] is 361.765098.
 
-Estimation::mcmc: Multiple chains mode.
-Estimation::mcmc: Old metropolis.log file successfully erased!
-Estimation::mcmc: Creation of a new metropolis.log file.
-Estimation::mcmc: Searching for initial values...
-Estimation::mcmc: Initial values found!
-
-Estimation::mcmc: Write details about the MCMC... Ok!
-Estimation::mcmc: Details about the MCMC are available in basicrbc2015_est/metropolis/basicrbc2015_est_mh_history_0.mat
-
-
-Estimation::mcmc: Number of mh files: 1 per block.
-Estimation::mcmc: Total number of generated files: 3.
-Estimation::mcmc: Total number of iterations: 100000.
-Estimation::mcmc: Current acceptance ratio per chain:
-                                                       Chain  1: 46.232%
-                                                       Chain  2: 46.444%
-                                                       Chain  3: 46.461%
 Estimation::mcmc: Total number of MH draws per chain: 100000.
 Estimation::mcmc: Total number of generated MH files: 1.
 Estimation::mcmc: I'll use mh-files 1 to 1.
@@ -157,9 +136,4 @@ standard deviation of shocks
           prior mean   post. mean        90% HPD interval    prior       pstdev
 
 epsilon        0.010       0.0026      0.0020      0.0033     invg          Inf
-Estimation::mcmc: Posterior (dsge) IRFs...
-Estimation::mcmc: Posterior IRFs, done!
-Estimation::compute_moments_varendo: I'm computing endogenous moments (this may take a while)... 
-Done!
-
-Total computing time : 0h03m40s
+Total computing time : 0h00m07s

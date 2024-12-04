@@ -377,19 +377,12 @@ if ~isempty(find(estim_params_.var_exo(:,1)==1))
     error('The standard deviation for epsilon has been specified twice in two concatenated ''estimated_params'' blocks. Depending on your intention, you may want to use the ''overwrite'' option or an ''estimated_params_remove'' block.')
 end
 estim_params_.var_exo = [estim_params_.var_exo; 1, NaN, (-Inf), Inf, 4, 0.01, Inf, NaN, NaN, NaN ];
-options_.bayesian_irf = true;
-options_.conditional_variance_decomposition = [1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;];
 options_.datafile = 'data9519';
 options_.graph_format = {'fig';'pdf'};
-options_.irf = 40;
-options_.mh_drop = 0.5;
-options_.mh_jscale = 0.99;
-options_.mh_nblck = 3;
-options_.mh_replic = 100000;
-options_.mode_check.status = true;
+options_.load_mh_file = true;
+options_.mh_replic = 0;
 options_.mode_compute = 0;
 options_.mode_file = 'basicrbc2015_est_mode';
-options_.moments_varendo = true;
 options_.nodisplay = true;
 options_.order = 1;
 var_list_ = {'y_obs';'dc';'dv';'y';'c';'n';'v';'k';'r';'z'};
