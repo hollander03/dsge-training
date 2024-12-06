@@ -39,7 +39,7 @@ model(linear);
 // Aggregate resource constraint
 y = c; 
 
-// Uncomment to include production function with labour
+// Uncomment to include production function with labour. You need to add n as variable above
 // y = n + xi_z;
 
 // Consumption Euler equation
@@ -64,6 +64,7 @@ x = -mc;
 // Uncomment to include output (y) in the policy rule
 // int = rho_i*int(-1) + (1 - rho_i)*(kappa_pii*pii + kappa_y*y) + epsilon_i;
 int = rho_i*int(-1) + (1 - rho_i)*(kappa_pii*pii + kappa_y*ygap) + epsilon_i;
+// int = rn + (kappa_pii*pii + kappa_y*ygap) + epsilon_i;
 
 // Uncomment to include money growth rule
 // m = rho_mu*(m(-1) - pii) - (1 - rho_mu)*(kappa_pii*pii + kappa_y*y) + epsilon_mu;
@@ -77,7 +78,7 @@ xi_p = rho_p*xi_p(-1) + epsilon_p;  // Price shock
 // Flexible price equilibrium
 yn = cn;
 
-// Uncomment to include production function with labour
+// Uncomment to include production function with labour. You need to add nn as variable above
 // yn = nn + xi_z;
 
 // Labour market clearing in flexible price equilibrium
@@ -96,15 +97,23 @@ end;
 
 // Define shocks for simulation
 shocks;
-var epsilon_z = sigmaz^2;  // Variance of technology shock
+ var epsilon_z = sigmaz^2;  // Variance of technology shock
 // var epsilon_p = sigmap^2;  // Variance of price shock
-// var epsilon_i = sigmai^2;  // Variance of monetary policy shock
+ var epsilon_i = sigmai^2;  // Variance of monetary policy shock
 // var epsilon_mu = sigmamu^2;  // Variance of money supply shock
 end;
 
 // Compute steady state and check model
-steady;
-check;
+ steady;
+ check;
 
 // Simulate model
-stoch_simul(order=1, irf=22); // , periods=150
+% stoch_simul(order=1, irf=40) ygap pii int r; // xi_p; // , periods=150
+
+optim_weights;
+ygap 1; // kappa*(eta_n + eta_c))/10;
+pii 1;
+end;
+
+osr_params kappa_pii kappa_y ; 
+osr(order=1, irf=40, graph_format=fig) ygap pii int r;
