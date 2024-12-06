@@ -3,6 +3,8 @@
 
  Links to surveys: 
  - [Day 1](https://www.surveymonkey.com/r/8H68ZYV)
+ - [Day 5](https://www.surveymonkey.com/r/6SH5JHP)
+ - What suggestions do you have for improving future DSGE model workshops? (Please send email to hollander03@gmail.com)
 
 ## Training resources
 - Repository for training material and capacity building on Modern Macroeconomic Theory and Computational Methods for Macroeconomics are in the `training` folder: [training](https://github.com/hollander03/dsge-training/tree/main/training).
