@@ -1,249 +1,289 @@
 Starting Dynare (version 6.1).
 Calling Dynare with arguments: none
 Starting preprocessing of the model file ...
-Found 14 equation(s).
+Found 17 equation(s).
 Evaluating expressions...
 Computing static model derivatives (order 1).
 Normalizing the static model...
-Finding the optimal block decomposition of the static model...
-7 block(s) found:
-  6 recursive block(s) and 1 simultaneous block(s).
-  the largest simultaneous block has 7 equation(s)
-                                 and 7 feedback variable(s).
+Normalization failed with cutoff, trying symbolic normalization...
+Could not normalize the static model. Variable p is not in the maximum cardinality matching.
 Computing dynamic model derivatives (order 2).
 Normalizing the dynamic model...
 Finding the optimal block decomposition of the dynamic model...
-6 block(s) found:
-  5 recursive block(s) and 1 simultaneous block(s).
+8 block(s) found:
+  7 recursive block(s) and 1 simultaneous block(s).
   the largest simultaneous block has 7 equation(s)
                                  and 4 feedback variable(s).
 Preprocessing completed.
 Preprocessing time: 0h00m00s.
+[Warning: Some of the parameters have no value (rho_mu) when using steady. If
+these parameters are not initialized in a steadystate file or a
+steady_state_model-block, Dynare may not be able to solve the model. Note that
+simul, perfect_foresight_setup, and perfect_foresight_solver do not automatically
+call the steady state file.] 
 
 STEADY-STATE RESULTS:
 
-y    		 0
-c    		 0
-m    		 0
-r    		 0
-int  		 0
-pii  		 0
-mc   		 0
-x    		 0
-xi_z 		 0
-xi_p 		 0
-yn   		 0
-cn   		 0
-rn   		 0
-ygap 		 0
+y     		 0
+c     		 0
+m     		 0
+r     		 0
+int   		 0
+pii   		 0
+mc    		 0
+x     		 0
+xi_z  		 0
+xi_p  		 0
+xi_i  		 0
+p     		 0
+yn    		 0
+cn    		 0
+rn    		 0
+ygap  		 0
+mreal 		 0
 
 EIGENVALUES:
          Modulus             Real        Imaginary
           0.5243           0.5243                0
             0.75             0.75                0
             0.95             0.95                0
+               1                1                0
            1.122            1.122                0
            1.289            1.289                0
-       3.652e+16       -3.652e+16                0
+       4.535e+16        4.535e+16                0
 
 There are 3 eigenvalue(s) larger than 1 in modulus for 3 forward-looking variable(s)
 The rank condition is verified.
 
-
-OPTIMAL SIMPLE RULE
-
-OSR: Initial value of the objective function: 0.000202824 
-
------------------
-f at the beginning of new iteration,         0.0002028242
-Predicted improvement:        0.000000000
-lambda =          1; f =            0.0002028
-lambda =     1.9332; f =            0.0002028
-lambda =     3.7372; f =            0.0002028
-lambda =     7.2247; f =            0.0002028
-lambda =     13.967; f =            0.0002028
-lambda =         27; f =            0.0002028
-lambda =     52.196; f =            0.0002028
-lambda =      100.9; f =            0.0002028
-lambda =     195.07; f =            0.0002028
-lambda =      377.1; f =            0.0002028
-lambda =        729; f =            0.0002028
-lambda =     1409.3; f =            0.0002028
-lambda =     2724.4; f =            0.0002028
-lambda =     5266.8; f =            0.0002028
-lambda =      10182; f =            0.0002028
-lambda =      19683; f =            0.0002027
-lambda =      38051; f =            0.0002026
-lambda =      73559; f =            0.0002023
-lambda =  1.422e+05; f =            0.0002019
-lambda =  2.749e+05; f =            0.0002010
-lambda = 5.3144e+05; f =            0.0001994
-lambda = 1.0274e+06; f =            0.0001963
-lambda = 1.9861e+06; f =            0.0001906
-lambda = 3.8395e+06; f =            0.0001802
-lambda = 7.4224e+06; f =            0.0001627
-lambda = 1.4349e+07; f =            0.0001359
-lambda = 2.7739e+07; f =            0.0001012
-Norm of dx 2.5503e-08
-----
-Improvement on iteration 1 =        0.000101642
------------------
-f at the beginning of new iteration,         0.0001011825
-Predicted improvement:        0.000012658
-lambda =          1; f =            0.0000803
-lambda =     1.9332; f =            0.0000666
-lambda =     3.7372; f =            0.0000490
-Norm of dx    0.31924
-----
-Improvement on iteration 2 =        0.000052232
------------------
-f at the beginning of new iteration,         0.0000489505
-Predicted improvement:        0.000005988
-lambda =          1; f =            0.0000390
-lambda =     1.9332; f =            0.0000324
-lambda =     3.7372; f =            0.0000239
-Norm of dx    0.50667
-----
-Improvement on iteration 3 =        0.000025067
------------------
-f at the beginning of new iteration,         0.0000238834
-Predicted improvement:        0.000003039
-lambda =          1; f =            0.0000189
-lambda =     1.9332; f =            0.0000156
-lambda =     3.7372; f =            0.0000113
-Norm of dx    0.83812
-----
-Improvement on iteration 4 =        0.000012565
------------------
-f at the beginning of new iteration,         0.0000113184
-Predicted improvement:        0.000001442
-lambda =          1; f =            0.0000089
-lambda =     1.9332; f =            0.0000074
-lambda =     3.7372; f =            0.0000053
-Norm of dx     1.3324
-----
-Improvement on iteration 5 =        0.000005997
------------------
-f at the beginning of new iteration,         0.0000053209
-Predicted improvement:        0.000000701
-lambda =          1; f =            0.0000042
-lambda =     1.9332; f =            0.0000034
-lambda =     3.7372; f =            0.0000024
-Norm of dx     2.1482
-----
-Improvement on iteration 6 =        0.000002889
------------------
-f at the beginning of new iteration,         0.0000024323
-Predicted improvement:        0.000000323
-lambda =          1; f =            0.0000019
-lambda =     1.9332; f =            0.0000015
-lambda =     3.7372; f =            0.0000011
-Norm of dx     3.3564
-----
-Improvement on iteration 7 =        0.000001333
------------------
-f at the beginning of new iteration,         0.0000010992
-Predicted improvement:        0.000000149
-lambda =          1; f =            0.0000009
-lambda =     1.9332; f =            0.0000007
-lambda =     3.7372; f =            0.0000005
-Norm of dx     5.2487
-----
-Improvement on iteration 8 =        0.000000611
------------------
-f at the beginning of new iteration,         0.0000004877
-Predicted improvement:        0.000000066
-lambda =          1; f =            0.0000004
-lambda =     1.9332; f =            0.0000003
-lambda =     3.7372; f =            0.0000002
-Norm of dx     8.0358
-----
-Improvement on iteration 9 =        0.000000272
------------------
-f at the beginning of new iteration,         0.0000002153
-Predicted improvement:        0.000000030
-lambda =          1; f =            0.0000002
-lambda =     1.9332; f =            0.0000001
-lambda =     3.7372; f =            0.0000001
-Norm of dx     12.313
-----
-Improvement on iteration 10 =        0.000000121
------------------
-f at the beginning of new iteration,         0.0000000943
-Predicted improvement:        0.000000013
-lambda =          1; f =            0.0000001
-lambda =     1.9332; f =            0.0000001
-lambda =     3.7372; f =            0.0000000
-Norm of dx     18.671
-----
-Improvement on iteration 11 =        0.000000053
-improvement < crit termination
-
-
-OPTIMAL VALUE OF THE PARAMETERS
-Variables         Value
-kappa_pii    105.485898
-kappa_y      168.751277
-
-Objective function :      4.13042e-08
-
+[Warning: Some of the parameters have no value (rho_mu) when using stoch_simul. If
+these parameters are not initialized in a steadystate file or a
+steady_state_model-block, Dynare may not be able to solve the model. Note that
+simul, perfect_foresight_setup, and perfect_foresight_solver do not automatically
+call the steady state file.] 
 
 MODEL SUMMARY
 
-  Number of variables:         14
+  Number of variables:         17
   Number of stochastic shocks: 3
-  Number of state variables:   3
+  Number of state variables:   4
   Number of jumpers:           3
-  Number of static variables:  8
+  Number of static variables:  10
 
 
 MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
 Variables    epsilon_z  epsilon_p  epsilon_i
 epsilon_z     0.000100   0.000000   0.000000
-epsilon_p     0.000000   0.000000   0.000000
-epsilon_i     0.000000   0.000000   0.000100
+epsilon_p     0.000000   0.000006   0.000000
+epsilon_i     0.000000   0.000000   0.000006
 
 POLICY AND TRANSITION FUNCTIONS
-                                ygap             pii             int               r
-int(-1)                    -0.014668       -0.003898        0.028393        0.028504
-xi_z(-1)                   -0.001070       -0.000631       -0.061773       -0.061414
-xi_p(-1)                   -1.079955        1.796938        1.826964        0.486381
-epsilon_z                  -0.001126       -0.000664       -0.065024       -0.064646
-epsilon_p                  -1.439940        2.395918        2.435952        0.648507
-epsilon_i                  -0.019558       -0.005197        0.037857        0.038005
+                                   y            ygap           mreal               r             int             pii              mc               x               c            xi_z            xi_p               m               p
+int(-1)                    -0.782123       -0.782123       -0.694246        0.744176        0.524259       -0.419481       -2.346368        2.346368       -0.782123               0               0       -1.113726       -0.419481
+xi_z(-1)                    0.514866       -0.118468        0.361708        0.036126       -0.056010       -0.121716       -0.355403        0.355403        0.514866        0.950000               0        0.239992       -0.121716
+xi_p(-1)                   -0.697210       -0.697210       -0.622520       -0.399734        0.478402        1.438422       -2.091630        2.091630       -0.697210               0        0.750000        0.815902        1.438422
+p(-1)                              0               0               0               0               0               0               0               0               0               0               0        1.000000        1.000000
+epsilon_z                   0.541964       -0.124703        0.380746        0.038027       -0.058957       -0.128123       -0.374108        0.374108        0.541964        1.000000               0        0.252623       -0.128123
+epsilon_p                  -0.929613       -0.929613       -0.830027       -0.532978        0.637870        1.917896       -2.788840        2.788840       -0.929613               0        1.000000        1.087869        1.917896
+epsilon_i                  -1.042830       -1.042830       -0.925661        0.992234        0.699012       -0.559307       -3.128491        3.128491       -1.042830               0               0       -1.484969       -0.559307
 
 
 THEORETICAL MOMENTS
 VARIABLE         MEAN  STD. DEV.   VARIANCE
-ygap           0.0000     0.0002     0.0000
-pii            0.0000     0.0001     0.0000
-int            0.0000     0.0022     0.0000
-r              0.0000     0.0022     0.0000
+y              0.0000     0.0214     0.0005
+ygap           0.0000     0.0072     0.0001
+mreal          0.0000     0.0160     0.0003
+r              0.0000     0.0041     0.0000
+int            0.0000     0.0061     0.0000
+pii            0.0000     0.0069     0.0000
+mc             0.0000     0.0216     0.0005
+x              0.0000     0.0216     0.0005
+c              0.0000     0.0214     0.0005
+xi_z           0.0000     0.0320     0.0010
+xi_p           0.0000     0.0038     0.0000
+m                 NaN        NaN        NaN
+p                 NaN        NaN        NaN
 
 
 
 VARIANCE DECOMPOSITION (in percent)
-        epsilon_z  epsilon_p  epsilon_i
-ygap         0.35       0.00      99.65
-pii          6.41       0.00      93.59
-int         96.96       0.00       3.04
-r           96.91       0.00       3.09
+         epsilon_z  epsilon_p  epsilon_i
+y            89.19       8.76       2.05
+ygap          5.01      76.95      18.04
+mreal        84.70      12.41       2.89
+r            18.49      31.39      50.11
+int          39.35      49.36      11.29
+pii          14.99      79.33       5.68
+mc            5.01      76.95      18.04
+x             5.01      76.95      18.04
+c            89.19       8.76       2.05
+xi_z        100.00       0.00       0.00
+xi_p          0.00     100.00       0.00
 
 
 
 MATRIX OF CORRELATIONS
-Variables       ygap      pii      int        r
-ygap          1.0000   0.9761  -0.1430  -0.1446
-pii           0.9761   1.0000   0.0756   0.0740
-int          -0.1430   0.0756   1.0000   1.0000
-r            -0.1446   0.0740   1.0000   1.0000
+Variables          y     ygap    mreal        r      int      pii       mc        x        c     xi_z     xi_p
+y             1.0000   0.1711   0.9977  -0.5209  -0.8430  -0.5349   0.1711  -0.1711   1.0000   0.9431  -0.2735
+ygap          0.1711   1.0000   0.2375  -0.5067  -0.6743  -0.4664   1.0000  -1.0000   0.1711  -0.1663  -0.8108
+mreal         0.9977   0.2375   1.0000  -0.5480  -0.8775  -0.5600   0.2375  -0.2375   0.9977   0.9183  -0.3258
+r            -0.5209  -0.5067  -0.5480   1.0000   0.6632  -0.1191  -0.5067   0.5067  -0.5209  -0.3503   0.0493
+int          -0.8430  -0.6743  -0.8775   0.6632   1.0000   0.6595  -0.6743   0.6743  -0.8430  -0.6160   0.6507
+pii          -0.5349  -0.4664  -0.5600  -0.1191   0.6595   1.0000  -0.4664   0.4664  -0.5349  -0.3779   0.8706
+mc            0.1711   1.0000   0.2375  -0.5067  -0.6743  -0.4664   1.0000  -1.0000   0.1711  -0.1663  -0.8108
+x            -0.1711  -1.0000  -0.2375   0.5067   0.6743   0.4664  -1.0000   1.0000  -0.1711   0.1663   0.8108
+c             1.0000   0.1711   0.9977  -0.5209  -0.8430  -0.5349   0.1711  -0.1711   1.0000   0.9431  -0.2735
+xi_z          0.9431  -0.1663   0.9183  -0.3503  -0.6160  -0.3779  -0.1663   0.1663   0.9431   1.0000   0.0000
+xi_p         -0.2735  -0.8108  -0.3258   0.0493   0.6507   0.8706  -0.8108   0.8108  -0.2735   0.0000   1.0000
 
 
 
 COEFFICIENTS OF AUTOCORRELATION
 Order          1       2       3       4       5
-ygap      0.0288  0.0012  0.0004  0.0004  0.0004
-pii       0.0815  0.0528  0.0494  0.0469  0.0446
-int       0.9246  0.8777  0.8338  0.7921  0.7525
-r         0.9241  0.8772  0.8333  0.7916  0.7521
-Total computing time : 0h00m02s
+y         0.9498  0.8954  0.8419  0.7913  0.7444
+ygap      0.8307  0.6664  0.5235  0.4060  0.3124
+mreal     0.9465  0.8876  0.8299  0.7760  0.7266
+r         0.6158  0.4066  0.2903  0.2237  0.1838
+int       0.8979  0.7871  0.6844  0.5952  0.5204
+pii       0.6556  0.4527  0.3290  0.2507  0.1991
+mc        0.8307  0.6664  0.5235  0.4060  0.3124
+x         0.8307  0.6664  0.5235  0.4060  0.3124
+c         0.9498  0.8954  0.8419  0.7913  0.7444
+xi_z      0.9500  0.9025  0.8574  0.8145  0.7738
+xi_p      0.7500  0.5625  0.4219  0.3164  0.2373
+
+OPTIMAL SIMPLE RULE
+
+OSR: Initial value of the objective function: 6.08936e-05 
+
+-----------------
+f at the beginning of new iteration,         0.0000608936
+Predicted improvement:        0.000000000
+lambda =          1; f =            0.0000609
+lambda =     1.9332; f =            0.0000609
+lambda =     3.7372; f =            0.0000609
+lambda =     7.2247; f =            0.0000609
+lambda =     13.967; f =            0.0000609
+lambda =         27; f =            0.0000609
+lambda =     52.196; f =            0.0000609
+lambda =      100.9; f =            0.0000609
+lambda =     195.07; f =            0.0000609
+lambda =      377.1; f =            0.0000609
+lambda =        729; f =            0.0000609
+lambda =     1409.3; f =            0.0000609
+lambda =     2724.4; f =            0.0000609
+lambda =     5266.8; f =            0.0000609
+lambda =      10182; f =            0.0000609
+lambda =      19683; f =            0.0000609
+lambda =      38051; f =            0.0000609
+lambda =      73559; f =            0.0000609
+lambda =  1.422e+05; f =            0.0000608
+lambda =  2.749e+05; f =            0.0000608
+lambda = 5.3144e+05; f =            0.0000607
+lambda = 1.0274e+06; f =            0.0000606
+lambda = 1.9861e+06; f =            0.0000603
+lambda = 3.8395e+06; f =            0.0000597
+lambda = 7.4224e+06; f =            0.0000586
+lambda = 1.4349e+07; f =            0.0000567
+lambda = 2.7739e+07; f =            0.0000533
+lambda = 5.3625e+07; f =            0.0000483
+lambda = 1.0367e+08; f =            0.0000427
+Norm of dx  5.627e-09
+----
+Improvement on iteration 1 =        0.000018177
+-----------------
+f at the beginning of new iteration,         0.0000427161
+Predicted improvement:        0.000000775
+lambda =          1; f =            0.0000417
+Norm of dx    0.14133
+----
+Improvement on iteration 2 =        0.000001012
+-----------------
+f at the beginning of new iteration,         0.0000417041
+Predicted improvement:        0.000000116
+lambda =          1; f =            0.0000416
+Norm of dx   0.066382
+----
+Improvement on iteration 3 =        0.000000126
+-----------------
+f at the beginning of new iteration,         0.0000415783
+Predicted improvement:        0.000000001
+lambda =          1; f =            0.0000416
+Norm of dx  0.0064941
+----
+Improvement on iteration 4 =        0.000000001
+improvement < crit termination
+
+
+OPTIMAL VALUE OF THE PARAMETERS
+Variables        Value
+kappa_pii     2.159413
+kappa_y      -0.098579
+
+Objective function :      4.15773e-05
+
+[Warning: Some of the parameters have no value (rho_mu) when using stoch_simul. If
+these parameters are not initialized in a steadystate file or a
+steady_state_model-block, Dynare may not be able to solve the model. Note that
+simul, perfect_foresight_setup, and perfect_foresight_solver do not automatically
+call the steady state file.] 
+
+MODEL SUMMARY
+
+  Number of variables:         17
+  Number of stochastic shocks: 3
+  Number of state variables:   4
+  Number of jumpers:           3
+  Number of static variables:  10
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables    epsilon_z  epsilon_p  epsilon_i
+epsilon_z     0.000100   0.000000   0.000000
+epsilon_p     0.000000   0.000006   0.000000
+epsilon_i     0.000000   0.000000   0.000006
+
+POLICY AND TRANSITION FUNCTIONS
+                                ygap             pii             int               r
+int(-1)                    -0.816092       -0.443538        0.530667        0.766038
+xi_z(-1)                   -0.094918       -0.085914       -0.044041        0.018042
+xi_p(-1)                   -1.500828        0.699280        0.414496        0.073881
+epsilon_z                  -0.099914       -0.090435       -0.046359        0.018992
+epsilon_p                  -2.001104        0.932373        0.552661        0.098507
+epsilon_i                  -1.088123       -0.591383        0.707556        1.021384
+
+
+THEORETICAL MOMENTS
+VARIABLE         MEAN  STD. DEV.   VARIANCE
+ygap           0.0000     0.0105     0.0001
+pii            0.0000     0.0036     0.0000
+int            0.0000     0.0053     0.0000
+r              0.0000     0.0047     0.0000
+
+
+
+VARIANCE DECOMPOSITION (in percent)
+        epsilon_z  epsilon_p  epsilon_i
+ygap         1.43      89.26       9.31
+pii         22.37      54.24      23.38
+int         33.52      50.80      15.69
+r           14.36      44.68      40.96
+
+
+
+MATRIX OF CORRELATIONS
+Variables       ygap      pii      int        r
+ygap          1.0000  -0.3381  -0.7467  -0.7384
+pii          -0.3381   1.0000   0.3927   0.0008
+int          -0.7467   0.3927   1.0000   0.9141
+r            -0.7384   0.0008   0.9141   1.0000
+
+
+
+COEFFICIENTS OF AUTOCORRELATION
+Order          1       2       3       4       5
+ygap      0.8263  0.6604  0.5171  0.3996  0.3061
+pii       0.5725  0.3492  0.2326  0.1715  0.1391
+int       0.8785  0.7575  0.6494  0.5576  0.4817
+r         0.7728  0.6042  0.4781  0.3831  0.3111
+Total computing time : 0h00m04s
+Note: warning(s) encountered in MATLAB/Octave code
