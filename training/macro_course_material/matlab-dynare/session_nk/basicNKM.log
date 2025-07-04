@@ -1,0 +1,149 @@
+Starting Dynare (version 6.1).
+Calling Dynare with arguments: none
+Starting preprocessing of the model file ...
+Found 14 equation(s).
+Evaluating expressions...
+Computing static model derivatives (order 1).
+Normalizing the static model...
+Finding the optimal block decomposition of the static model...
+7 block(s) found:
+  6 recursive block(s) and 1 simultaneous block(s).
+  the largest simultaneous block has 7 equation(s)
+                                 and 7 feedback variable(s).
+Computing dynamic model derivatives (order 2).
+Normalizing the dynamic model...
+Finding the optimal block decomposition of the dynamic model...
+6 block(s) found:
+  5 recursive block(s) and 1 simultaneous block(s).
+  the largest simultaneous block has 7 equation(s)
+                                 and 4 feedback variable(s).
+Preprocessing completed.
+Preprocessing time: 0h00m00s.
+
+STEADY-STATE RESULTS:
+
+y    		 0
+c    		 0
+m    		 0
+r    		 0
+int  		 0
+pii  		 0
+mc   		 0
+x    		 0
+xi_z 		 0
+xi_p 		 0
+yn   		 0
+cn   		 0
+rn   		 0
+ygap 		 0
+
+EIGENVALUES:
+         Modulus             Real        Imaginary
+          0.5243           0.5243                0
+            0.75             0.75                0
+            0.95             0.95                0
+           1.122            1.122                0
+           1.289            1.289                0
+       3.652e+16       -3.652e+16                0
+
+There are 3 eigenvalue(s) larger than 1 in modulus for 3 forward-looking variable(s)
+The rank condition is verified.
+
+
+MODEL SUMMARY
+
+  Number of variables:         14
+  Number of stochastic shocks: 3
+  Number of state variables:   3
+  Number of jumpers:           3
+  Number of static variables:  8
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables    epsilon_z  epsilon_p  epsilon_i
+epsilon_z     0.000100   0.000000   0.000000
+epsilon_p     0.000000   0.000000   0.000000
+epsilon_i     0.000000   0.000000   0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                   y               c               m               r             int             pii              mc               x            xi_z            xi_p              yn              cn              rn            ygap
+int(-1)                    -0.782123       -0.782123       -0.694246        0.744176        0.524259       -0.419481       -2.346368        2.346368               0               0               0               0               0       -0.782123
+xi_z(-1)                    0.514866        0.514866        0.361708        0.036126       -0.056010       -0.121716       -0.355403        0.355403        0.950000               0        0.633333        0.633333       -0.063333       -0.118468
+xi_p(-1)                   -0.697210       -0.697210       -0.622520       -0.399734        0.478402        1.438422       -2.091630        2.091630               0        0.750000               0               0               0       -0.697210
+epsilon_z                   0.541964        0.541964        0.380746        0.038027       -0.058957       -0.128123       -0.374108        0.374108        1.000000               0        0.666667        0.666667       -0.066667       -0.124703
+epsilon_p                  -0.929613       -0.929613       -0.830027       -0.532978        0.637870        1.917896       -2.788840        2.788840               0        1.000000               0               0               0       -0.929613
+epsilon_i                  -1.042830       -1.042830       -0.925661        0.992234        0.699012       -0.559307       -3.128491        3.128491               0               0               0               0               0       -1.042830
+
+
+THEORETICAL MOMENTS
+VARIABLE         MEAN  STD. DEV.   VARIANCE
+y              0.0000     0.0202     0.0004
+c              0.0000     0.0202     0.0004
+m              0.0000     0.0147     0.0002
+r              0.0000     0.0018     0.0000
+int            0.0000     0.0038     0.0000
+pii            0.0000     0.0027     0.0000
+mc             0.0000     0.0048     0.0000
+x              0.0000     0.0048     0.0000
+xi_z           0.0000     0.0320     0.0010
+xi_p           0.0000     0.0000     0.0000
+yn             0.0000     0.0214     0.0005
+cn             0.0000     0.0214     0.0005
+rn             0.0000     0.0021     0.0000
+ygap           0.0000     0.0016     0.0000
+
+
+
+VARIANCE DECOMPOSITION (in percent)
+        epsilon_z  epsilon_p  epsilon_i
+y          100.00       0.00       0.00
+c          100.00       0.00       0.00
+m          100.00       0.00       0.00
+r          100.00       0.00       0.00
+int        100.00       0.00       0.00
+pii        100.00       0.00       0.00
+mc         100.00       0.00       0.00
+x          100.00       0.00       0.00
+xi_z       100.00       0.00       0.00
+xi_p          NaN        NaN        NaN
+yn         100.00       0.00       0.00
+cn         100.00       0.00       0.00
+rn         100.00       0.00       0.00
+ygap       100.00       0.00       0.00
+
+
+
+MATRIX OF CORRELATIONS
+Variables          y        c        m        r      int      pii       mc        x     xi_z       yn       cn       rn     ygap
+y             1.0000   1.0000   0.9999  -0.8444  -0.9907  -0.9632  -0.7065   0.7065   0.9986   0.9986   0.9986  -0.9986  -0.7065
+c             1.0000   1.0000   0.9999  -0.8444  -0.9907  -0.9632  -0.7065   0.7065   0.9986   0.9986   0.9986  -0.9986  -0.7065
+m             0.9999   0.9999   1.0000  -0.8506  -0.9922  -0.9600  -0.6982   0.6982   0.9979   0.9979   0.9979  -0.9979  -0.6982
+r            -0.8444  -0.8444  -0.8506   1.0000   0.9094   0.6694   0.2175  -0.2175  -0.8146  -0.8146  -0.8146   0.8146   0.2175
+int          -0.9907  -0.9907  -0.9922   0.9094   1.0000   0.9177   0.6037  -0.6037  -0.9820  -0.9820  -0.9820   0.9820   0.6037
+pii          -0.9632  -0.9632  -0.9600   0.6694   0.9177   1.0000   0.8707  -0.8707  -0.9762  -0.9762  -0.9762   0.9762   0.8707
+mc           -0.7065  -0.7065  -0.6982   0.2175   0.6037   0.8707   1.0000  -1.0000  -0.7433  -0.7433  -0.7433   0.7433   1.0000
+x             0.7065   0.7065   0.6982  -0.2175  -0.6037  -0.8707  -1.0000   1.0000   0.7433   0.7433   0.7433  -0.7433  -1.0000
+xi_z          0.9986   0.9986   0.9979  -0.8146  -0.9820  -0.9762  -0.7433   0.7433   1.0000   1.0000   1.0000  -1.0000  -0.7433
+yn            0.9986   0.9986   0.9979  -0.8146  -0.9820  -0.9762  -0.7433   0.7433   1.0000   1.0000   1.0000  -1.0000  -0.7433
+cn            0.9986   0.9986   0.9979  -0.8146  -0.9820  -0.9762  -0.7433   0.7433   1.0000   1.0000   1.0000  -1.0000  -0.7433
+rn           -0.9986  -0.9986  -0.9979   0.8146   0.9820   0.9762   0.7433  -0.7433  -1.0000  -1.0000  -1.0000   1.0000   0.7433
+ygap         -0.7065  -0.7065  -0.6982   0.2175   0.6037   0.8707   1.0000  -1.0000  -0.7433  -0.7433  -0.7433   0.7433   1.0000
+
+
+
+COEFFICIENTS OF AUTOCORRELATION
+Order          1       2       3       4       5
+y         0.9630  0.9216  0.8791  0.8370  0.7962
+c         0.9630  0.9216  0.8791  0.8370  0.7962
+m         0.9655  0.9253  0.8833  0.8414  0.8005
+r         0.9324  0.8765  0.8279  0.7839  0.7434
+int       0.9841  0.9528  0.9145  0.8737  0.8326
+pii       0.8737  0.7900  0.7295  0.6820  0.6422
+mc        0.6273  0.4267  0.3167  0.2544  0.2173
+x         0.6273  0.4267  0.3167  0.2544  0.2173
+xi_z      0.9500  0.9025  0.8574  0.8145  0.7738
+yn        0.9500  0.9025  0.8574  0.8145  0.7738
+cn        0.9500  0.9025  0.8574  0.8145  0.7738
+rn        0.9500  0.9025  0.8574  0.8145  0.7738
+ygap      0.6273  0.4267  0.3167  0.2544  0.2173
+Total computing time : 0h00m02s

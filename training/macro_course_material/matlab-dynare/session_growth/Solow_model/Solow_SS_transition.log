@@ -1,0 +1,33 @@
+Starting Dynare (version 4.5.6).
+Starting preprocessing of the model file ...
+Found 11 equation(s).
+Evaluating expressions...done
+Computing static model derivatives:
+ - order 1
+Computing dynamic model derivatives:
+ - order 1
+Processing outputs ...
+done
+Preprocessing completed.
+
+
+
+
+Residuals of the static equations:
+
+Equation number 1 : 0 : Law of motion capital
+Equation number 2 : 0 : resource constraint
+Equation number 3 : 0 : behavioral rule savings
+Equation number 4 : 0 : production function
+Equation number 5 : 0 : Definition log output
+Equation number 6 : 0 : Definition log consumption
+Equation number 7 : 0 : Definition log investment
+Equation number 8 : 0 : Definition capital decided upon today
+Equation number 9 : 0 : Definition capital growth rate between today and tomorrow 
+Equation number 10 : 0 : Definition capital per capita growth rate between today and tomorrow
+Equation number 11 : 0 : Definition aggregate capital growth rate between today and tomorrow
+
+
+Perfect foresight solution found.
+
+Total computing time : 0h01m01s
