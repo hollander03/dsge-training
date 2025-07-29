@@ -10,8 +10,8 @@ Repository for training material and capacity building on Modern Macroeconomic T
 - We will aim to include as much practical training so that we can have you all engage. 
 - Prescribed resources should therefore be familiarised with before contact sessions --- i.e., watch tutorial videos and read through prescribed slides & notes so that we focus on challenges and practical aspects.
 - So look to prepare questions on what you struggled with, the insights/revelations that you experienced, and the critiques that you may have on the underlying assumptions/presuppositions.
-- It may be useful for the **participants** to post these remarks online via a [Slack Channel](https://slack.com/) *(to be confirmed)*.
-- If the content is not all covered within the designated session, the **participants** should post questions on the [Slack Channel](https://slack.com/) *before the following contact session* *(to be confirmed)*.
+- It may be useful for the **participants** to post these remarks online via a [Slack Channel](https://slack.com/) (the `National Treasure` workspace in Slack).
+- If the content is not all covered within the designated session, the **participants** should post questions on the [Slack Channel](https://slack.com/) *before the following contact session*.
 - We will look to split Q&A sessions into 1 hour of recap and engagement (Q&A), and 1 hour of practical work (e.g., run the code, interpret, adjust). 
 
 ## Resources
@@ -23,7 +23,7 @@ Repository for training material and capacity building on Modern Macroeconomic T
 ## Schedule
 ### DSGE training and tutorial sessions
 
-Below follows the high-level outline. See the ``2024 DSGE Training Schedule.docx`` (or [Google Sheets](https://docs.google.com/spreadsheets/d/13zqYkf0Z0ncbDcjvZigb51Z2zR6nLJpCXLYeAWW-1cs/edit?usp=sharing)) in `admin` folder for more details.
+Below follows the high-level outline. See the ``2025 DSGE Training Schedule`` ([Google Sheets](https://docs.google.com/spreadsheets/d/1rM07nKc1pZM4wYUtGbaFP4UbdtLBaR_5WURb-unP_TA/edit?usp=sharing)) in `admin` folder for more details. 
 
 - **[Block 1]** Introduction to DSGE models and Dynare
 1. Slack, GitHub, & Matlab/Octave installation – with Dynare (0.5 session)
