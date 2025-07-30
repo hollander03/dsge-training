@@ -10,3 +10,4 @@ The `other` folder contains:
 - A practical tutorial (akin to the one in the training resources).
 - A description of Dynare's graph outputs
 - A guide to deal with observation equations for estimation
+- A guide on installing and configuring Dynare for Octave (a free MATLAB-alternative)
