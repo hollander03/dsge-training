@@ -18,7 +18,7 @@ Finding the optimal block decomposition of the dynamic model...
   the largest simultaneous block has 6 equation(s)
                                  and 6 feedback variable(s).
 Preprocessing completed.
-Preprocessing time: 0h00m00s.
+Preprocessing time: 0h00m01s.
 
 STEADY-STATE RESULTS:
 
@@ -92,4 +92,4 @@ v           0.8366  0.6782  0.5231  0.4549  0.3764
 k           0.9920  0.9818  0.9675  0.9508  0.9324
 r           0.8775  0.7593  0.6485  0.6048  0.5520
 z           0.8820  0.7690  0.6571  0.6036  0.5428
-Total computing time : 0h00m02s
+Total computing time : 0h00m06s

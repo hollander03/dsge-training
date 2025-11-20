@@ -365,9 +365,6 @@ end
 figure
 plot([101:200], y_sim(:,101:200))
 hold off
-write_latex_parameter_table;
-write_latex_definitions;
-collect_latex_files;
 
 
 oo_.time = toc(tic0);
