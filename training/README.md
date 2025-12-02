@@ -2,7 +2,9 @@
 
 [`Overview`](#overview) | [`Resources`](#resources) | [`Schedule`](#schedule) | [`Tutorials`](#tutorials) |
 
-Repository for training material and capacity building on Modern Macroeconomic Theory and Computational Methods for Macroeconomics
+Repository for training material and capacity building on Modern Macroeconomic Theory and Computational Methods for Macroeconomics. 
+
+The user guide can be found in the [`ntdsge/0.user_guide` sub-directory](https://github.com/hollander03/dsge-training/tree/main/ntdsge/0.user_guide).
 
 ## Overview
 - Session blocks under [`Schedule`](#schedule) indicate Sections by bullet numbering. 1 Session = 2 Hours. 
