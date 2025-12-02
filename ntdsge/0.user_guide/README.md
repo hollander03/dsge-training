@@ -1,6 +1,6 @@
 # DSGE User Guide
 
-This folder contains the user guide, the Dynare Manual, and additional resources to understand and implement DSGE models in Dynare.
+This folder contains the user guide, the Dynare Manual, and additional resources to understand and implement DSGE models in Dynare. The most up-to-date user guide verison will be maintained in this (google doc)[https://docs.google.com/document/d/1mAzQPIP47KYYNsGOvcBHuVgZHptjEdJH/edit]. Please check before downloading. Anyone with the link can comment.
 
 *Note:* beginners for DSGE training can skip to page 5 of the user guide where the document begins with instructions on how to install the DYNARE software. You can alternatively start reading the Dynare Manual (this is more comprehensive).
 
