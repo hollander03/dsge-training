@@ -18,7 +18,7 @@ The user guide can be found in the [`ntdsge/0.user_guide`](https://github.com/ho
 
 ## Resources
 - Our sessions will follow closely to the [DYNARE TUTORIALS by Willi Mutschler](https://mutschler.eu/dynare/)
-- With supplementary material on [MACROECONOMIC THEORY by Sang Seok Lee](https://sites.google.com/site/ssleeeconomist/teaching/506?authuser=0)
+- See also supplementary material on [MACROECONOMIC THEORY by Sang Seok Lee](https://sites.google.com/site/ssleeeconomist/teaching/506?authuser=0)
 - This [HANDBOOK OF MACROECONOMICS (CHAPTER 9)](https://www.sas.upenn.edu/~jesusfv/FVRS_Handbook.pdf) provides an overview of solution and estimation techniques for DSGE models. The authors cover the foundations of numerical approximation techniques as well as statistical inference and they survey the latest developments in the field. It is a challenging text and thus your benchmark to aim for.
 - See also the `readers` folder (there is a huge amount of literature, so we've tried to be as focused as possible on the DSGE and empirical topics identified). We will add more to supplement the above core resources.
 
@@ -52,4 +52,5 @@ Above includes: Practical DSGE and empirical sessions [`Tutorials`](#tutorials).
 
 ## Tutorials
 
-Resources for practical tutorials can be found in ~/training/ntdsge_content.
+- Resources for practical tutorials can be found in [~/training/macro_course_material](https://github.com/hollander03/dsge-training/tree/main/training/macro_course_material) and [~/training/ntdsge_content](https://github.com/hollander03/dsge-training/tree/main/training/ntdsge_content). 
+- The NT-DSGE team is also developing additional **fiscal-policy-focused** `Dynare training exercises` based on Ljungqvist & Sargent in a seperate repo [Practicing-Dynare-NT](https://github.com/hollander03/Practicing-Dynare-NT). These small-scale "toy models" are designed for researchers, graduate students, and policymakers who want hands-on practice implementing fiscal instruments (taxes, government spending, anticipated vs. unanticipated policy) in simple DSGE/RBC environments.
