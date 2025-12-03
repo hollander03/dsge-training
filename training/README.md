@@ -52,5 +52,5 @@ Above includes: Practical DSGE and empirical sessions [`Tutorials`](#tutorials).
 
 ## Tutorials
 
-- Resources for practical tutorials can be found in [~/training/macro_course_material](training/macro_course_material) and [~/training/ntdsge_content](https://github.com/hollander03/dsge-training/tree/main/training/ntdsge_content). 
+- Resources for practical tutorials can be found in [~/training/macro_course_material](https://github.com/hollander03/dsge-training/tree/main/training/macro_course_material) and [~/training/ntdsge_content](https://github.com/hollander03/dsge-training/tree/main/training/ntdsge_content). 
 - The NT-DSGE team is also developing additional **fiscal-policy-focused** `Dynare training exercises` based on Ljungqvist & Sargent in a seperate repo [Practicing-Dynare-NT](https://github.com/hollander03/Practicing-Dynare-NT). These small-scale "toy models" are designed for researchers, graduate students, and policymakers who want hands-on practice implementing fiscal instruments (taxes, government spending, anticipated vs. unanticipated policy) in simple DSGE/RBC environments.
