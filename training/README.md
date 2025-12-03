@@ -53,4 +53,4 @@ Above includes: Practical DSGE and empirical sessions [`Tutorials`](#tutorials).
 
 ## Tutorials
 
-Resources for practical tutorials can be found in ~/training/ntdsge_content.
+Resources for practical tutorials can be found in [~/training/ntdsge_content](https://github.com/hollander03/dsge-training/tree/main/training/ntdsge_content).
