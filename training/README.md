@@ -18,7 +18,7 @@ The user guide can be found in the [`ntdsge/0.user_guide`](https://github.com/ho
 
 ## Resources
 - Our sessions will follow closely to the [DYNARE TUTORIALS by Willi Mutschler](https://mutschler.eu/dynare/)
-- The NT-DSGE team is also developing additional **fiscal-policy-focused** training exercises based on Ljungqvist & Sargent in a seperate repo [Practicing-Dynare-NT](https://github.com/hollander03/Practicing-Dynare-NT)
+- The NT-DSGE team is also developing additional **fiscal-policy-focused** `Dynare training exercises` based on Ljungqvist & Sargent in a seperate repo [Practicing-Dynare-NT](https://github.com/hollander03/Practicing-Dynare-NT). These small-scale "toy models" are designed for researchers, graduate students, and policymakers who want hands-on practice implementing fiscal instruments (taxes, government spending, anticipated vs. unanticipated policy) in simple DSGE/RBC environments.
 - See also supplementary material on [MACROECONOMIC THEORY by Sang Seok Lee](https://sites.google.com/site/ssleeeconomist/teaching/506?authuser=0)
 - This [HANDBOOK OF MACROECONOMICS (CHAPTER 9)](https://www.sas.upenn.edu/~jesusfv/FVRS_Handbook.pdf) provides an overview of solution and estimation techniques for DSGE models. The authors cover the foundations of numerical approximation techniques as well as statistical inference and they survey the latest developments in the field. It is a challenging text and thus your benchmark to aim for.
 - See also the `readers` folder (there is a huge amount of literature, so we've tried to be as focused as possible on the DSGE and empirical topics identified). We will add more to supplement the above core resources.
