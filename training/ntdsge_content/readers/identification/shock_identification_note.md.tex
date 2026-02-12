@@ -1,0 +1,101 @@
+Title: More Structural Shocks than Observables in DSGE Estimation
+Author: H. Hollander (notes compiled with AI assistance)
+Purpose: Short technical note for reference and pedagogy (DSGE training)
+
+1. State-space representation (why “counting shocks vs observables” is misleading)
+A linear(ized) DSGE solution can be written in state-space form:
+
+  Transition (states):
+    x_t = F(θ) x_{t-1} + G(θ) ε_t,      ε_t ~ N(0, Q)
+
+  Measurement (observables):
+    y_t = H(θ) x_t + u_t,              u_t ~ N(0, R)
+
+where x_t is a vector of latent states (not directly observed), y_t are observed data, and ε_t are structural shocks.
+Shocks affect observables indirectly through the latent state vector and the model’s propagation mechanism.
+
+Key references:
+- An & Schorfheide (2007, JEDC)
+- Herbst & Schorfheide (2015, book)
+- Durbin & Koopman (2012, book)
+- Smets & Wouters (2007, AER)
+
+2. The Kalman filter and the likelihood (the key mathematical point)
+The likelihood of the observables integrates out (marginalizes over) latent states:
+
+  p(y_{1:T} | θ) = ∫ p(y_{1:T}, x_{1:T} | θ) dx_{1:T}
+                 = ∫ [ Π_{t=1}^T p(y_t | x_t, θ) ] p(x_{1:T} | θ) dx_{1:T}
+
+Under Gaussian assumptions, the Kalman filter computes this likelihood recursively via prediction errors:
+
+  log L(θ) = Σ_{t=1}^T [ -½ log |S_t| - ½ ν_t' S_t^{-1} ν_t ] + constant
+
+where:
+- ν_t = y_t − E[y_t | y_{1:t−1}] is the one-step-ahead forecast error
+- S_t = Var(ν_t | y_{1:t−1}) is the forecast error variance
+
+Crucially, this does not require a one-to-one mapping between shocks and observables. Identification comes from the full
+dynamic structure (propagation through F), cross-equation restrictions, and shock-specific loadings through G and H.
+
+Key references:
+- Durbin & Koopman (2012)
+- Hamilton (1994, Ch. 13)
+- An & Schorfheide (2007)
+
+Useful explainers (accessible):
+- Wikipedia (Kalman filter): https://en.wikipedia.org/wiki/Kalman_filter
+- Durbin & Koopman (2012) is the standard state-space reference (book).
+- An & Schorfheide (2007) is a widely-cited DSGE state-space primer in JEDC.
+
+3. Why medium-scale NK models can sustain many shocks
+In medium-scale NK DSGE models (e.g., Smets & Wouters 2007), shocks enter different structural blocks (Euler equations,
+Phillips curves, capital accumulation, policy rules). Even if multiple shocks affect the same observable, they typically do so
+with distinct persistence and propagation, producing distinguishable impulse responses (IRFs) and cross-covariances.
+
+Reference:
+- Smets & Wouters (2007, AER)
+
+4. When “too many shocks” becomes a problem
+Difficulties arise when:
+(a) Shocks are observationally equivalent (similar equation entry + similar persistence + similar propagation), leading to weak identification.
+(b) Shocks absorb structural misspecification, potentially distorting structural parameters and implied mechanisms.
+(c) Many highly persistent shocks become collinear, increasing prior sensitivity and “variance swapping” across shocks.
+
+References:
+- Den Haan & Drechsel (2021, JME) on misspecification of structural disturbances and how flexible disturbances reveal it.
+- Cúrdia & Reis (2012, JME) on correlated disturbances and implications for inference.
+
+5. Identification criterion (what matters, formally)
+The relevant condition is NOT:
+  #shocks ≤ #observables
+
+Instead, identification depends on rank / local invertibility conditions: whether the mapping from structural parameters
+(and shock process parameters) into the likelihood-implied moments (or the state-space likelihood itself) is locally one-to-one.
+Practically: distinct dynamic responses and cross-equation restrictions must pin down parameters and shock processes.
+
+Reference:
+- Iskrev (2010, JME) on local identification in DSGE models
+
+6. Post-2008 financial-friction models (why shock counts rose, and what to watch)
+Post-2008 DSGE models typically add financial wedges/shocks: risk premia, credit spreads, intermediation constraints,
+capital quality/valuation, liquidity, and occasionally housing or collateral constraints. These shocks are often needed to match
+spread dynamics, investment/credit comovement, and policy transmission. But added flexibility increases the risk that shocks
+mimic each other or mask misspecification.
+
+Good practice in these environments:
+- Report variance decompositions and IRFs; check that key shocks imply economically interpretable dynamics.
+- Use identification diagnostics (e.g., Iskrev-style / Dynare Identification Toolbox).
+- Consider tests/robustness for shock specification and correlation (cf. Den Haan & Drechsel 2021; Cúrdia & Reis 2012).
+
+Representative references:
+- Bernanke, Gertler & Gilchrist (1999, QJE)
+- Iacoviello (2005, AER)
+- Gerali et al. (2010, JMCB)
+- Gertler & Karadi (2011, JME)
+- Christiano, Motto & Rostagno (2014, AER)
+
+Summary
+More shocks than observables is not inherently problematic in DSGE estimation. The Kalman filter computes the likelihood by
+integrating over latent states, and identification comes from dynamic structure and cross-equation restrictions. Problems arise
+when shocks are observationally equivalent or absorb misspecification—risks that are especially relevant in post-2008 macro-
+financial models.

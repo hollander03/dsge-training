@@ -1,0 +1,167 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{natbib}
+\usepackage{hyperref}
+
+\geometry{margin=1in}
+
+\title{More Structural Shocks than Observables in DSGE Estimation: A Short Technical Note}
+\author{H. Hollander}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{State-Space Representation}
+
+A linear(ized) DSGE model can be written in state-space form:
+\begin{align}
+x_t &= F(\theta)\, x_{t-1} + G(\theta)\, \varepsilon_t, 
+& \varepsilon_t \sim \mathcal{N}(0,Q), \label{eq:transition}\\
+y_t &= H(\theta)\, x_t + u_t,
+& u_t \sim \mathcal{N}(0,R), \label{eq:measurement}
+\end{align}
+where $x_t$ is a vector of latent states, $y_t$ are observables, and $\varepsilon_t$ are structural shocks.
+Shocks affect observables indirectly through the state vector and the model's propagation mechanism; thus counting
+arguments based on the number of shocks and observables are not, by themselves, decisive. See \citet{an2007},
+\citet{herbst2015}, \citet{durbin2012}.
+
+\section{The Kalman Filter and the Likelihood}
+
+The likelihood integrates out the latent state path:
+\begin{align}
+p(y_{1:T}\mid \theta)
+&= \int p(y_{1:T},x_{1:T}\mid \theta)\, dx_{1:T} \nonumber\\
+&= \int \left[\prod_{t=1}^T p(y_t\mid x_t,\theta)\right] p(x_{1:T}\mid \theta)\, dx_{1:T}. \label{eq:likelihood_integral}
+\end{align}
+Under Gaussian assumptions, the Kalman filter yields the prediction-error decomposition:
+\begin{equation}
+\log L(\theta)
+= \sum_{t=1}^{T} \left[
+-\frac{1}{2}\log|S_t|
+-\frac{1}{2}\nu_t' S_t^{-1}\nu_t
+\right] + \text{constant}, \label{eq:kalman_ll}
+\end{equation}
+where $\nu_t = y_t - \mathbb{E}[y_t \mid y_{1:t-1}]$ is the one-step-ahead forecast error and
+$S_t = \text{Var}(\nu_t \mid y_{1:t-1})$ its variance. This formulation makes clear that the likelihood is well-defined without a
+one-to-one mapping from shocks to observables; identification instead relies on the model's dynamic structure and
+cross-equation restrictions. See \citet{durbin2012}, \citet{hamilton1994}, \citet{an2007}.
+
+\paragraph{Useful explainers.}
+Wikipedia (Kalman filter): \url{https://en.wikipedia.org/wiki/Kalman_filter}.
+Standard technical references: \citet{durbin2012} and \citet{hamilton1994}. A DSGE-focused state-space primer is \citet{an2007}.
+
+\section{Why Medium-Scale NK Models Can Sustain Many Shocks}
+
+In medium-scale NK models (e.g., \citealt{smets2007}), different shocks enter different blocks of the model (Euler equations,
+Phillips curves, capital accumulation, policy rules) and propagate through common state dynamics. Identification typically
+derives from distinct persistence and distinct dynamic responses (IRFs) across observables.
+
+\section{When ``Too Many Shocks'' Becomes a Problem}
+
+Difficulties arise when shocks are observationally equivalent (similar entry points, similar persistence, similar propagation),
+leading to weak identification and ``variance swapping.'' A separate concern is that shock flexibility may absorb structural
+misspecification and distort inference about structural parameters. See \citet{denhaan2021asd}. Correlated or dynamically
+interacting disturbances can also matter empirically; see \citet{curdia2012}.
+
+\section{Identification Criterion}
+
+The relevant condition is not:
+\begin{equation}
+\#\text{shocks} \le \#\text{observables}.
+\end{equation}
+Instead, identification depends on rank / local invertibility conditions: whether the mapping from structural parameters (and
+shock process parameters) into the likelihood-implied moments (or directly into the state-space likelihood) is locally one-to-one.
+See \citet{iskrev2010} for a formal treatment of local identification in DSGE models.
+
+\section{Post-2008 Financial-Friction Models}
+
+Post-2008 DSGE models commonly add financial wedges/shocks (risk premia, credit spreads, intermediation constraints,
+capital quality/valuation, liquidity, and sometimes housing/collateral constraints) to match spread dynamics and macro-financial
+comovement. This added flexibility can improve empirical fit but increases the risk of observational equivalence among shocks
+and of absorbing misspecification. Good practice includes reporting variance decompositions and IRFs, checking identification
+diagnostics, and testing shock specifications (cf. \citealt{denhaan2021asd}; \citealt{curdia2012}).
+
+Representative references include \citet{bgg1999}, \citet{iacoviello2005}, \citet{gerali2010}, \citet{gertlerkaradi2011},
+\citet{christiano2014}.
+
+\section*{Conclusion}
+
+More shocks than observables is not inherently problematic in DSGE estimation. The likelihood is computed by integrating
+over latent states, and identification comes from dynamic structure and cross-equation restrictions. Problems arise when shocks
+generate indistinguishable dynamics or absorb misspecification---risks that are especially salient in macro-financial models.
+
+\bibliographystyle{apalike}
+\begin{thebibliography}{}
+
+\bibitem[An and Schorfheide(2007)]{an2007}
+An, S. and Schorfheide, F. (2007).
+Bayesian analysis of DSGE models.
+\textit{Journal of Economic Dynamics and Control}.
+
+\bibitem[Bernanke et al.(1999)]{bgg1999}
+Bernanke, B., Gertler, M., and Gilchrist, S. (1999).
+The financial accelerator in a quantitative business cycle framework.
+\textit{Quarterly Journal of Economics}.
+
+\bibitem[Christiano et al.(2014)]{christiano2014}
+Christiano, L., Motto, R., and Rostagno, M. (2014).
+Risk shocks.
+\textit{American Economic Review}.
+
+\bibitem[Cúrdia and Reis(2012)]{curdia2012}
+Cúrdia, V. and Reis, R. (2012).
+Correlated disturbances and {U.S.} business cycles.
+\textit{Journal of Monetary Economics}.
+
+\bibitem[Den Haan and Drechsel(2021)]{denhaan2021asd}
+Den Haan, W. and Drechsel, T. (2021).
+Agnostic structural disturbances (ASDs): Detecting and reducing misspecification in empirical macroeconomic models.
+\textit{Journal of Monetary Economics}.
+
+\bibitem[Durbin and Koopman(2012)]{durbin2012}
+Durbin, J. and Koopman, S. (2012).
+\textit{Time Series Analysis by State Space Methods}.
+Oxford University Press.
+
+\bibitem[Gerali et al.(2010)]{gerali2010}
+Gerali, A., Neri, S., Sessa, L., and Signoretti, F. (2010).
+Credit and banking in a DSGE model of the euro area.
+\textit{Journal of Money, Credit and Banking}.
+
+\bibitem[Gertler and Karadi(2011)]{gertlerkaradi2011}
+Gertler, M. and Karadi, P. (2011).
+A model of unconventional monetary policy.
+\textit{Journal of Monetary Economics}.
+
+\bibitem[Hamilton(1994)]{hamilton1994}
+Hamilton, J. (1994).
+\textit{Time Series Analysis}.
+Princeton University Press.
+
+\bibitem[Herbst and Schorfheide(2015)]{herbst2015}
+Herbst, E. and Schorfheide, F. (2015).
+\textit{Bayesian Estimation of DSGE Models}.
+Princeton University Press.
+
+\bibitem[Iacoviello(2005)]{iacoviello2005}
+Iacoviello, M. (2005).
+House prices, borrowing constraints, and monetary policy in the business cycle.
+\textit{American Economic Review}.
+
+\bibitem[Iskrev(2010)]{iskrev2010}
+Iskrev, N. (2010).
+Local identification in DSGE models.
+\textit{Journal of Monetary Economics}.
+
+\bibitem[Smets and Wouters(2007)]{smets2007}
+Smets, F. and Wouters, R. (2007).
+Shocks and frictions in U.S. business cycles: A Bayesian DSGE approach.
+\textit{American Economic Review}.
+
+\end{thebibliography}
+
+\end{document}
