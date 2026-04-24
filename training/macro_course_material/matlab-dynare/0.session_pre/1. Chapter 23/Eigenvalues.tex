@@ -1,0 +1,701 @@
+\PassOptionsToPackage{dvipsnames}{xcolor}
+%\documentclass[12pt]{beamer}
+%\documentclass[10pt]{beamer}
+\documentclass[10pt, handout]{beamer}
+
+\usepackage{mathtools} %% previously \usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb} % http://www.ctan.org/tex-archive/macros/latex/required/psnfss/psnfss2e.pdf
+%\usepackage[official]{eurosym}
+\usepackage{helvet}
+\usepackage{natbib}
+\usepackage{lscape, longtable, array, booktabs, multirow, tabularx, graphics, epstopdf}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage {tikz}
+
+\usefonttheme[onlymath]{serif}
+
+\usepackage{accents}
+\newcommand*{\dt}[1]{%
+   \accentset{\mbox{\LARGE $.$}}{#1}}
+
+%\usepackage[T1]{fontenc}
+
+\usetheme{Boadilla}
+%\usecolortheme{dolphin}
+%\useoutertheme{infolines}
+\definecolor{dollarbill}{rgb}{0.52, 0.73, 0.4}
+%\setbeamercovered{transparent}% Dim out "inactive" elements
+\setbeamercovered{invisible}% Default
+\beamertemplatenavigationsymbolsempty
+\setbeamerfont{page number in head/foot}{size=\scriptsize}
+\setbeamertemplate{footline}[frame number]
+
+
+\usepackage{hyperref} 
+\hypersetup{colorlinks=true}
+%\hypersetup{linkcolor=RoyalBlue, urlcolor=ForestGreen, citecolor=Magenta}
+\hypersetup{allcolors=RoyalBlue} %% 
+
+%\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+
+\DeclareMathOperator*{\argmax}{argmax} % thin space, limits underneath in displays
+
+
+\title[Eigenvalues \& Eigenvectors]{Eigenvalues \& Eigenvectors}
+\vskip 0.1in
+
+\subtitle{Mathematical Methods for Economics (771)}
+%\author[H Hollander]{Hylton Hollander}
+
+\institute[Stellenbosch University]{\large{
+Stellenbosch University}}
+
+
+%\date[April, 2020]{April, 2020}
+
+\date{}
+
+\begin{document}
+
+
+\frame{\titlepage}
+
+\frame{\frametitle{Contents:} \tableofcontents}
+
+
+\section{Readings}
+
+\frame{
+    \frametitle{Readings} \vskip 0.1in
+
+
+\begin{itemize}
+\item Simon \& Blume, Chapter 23.1-23.3, 23.6-23.7 (recommended self-study 23.8-23.9) \vskip0.1in
+
+\item Additional: \href{https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab}{3Blue1Brown}
+
+\end{itemize}
+
+}
+
+
+
+\section{Review of Linear Independence (Chapter 11)}
+
+
+\subsection{Linear combinations and span}
+
+\begin{frame}
+\frametitle{Linear combinations and span} \vskip 0.1in
+
+The set of all scalar multiplies of a nonzero vector $\mathbf{v}$ is a straight line through the origin. \\ \vskip0.1in
+
+Formally, we denote this set by:
+\begin{equation}
+\mathcal{L}[\mathbf{v}] \equiv \{ r. \mathbf{v} : r \in \mathbf{R} \} ~,
+\end{equation}
+and call it the line \textit{generated} or \textit{spanned} by  $\mathbf{v}$.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{line-span.png}
+\caption{The line $\mathcal{L}$ spanned by vector $\mathbf{v}$}
+\end{figure}
+
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Linear combinations and span} \vskip 0.1in
+
+The set spanned by two nonzero vectors $\mathbf{v_1}$ and $\mathbf{v_2}$ is given by:
+
+\begin{equation}
+\mathcal{L}[\mathbf{v_1},\mathbf{v_2}] \equiv  \{ r_1. \mathbf{v_1} + r_2. \mathbf{v_2} : r_1 , r_2 \in \mathbf{R} \} ~,
+\end{equation}
+If $\mathbf{v_1}$ is a multiple of $\mathbf{v_2}$, or vice versa, we say $\mathbf{v_1}$ and $\mathbf{v_2}$ are \textbf{linearly dependent}. Otherwise, we say that $\mathbf{v_1}$ and $\mathbf{v_2}$ are \textbf{linearly \textit{in}dependent}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{line-multi.png}
+\caption{If $\mathbf{v_1}$ is a multiple of $\mathbf{v_2}$, then $\mathcal{L}[\mathbf{v_1},\mathbf{v_2}] = \mathcal{L}[\mathbf{v_2}]$ is simply a line spanned by $\mathbf{v_2}$.}
+\end{figure}
+
+ 
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Linear combinations and span} \vskip 0.1in
+
+%Otherwise, we say that $\mathbf{v_1}$ and $\mathbf{v_2}$ are \textbf{linearly \textit{in}dependent}.  \\ \vskip0.1in
+
+That is, given the linear combination of two nonzero vectors $\mathbf{v_1}$ and $\mathbf{v_2}$, $c_{1}\mathbf{v_1} + c_{2}\mathbf{v_2} = 0$, we say $\mathbf{v_1}$ and $\mathbf{v_2}$ are:
+\begin{itemize}
+\item \textbf{linearly dependent} if $c_1$ or $c_2$ nonzero ($\mathcal{L}[\cdot]$ is a line);
+\item \textbf{linearly \textit{in}dependent} if $c_1 = c_2 = 0$ ($\mathcal{L}[\cdot]$ is a plane).
+\end{itemize}
+\begin{definition}
+Vectors $\mathbf{v_1}, \mathbf{v_2}, \ldots , \mathbf{v_k}$ in $\mathbf{R^n}$ are \textbf{linearly dependent} if and only if there exists scalars $c_1, c_2, \ldots, c_k$,\textit{ not all zero}, such that $$ c_1\mathbf{v_1} + c_2\mathbf{v_2} + \ldots + c_k\mathbf{v_k} = 0$$
+Vectors $\mathbf{v_1}, \mathbf{v_2}, \ldots , \mathbf{v_k}$ in $\mathbf{R^n}$ are \textbf{linearly independent} if and only if $c_1\mathbf{v_1} + c_2\mathbf{v_2} + \ldots + c_k\mathbf{v_k} = 0$ for scalars $c_1, \ldots, c_k$ implies that $c_1 = \cdots = c_k = 0$.
+\end{definition}
+
+\end{frame}
+
+
+
+\begin{frame}
+%\frametitle{Linear combinations and span} \vskip 0.1in
+
+\begin{theorem}[11.1]
+Vectors $\mathbf{v_1}, \mathbf{v_2}, \ldots , \mathbf{v_{\color{red}k}}$ in $\mathbf{R^{\color{Green}n}}$ are \textbf{linearly dependent} if and only if the linear system $$ A \begin{pmatrix} c_1 \\ \vdots \\ c_{\color{red}k} \end{pmatrix} = 0 $$
+has a nonzero solution ($c_1, c_2, \ldots, c_{\color{red}k}$), where A is the ${\color{Green}n} \times {\color{red}k}$ matrix whose columns are the vectors $\mathbf{v_1}, \ldots , \mathbf{v_{\color{red}k}}$ under study: 
+$$A = \begin{pmatrix} \mathbf{v_1} & \mathbf{v_2} & \cdots & \mathbf{v_{\color{red}k}} \end{pmatrix} ~.$$
+\end{theorem}
+
+\begin{theorem}[11.2, case $k = n$]
+A set of $n$ vectors $\mathbf{v_1},  \ldots , \mathbf{v_n}$ in $\mathbf{R^n}$ are \textbf{linearly independent} if and only if $$\det{A} = \det \begin{pmatrix} \mathbf{v_1} & \mathbf{v_2} & \cdots & \mathbf{v_n} \end{pmatrix} \neq 0 ~.$$
+\end{theorem}
+%% uses the fact that a square matrix is nonsingular iff its determinant is not zero 
+\begin{theorem}[11.3, case $k > n$]
+If $k > n$, any set A set of $k$ vectors in $\mathbf{R^n}$ is \textbf{linearly dependent}.
+\end{theorem}
+
+\end{frame}
+
+
+
+
+
+
+\subsection{Spanning sets}
+
+\begin{frame}
+\frametitle{Spanning sets} \vskip 0.1in
+
+Recall that the set spanned by  $\mathbf{v_1}, \mathbf{v_2}, \ldots , \mathbf{v_{\color{red}k}}$ can be written as $$\mathcal{L}[ \mathbf{v_1}, \mathbf{v_2}, \ldots , \mathbf{v_{k}}] \equiv \{ c_1\mathbf{v_1} + c_2\mathbf{v_2} + \ldots + c_k\mathbf{v_k} : c_1, c_2, \ldots, c_k \in \mathbf{R} \} ~.$$ \\ \vskip0.1in
+
+Suppose we are given a subset $V$ of $\mathbf{R^n}$. Then there exists
+$\mathbf{v_1}, \mathbf{v_2}, \ldots , \mathbf{v_{k}}$ in $\mathbf{R^n}$ such that every vector in $V$ can be written as a linear combination of $\mathbf{v_1}, \mathbf{v_2}, \ldots , \mathbf{v_{k}}$: $$V = \mathcal{L}[\mathbf{v_1}, \mathbf{v_2}, \ldots , \mathbf{v_{k}}] ~.$$
+That is, $\mathbf{v_1}, \mathbf{v_2}, \ldots , \mathbf{v_{k}}$ \textbf{span} $V$. 
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Spanning sets} \vskip 0.1in
+
+
+
+\begin{example}[11.4]
+The $x_{1}x_{2}$-plane in $\mathbf{R^3}$ is the span of the unit vectors $e_1 = (1, 0, 0)$ and $e_2 = (0, 1, 0)$, because any vector $(a,b,0)$ in this plane can be written as a linear combination of $e_1$ and $e_2$:
+$$ \begin{pmatrix} a \\ b \\ 0 \end{pmatrix} = a \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} + b \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} $$
+\end{example}
+
+\begin{theorem}[11.6]
+A set of $k$ vectors that spans $\mathbf{R^n}$ must contain at least $n$ vectors ($k \geq n$).
+\end{theorem}
+
+
+\end{frame}
+
+
+\subsection{Basis and dimension in $\mathbf{R^n}$}
+
+\begin{frame}
+\frametitle{Basis and dimension in $\mathbf{R^n}$} \vskip 0.1in
+
+It is clear from Theorem 11.6 that we can find a ``more efficient'' spanning set:
+
+\begin{definition}
+Let $\mathbf{v_1}, \ldots , \mathbf{v_k}$ be a fixed set of $k$ vectors in $\mathbf{R^n}$. Let $V$ be the set $\mathcal{L}[\mathbf{v_1}, \ldots , \mathbf{v_k}]$ spanned by $\mathbf{v_1}, \ldots , \mathbf{v_k}$. Then, $\mathbf{v_1}, \ldots , \mathbf{v_k}$ forms a \textbf{basis} of $V$ if:
+\begin{itemize}
+\item[(a)] $\mathbf{v_1}, \ldots , \mathbf{v_k}$ span $V$, and
+\item[(b)] $\mathbf{v_1}, \ldots , \mathbf{v_k}$ are linearly independent.
+\end{itemize} 
+\end{definition}
+
+
+\begin{example}[11.8]
+ The unit vectors $$e_1 = \begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix} , \ldots , e_n = \begin{pmatrix} 0 \\ 0 \\ \vdots \\ 1 \end{pmatrix} $$ form a basis of $\mathbf{R^n}$. Since this is such a natural basis, it is called the \textbf{canonical basis}.
+\end{example}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Basis and dimension in $\mathbf{R^n}$} \vskip 0.1in
+
+%It is clear from Theorem 11.6 that we can find a ``more efficient'' spanning set:
+\begin{theorem}[11.7]
+Every basis of $\mathbf{R^n}$ contains $n$ vectors.
+\end{theorem}
+
+\begin{theorem}[11.8]
+Let $\mathbf{v_1}, \ldots , \mathbf{v_n}$ be a collection of $n$ vectors in $\mathbf{R^n}$. Form the $n \times n$ matrix $A$ whose columns are these $\mathbf{v}_{j}$'s: $A = \begin{pmatrix} \mathbf{v_1} &  \mathbf{v_2} & \cdots & \mathbf{v_n} \end{pmatrix}$. 
+
+Then, the following statements are equivalent:
+\begin{itemize}
+\item[(a)] $\mathbf{v_1}, \ldots , \mathbf{v_n}$ are linearly independent,
+\item[(b)] $\mathbf{v_1}, \ldots , \mathbf{v_n}$ span $\mathbf{R^n}$,
+\item[(c)]  $\mathbf{v_1}, \ldots , \mathbf{v_n}$ form a basis of $\mathbf{R^n}$, and
+\item[(d)] the determinant of $A_{n \times n}$ is nonzero
+\end{itemize} 
+\end{theorem}
+
+The \textbf{dimension} of a vector space $V$ is the \# of vectors in any basis of V.
+
+\begin{itemize}
+\item[] Since every basis of $\mathbf{R^n}$ contains exactly $n$ vectors, there are $n$ independent directions in $\mathbf{R^n}$, and $\mathbf{R^n}$ is $n$-dimensional.
+\end{itemize} 
+
+\end{frame}
+
+
+\section{Eigenvalues and Eigenvectors (Chapter 23)}
+
+\subsection{Definitions}
+% Ch23.1
+\begin{frame}
+\frametitle{Chapter 23. Eigenvalues and Eigenvectors} \vskip 0.1in
+
+Eigenvalues (``characteristic values'') and eigenvectors of a square matrix summarize the essential properties of linear and nonlinear systems of equations:
+\begin{itemize}
+\item They are the components of explicit solutions to \textit{linear} dynamic models.
+\item The signs of eigenvalues determine the stability of equilibria in \textit{nonlinear} dynamic models, and the definiteness of a symmetric matrix.
+\item Important for economic optimization problems.
+\end{itemize}
+
+\end{frame}
+
+
+
+
+%\subsection{Definitions}
+% Ch23.1
+\begin{frame}
+\frametitle{Eigenvalues and Eigenvectors} \vskip 0.1in
+
+\begin{example}[See 23.1, 23.2, 23.3, \& 23.4., pp. 580-1]
+\end{example}
+
+\begin{definition}
+Let $A$ be a square matrix. An \textbf{eigenvalue} of A is a number $r$ which when subtracted from each of the  diagonal entries of $A$ converts $A$ into a singular matrix. Therefore, $r$ is an eigenvalue of $A$ if and only if $ A - rI $ is a singular matrix.
+\end{definition}
+
+
+\begin{theorem}[23.1]
+The diagonal entries of a diagonal matrix $D$ are eigenvalues of $D$.
+\end{theorem}
+
+\begin{theorem}[23.2]
+A square matrix $A$ is singular if and only if 0 is an eigenvalue of $A$.
+\end{theorem}
+
+A matrix is singular if and only if its determinant is zero. That is, $ A - rI $ is a singular matrix, if and only if $\label{deter} \det (A - r I) = 0 ~.$
+
+\end{frame}
+
+
+\subsection{Finding eigenvalues and eigenvectors}
+% Ch23.1
+\begin{frame}
+\frametitle{Finding eigenvalues and eigenvectors}
+For an $n \times n$ matrix $A$, $\det (A - r I)$ is an $n$th order polynomial in the variable $r$, called the \textbf{characteristic polynomial}.
+
+\begin{example}
+For a general $2 \times 2$ matrix, the characteristic polynomial is 
+\begin{eqnarray} \nonumber 
+\det(A - r I) &=& \det \begin{pmatrix} a_{11} - r & a_{12} \\ a_{21} & a_{22} - r\end{pmatrix} \\ \label{characpoly}
+&=& r^2 - (a_{11} + a_{22})r + (a_{11}a_{22} - a_{12}a_{21}) ~,
+\end{eqnarray}
+a second-order polynomial. 
+\end{example}
+Therefore,
+\begin{itemize}  
+\item The eigenvalues $r$ of $A$ are the roots of the characteristic polynomial;
+\item a $2 \times 2$ matrix has at most two eigenvalues (we can use the quadratic formula);  a $n \times n$ matrix has at most $n$ eigenvalues.
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Finding eigenvalues and eigenvectors}
+When $r$ is an eigenvalue of $A$, a \textit{nonzero} vector $\mathbf{v}$ such that \begin{equation}\label{eigen} 
+(A - r I)\mathbf{v} = \mathbf{0} 
+\end{equation} 
+is called an \textbf{eigenvector} of $A$ \textit{corresponding} to eigenvalue $r$. Multiplying out \eqref{eigen} yields
+\begin{eqnarray}\nonumber
+A\mathbf{v} - r I\mathbf{v} &=& \mathbf{0} \\  \nonumber
+A\mathbf{v} - r \mathbf{v} &=& \mathbf{0} \\  \nonumber
+A\mathbf{v} &=& r \mathbf{v} 
+\end{eqnarray}
+If $r$ is an eigenvalue and $\mathbf{v}$ is a corresponding eigenvector, then $A\mathbf{v} = r \mathbf{v}$.
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Finding eigenvalues and eigenvectors}
+
+We can summarize the above as follows:
+\begin{theorem}[23.3]\label{th23.3}
+Let $A$ be an $n \times n$ matrix and let $r$ be a scalar. Then, the following statements are equivalent:
+\begin{itemize}
+\item[(a)] Subtracting $r$ from each diagonal entry of $A$ transforms $A$ into a singular matrix.
+\item[(b)] $A - r I$ is a singular matrix.
+\item[(c)] {\color{red}$\det(A - r I) = 0$}
+\item[(d)] {\color{red}$(A - r I)\mathbf{v} = \mathbf{0}$} for some nonzero vector $\mathbf{v}$.
+\item[(e)] $A\mathbf{v}  = r\mathbf{v}$ for some nonzero vector $\mathbf{v}$.
+\end{itemize}
+\end{theorem}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Finding eigenvalues and eigenvectors}
+
+\begin{example}
+Examples 23.5 and 23.6 (pp. 583-4)
+\end{example}
+
+In general, one chooses the ``simplest'' of the nonzero candidates.
+\vskip0.1in
+
+The \textbf{eigenspace} of $A$ is the span of the set of all eigenvectors, including $\mathbf{v} = 0$. i.e., the set of all solutions to \eqref{eigen}. \vskip0.1in
+
+In some problems, one will need to use Guassian elimination to solve the linear system $(A - r I)\mathbf{v} = \mathbf{0}$ for an eigenvector $\mathbf{v}$.
+
+\end{frame}
+
+
+
+\subsection{Solving linear difference equations}
+% Chapter 23.2
+\begin{frame}
+\frametitle{Solving linear difference equations}
+\framesubtitle{One-dimensional equations}
+To solve a one-dimensional equation $y_{n+1} = {a}y_{n}$,
+
+\begin{eqnarray} \nonumber
+y_1 &=& {a}y_0 \\ 
+\nonumber
+y_2 &=& {a}y_1 = a({a}y_0) = {a^2}y_0 \\ 
+\nonumber
+y_3 &=& {a}y_2 = a({a^2}y_0) = {a^3}y_0 \\ \nonumber
+\vdots &=& \vdots \\ \label{onedim}
+y_n &=& {a^n}y_0 
+\end{eqnarray} \vskip0.1in
+
+In what settings could the solution \eqref{onedim} arise?
+%% bank account; population growth
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Solving linear difference equations}
+\framesubtitle{Two-dimensional systems}
+Now, consider a system of two linear difference equations:
+\begin{eqnarray}\label{twodim1}
+x_{n+1} &=& {a}x_{n} + {b}y_{n} \\  \label{twodim2}
+y_{n+1} &=& {c}x_{n} + {d}y_{n}
+\end{eqnarray}
+In matrix form, the system of difference equations becomes:
+\begin{equation}\label{twosys}
+\mathbf{z}_{n+1} = \begin{pmatrix} x_{n+1} \\ y_{n+1} \end{pmatrix} = \begin{pmatrix}
+a & b \\ c & d 
+\end{pmatrix} \begin{pmatrix}
+x_n \\ y_n 
+\end{pmatrix} \equiv A\mathbf{z}_n
+\end{equation}
+\begin{itemize}
+\item If $b=c=0$, \eqref{twodim1} and \eqref{twodim2} are uncoupled, and can be solved as two seperate one-dimensional problems \eqref{onedim}.
+\item If $b \neq 0$ or $c \neq 0$, we need to transform the coefficient matrix $A$ into a diagonal matrix so that \eqref{twodim1} and \eqref{twodim2} become uncoupled and therefore more easily solved; and
+\item To transform matrix $A$ into a diagonal matrix $D$ we use the technique of a change-of-coordinates (or change-of-bases): $P^{-1}AP = D$
+\end{itemize}
+%% ($P^{-1}AP = D$), we use the definition of eigenvalues and eigenvectors;
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{\large Visual example: conic section}
+%\framesubtitle{Visual example: conic section}
+
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{conicsection.jpg}
+\caption{A conic section in a coordinate system adapted for it.}
+\end{figure} \vskip-0.1in
+\begin{eqnarray}
+& Ax^2 + Bxy + Cy^2 - D = 0 & ,  B \neq 0 \nonumber \\ % A,B,C,D \in R,{~~\text{and}~}
+\therefore {\text{find}}& x = \alpha{x^\prime} + \beta {y^\prime} ~,~~ y = \gamma{x^\prime} + \delta{y^\prime} & \nonumber \\
+& {\text{to remove $xy$-term}} & \nonumber
+\end{eqnarray}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Solving linear difference equations}
+\framesubtitle{Two-dimensional systems}
+Consider the abstract system of difference equations:
+$$ \mathbf{z}_{n+1} =   A\mathbf{z}_n~. $$
+We want to choose a transformation $P$ and $P^{-1}$ such that:$^{*}$ 
+$$\mathbf{z} = P\mathbf{Z}, ~{\text{or}}~~ \mathbf{Z} = P^{-1}\mathbf{z}~.$$
+\begin{eqnarray}
+\mathbf{Z}_{n+1} &=& P^{-1}\mathbf{z}_{n+1} \nonumber \\
+ &=& P^{-1}(A\mathbf{z}_{n}) \nonumber \\
+ &=& (P^{-1}A)\mathbf{z}_{n} \nonumber \\
+ &=& (P^{-1}A)(P\mathbf{Z}_{n}) \nonumber \\
+ &=& {\color{red}{(P^{-1}{A}P)}}\mathbf{Z}_{n} \nonumber \\
+\mathbf{Z}_{n+1} &=& {\color{red}{D}}\mathbf{Z}_{n}  
+\end{eqnarray}
+
+\vfill
+{\footnotesize{*Trace these steps in the Leslie population model example.}}
+\end{frame}
+
+
+
+%\subsection{Diagonalization}
+% Ch23.1, theorem 23.4
+\begin{frame}
+\frametitle{Solving linear difference equations}
+\framesubtitle{Diagonalization} 
+It turns out \ldots since $P$ is an invertible matrix then $AP=PD$. In the two-dimensional system we can write this as: $$A[\mathbf{v}_1 ~~ \mathbf{v}_2] = [\mathbf{v}_1 ~~ \mathbf{v}_2]\begin{pmatrix}
+r_1 & 0 \\ 0 & r_2 \end{pmatrix} ~,$$ where $\mathbf{v}_1$ and $\mathbf{v}_2$ are the two column vectors of the $2 \times 2$ matrix $P$. Therefore:
+\begin{eqnarray}
+\begin{bmatrix} A\mathbf{v}_1 & A\mathbf{v}_2
+\end{bmatrix} &=& \begin{bmatrix}
+r_1\mathbf{v}_1 & r_2\mathbf{v}_2
+\end{bmatrix} \nonumber \\
+A\mathbf{v}_1 = r_1\mathbf{v}_1~, & {\text{and}} &~~  A\mathbf{v}_2 = r_2\mathbf{v}_2 \nonumber
+\end{eqnarray}
+\ldots $r_1$ and $r_2$ must be eigenvalues of $A$, and $\mathbf{v}_1$ and $\mathbf{v}_2$ are the corresponding eigenvectors!! (see Theorem \href{th23.3}{23.3}) \\ \vskip0.1in
+
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Solving linear difference equations}
+\framesubtitle{Diagonalization} 
+
+This holds for $k$-Dimensional systems \ldots which gives us % Theorem \href{th23.4}{23.4} \ldots
+
+\begin{theorem}[23.4]\label{th23.4}
+Let $A$ be a $k \times k$ matrix. Let $r_1, r_2, \ldots, r_k$ be eigenvalues of $A$, and $\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_k$ the corresponding eigenvectors. Form the matrix $$P = [ \mathbf{v}_1 \mathbf{v}_2 \cdots \mathbf{v}_k ] $$ whose columns are these $k$ eigenvectors. If $P$ is invertible, then 
+\begin{equation}\label{diagonalisation}
+P^{-1}A{P} = \begin{pmatrix}
+r_1 & 0 & \cdots & 0 \\
+0 & r_2 & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & r_k
+\end{pmatrix}
+\end{equation}
+Conversely, if $P^{-1}A{P}$ is a diagonal matrix $D$, the columns of $P$ must be eigenvectors of $A$ and the diagonal entries of $D$ must be eigenvalues of $A$.
+\end{theorem}
+
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Solving linear difference equations}
+\framesubtitle{A general solution}
+\begin{theorem}[23.6]
+Let $A$ be a $k \times k$ matrix with $k$ distinct real eigenvalues $r_1, \ldots, r_k$ and corresponding eigenvectors $\mathbf{v}_1, \ldots, \mathbf{v}_k$. The general solution of the system of difference equations $\mathbf{z}_{n+1} =   A\mathbf{z}_n$ is 
+\begin{equation}\label{gensol}
+\mathbf{z}_{n} =   c_{1}r_1^n\mathbf{v}_1 + c_{2}r_2^n\mathbf{v}_2 + \cdots + c_{k}r_k^n\mathbf{v}_k ~. 
+\end{equation}
+\end{theorem} 
+
+\vfill 
+
+Note: We need to know the initial vector $\mathbf{z}_0$ to solve the numerical formula $\mathbf{z}_n$ (recall \eqref{onedim}). To see this, set $n=0$ in \eqref{gensol}:
+\begin{eqnarray}
+\mathbf{z}_0 &=& c_{1}\mathbf{v}_1 + \cdots + c_{k}\mathbf{v}_k \nonumber \\
+&=& [\mathbf{v}_1 \cdots \mathbf{v}_k] \begin{pmatrix}
+c_1 \\ \vdots \\ c_k 
+\end{pmatrix} = P \begin{pmatrix}
+c_1 \\ \vdots \\ c_k 
+\end{pmatrix}~.
+\end{eqnarray} 
+Therefore, for \textit{any} specific initial vector $\mathbf{z}_0$, the proper choice of $c_1, \ldots, c_k$ gives the solution for \eqref{gensol}. %[Note: this follows from the uncoupling/diagonalization of the system and easily seen in the Leslie model]
+\end{frame}
+
+
+\begin{frame}
+\frametitle{\large An alternative approach: the powers of a matrix}
+\begin{theorem}[23.7]\footnotesize
+Let $A$ be a $k \times k$ matrix. Suppose that there is a nonsingular matrix $P$ such that 
+\begin{equation}\nonumber
+P^{-1}A{P} = \begin{pmatrix}
+r_1 & 0 & \cdots & 0 \\
+0 & r_2 & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & r_k
+\end{pmatrix} ~, ~~~~ {\text{[\eqref{diagonalisation}]}}
+\end{equation}
+a diagonal matrix. Then, 
+\begin{equation}\nonumber
+A^{n} = {P}\begin{pmatrix}
+r_1^n & 0 & \cdots & 0 \\
+0 & r_2^n & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & r_k^n
+\end{pmatrix}P^{-1} ~.
+\end{equation}
+The solution of the corresponding system of difference equations $\mathbf{z}_{n+1} = A\mathbf{z}_n$ with initial vector $\mathbf{z}_0$ is 
+\begin{equation}\nonumber
+\mathbf{z}_{n} = {P}\begin{pmatrix}
+r_1^n & 0 & \cdots & 0 \\
+0 & r_2^n & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & r_k^n
+\end{pmatrix}P^{-1}\mathbf{z}_{0} ~.
+\end{equation}
+\end{theorem} 
+
+\end{frame}
+
+
+% Chapter 23.2
+\begin{frame}
+\frametitle{Stability of equilibria} \vskip 0.1in
+
+It follows:
+\begin{itemize}
+\item For $\mathbf{z}_0 = \mathbf{0}$, we have $\mathbf{z}_n  = \mathbf{0}$. Such a solution is called a \textbf{steady state}, \textbf{equilibrium}, or \textbf{stationary solution}.
+\item The solution is \textbf{asymptotically stable} if every solution of $\mathbf{z}_{n+1} = A\mathbf{z}_n$ tends to the steady state $\mathbf{z} = \mathbf{0}$ as $n$ tends to infinity.
+\item For every solution to have a steady state, the absolute value of all the eigenvalues of $A$ must be less than 1 $(| r_i | < 1)$ such that $r^{n}_i \to 0$ as $n \to \infty$.
+\end{itemize}
+\begin{theorem}[23.8]
+If the $k \times k$ matrix $A$ has $k$ distinct real eigenvalues, then every solution of the general system of linear difference equations $\mathbf{z}_{n+1} = A\mathbf{z}_n$ tends to $\mathbf{0}$ if and only if all the eigenvalues of $A$ have absolute value less than 1.
+\end{theorem}
+
+
+
+\end{frame}
+
+
+
+
+\subsection{Markov processes}
+% Chapter 23.6
+\begin{frame}
+\frametitle{Markov processes} \vskip0.1in
+\begin{definition}
+A \textbf{stochastic process} is a rule which gives the probability that the system (or the individual in this system) will be in state $i$ at time $n + 1$, given the probabilities of its being in the various states in previous periods. \vskip0.1in
+
+When the probability that the system is in any state $i$ at time $n + 1$ depends only on what state the system was in at time $n$, the stochastic process
+is called a \textbf{Markov process}. \vskip0.1in
+
+That is, only the \textit{immediate} past matters.
+\end{definition} \vskip0.1in
+The key elements of a Markov process are:
+\begin{itemize}
+\item[(1)] the probability $x^{i}(n)$ that state $i$ occurs at time period $n$, or alternatively, the fraction of the population under study that is in state $i$ at time period $n$; and
+\item[(2)] the transition probabilities $m_{ij}$, where $m_{{\color{red}i}{\color{Green}j}}$ is the probability that the process will be in state $\color{red}i$ at time $n+1$ if it is in state $\color{Green}j$ at time $n$.
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Markov processes} \vskip0.1in
+
+\begin{eqnarray}\label{markov}
+\begin{pmatrix}
+x^1(n+1) \\ \vdots \\ x^k(n+1)
+\end{pmatrix} &=& \underset{\text{\textbf{Markov} (transition) \textbf{matrix}}}{\underbrace{\begin{pmatrix}
+m_{{\color{red}1}1} & \cdots & m_{1k} \\
+\vdots & \ddots & \vdots \\
+m_{{\color{red}k}1} & \cdots & m_{kk} 
+\end{pmatrix}}} \begin{pmatrix}
+x^1(n) \\ \vdots \\ x^k(n)
+\end{pmatrix} ~; \\ \nonumber  \\ \nonumber 
+{\text{that is,~~~~~\hfill}}\mathbf{x}(n+1) &=& M\mathbf{x}(n)~,
+\end{eqnarray}
+where $M$ is any nonnegative matrix whose column sums $\sum_i m_{ij}$ all equal 1.\vskip0.1in
+
+For example, each element $m_{ij}$ in first column of $M$ gives the (conditional) probability that the system will be in state ${\color{red}i=1,\ldots,k}$ next period, given that it was in state $j=1$ today. We therefore have $\sum_{i=1}^{k} m_{i1} = 1$.
+
+\begin{example}[23.20, p. 617]
+$$\begin{pmatrix}
+x^{em}(n+1) \\ x^{un}(n+1)
+\end{pmatrix} = \begin{pmatrix}
+0.9 & 0.4 \\ 0.1 & 0.6
+\end{pmatrix} \begin{pmatrix}
+x^{em}(n) \\ x^{un}(n)
+\end{pmatrix} $$
+\end{example}
+
+%System of equations \eqref{markov}, in which ... $M$ is a \textbf{Markov matrix} (transition matrix or stochastic matrix)) such that
+\end{frame}
+
+
+%p. 581 see example 23.4
+\begin{frame}
+\frametitle{Markov processes} \vskip0.1in
+Some general principles that example 23.20 illustrates
+\begin{theorem}[23.15]
+Let $M$ be a positive Markov matrix. Then,
+\begin{itemize}
+\item[(a)] $r_1 = 1$ is an eigenvalue of every $M$;
+\item[(b)] every other eigenvalue $r$ of $M$ satisfies $|r|<1$
+\item[(c)] eigenvalue $r = 1$ has an eigenvector $\mathbf{w}_1$ with strictly positive components; and
+\item[(d)] if we write $\mathbf{v}_1$ for $\mathbf{w}_1$ divided by its components, then $\mathbf{v}_1$ is a probability vector and each solution $\mathbf{x}(n)$ of $\mathbf{x}(n+1) = M\mathbf{x}(n)$ tends to $\mathbf{v}_1$ as $n \to \infty$.
+\end{itemize}
+\end{theorem}
+\end{frame}
+
+%exercises 23.30 and 23.33
+
+
+\subsection{Symmetric matrices}
+% Chapter 23.7
+\begin{frame}
+\frametitle{Symmetric matrices} \vskip 0.1in
+
+Most matrices that arise in optimization and econometrics are symmetric matrices (e.g., Hessians). If $A$ is a symmetric matrix. Then,
+\begin{definition}
+\begin{itemize}
+\item[] $A = A^T$;
+\item[] $A$ is a $k \times k$ square matrix;
+\item[] its ``counter-diagonals'' have the same entries: $a_{ij} = a_{ji}$ ;
+\item[] it is orthogonally diagonalizable, meaning that
+we can find an orthogonal matrix $P$ ($P^{-1}=P^T$) which diagonalizes $A$: $D = P^{-1}AP$.
+\end{itemize}
+\end{definition}\vfill
+
+See also Section 23.8: Definiteness
+\end{frame}
+
+
+
+
+
+
+
+%\begin{frame}
+%\begin{center}
+%\Huge{THE END}
+%\end{center}
+%\end{frame}
+
+
+\end{document}

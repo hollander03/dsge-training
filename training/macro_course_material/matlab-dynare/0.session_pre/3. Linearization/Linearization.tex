@@ -1,0 +1,440 @@
+\PassOptionsToPackage{dvipsnames}{xcolor}
+%\documentclass[12pt]{beamer}
+%\documentclass[10pt]{beamer}
+\documentclass[10pt, handout]{beamer}
+
+\usepackage{mathtools} %% previously \usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb} % http://www.ctan.org/tex-archive/macros/latex/required/psnfss/psnfss2e.pdf
+%\usepackage[official]{eurosym}
+\usepackage{helvet}
+\usepackage{natbib}
+\usepackage{lscape, longtable, array, booktabs, multirow, tabularx, graphics, epstopdf}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage {tikz}
+
+\usefonttheme[onlymath]{serif}
+
+\usepackage{accents}
+\newcommand*{\dt}[1]{%
+   \accentset{\mbox{\LARGE $.$}}{#1}}
+
+%\usepackage[T1]{fontenc}
+
+\usecolortheme{dolphin}
+%\useoutertheme{infolines}
+\definecolor{dollarbill}{rgb}{0.52, 0.73, 0.4}
+%\setbeamercovered{transparent}% Dim out "inactive" elements
+\setbeamercovered{invisible}% Default
+\beamertemplatenavigationsymbolsempty
+\setbeamerfont{page number in head/foot}{size=\footnotesize}
+\setbeamertemplate{footline}[frame number]
+
+
+\usepackage{hyperref} 
+\hypersetup{colorlinks=true}
+%\hypersetup{linkcolor=RoyalBlue, urlcolor=ForestGreen, citecolor=Magenta}
+\hypersetup{allcolors=RoyalBlue} %% 
+
+%\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+
+\DeclareMathOperator*{\argmax}{argmax} % thin space, limits underneath in displays
+
+
+\title[Linearization]{Linearization}
+\vskip 0.1in
+
+\subtitle{Mathematical Methods for Economics (771)}
+%\author[H Hollander]{Hylton Hollander}
+
+\institute[Stellenbosch University]{\large{
+Stellenbosch University}}
+
+
+%\date[April, 2020]{April, 2020}
+
+\date{}
+
+\begin{document}
+
+
+\frame{\titlepage}
+
+\frame{\frametitle{Contents:} \tableofcontents}
+
+
+\section{Readings}
+
+\frame{
+    \frametitle{Readings} \vskip 0.1in
+
+
+\begin{itemize}
+\item Dejong, D. N. and C. Dave, 2007. Structural Macroeconometrics.
+Princeton University Press. Chapter 2: Approximating and solving DSGE models;
+\item A Toolkit for analyzing nonlinear dynamic stochastic
+models easily (by Uhlig Harald).
+\end{itemize}
+
+}
+
+
+
+\section{Introduction}
+
+\begin{frame}
+
+\frametitle{Introduction} \vskip 0.1in
+
+A DSGE model consists of a system of nonlinear
+difference equations. It typically includes three components (DeJong
+and Dave (2007:11)):
+
+\begin{enumerate}
+\item the \textcolor{blue}{decision problem} -- a characterization of the environment in which decision makers
+reside;
+\item a set of \textcolor{blue}{decision rules} that dictate their behaviour (e.g., FOCs);
+\item a characterization of the \textcolor{blue}{uncertainty} they face in making decisions (e.g., stochastic shocks, risk aversion \& information asymmetry).
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{Introduction} \vskip 0.1in
+
+There generally exists no closed-form solution for such (non-linear) problems.
+\begin{itemize}
+\item[$\therefore$] we must result to numerical and/or approximation techniques $\rightarrow$ construct a linear approximation of the model.
+\end{itemize}\vskip 0.1in
+
+{{There are varied approaches to approximate a nonlinear system
+linearly {(\footnotesize{see, e.g., Judd (1998).)}}, such as
+\begin{itemize}
+\item local approximation (eg. Taylor series and Pad{\'{e}}
+expansions);
+\item interpolation;
+\item regression.
+\end{itemize}}}\vskip 0.1in
+
+In this session, we study the log-linearization method only.
+\begin{itemize}
+  \item the standard method;
+  \item a simpler method (Uhlig's method);
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+
+\frametitle{Introduction} \vskip 0.1in
+
+We first:\vskip 0.05in
+\begin{enumerate}
+\item[(1)] take natural logs of the system of non-linear difference equations
+\end{enumerate}\vskip 0.1in
+
+We then:\vskip 0.05in
+\begin{enumerate}
+\item[(2)] linearize the logged difference equations about a particular point (usually a steady state). And simplify until we have a system of linear difference equations:\vskip 0.05in
+    \begin{enumerate}
+    \item[$\triangleright$] variables are expressed as (percentage) deviations about their steady state values;\vskip 0.05in
+    \item[$\triangleright$] directly amenable to empirical implementation
+    \end{enumerate}
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Introduction} \vskip 0.1in
+
+\textcolor{blue}{Why this method?} \vskip0.1in
+
+\begin{itemize}
+\item Linearization is nice because we know how to work with linear difference equations;
+\item Log-difference terms are nice because they provide natural interpretations of the units (i.e., everything is in percentage terms)
+\end{itemize}
+
+\vskip0.2in
+
+{\footnotesize{Since the principle of both methods that we focus on here is to use
+a Taylor-series expansion around the steady state to replace all
+equations by approximations, let's first review the theorem of
+Taylor series approx.}}
+
+\end{frame}
+
+\section{Taylor Series Approximation}
+
+\begin{frame}
+
+\frametitle{Taylor Series Approximation}
+
+
+\textcolor{blue}{Taylor's theorem for a univariate function $f(x)$:}
+\begin{eqnarray}
+f(x) &=& f(x^*) + \frac{f'(x^*)}{1!}(x-x^*)+ \frac{f''(x^*)}{2!}(x-x^*)^2  \nonumber\\ &+& \frac{f^{(3)}(x^*)}{3!}(x-x^*)^3 +  \ldots  + \frac{f^{n}(x^*)}{n!}(x-x^*)^n +
+R_{n+1}(x)\label{EqB.1}%\\
+%R_{n+1}(x) &=& \int_{x^*}^{x} \frac{(x-t)^n}{n!} f^{n+1} (t)dt
+%\label{EqB.2}
+\end{eqnarray}
+{\footnotesize{where we refer to $R_{n+1}(x)$ as the residual term.}}\vskip 0.2in
+
+{\footnotesize{Taylor's theorem says that one can use derivative information at a
+single point to construct a polynomial approximation of a function
+at a point ($x^*$)---usually a steady state. It is the theoretical basis for all local
+approximations.}}
+
+\end{frame}
+
+%\begin{frame}
+
+%\frametitle{Taylor Series Approximation} \vskip 0.1in
+
+%Following Dejong and Dave (2007), consider we have a n-equation
+%system of nonlinear difference equations:
+
+%\begin{equation}\label{EqB.3}
+%\psi (z_{t+1},z_t) = 0
+%\end{equation} \pause
+
+%By applying the first-order Taylor Series approximation, we can
+%linearize \eqref{EqB.3} around its steady state $\psi(\bar{z})$,
+
+%\begin{equation}\label{EqB.4}
+%0 \approx \psi(z^{ss}) + \frac{\partial \psi}{\partial
+%z_t}(z^{ss})(z_t - z^{ss}) + \frac{\partial \psi}{\partial
+%z_{t+1}}(z^{ss})(z_{t+1} - z^{ss})
+%\end{equation}
+
+%where $\frac{\partial \psi}{\partial z_t}(z^{ss})$ denotes the
+%Jacobian of $\psi (z_{t+1},z_t)$ w.r.t. $z_t$ at $z^{ss}$.\vskip
+%0.1in
+
+%\pause
+
+%The solution of \eqref{EqB.3} is given by,
+
+%\begin{equation}\label{EqB.5}
+%A (x_{t+1}) = B (x_t)
+%\end{equation}
+
+%where $A=\frac{\partial \psi}{\partial z_{t+1}}(z^{ss})$,
+%$B=-\frac{\partial \psi}{\partial z_t}(z^{ss})$, $x_t=z_{t+1}-z_t$
+%\end{frame}
+
+\begin{frame}
+
+\frametitle{Taylor Series Approximation} \vskip 0.1in
+
+\textcolor{blue}{We go one step further:}\vskip0.05in
+
+For a function that is sufficiently smooth, the higher order derivatives will be small, and the function can be well approximated (about $x^*$) linearly as:
+\begin{equation}
+f(x) \approx f(x^*) + f'(x^*)(x - x^*)
+\end{equation}
+
+\vskip0.1in
+\pause
+
+\textcolor{blue}{The theorem also applies to multivariate functions:}\vskip0.05in
+
+\noindent For example, the first order approximation of $f(x,y)$ about the point $(x^*,y^*)$ is:
+\begin{equation}
+f(x,y) \approx f(x^*,y^*) + f_{x}(x^*,y^*)(x - x^*) + f_{y}(x^*,y^*)(y - y^*)
+\end{equation}
+
+\end{frame}
+
+
+\section{The Standard Method}
+
+\begin{frame}
+
+\frametitle{The Standard Method} \vskip 0.1in
+
+{\footnotesize{The log-linearization method is based on the assumption that if the
+system is not too far from the steady state, the linear version
+result closely approximates the original system.}}\vskip 0.1in
+
+Consider a model that consists of a set of nonlinear equations of
+the following general form,
+
+\begin{equation}\label{EqB.6}
+F(x_{t})=\frac{G(x_t)}{H(x_t)}
+\end{equation}
+
+Taking the logarithms,
+
+\begin{equation}\label{EqB.7}
+ln(F(x_{t}))=ln(G(x_t))- ln(H(x_t))
+\end{equation}
+
+Again, by applying the first-order Taylor Series approximation, we
+can linearize \eqref{EqB.7} around its steady state $x^{ss}$.
+
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{The Standard Method} \vskip 0.1in
+
+The log linearized \eqref{EqB.7},
+
+{\scriptsize{
+\begin{eqnarray}\label{EqB.8}
+ln(F(x^{ss})) + \frac{F'(x^{ss})}{F(x^{ss})}(x_t-x^{ss}) &=&
+[ln(G(x^{ss}) + \frac{G'(x^{ss})}{G(x^{ss})}(x_t-x^{ss})] -
+[ln(H(x^{ss})) \nonumber\\
+&& + \frac{H'(x^{ss})}{H(x^{ss})}(x_t-x^{ss})]
+\end{eqnarray}}}
+
+\pause
+
+To simplify the model, we can eliminate the steady state of the
+model from \eqref{EqB.8},
+
+\begin{equation}\label{EqB.9}
+\frac{F'(x^{ss})}{F(x^{ss})}(x_t-x^{ss}) =
+\frac{G'(x^{ss})}{G(x^{ss})}(x_t-x^{ss}) -
+\frac{H'(x^{ss})}{H(x^{ss})}(x_t-x^{ss})
+\end{equation}
+
+The model is now linear in $x_t$.
+\end{frame}
+
+
+\begin{frame}
+
+\frametitle{The Standard Method} \vskip 0.1in
+
+The above procedure applies equally well in multivariate cases. To summarize, the 3-step procedure for log-linearizing is:\vskip0.1in
+
+\begin{enumerate}
+\item Take logs
+\item Do a first order Taylor series expansion about a point (the steady state)
+\item Simplify so that everything is expressed in {$\%$} deviations from steady state
+\end{enumerate}
+
+\end{frame}
+
+
+\section{Uhlig's Method}
+
+\begin{frame}
+
+\frametitle{Uhlig's Method} \vskip 0.1in
+
+Uhlig's method does not require explicit differentiation and the
+linearized model is expressed in terms of log differences of the
+variables.\vskip 0.1in
+
+\pause
+
+Suppose $X_t$ be the vector of variables, $X^{ss}$ their steady
+state, and $x_t$ the vector of log-deviations:
+
+\begin{equation}\label{EqB.10}
+x_t=ln{X_{t}}-ln{X^{ss}}
+\end{equation}
+
+That is, $x_t$ denotes the percentage deviation from their steady
+state levels. Alternatively\footnote{Given \eqref{EqB.10},
+$x_t=ln\frac{X_t}{X^{ss}}$, $e^{x_t}=\frac{X_t}{X^{ss}}$,
+$\therefore X_t = X^{ss}e^{x_t}$; $
+e^{x_t}=\sum_{n=1}^{\infty}\frac{(1+x_t)^n}{n!} \approx 1+x_t$.}
+
+\begin{equation}\label{EqB.11}
+X_t=X^{ss}e^{x_t}\approx X^{ss}(1+x_t)
+\end{equation}
+
+\vfill
+
+{\footnotesize 1. Given \eqref{EqB.10} }
+
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{Uhlig's Method} \vskip 0.1in
+
+\textcolor{blue}{Four steps (Uhlig, 1995:5):}
+
+\begin{enumerate}
+\item multiply out everything in each equation;
+\item replace a variable $X_t$ with $X_t=X^{ss}e^{x_t}$;
+\item take logarithms, where both sides of an equation only involve
+products, or use the following three building blocks\footnote{Eg.
+$e^{x_t}\approx 1+x_{t}$; $aX_{t}=aX^{ss}e^{x_{t}}$;
+$(X_t+a)Y_t=X^{ss}Y^{ss}e^{x_t}+X^{ss}Y^{ss}e^{y_t}+aY^{ss}y_t$}:
+\begin{eqnarray}
+e^{x_{t}+ay_{t}} &\approx& 1+x_t+ay_t\\
+x_t y_t &\approx& 0\\
+E_{t}[ae^{x_{t+1}}] &\approx& E_{t}[ax_{t+1}]
+\end{eqnarray}
+\item drop constants in each equation in the end.
+\end{enumerate}
+
+\vfill
+
+{\footnotesize {2. E.g.,
+$e^{x_t}\approx 1+x_{t}$; $aX_{t}=aX^{ss}e^{x_{t}}$;
+$(X_t+a)Y_t=X^{ss}Y^{ss}e^{x_t}+X^{ss}Y^{ss}e^{y_t}+aY^{ss}y_t$}}
+
+
+\end{frame}
+
+
+\section{Examples}
+
+\begin{frame}
+
+\frametitle{Examples} 
+
+Log-linearize the following using both the Taylor method and Uhlig's method, and compare your answers: \vskip0.2in
+
+(1) The resource constraint $$Y_t = C_t + I_t ~,$$ indicating that output can be either consumed or invested.\vskip0.1in
+
+(2) The Cobb-Douglas production function $$Y_t=a_{t}K^{\alpha}_{t}N^{1-\alpha}_t ~,$$ where output is produced by use of capital and labour and is subject to a productivity shock.
+
+\end{frame}
+
+
+
+\begin{frame}
+
+\frametitle{Hansen's real business cycle model (Uhlig, pp. 5-7)} 
+
+With the tools you've learned from dynamic programming, you can now simulate a dynamic stochastic general equilibrium model. \vskip0.1in 
+
+We will work use Hansen's real business cycle model (Uhlig, pp. 5-7). \vskip0.1in 
+
+See the tutorial on recursive methods and linearization on SUNLearn. \vskip0.1in
+
+For the final question you will be given step-by-step instructions to simulate the model and obtain impulse response functions (of the variables) in response to a 1 percentage point increase in total factor productivity (see figure in the next slide). \vskip0.1in
+
+Both Dynare and Octave are free software. Octave is basically a free version of matlab.
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Impulse response functions}
+\begin{figure}[hpb]\centering \vskip-1in
+\includegraphics[width=0.75\textwidth]{basicrbc_fig.pdf}
+%\caption{IRFs to a 1 percentage point increase in total factor productivity}
+\end{figure}
+\end{frame}
+
+
+%\begin{frame}
+%\begin{center}
+%\Huge{THE END}
+%\end{center}
+%\end{frame}
+\end{document}

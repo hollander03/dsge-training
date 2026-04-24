@@ -1,0 +1,627 @@
+\PassOptionsToPackage{dvipsnames}{xcolor}
+%\documentclass[12pt]{beamer}
+%\documentclass[10pt]{beamer}
+\documentclass[10pt, handout]{beamer}
+
+\usepackage{mathtools} %% previously \usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb} % http://www.ctan.org/tex-archive/macros/latex/required/psnfss/psnfss2e.pdf
+%\usepackage[official]{eurosym}
+\usepackage{helvet}
+\usepackage{natbib}
+\usepackage{lscape, longtable, array, booktabs, multirow, tabularx, graphics, epstopdf}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage {tikz}
+
+\usefonttheme[onlymath]{serif}
+
+\usepackage{accents}
+\newcommand*{\dt}[1]{%
+   \accentset{\mbox{\LARGE $.$}}{#1}}
+
+%\usepackage[T1]{fontenc}
+
+\usecolortheme{dolphin}
+%\useoutertheme{infolines}
+\definecolor{dollarbill}{rgb}{0.52, 0.73, 0.4}
+%\setbeamercovered{transparent}% Dim out "inactive" elements
+\setbeamercovered{invisible}% Default
+\beamertemplatenavigationsymbolsempty
+\setbeamerfont{page number in head/foot}{size=\footnotesize}
+\setbeamertemplate{footline}[frame number]
+
+
+\usepackage{hyperref} 
+\hypersetup{colorlinks=true}
+%\hypersetup{linkcolor=RoyalBlue, urlcolor=ForestGreen, citecolor=Magenta}
+\hypersetup{allcolors=RoyalBlue} %% 
+
+%\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+
+\DeclareMathOperator*{\argmax}{argmax} % thin space, limits underneath in displays
+
+
+\title [Recursive Methods]{Recursive Methods}
+\vskip 0.1in
+
+\subtitle{Mathematical Methods for Economics (771)}
+%\author[H Hollander]{Hylton Hollander}
+
+\institute[Stellenbosch University]{\large{
+Stellenbosch University}}
+
+
+%\date[April, 2020]{April, 2020}
+
+\date{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\frame{\frametitle{Contents:} \tableofcontents}
+
+
+\begin{frame}
+
+\section{Readings}
+
+\frametitle{Readings} \vskip 0.1in
+
+\begin{itemize}
+\item Krusell, Per. (2014). Real Macroeconomic Theory, Chapter 4 ``Dynamic Optimization''
+
+\item Judd, Kenneth, L. (1991). ``A Review of \textit{Recursive Methods in Economic Dynamics} by Stockey, N., Lucas Jr., R., and Prescott, E.,'' Journal of Economic Literature, 29(1), 69$-$77
+\end{itemize}
+
+Additional:
+\begin{itemize}
+\item  Namay L. Stockey, Robert E. Lucas Jr., and Edward C. Prescott, 1989. Recursive methods in economic dynamics. Harvard university
+press (CH 4, 5).
+\end{itemize}
+
+
+\end{frame}
+
+
+\section{Introduction}
+\subsection{Why dynamic programming?}
+
+
+\begin{frame}
+
+\frametitle{Why Dynamic Programming?} \vskip 0.1in
+% ref: McCandless: 50
+
+%$\square$ Recursive methods (dynamic programming) is a fundamental tool of dynamic economic analysis.
+
+$\square$ Most macro models involve a dynamic optimization problem and a resulting (infinite) sequence of real numbers that solves it.
+\begin{itemize}
+\item Dynamic decisions are made recursively (time period by time period) and not once-and-for-all. For example, savings between $t$ and $t+1$ are decided on at $t$, and not $0$
+
+\item But: the nature/structure of the optimization problem that a decision maker faces does not depend on the period in which they are making their decisions: it is identical (stationary) at every point in time. 
+%\item the nature of the problems that we are going to solve do not change with time;
+\item What changes from period to period are the initial conditions
+$\rightarrow$ the values of the variables that have been determined
+by the past or by ``nature''.
+\end{itemize}
+
+$\square$ The search for a sequence is sometimes impractical, and not always intuitive. An alternative approach is often available: \textit{dynamic programming}  
+
+
+\end{frame}
+
+
+\begin{frame}
+
+\frametitle{Why Dynamic Programming?} \vskip 0.1in
+%see Krussel p.58
+
+$\square$ Recursive methods (dynamic programming) is a fundamental tool of dynamic economic analysis:
+\begin{itemize}
+\item Useful conceptually as well as for analytical and, especially, \textit{numerical} computation.
+
+\item Allows for comparative dynamic exercises, in dynamic models with uncertainty (e.g., a counterfactual policy intervention)
+
+\item Permit the inclusion of the stochastic shocks (i.e., a non-deterministic system).
+
+\item But the reduction of a dynamic model to a \textit{recursive model} must be done carefully. 
+
+\end{itemize}
+
+$\square$ We will go over the basics of this approach.
+
+$\square$ The focus will be on concepts, as opposed to mathematical rigor or formal proofs
+
+
+%see Krussel p.58
+% The nature of the optimization problem that individuals face does not depend on the period in which they are making their decisions
+\end{frame}
+
+
+
+%\subsection{Recursive methods in economic dynamics}
+
+\begin{frame}
+
+\frametitle{Recursive methods in economic dynamics} %\vskip 0.1in
+% ref: McCandless: 50
+% for further discussion of the inclusion of stochastic shocks see McCandless CH5
+
+\begin{quote}
+In general, we turn away from looking for a sequence of prices and allocations that satisfy equilibrium conditions, and instead look for a collection of policy functions, independent of time, which express current decisions and prices as functions of the state variables, which in turn are sufficient statistics of the past. 
+\begin{flushright}
+--- Judd (1991, p.71)
+\end{flushright} 
+\end{quote} \vskip 0.2in
+
+\end{frame}
+
+
+
+%\subsection{States and controls}
+
+\begin{frame}
+
+\frametitle{Preliminaries} \vskip 0.1in
+
+
+%The reduction of a dynamic model to a recursive model must be done carefully. 
+$\square$  We are looking for a function $g(\cdot)$ that does not vary with time: a \textit{decision} or \textit{policy rule} \vskip0.1in
+
+
+$\square$ The critical step is defining the \textcolor{blue}{state variable} 
+%\textcolor{blue}{States and Controls}
+\begin{itemize}
+\item variables whose values are already determined in period $t$ (predetermined)
+\end{itemize} \vskip0.1in
+%\pause
+
+$\square$ The choice of \textcolor{blue}{control variables} can matter in how easily we can solve the model. 
+\begin{itemize}
+\item decision variables whose values decision makers explicitly choose in period $t$ with the goal of optimizing their objective function.
+\end{itemize} \vskip0.1in
+
+$\square$ Whatever the choice, there must be enough constraints (market conditions) such that the values of the rest of the relevant variables in period $t$ are determined.
+
+\end{frame}
+
+
+
+
+\section{A simple problem and an alternative approach to its solution}
+
+
+\subsection{The canonical problem}
+
+\begin{frame}
+\frametitle{ The canonical problem}
+We consider the finite horizon dynamic optimization problem:%\footnote{}
+\begin{eqnarray}\label{Eq1}
+\max_{\{k_{t+1}\}^{T}_{t=0}} && \sum^{T}_{t=0} \beta^t F(k_t, k_{t+1}) \\ \nonumber
+\text{s.t.} && k_{t+1} \geq 0 ~ \forall ~ t
+\end{eqnarray}
+where we want to find the sequence $\{k_{t+1}\}^{T}_{t+0}$ that maximizes the objective function (\ref{Eq1}). \vskip0.25in
+
+Assume $F(k_t, k_{t+1}) = u(c_t)$ is a concave utility function, and $\beta$ is the stationary discount factor. Let $k_t$ be the capital stock at \textit{the beginning of period} $t$, $y_t = f(k_t)$ a neoclassical production function, and $c_t$ consumption in period $t$ chosen at \textit{the end of the period}.
+
+%\begin{equation}
+%u(c_t)
+%\end{equation}
+% additively separable, with stationary discounting weights.
+
+
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{ The canonical problem}
+Then a social planner for this economy will solve the problem
+\begin{eqnarray}\label{Eq2}
+\max_{\{c_{t}\}} \sum^{T}_{t=0} \beta^t u(c_{t})
+\end{eqnarray}
+where the choice path for $c_t$ is constrained by production possibilities, represented by the law of motion
+\begin{equation}\label{Eq3}
+k_{t+1} = \underset{\text{Investment}}{\underbrace{y_t - c_t}} = f(k_t) - c_t,
+\end{equation} 
+where $k_0 > 0$ is the initial endowment of capital. \vskip0.15in
+
+To make our lives simple we assume:
+\begin{itemize} \scriptsize
+\item the resource constraint (\ref{Eq3}) is binding; 
+\item $c_t$ and $k_t$ are nonnegative for all $t$; 
+\item $\underset{{c \to 0}}{\lim} u'(c)=\infty$ (i.e., $c_t = 0$ at any $t$ cannot be optimal). So we ignore $c_{t} \geq 0$, but we still consider the inequality $k_{t+1} \geq 0$ (Krussel, p.44); and, 
+\item $\delta = 1$ implies that the capital stock depreciates 100\%. 
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{ The canonical problem}
+We now have a consumption-savings decision problem, with the following Lagrangian function:
+\begin{equation}
+\mathcal{L} = \sum^{T}_{t=0} \beta^t [u[f(k_t) - k_{t+1}] + {\mu}k_{t+1}]
+\end{equation}
+The next step involves taking the derivative w.r.t the decision variable $k_{t+1}$. The first-order conditions are:
+%(recall our assumption about $c_t$?)
+\begin{eqnarray}\nonumber
+\frac{\partial\mathcal{L}}{\partial{k_{t+1}}} &:& - \beta^{t}u'(c_t) + \beta^{t}\mu_t + \beta^{t+1}u'(c_{t+1})f'(k_{t+1}) = 0, ~~~ t=0, \ldots , T-1 \\ \nonumber
+\frac{\partial\mathcal{L}}{\partial{k_{T+1}}} &:& - \beta^{T}u'(c_T) + \beta^{T}\mu_T = 0  , ~~~ {\text{for period}}~T
+\end{eqnarray}
+Finally, the Kuhn-Tucker conditions include:
+\begin{eqnarray}\nonumber
+\mu_{t}k_{t+1} = 0, ~~~ t=0, \ldots , T \\ \nonumber
+k_{t+1} \geq 0, ~~~ t=0, \ldots , T \\ \nonumber
+\mu_{t} \geq 0, ~~~ t=0, \ldots , T 
+\end{eqnarray}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{ The canonical problem}
+The summary statement of the first-order conditions is then the ``Euler equation'':
+\begin{eqnarray} \nonumber
+u'[f(k_t)-k_{t+1}] &=& {\beta}u'[f(k_{t+1})-k_{t+2}]f'(k_{t+1}) ~, ~~~ t = 0, \ldots, T-1 \\ \nonumber
+ &&  k_{0} ~{\text{given}}, ~ k_{T+1}=0 ,
+\end{eqnarray}
+where the capital sequence is what we need to solve for.\footnote{recall the optimization problem (\ref{Eq1})} \vskip0.1in
+
+The following conditions ensure a unique solution, such that the FOCs are sufficient:\footnote{\scriptsize That is, computing the equilibrium policy function in a recursive model is valuable because it is a sufficient description of equilibrium, and from it one can derive any economic quantity (Judd, 1991)}
+\begin{itemize}
+\item The objective $U = \sum^{T}_{t=0} u(c_t)$ is (strictly) concave 
+\item The constraint (choice) set is convex in $\{c_t , k_{t+1}\}$
+\end{itemize}
+
+\vfill
+
+{\scriptsize {$1$}Recall the optimization problem (\ref{Eq1}).}
+
+{\scriptsize $2$ That is, computing the equilibrium policy function in a recursive model is valuable because it is a sufficient description of equilibrium, and from it one can derive any economic quantity (Judd, 1991).}
+
+{\scriptsize Note: From $\partial\mathcal{L}/\partial{k_{T+1}}$, and since $u'(c) > 0 ~ \forall ~ c$, we conclude that $\mu_{T} > 0$. This implies that $k_{T+1} = 0$: the consumer leaves no capital for after the last period.}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{ The canonical problem}
+
+Let's interpret the key equation for optimization, the Euler equation:
+
+\begin{equation}
+\underset{\text{invest ``one'' more unit}}{\underset{\text{Utility lost if you}}{\underbrace{u'(c_t)}}} 
+= 
+\underset{\text{next period per unit}}{\underset{\text{Utility increase}}{\underbrace{\beta{u}'(c_{t+1})}}}  \cdot  \underset{\text{invested unit}}{\underset{\text{Return on the }}{\underbrace{f'(k_{t+1})}}}
+\end{equation}
+Thus, because of the concavity of $u$, equalizing the marginal cost of saving (LHS) to the marginal benefit of saving (RHS) is a condition for an optimum. \vskip0.25in
+
+
+How do the primitives affect savings behaviour? 
+
+Three components:
+\begin{itemize}
+\item[(i)] Consumption ``smoothing'' via strictly concave utility function $u$
+\item[(ii)] Impatience via discount factor $\beta$
+\item[(iii)] Income and substitution effects via the return to savings $f'(k_{t+1}) = R_t$
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+Example 4.1: Logarithmic utility (p. 47)
+\end{frame}
+
+
+\begin{frame}
+Example 4.2: CIES (constant intertemporal elasticity of substitution) utility function (p. 49)
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Infinite Horizon \& Sufficient conditions}
+Why should macroeconomists study the case of an infinite horizon?
+\begin{itemize}
+\item Altruism: people do not live forever, but they may care about their descendants
+\item Simplicity: with a long time horizon, finite- and infinite-horizon models show very similar results. Infinite horizon models are stationary in nature.
+\end{itemize}\vskip0.2in
+
+
+The infinite horizon only requires one additional condition to that in the finite case: the \textit{transversality condition}. Both ensure the capital stock is zero in the limit. See Proposition 4.4, p. 56:
+
+
+
+\end{frame}
+
+
+\subsection{Recursive methods}
+
+\begin{frame}
+% A simple problem and an alternative approach to its solution
+\frametitle{An alternative approach}
+% Krussel, p. 58
+%\textcolor{blue}{Dynamic Programming}
+\begin{itemize}
+\item Our approach up to now has been to look for a sequence of real numbers $\{ k_{t+1} \}^{\infty}_{0}$ that generates an optimal consumption plan.
+\item The solution was a difference (functional) equation: the Euler equation.
+\item The search for a sequence is sometimes impractical, and not always intuitive.
+\item An alternative approach that is intuitive and useful for both analytic \textit{and} numerical computation, is dynamic programming using \textit{recursive methods}
+\end{itemize}
+
+
+\end{frame}
+
+
+
+
+
+\begin{frame}
+% A simple problem and an alternative approach to its solution
+\frametitle{The value function}
+%\textcolor{blue}{The value function}
+
+Using the canonical (neoclassical) model as an example, assume we can derive the individual's discounted value of utility in period $t$ as:
+
+{ {
+\begin{equation}\label{EqA.1}
+V(k_t) \equiv \max_{\{k_{t+1+i}\}_{i=0}^{\infty}} \sum_{i=0}^{\infty} \beta^{i} u[f(k_{t+i})- k_{t+1+i}] %~, ~~ {\text s.t.}~ k_{
+\end{equation}
+%where $\Gamma(k_t)$ represents the feasibale choice set for $k_{t+1}$ given initial condition $k_t$. 
+Given the current state ($k_t$), $V(k_t)$ gives the supremum over all possible policies of the present values of current and future utility. 
+\vskip0.1in
+
+\textcolor{blue}{The value function} in period ${\color{red}t+1}$:
+\begin{equation}\label{EqA.2}
+V(k_{t+1}) = \max_{\color{red}\{k_{t+1+i}\}_{i=1}^{\infty}} \sum_{{\color{red}i=1}}^{\infty} \beta^{{\color{red}i-1}} u
+[f(k_{t+i})- k_{t+1+i} ]
+\end{equation}
+
+We now separate the period $t$ problem \eqref{EqA.1} from that of future periods \ldots
+
+}}
+\end{frame}
+
+
+
+\begin{frame}
+% A simple problem and an alternative approach to its solution
+
+\frametitle{The value function}
+
+\ldots using maximisation-by-steps:
+ \begin{eqnarray} \nonumber
+V(k_t) & = & \max_{ k_{t+1} \in [0,f(k_t)] } \Big\{ \underset{ i = 0}{\underbrace{u[f(k_{t})- k_{t+1}]}}  \\ \nonumber & & +  \max_{\{k_{t+1+i}\}_{i=1}^{\infty}} \sum_{i=1}^{\infty} \beta^{i} u
+[f(k_{t+i})- k_{t+1+i}] \Big \}
+ \end{eqnarray}
+
+
+%\textcolor{blue}{The value function}
+\begin{eqnarray}\nonumber
+V(k_t) & = & \max_{ k_{t+1} \in [0,f(k_t)] } \Big\{ u[f(k_{t})- k_{t+1}] \\ \label{EqA.3}  & & + ~ \beta \max_{\color{red}\{k_{t+1+i}\}_{i=1}^{\infty}} \sum_{{\color{red}i=1}}^{\infty} \beta^{{\color{red}i-1}} u
+[f(k_{t+i})- k_{t+1+i} ] \Big \}
+ \end{eqnarray}
+
+By definition of \eqref{EqA.2}, \eqref{EqA.3} equals:
+
+\begin{equation}\nonumber 
+V(k_{t}) = \max_{k_{t+1} \in [0,f(k_t)] } \{ u [f(k_{t})-k_{t+1}] +
+\beta V(k_{t+1}) \}
+\end{equation}
+
+
+\end{frame}
+
+
+\begin{frame}
+
+\frametitle{The value function} \vskip 0.1in
+
+%\textcolor{blue}{Remarks:}\\\vskip 0.1in
+
+\begin{equation}\label{EqA.4}
+V(k_{t}) = \max_{k_{t+1} \in [0,f(k_t)] } \{ u [f(k_{t})-k_{t+1}] +
+\beta V(k_{t+1}) \}
+\end{equation}
+
+\begin{itemize}
+\item \eqref{EqA.4} is the dynamic programming formulation.
+\item It presents exactly the same problem as that shown in \eqref{EqA.1}, but written in a recursive form;
+\item It is known as the Bellman equation, and it is a functional equation: the unknown is a function $V$
+\item If we find a $V$ that satisfies \eqref{EqA.4} for any value of $k_t$, then all the maximizations on the RHS are well-defined
+%\item we denote the value function of the discounted utility by $V(K_{t-1},Z_{t}$), to stress that it is a function of the value of the initial capital stock, $K_{t-1}$ (state variable);
+\item The decision rule for $k_{t+1} = g(k_t)$, alluded to earlier, follows:
+\end{itemize}
+\begin{equation}
+g(k_t) = \argmax_{k_{t+1}} \{ u [f(k_{t})-k_{t+1}] +
+\beta V(k_{t+1}) \}
+\end{equation}
+\begin{itemize}
+\item To proceed, we need to assume that the value function
+$V(\cdot)$ exists, that a maximum exists and it is unique;
+\item Moreover, we need the \emph{envelope theorem} to derive the functional Euler equation.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+Example 4.5 Solving a parametric dynamic programming problem
+
+(work from the ``guess'' that the value function has the form $V(k) = a + b\log{k}$ to obtain the decision rule: $k^{\prime} = \alpha \beta A k^{\alpha}$). 
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Simple steps to solving a dynamic optimization problem using the envelope theorem}
+\begin{equation}
+V(k_{t}) = \max_{c_t, k_{t+1}} \{ u(c_t) +
+\beta V(k_{t+1}) \} ~, ~~ {\text{s.t.}~~} c_t = f(k_{t}) - k_{t+1}
+\end{equation}
+Assume the constraint binds, as before, and take FOC w.r.t $k_{t+1}$:
+\begin{eqnarray} \nonumber
+\frac{\partial{V}(k_t)}{\partial{k}_{t+1}} &:& \underset{{\text{Chain rule}}}{\underbrace{\frac{\partial{u}(c_t)}{\partial{c}_{t}} \frac{\partial{c_t}}{\partial{k}_{t+1}}}} + \beta\frac{\partial{V}(k_{t+1})}{\partial{k}_{t+1}} = 0 \\ \nonumber
+& \therefore & u^{\prime}(c_t)(-1) + {\beta}V^{\prime}(k_{t+1}) = 0 \\ \label{FOC1}
+& \therefore & u^{\prime}(c_t) = {\beta}V^{\prime}(k_{t+1})
+\end{eqnarray}
+We need to find $V^{\prime}(k_{t+1})$ \ldots 
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Simple steps to solving a dynamic optimization problem using the envelope theorem}
+
+We can use the envelope theorem, by taking FOC w.r.t $k_{t}$ and then iterating forward by one period:
+\begin{eqnarray} \nonumber
+\frac{\partial{V}(k_t)}{\partial{k}_{t}} &:& \frac{\partial{u}(c_t)}{\partial{c}_{t}}\frac{\partial{c_t}}{\partial{f(k_t)}} \frac{\partial{f(k_t)}}{\partial{k}_t} + \beta\frac{\partial{V}(k_{t+1})}{\partial{k}_{t}} \\ \nonumber
+& \therefore & u^{\prime}(c_t)(1)f^{\prime}(k_t) + \beta (0)
+ \\  \label{FOC2}
+ \therefore \frac{\partial{V}(k_{t+1})}{\partial{k}_{t+1}} &=& V^{\prime}(k_{t+1}) =  u^{\prime}(c_{t+1})f^{\prime}(k_{t+1}) 
+\end{eqnarray}
+
+
+Substitute \eqref{FOC2} into \eqref{FOC1} to get the functional Euler equation, as in our ``canonical problem'':
+
+\begin{equation}
+\underset{\text{invest ``one'' more unit}}{\underset{\text{Utility lost if you}}{\underbrace{u'(c_t)}}} 
+= 
+\underset{\text{next period per unit}}{\underset{\text{Utility increase}}{\underbrace{\beta{u}'(c_{t+1})}}}  \cdot  \underset{\text{invested unit}}{\underset{\text{Return on the }}{\underbrace{f'(k_{t+1})}}}
+\end{equation}
+
+\end{frame}
+
+
+
+
+
+
+
+\section{A General Version}
+
+\begin{frame}
+
+\frametitle{A General Version (similiar to Krussel, Ch 4.3.)} \vskip 0.1in
+
+In a general form, for the model economy, the social-planning
+problem or, equivalently, the competitive equilibrium involves solving the following dynamic programming problem:
+
+\begin{eqnarray}
+V(x_{t},z_{t}) &=& \max_{y_t} [F(x_{t},y_{t},z_{t}) + \beta
+E_{t}V(x_{t+1},z_{t+1})] \label{EqA.5}\\
+s.t. ~~~~~~~ x_{t+1} &=& {\color{blue}G (x_{t},y_{t},z_{t})} \label{EqA.6}
+\end{eqnarray}
+
+where,\\
+
+\begin{itemize}
+\item $x_{t}$: a vector of state variables in t;
+\item $y_{t}$: a vector of control variables in t;
+\item $z_{t}$: a vector of stochastic state variables in t;
+\item F($\cdot$,$\cdot$): objective function to be maximized;
+\item \eqref{EqA.6}: budget constraint. We include the expectations operator because of the presence of uncertainty $z_t$.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{A General Version} \vskip 0.1in
+
+The solution to this problem:
+
+\begin{equation}\label{EqA.7}
+y_{t} = {\color{red}H(x_{t}, z_{t})}
+\end{equation}
+
+\eqref{EqA.7} is the so called policy function (or decision rule)
+which describes how the control variable behaves as a function of the
+state variables in $t$.\vskip 0.1in
+
+\pause
+
+Since the policy function optimizes the choice of the control
+variables for every permitted value of $x_{t}$, it must fulfill the
+following condition:
+
+\begin{equation}\label{EqA.8}
+V (x_t, z_t) = F (x_t, {\color{red}H(x_t, z_t)}, z_t) + \beta E_t V({\color{blue}G(x_t, {\color{red}H(x_t,
+z_t)}, z_t)}, z_{t+1})
+\end{equation}
+
+\end{frame}
+
+
+\begin{frame}
+
+\frametitle{A General Version} \vskip 0.1in
+
+To find the policy function $H(x_t, z_t)$, we need the FOCs of
+\eqref{EqA.5} and its envelope condition,
+
+{\scriptsize{
+\begin{eqnarray}
+\frac{\partial{V}(\cdot_t)}{\partial{y_t}} &:& 0 = F_{y}(x_t, y_t, z_t) + \beta E_t [{\overset{{\color{Green}\frac{\partial{V}(x_{t+1}, z_{t+1})}{\partial{x_{t+1}}}} \frac{\partial{x}_{t+1}}{\partial{G}(\cdot)} \frac{\partial{G}(\cdot)}{\partial{y}_t} }{\overbrace{{\color{Green}{V_x({\color{blue}G(x_t, y_t,z_t)},
+z_{t+1})}}G_y(x_t, y_t, z_t)}}}]  \label{EqA.9}\\ \nonumber \\ \label{EqA.9b}
+\underset{{\text{\scriptsize satisfies}}}{{\color{red}H(\cdot_t)}} &:& 0 = F_{y}({\color{red}H}) + \beta E_t [{\color{Green}{V_x({\color{blue}G(H)})}}G_y({\color{red}H}))]  \\ \nonumber && {\text{But,}}~{\color{Green}V_x(\cdot_{t+1})}~{\text{is unknown}}   \\ \label{EqA.10}
+{\color{Green}{\frac{\partial{V}(\cdot_{t})}{\partial{x_{t}}}}} &=& F_x  +  \beta E_t V_{x}G_x + H_x [ \underset{= 0 ~{\text{by}}~ \eqref{EqA.9b}}{\underbrace{F_{y} +  \beta E_t V_{x}G_y }}  ]
+\end{eqnarray} 
+}}
+
+where,
+\begin{itemize}
+\item $F_{y}(x_t, y_t, z_t), F_{x}(x_t, y_t, z_t)$: vector of derivatives of the objective
+function w.r.t. the control variables and state variables;
+\item ${\color{Green}{V_x({\color{blue}G(x_t, y_t,z_t)},
+z_{t+1})}}$: vector of derivatives of the objective
+function w.r.t. the state variables in ${\color{black}{t+1}}$;
+\item $G_y(x_t, y_t, z_t), G_x(x_t, y_t, z_t)$: vector of
+derivatives of the budget constraints w.r.t. the control variables
+and state variables.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{A General Version} \vskip 0.1in
+
+$\Box$ Optimizing \eqref{EqA.5} such that \eqref{EqA.6} holds, implies that $G_x(\cdot)=0$, and \eqref{EqA.10}, iterated forward, becomes:
+%\begin{eqnarray}
+%\therefore {\color{Green}{\frac{\partial{V}(\cdot_{t+1})}{\partial{x_{t+1}}}}} &=& F_x (x_{t+1}, y_{t+1}, z_{t+1}) \\   & & + ~~  \beta E_t [V_x({\color{blue}G(x_{t+1}, y_{t+1},z_{t+1})}, z_{t+2})G_x(x_{t+1}, y_{t+1}, z_{t+1})]
+%\end{eqnarray}
+\begin{eqnarray}\label{EqA.11}
+\therefore {\color{Green}{\frac{\partial{V}(\cdot_{t+1})}{\partial{x_{t+1}}}}} &:& V_x(x_{t+1}, z_{t+1}) = F_x (x_{t+1}, y_{t+1}, z_{t+1})
+\end{eqnarray}
+
+
+Therefore, the FOCs \eqref{EqA.9} give the following functional Euler equation:
+\begin{equation}\label{EqA.12}
+0 = F_{y}(x_t, y_t, z_t) + \beta E_t [F_x(G(x_t, y_t,z_t), y_{t+1},
+z_{t+1})G_y(x_t, y_t, z_t)]
+\end{equation}
+Solving for $y_t$ gives the policy function \eqref{EqA.7}.
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Self-study}
+
+Work through examples 4.1 (p. 47), 4.2 (p. 49), 4.5. (p. 63), and Ch 4.3 (pp. 67-69).
+
+\end{frame}
+
+
+%\begin{frame}
+%\begin{center}
+%\Huge{THE END}
+%\end{center}
+%\end{frame}
+\end{document}
