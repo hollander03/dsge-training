@@ -1,1 +1,1 @@
-[Schedule - Google Sheets](https://docs.google.com/spreadsheets/d/1rM07nKc1pZM4wYUtGbaFP4UbdtLBaR_5WURb-unP_TA/edit?usp=sharing)
+[09-13 November 2026 ERSA Schedule - Google Sheets](https://docs.google.com/spreadsheets/d/1ZY6m46xt7Z1jF3WgcaSP3GxivPZ8YxHT/edit?usp=sharing&ouid=104863735015329917089&rtpof=true&sd=true)
