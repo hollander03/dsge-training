@@ -12,7 +12,7 @@ The user guide can be found in the [`ntdsge/0.user_guide`](https://github.com/ho
 - We will aim to include as much practical training so that we can have you all engage. 
 - Prescribed resources should therefore be familiarised with before contact sessions --- i.e., watch tutorial videos and read through prescribed slides & notes so that we focus on challenges and practical aspects.
 - So look to prepare questions on what you struggled with, the insights/revelations that you experienced, and the critiques that you may have on the underlying assumptions/presuppositions.
-- It may be useful for the **participants** to post these remarks online via a [Slack Channel](https://slack.com/) (the `National Treasure` workspace in Slack).
+- It may be useful for the **participants** to post these remarks online via a [Slack Channel](https://slack.com/) (the `DSGE Workshop` workspace in Slack).
 - If the content is not all covered within the designated session, the **participants** should post questions on the [Slack Channel](https://slack.com/) *before the following contact session*.
 - We will look to split Q&A sessions into 1 hour of recap and engagement (Q&A), and 1 hour of practical work (e.g., run the code, interpret, adjust). 
 
