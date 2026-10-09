@@ -11,5 +11,5 @@
 - *Note:* `user_guide` in the `ntdsge` folder contains a practitioner's guide to running DSGE models in Dynare: [user guide](https://github.com/hollander03/dsge-training/tree/main/ntdsge/0.user_guide). It provides the necessary information to use DSGE models for policy analysis and to develop the skills to maintain and improve existing models. The practitioner should have a basic understanding of DSGE models and should be familiar with MATLAB before attempting to use the replication code. Supplementary training resources are available in the `training` subdirectory, which takes you to the repository for training material and capacity building that was used for the Modelling & Forecasting Unit in the Economic Policy Division at National Treasury. It includes a short MATLAB primer.
 
 ## Model codes
-- Repository containing resources and replication files for DSGE models are in the `ntdsge` folder: [ntdsge](https://github.com/hollander03/dsge-training/tree/main/ntdsge).
-- *Note:* this folder has mostly been emptied for the ERSA DSGE training workshop for November 2026.
+- Repository containing resources and replication files for DSGE models are in the `dsge` folder: [ntdsge](https://github.com/hollander03/dsge-training/tree/main/dsge).
+- *Note:* subfolders in this folder has mostly been emptied for the ERSA DSGE training workshop for November 2026.
