@@ -25,7 +25,7 @@ The user guide can be found in the [`ntdsge/0.user_guide`](https://github.com/ho
 ## Schedule
 ### DSGE training and tutorial sessions
 
-Below follows the high-level outline. See the ``2025 DSGE Training Schedule`` ([Google Sheets](https://docs.google.com/spreadsheets/d/1rM07nKc1pZM4wYUtGbaFP4UbdtLBaR_5WURb-unP_TA/edit?usp=sharing)) in `admin` folder for more details. 
+Below follows the high-level outline. See the ``DSGE Training Schedule`` in `admin` folder for more details ([Link](training/admin/Schedule - Google Sheets.md)). 
 
 - **[Block 1]** Introduction to DSGE models and Dynare
 1. Slack, GitHub, & Matlab/Octave installation – with Dynare (0.5 session)
