@@ -4,7 +4,7 @@
 
 Repository for training material and capacity building on Modern Macroeconomic Theory and Computational Methods for Macroeconomics. 
 
-The user guide can be found in the [`ntdsge/0.user_guide`](https://github.com/hollander03/dsge-training/tree/main/ntdsge/0.user_guide) sub-directory. This folder contains the user guide, the Dynare Manual, and additional resources to understand and implement DSGE models in Dynare. The most up-to-date user guide verison will be maintained in this [google doc](https://docs.google.com/document/d/1mAzQPIP47KYYNsGOvcBHuVgZHptjEdJH/edit). Please check before downloading. Anyone with the link can comment.
+The user guide can be found in the [`dsge/0.user_guide`](https://github.com/hollander03/dsge-training/tree/main/dsge/0.user_guide) sub-directory. This folder contains the user guide, the Dynare Manual, and additional resources to understand and implement DSGE models in Dynare. The most up-to-date user guide verison will be maintained in this [google doc](https://docs.google.com/document/d/1mAzQPIP47KYYNsGOvcBHuVgZHptjEdJH/edit). Please check before downloading. Anyone with the link can comment.
 
 ## Overview
 - Session blocks under [`Schedule`](#schedule) indicate Sections by bullet numbering. 1 Session = 2 Hours. 
@@ -52,5 +52,5 @@ Above includes: Practical DSGE and empirical sessions [`Tutorials`](#tutorials).
 
 ## Tutorials
 
-- Resources for practical tutorials can be found in [~/training/macro_course_material](https://github.com/hollander03/dsge-training/tree/main/training/macro_course_material) and [~/training/ntdsge_content](https://github.com/hollander03/dsge-training/tree/main/training/ntdsge_content). 
+- Resources for practical tutorials can be found in [~/training/macro_course_material](https://github.com/hollander03/dsge-training/tree/main/training/macro_course_material) and [~/training/ntdsge_content](https://github.com/hollander03/dsge-training/tree/main/training/dsge_content). 
 - The NT-DSGE team is also developing additional **fiscal-policy-focused** `Dynare training exercises` based on Ljungqvist & Sargent in a seperate repo [Practicing-Dynare-NT](https://github.com/hollander03/Practicing-Dynare-NT). These small-scale "toy models" are designed for researchers, graduate students, and policymakers who want hands-on practice implementing fiscal instruments (taxes, government spending, anticipated vs. unanticipated policy) in simple DSGE/RBC environments.
