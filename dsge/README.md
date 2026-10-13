@@ -14,7 +14,7 @@ Repository containing the DSGE model code for policy analysis & forecasting, as 
 
 - `policy_papers` contains replication files for past policy papers published.
 
-- `policy_analysis` contains output for deliverables in the foreasting and budgeting process within the Forecasting & Modelling Unit at National Treasury.
+- `policy_analysis` contains output for deliverables from the workshop.
 
 - `matlab_code` contains matlab functions and example code to seasonally adjust variables, convert frequency of timeseries, generate fiscal multipliers, create figure plots, etc.
 
