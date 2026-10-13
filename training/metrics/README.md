@@ -1,37 +1,26 @@
-# Macro-Econometrics
+# Macro-econometrics for policy applications
 
-[`Overview`](#overview) | [`Resources`](#resources) | [`Schedule`](#schedule) | [`Tutorials`](#tutorials) |
+This directory houses participant-facing material for applied macroeconomic time-series work. It complements the DSGE materials in `../ntdsge_content`; it does not duplicate the National Treasury DSGE model in `../../dsge`.
 
-This folder contains training & capacity building material on Econometric Methods for Macroeconomics.
+The first implementation target is a Master’s-level, application-led pathway for the 2026 NT workshop. See the [curriculum map](CURRICULUM_MAP.md), [econometrics reading log](READING_LOG.md), and [software compatibility standard](SOFTWARE_COMPATIBILITY.md).
 
-## Overview
-- Session blocks under [`Schedule`](#schedule) indicate Sections by bullet numbering. 1 Session = 2 Hours.
+## How to use this directory
 
-## Resources
-- Our sessions will follow closely to 
-- With supplementary material on 
-- This [HANDBOOK OF MACROECONOMICS (CHAPTER XX)](https://) provides an overview of . The authors cover the foundations of . It is a challenging text and thus your benchmark to aim for.
-- See also the `readers` folder (there is a huge amount of literature, so we've tried to be as focused as possible on the DSGE and empirical topics identified). We will add more to supplement the above core resources.
+- `tutorials/` contains runnable exercises and their data.
+- `readings/` will contain a curated, permission-cleared reading list and links; it should not become an uncurated dump of copyrighted books or papers.
+- `reference_slides/` will contain facilitator-owned or permission-cleared slides that support, rather than replace, the practical exercises.
+- `archive/` is for deprecated or superseded material only. Do not place live teaching material there.
 
-## Schedule
-### First Semester - DSGE training and tutorial sessions
+## Workshop pathway
 
-- See the ``2023_WorkSchedule_NT-SA-TIED.docx`` in `admin` folder for more details.
+1. Reproducible data handling, dynamic relationships and transformations.
+2. Univariate benchmarks, forecasting and forecast evaluation.
+3. The move from univariate methods to VAR/SVAR methods and structural identification for a fiscal-policy question.
+4. DSGE observables, measurement equations, identification and scenario analysis.
+5. Team mini-projects, presentations and continuation plans.
 
-### Second Semester Schedule - Practical DSGE and empirical sessions
+The existing `tutorials/econometric_research` material is valuable preliminary content: it links data preparation, univariate/multivariate workflows, VARs and Bayesian VARs. It is reference material until each activity has a documented plain-`.m`/GNU-Octave route.
 
-- **[Block 1]** (Re-)Introduction to Macroeconomic Time-series Econometrics
-1. Matlab apps, toolboxes, & best practices (0.5 session)
-2. Univariate time series (0.5 session)
-3. Multivariate time series (1 sessions)
+## Software rule
 
-- **[Block 2]** Macroeconomic Time-series Analysis
-
-1. OLS (1 session)
-2. VARs (1 session) 
-3. VECMs (1 session)
-
-- **[Block 3]** Specialized topics
-1. Bayesian models (1 sessions)
-2. Time-varying parameters and Stochastic volatility models (2 sessions)
-3. Large variable models (2 sessions)
+Core exercises must run with GNU Octave and, where needed, Dynare. MATLAB, Econometrics Modeler and BEAR may be used as optional enhancements, but are not prerequisites. Each approved exercise should have a simple run instruction, declared inputs, expected outputs and a planned R equivalent.
