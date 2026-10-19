@@ -1,6 +1,6 @@
 # DSGE 
 
-[`Overview`](#overview) | [To-Do List](https://github.com/hollander03/dsge-training/tree/main/ntdsge/7.notes)
+[`Overview`](#overview) | [To-Do List](https://github.com/hollander03/dsge-training/tree/main/dsge/7.notes)
 
 Repository containing the DSGE model code for policy analysis & forecasting, as well as resources and replication files to assist policy analysis.
 
@@ -14,10 +14,10 @@ Repository containing the DSGE model code for policy analysis & forecasting, as 
 
 - `policy_papers` contains replication files for past policy papers published.
 
-- `policy_analysis` contains output for deliverables from the workshop.
+- `policy_analysis` contains output for deliverables in the foreasting and budgeting process within the Forecasting & Modelling Unit at National Treasury.
 
 - `matlab_code` contains matlab functions and example code to seasonally adjust variables, convert frequency of timeseries, generate fiscal multipliers, create figure plots, etc.
 
 - `latex_output` contains the latex files generated using the ``LaTeX`` command in the Dynare ``.mod`` file as described in the user guide. This compiles a ``.pdf`` document of the calibrated and estimated parmaters, the steady state conditions, and the model equations.
 
-- `notes` contains information on on-going work and includes a [To-Do List](https://github.com/hollander03/dsge-training/tree/main/ntdsge/7.notes).
+- `notes` contains information on on-going work and includes a [To-Do List](https://github.com/hollander03/dsge-training/tree/main/dsge/7.notes).
