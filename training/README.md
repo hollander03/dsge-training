@@ -2,55 +2,53 @@
 
 [`Overview`](#overview) | [`Resources`](#resources) | [`Schedule`](#schedule) | [`Tutorials`](#tutorials) |
 
-Repository for training material and capacity building on Modern Macroeconomic Theory and Computational Methods for Macroeconomics. 
+Training materials for modern macroeconomic theory and computational methods, supporting research and capacity building.
 
-The user guide can be found in the [`dsge/0.user_guide`](https://github.com/hollander03/dsge-training/tree/main/dsge/0.user_guide) sub-directory. This folder contains the user guide, the Dynare Manual, and additional resources to understand and implement DSGE models in Dynare. The most up-to-date user guide verison will be maintained in this [google doc](https://docs.google.com/document/d/1mAzQPIP47KYYNsGOvcBHuVgZHptjEdJH/edit). Please check before downloading. Anyone with the link can comment.
+The user guide can be found in the [`dsge/0.user_guide`](https://github.com/hollander03/dsge-training/tree/main/dsge/0.user_guide) subdirectory. This folder contains the user guide, the Dynare Manual, and additional resources to understand and implement DSGE models in Dynare. The most up-to-date user guide version will be maintained in this [Google Doc](https://docs.google.com/document/d/1mAzQPIP47KYYNsGOvcBHuVgZHptjEdJH/edit). Please check before downloading. Anyone with the link can comment.
 
 ## Overview
-- Session blocks under [`Schedule`](#schedule) indicate Sections by bullet numbering. 1 Session = 2 Hours. 
-- Additional practical/Q&A sessions scheduled to ensure everyone is on track.
-- We will aim to include as much practical training so that we can have you all engage. 
-- Prescribed resources should therefore be familiarised with before contact sessions --- i.e., watch tutorial videos and read through prescribed slides & notes so that we focus on challenges and practical aspects.
-- So look to prepare questions on what you struggled with, the insights/revelations that you experienced, and the critiques that you may have on the underlying assumptions/presuppositions.
-- It may be useful for the **participants** to post these remarks online via a [Slack Channel](https://slack.com/) (the `DSGE Workshop` workspace in Slack; [invite link](https://join.slack.com/t/dsgeworkshop/shared_invite/zt-4er0kw2as-NQ3pTKse2gmadq3f3Y97Fw)).
-- If the content is not all covered within the designated session, the **participants** should post questions on the [Slack Channel](https://slack.com/) *before the following contact session*.
-- We will look to split Q&A sessions into 1 hour of recap and engagement (Q&A), and 1 hour of practical work (e.g., run the code, interpret, adjust). 
+
+- The numbered topics under [Schedule](#schedule) are organised into teaching blocks. One session represents approximately two hours; the detailed workshop schedule specifies the actual allocation.
+- Teaching combines discussion of core concepts, guided code examples and practical applications.
+- Participants develop their understanding by running models, interpreting results and exploring changes to assumptions, parameters and policy rules.
+- Review the relevant resources beforehand where possible, and bring questions about concepts, implementation or interpretation.
+- Use the `DSGE Workshop` workspace on [Slack](https://slack.com/) to share questions, results and useful resources during and between sessions. [Workspace link](https://dsgeworkshop.slack.com/) · [invite link](https://join.slack.com/t/dsgeworkshop/shared_invite/zt-4er0kw2as-NQ3pTKse2gmadq3f3Y97Fw).
 
 ## Resources
-- Our sessions will follow closely to the [DYNARE TUTORIALS by Willi Mutschler](https://mutschler.eu/dynare/)
-- See also supplementary material on [MACROECONOMIC THEORY by Sang Seok Lee](https://sites.google.com/site/ssleeeconomist/teaching/506?authuser=0)
-- This [HANDBOOK OF MACROECONOMICS (CHAPTER 9)](https://www.sas.upenn.edu/~jesusfv/FVRS_Handbook.pdf) provides an overview of solution and estimation techniques for DSGE models. The authors cover the foundations of numerical approximation techniques as well as statistical inference and they survey the latest developments in the field. It is a challenging text and thus your benchmark to aim for.
-- See also the `readers` folder (there is a huge amount of literature, so we've tried to be as focused as possible on the DSGE and empirical topics identified). We will add more to supplement the above core resources.
+- Sessions draw on the [Dynare tutorials by Willi Mutschler](https://mutschler.eu/dynare/).
+- See supplementary material on [macroeconomic theory by Sang Seok Lee](https://sites.google.com/site/ssleeeconomist/teaching/506?authuser=0).
+- This [HANDBOOK OF MACROECONOMICS (CHAPTER 9)](https://www.sas.upenn.edu/~jesusfv/FVRS_Handbook.pdf) provides an overview of solution and estimation techniques for DSGE models. The authors cover the foundations of numerical approximation techniques as well as statistical inference and they survey the latest developments in the field. This is an advanced reference for further study.
+- The `readers` folder contains additional material on the DSGE and empirical topics covered in the course.
 
 ## Schedule
 ### DSGE training and tutorial sessions
 
-Below follows the high-level outline. See the ``DSGE Training Schedule`` in `admin` folder for more details ([`Link`](https://github.com/hollander03/dsge-training/tree/main/training/admin)). 
+The outline below gives the teaching blocks and indicative allocations. See the [detailed workshop schedule and participant guidance](https://github.com/hollander03/dsge-training/tree/main/training/admin) for the current programme.
 
 - **[Block 1]** Introduction to DSGE models and Dynare
-1. Slack, GitHub, & Matlab/Octave installation – with Dynare (0.5 session)
+1. Slack, GitHub and MATLAB/Octave setup with Dynare (0.5 session)
 2. Introduction to modern macroeconomic models (0.5 session)
-3. Real Business Cycle models in Dynare (2 sessions)
+3. Real business cycle models in Dynare (2 sessions)
 
-- **[Block 2]** Modern DSGE models & Estimation
-4. New-Keynesian models in Dynare (2 sessions)
-5. Solving the basic New-Keynesian model (2 sessions)
+- **[Block 2]** Modern DSGE models and estimation
+4. New Keynesian models in Dynare (2 sessions)
+5. Solving the basic New Keynesian model (2 sessions)
 6. Bayesian estimation of DSGE models (2 sessions)
 
-- **[Block 3]** Identification analysis of DSGE model parameters, Optimal policy, & Best Practices
-7. Identification in Dynare (1 sessions)
-8. Optimal policy in Dynare (1 sessions)
-9. Best practices in Dynare (1 sessions)
+- **[Block 3]** Identification of DSGE model parameters, optimal policy and best practices
+7. Identification in Dynare (1 session)
+8. Optimal policy in Dynare (1 session)
+9. Best practices in Dynare (1 session)
 
 - **[Option]** Specialized topics
 10. Optimal taxation in DSGE models (1 session)
 11. Small open economy DSGE model (1 session)
 12. Financial accelerator (1 session)
-13. Medium-scale DSGE Model (1 session)
+13. Medium-scale DSGE model (1 session)
 
-Above includes: Practical DSGE and empirical sessions [`Tutorials`](#tutorials).
+These blocks include practical DSGE and empirical exercises; see [Tutorials](#tutorials).
 
 ## Tutorials
 
 - Resources for practical tutorials can be found in [~/training/macro_course_material](https://github.com/hollander03/dsge-training/tree/main/training/macro_course_material) and [~/training/dsge_content](https://github.com/hollander03/dsge-training/tree/main/training/dsge_content).
-- The NT-DSGE team is also developing additional **fiscal-policy-focused** `Dynare training exercises` based on Ljungqvist & Sargent in a seperate repo [Practicing-Dynare-NT](https://github.com/hollander03/Practicing-Dynare-NT). These small-scale "toy models" are designed for researchers, graduate students, and policymakers who want hands-on practice implementing fiscal instruments (taxes, government spending, anticipated vs. unanticipated policy) in simple DSGE/RBC environments.
+- **Optional supplementary resource:** [Practicing_Dynare_Fiscal_Policy](https://github.com/hollander03/Practicing-Dynare-NT) contains fiscal-policy exercises based on Ljungqvist and Sargent. These small DSGE/RBC models provide practice with taxes, government spending and anticipated versus unanticipated policy changes. The accompanying Overleaf project is named “Practicing Dynare Fiscal Policy”, with the main TeX file `practice_dynare_FP.tex`. These exercises supplement the core workshop materials.
