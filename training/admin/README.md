@@ -8,7 +8,6 @@
 ## Participant overview and preparation
 
 **9–13 November 2026 | University of Cape Town**  
-Facilitator: Hylton Hollander
 
 We will move from economic intuition to implementation, model extensions and interpretation. The emphasis is on understanding how a modelling choice produces a result and what that result means.
 
@@ -26,15 +25,15 @@ You may work with your own model or an existing model from the Macroeconomic Mod
 
 | Time | Activity | What to expect |
 |---|---|---|
-| 09:00–10:30 | Core concepts and discussion | Hylton introduces the economic ideas and mechanisms. **Pencil and paper only, both supplied. Put laptops, phones and smartwatches away.** |
+| 09:00–10:30 | Core concepts and discussion | The facilitator introduces the economic ideas and mechanisms. **Pencil and paper only, both supplied. Put laptops, phones and smartwatches away.** |
 | 10:30–11:00 | Tea | |
-| 11:00–12:30 | Minimal example and guided practical | Hylton demonstrates a small code example and explains its results. We connect the concepts to implementation. |
+| 11:00–12:30 | Minimal example and guided practical | The facilitator demonstrates a small code example and explains its results. We connect the concepts to implementation. |
 | 12:30–13:30 | Lunch | |
 | 13:30–15:00 | Group extension | Work in your group to extend the example. Suggested exercises will be supplied, with scope to pursue a related direction of your choice. |
 | 15:00–15:30 | Tea | |
 | 15:30–17:00 | Preparation and group presentations | First 30 minutes: preparation. Each of the five groups then has **8 minutes to present and 2 minutes for questions**. |
 
-There are five groups of up to four participants, each with a group lead. Use the group to discuss mechanisms, share implementation tasks and troubleshoot. Hylton will facilitate throughout.
+There are five groups of up to four participants, each with a group lead. Use the group to discuss mechanisms, share implementation tasks and troubleshoot. The facilitator will be available throughout.
 
 For Monday–Wednesday presentations, use **no more than four content slides, excluding the title slide**. Show what you tried, the method or change you made, a result and its interpretation. **Every group member other than the lead must present at least once across these three days.** Agree the rotation within your group. Leads can help prepare and discuss the work while other members take the presentation role.
 
@@ -46,7 +45,7 @@ The morning covers welfare analysis and optimal policy, followed by practical wo
 
 **13:30–15:00:** apply relevant methods to your own project or an identified existing model. This work should connect to the thesis logic document you completed before the workshop. A focused calibration, diagnostic, policy-rule comparison, sensitivity exercise or counterfactual is enough for a useful workshop application.
 
-**15:30–17:00:** prepare your individual presentation for Friday. You can use your group for feedback and troubleshooting, with Hylton available to help.
+**15:30–17:00:** prepare your individual presentation for Friday. You can use your group for feedback and troubleshooting, with the facilitator available to help.
 
 ## Friday: individual presentations and discussion
 
