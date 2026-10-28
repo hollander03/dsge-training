@@ -1,3 +1,9 @@
+# Workshop schedules
+
+- [ERSA Intermediate DSGE workshop — 9–13 November 2026](https://docs.google.com/spreadsheets/d/1ZY6m46xt7Z1jF3WgcaSP3GxivPZ8YxHT/edit?usp=sharing)
+
+---
+
 # ERSA Intermediate DSGE Modelling and Policy Applications
 ## Participant overview and preparation
 
@@ -6,7 +12,7 @@ Facilitator: Hylton Hollander
 
 We will move from economic intuition to implementation, model extensions and interpretation. The emphasis is on understanding how a modelling choice produces a result and what that result means.
 
-The [detailed schedule](https://docs.google.com/spreadsheets/d/1ZY6m46xt7Z1jF3WgcaSP3GxivPZ8YxHT/edit) is also linked through the [workshop repository](https://github.com/hollander03/dsge-training/tree/main). Monday–Thursday run from 09:00 to 17:00. Friday runs from 09:00 to 15:00.
+The [detailed schedule](https://docs.google.com/spreadsheets/d/1ZY6m46xt7Z1jF3WgcaSP3GxivPZ8YxHT/edit) is also linked through the [workshop repository’s Schedule section](https://github.com/hollander03/dsge-training/tree/main/training#schedule). Monday–Thursday run from 09:00 to 17:00. Friday runs from 09:00 to 15:00.
 
 ## Before the workshop
 
