@@ -6,8 +6,6 @@ This folder contains the user guide, the Dynare Manual, and additional resources
 
 The guide presents the model code; the runnable files are available in [`training/dsge_content/codes/Basic_RBC`](https://github.com/hollander03/dsge-training/tree/main/training/dsge_content/codes/Basic_RBC).
 
-The `archive` folder preserves the 10 December 2025 DOCX and PDF, earlier versions, the overview draft, and a copy of the Google Docs file before this revision.
-
 *Note:* beginners for DSGE training can start with **The DYNARE software**, including installation and configuration. You can alternatively start reading the Dynare Manual (this is more comprehensive).
 
 The `other` folder contains:
