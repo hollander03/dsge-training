@@ -13,7 +13,7 @@ vars_to_plot = {'y', 'ygap', 'mreal', 'r', 'int', 'pii', 'mc', 'x'};
 plot_titles = {'Output', 'Output gap', 'Real money supply', ...
                'Real interest rate', 'Nominal interest rate', 'Inflation', ...
                'Marginal cost', 'Markup'};
-scale_400 = ismember(vars_to_plot, {'r', 'int', 'pii'}); % annualized rate variables
+scale_400 = ismember(vars_to_plot, {'r', 'int', 'pii'}); % annualised rate variables
 n_vars = length(vars_to_plot);
 
 % Loop over shocks
@@ -64,7 +64,7 @@ plot(0:T, [0; int_series(1:T)], 'm-d', 'DisplayName', 'Nominal interest rate');
 
 legend('Location','Northeast');
 xlabel('Quarters');
-ylabel('%-points (ann.)');
+ylabel('Rates: annualised percentage points; output gap: %');
 title('Monetary Transmission Mechanism');
 grid on;
 hold off;

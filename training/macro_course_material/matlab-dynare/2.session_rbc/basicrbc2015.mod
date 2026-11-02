@@ -104,6 +104,7 @@ hold off
 % Create loop to over parameter values. NOTE: this can also be performed using the macro language (see guide)
 %-------------------------------------------------------------
 
+eta_baseline = M_.params(strcmp(M_.param_names, 'eta'));
 eta_params = 1:0.1:5;
 for i=1:length(eta_params)
 % eta = eta_params(i);
@@ -146,6 +147,7 @@ hold off
 % Create loop to simulate 200 series with 200 observations for output
 %-------------------------------------------------------------
 
+set_param_value('eta', eta_baseline);
 for i=1:200
 set_dynare_seed(i);
 stoch_simul(order=1, periods=200, noprint, nograph);
@@ -157,7 +159,7 @@ end
 %-------------------------------------------------------------
 
 figure
-plot([101:200], y_sim(:,101:200))
+plot(101:200, y_sim(101:200,:))
 hold off
 
 %-------------------------------------------------------------

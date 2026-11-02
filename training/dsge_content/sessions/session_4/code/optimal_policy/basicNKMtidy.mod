@@ -8,7 +8,7 @@ var y c m r int pii mc x xi_z xi_p xi_i p
 varexo epsilon_z epsilon_p epsilon_i; //  epsilon_mu
 
 // Define parameters
-parameters betta delta eta_c eta_m eta_n theta_p kappa_pii kappa_y rho_z rho_p rho_i rho_mu phi_z sigmaz sigmap sigmai sigmamu;
+parameters betta delta eta_c eta_m eta_n theta_p kappa_pii kappa_y rho_z rho_p rho_i rho_iexo rho_mu phi_z sigmaz sigmap sigmai sigmamu;
 
 // Parameter values
 betta = 0.989;           // Discount factor
@@ -21,9 +21,9 @@ kappa_pii = 1.5;         // MP response to inflation
 kappa_y = 0.35;          // MP response to output gap
 rho_z = 0.95;            // Persistence of technology shock
 rho_p = 0.75;            // Persistence of price shock
-rho_i = 0.75;            // Persistence of monetary policy - Smoothing parameter in Taylor rule
-rho_i = 0.75;            // Persistence of monetary policy - Shock
-rho_iexo = 0.75;           // Persistence of money supply shock
+rho_i = 0.75;            // Interest-rate smoothing in the Taylor rule
+rho_iexo = 0;            // Monetary policy shock is i.i.d. in this experiment
+rho_mu = 0.75;          // Persistence for the optional money-supply rule
 phi_z = 0;               // Endogenous money supply response to tech shock
 sigmaz = 0.01;           // Std. dev. of technology shock
 sigmap = 0.0025;         // Std. dev. of price shock - quarterly rate

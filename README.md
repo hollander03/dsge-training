@@ -1,15 +1,23 @@
 # DSGE Training
- Repository for training material and capacity building on Modern Macroeconomic Theory and Computational Methods for Macroeconomics
 
- Links to surveys: 
- - [Day 1](https://www.surveymonkey.com/r/636QCVY) (2026)
- - [Day 5](https://www.surveymonkey.com/r/27PR6JS) (2026)
- - What suggestions do you have for improving future DSGE model workshops? (Please send email to hollander03@gmail.com)
+Training materials for modern macroeconomic theory and computational methods, supporting research and capacity building.
+
+Start with the [training overview](training/README.md) for the course outline and practical resources. Workshop participants should also read the [schedule and preparation guidance](training/admin/README.md).
 
 ## Training resources
-- Repository for training material and capacity building on Modern Macroeconomic Theory and Computational Methods for Macroeconomics are in the `training` folder: [training](https://github.com/hollander03/dsge-training/tree/main/training).
-- *Note:* `user_guide` in the `dsge` folder contains a practitioner's guide to running DSGE models in Dynare: [user guide](https://github.com/hollander03/dsge-training/tree/main/dsge/0.user_guide). It provides the necessary information to use DSGE models for policy analysis and to develop the skills to maintain and improve existing models. The practitioner should have a basic understanding of DSGE models and should be familiar with MATLAB before attempting to use the replication code. Supplementary training resources are available in the `training` subdirectory, which takes you to the repository for training material and capacity building that was used for the Modelling & Forecasting Unit in the Economic Policy Division at National Treasury. It includes a short MATLAB primer.
 
-## Model codes
-- Repository containing resources and replication files for DSGE models are in the `dsge` folder: [dsge](https://github.com/hollander03/dsge-training/tree/main/dsge).
-- *Note:* this folder has mostly been emptied for the ERSA DSGE training workshop for November 2026.
+- **DSGE workshops:** [`training/dsge_content`](training/dsge_content) contains workshop examples, exercises and readings. The [practical topic map](training/README.md#tutorials) links to the relevant material.
+- **Advanced macroeconomics course:** [`training/macro_course_material`](training/macro_course_material) is a standalone course based on Romer's *Advanced Macroeconomics*, with MATLAB and Dynare exercises integrated into the teaching material.
+- **Macroeconometrics:** [`training/metrics`](training/metrics) contains training and capacity-building material on econometric methods for macroeconomics. This material will be developed in due course to complement the DSGE training.
+
+## User guide and supporting resources
+
+The [user-guide folder](dsge/0.user_guide) contains the guide and supplementary references. The latest guide is maintained in [Overleaf](https://www.overleaf.com/project/6ad72ce5d978a419cd107ac1). Runnable examples for the guide are available in [Basic RBC](training/dsge_content/codes/Basic_RBC).
+
+The [`dsge`](dsge) folder also retains supporting MATLAB utilities, policy papers and application resources. Use the training overview to find the workshop exercises.
+
+## Workshop feedback
+
+- [Day 1 survey](https://www.surveymonkey.com/r/636QCVY) (2026)
+- [Day 5 survey](https://www.surveymonkey.com/r/27PR6JS) (2026)
+- Suggestions for future workshops: hollander03@gmail.com
