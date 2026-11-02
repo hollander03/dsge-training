@@ -4,6 +4,8 @@
 
 Training materials for modern macroeconomic theory and computational methods, supporting research and capacity building.
 
+For workshop schedules, participant guidance and preparation requirements, see the [workshop administration README](admin/README.md).
+
 The user guide can be found in the [`dsge/0.user_guide`](https://github.com/hollander03/dsge-training/tree/main/dsge/0.user_guide) subdirectory. This folder contains the user guide, the Dynare Manual, and additional resources to understand and implement DSGE models in Dynare. The most up-to-date user guide version will be maintained in this [Google Doc](https://docs.google.com/document/d/1mAzQPIP47KYYNsGOvcBHuVgZHptjEdJH/edit). Please check before downloading. Anyone with the link can comment.
 
 ## Overview
@@ -27,7 +29,7 @@ The outline below gives the teaching blocks and indicative allocations. See the 
 
 - **[Block 1]** Introduction to DSGE models and Dynare
 1. Slack, GitHub and MATLAB/Octave setup with Dynare (0.5 session)
-2. Introduction to modern macroeconomic models (0.5 session)
+2. Introduction to modern macroeconomic models (Solow & RCK) (1.5 sessions)
 3. Real business cycle models in Dynare (2 sessions)
 
 - **[Block 2]** Modern DSGE models and estimation
