@@ -91,9 +91,8 @@ end ;
 
 varobs y_obs ;
 
-%estimation(datafile=data9519);
-% The estimation uses Dynare version 6. For dynare version 4.6 use mode_compute=4
-estimation(datafile=data9519, mh_replic=0, // mh_nblocks=3, mh_drop=0.5, mh_jscale=0.99,
-           mode_compute=0, mode_file=basicrbc2015_est_mode, load_mh_file, // mode_check,  
-           // bayesian_irf, irf=40, // moments_varendo, conditional_variance_decomposition=[1:20],
-           graph_format=(fig,pdf), nodisplay) y_obs dc dv y c n v k r z ;
+// Fresh estimation: compute the posterior mode without requiring saved results.
+// Set mh_replic=50000 and add bayesian_irf for a full posterior-sampling run.
+// Assess convergence before interpreting posterior results.
+estimation(datafile=data9519, mh_replic=0, mode_compute=4,
+           graph_format=(fig,pdf), nodisplay) y_obs dc dv y c n v k r z;

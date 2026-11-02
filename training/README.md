@@ -6,7 +6,7 @@ Training materials for modern macroeconomic theory and computational methods, su
 
 For workshop schedules, participant guidance and preparation requirements, see the [workshop administration README](admin/README.md).
 
-The user guide can be found in the [`dsge/0.user_guide`](https://github.com/hollander03/dsge-training/tree/main/dsge/0.user_guide) subdirectory. This folder contains the user guide, the Dynare Manual, and additional resources to understand and implement DSGE models in Dynare. The most up-to-date user guide version will be maintained in this [Google Doc](https://docs.google.com/document/d/1mAzQPIP47KYYNsGOvcBHuVgZHptjEdJH/edit). Please check before downloading. Anyone with the link can comment.
+The user guide can be found in the [`dsge/0.user_guide`](https://github.com/hollander03/dsge-training/tree/main/dsge/0.user_guide) subdirectory. This folder contains the user guide, the Dynare Manual, and additional resources to understand and implement DSGE models in Dynare. The latest user guide is maintained in [Overleaf](https://www.overleaf.com/project/6ad72ce5d978a419cd107ac1). Since 2 November 2026, the Google Docs version and local DOCX have been retained as legacy references; future revisions are maintained in Overleaf.
 
 ## Overview
 
