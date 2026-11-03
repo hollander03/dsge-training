@@ -1,6 +1,6 @@
 # Research references: not the workshop run folder
 
-These files are retained from the facilitator's research directory. Text line endings and trailing whitespace are normalised; equations and code content are preserved. Run the simulation from the [parent folder](../README.md), not by running arbitrary files here.
+These files are retained from the facilitator's research directory. Text line endings and trailing whitespace are normalised; equations and code content are preserved. Run the simulation from the [parent folder](../../../../training/dsge_content/sessions/session_2/code/real_fiscal/README.md), not by running arbitrary files here.
 
 - `ntdsge_real.mod`: selected research source; its original active workflow performs estimation and requires external data and a mode file. Those estimation inputs are not required or included for the workshop simulation.
 - `SAFiscal_fiscalrstar_flexible2.mod`: earlier fixed-calibration simulation; its 54 model equations match the real block used in the selected source after comment/whitespace normalisation.

@@ -1,28 +1,26 @@
 # RBC fiscal applications: group practical
 
-Choose one focused fiscal question for the available 60–90 minutes. There are two routes, depending on how much model structure the group is ready to use.
+Build on the models you have already studied. Choose one fiscal extension and one question that can be investigated in 60–90 minutes.
 
-## Route A: extend a growth model
+## Choose a starting model
 
-Build on the fiscal NCG/RCK applications discussed in [session 1](../../../session_1/README.md) and the facilitator-selected Practicing Dynare fiscal exercises. Introduce or vary one tax or spending instrument, identify its financing arrangement, and interpret the steady state and transition path. This is the more accessible route for groups still consolidating the growth and RBC material.
+- [Hansen/basic RBC](../../code/basic_rbc): extend the baseline used in this session.
+- [Willi Mutschler's RBC example](../../code/mutschler_rbc): use its nonlinear formulation to connect equilibrium conditions, the steady state and stochastic simulation.
+- [Session 1 growth models and fiscal exercises](../../../session_1/README.md): develop an optimising NCG/RCK fiscal example into a stochastic business-cycle experiment. Revisit how expectations enter household decisions; adding a random shock to Solow alone does not supply an optimising RBC model.
 
-## Route B: use the fuller real fiscal DSGE model
+Start with one spending instrument or one distortionary tax. Add the necessary government budget and financing assumptions consistently to the household conditions and resource constraint. A model with productive government investment, household heterogeneity or additional fiscal rules is a broader real fiscal DSGE extension; it need not be the textbook RBC model.
 
-The [fixed-calibration real fiscal model](../../code/real_fiscal/README.md) brings private/public capital, household heterogeneity, debt, transfers and three distortionary taxes into one flexible-price framework. It is an optional advanced application, with an RBC-style real core; it is broader than the basic Hansen RBC model. Its original equations and calibration are retained.
+## Choose one comparison
 
-Run `dynare real_fiscal` from `../../code/real_fiscal`, then `plot_real_fiscal_irfs('etag')` for a government-consumption shock. The [run guide](../../code/real_fiscal/README.md) lists all six instruments and their innovation names. No estimation, observed data or external steady-state solver is required for the fixed-calibration simulation.
+- Add a government-consumption shock and compare its persistence. Explain the financing assumption and the responses of consumption, investment and labour.
+- Add one labour- or consumption-tax instrument and trace the associated household wedge. State whether revenue finances spending, transfers or debt repayment.
+- Compare one financing assumption while keeping the fiscal innovation fixed.
+- Extend a session 1 fiscal NCG/RCK example with a technology or fiscal shock, then compare the stochastic responses with the deterministic transition studied earlier.
 
-Choose just one comparison, for example:
-
-- How does government-consumption shock persistence affect output, consumption, investment and debt? The supplied `compare_real_fiscal_persistence` helper varies shock persistence while holding instrument smoothing fixed.
-- How do Ricardian and non-Ricardian consumption respond to a transfer or spending shock?
-- How does one debt-feedback coefficient change the financing and adjustment after a fiscal shock?
-- What are the qualitative differences between one spending shock and one tax shock? Start with their signs and mechanisms; the source shock sizes differ, and tax normalisation must be checked before comparing equal-cost interventions or multipliers.
-
-The model retains all six endogenous fiscal rules, even when the group studies one innovation. Choosing one tax and one spending instrument for discussion does not switch off the other financing responses. Leave structural simplification and steady-state recalibration for later work. The [model review](../../code/real_fiscal/MODEL_REVIEW.md) explains the inherited resource constraints, tax units and comparison with the research versions.
+Work in a copy of the baseline. First recover its original solution, then make the smallest extension needed for the question. Recompute the steady state and check the model solution before interpreting the results. Distinguish shock persistence from any smoothing in the fiscal rule.
 
 ## Present the finding
 
-First run and understand the baseline. State the question and predict its mechanism, make one focused comparison, then interpret the result and limitations. Keep other assumptions fixed where possible. Report the innovation size, units, calibration and financing responses; distinguish impact effects from later adjustment.
+State the question and predict the mechanism before running the experiment. Present one clear comparison, explain its financing and limitations, and distinguish impact effects from later adjustment. Report shock size, units and calibration; do not compare different instruments' one-standard-deviation shocks as if they were equal-cost interventions.
 
-Prepare one clear result and economic explanation. A literature review or comprehensive model description is unnecessary. Follow the [workshop presentation guidance](../../../../../admin/README.md).
+A comprehensive model description or literature review is unnecessary. Follow the [workshop presentation guidance](../../../../../admin/README.md).

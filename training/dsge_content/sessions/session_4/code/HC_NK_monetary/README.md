@@ -6,6 +6,6 @@ Optional extension to the [New Keynesian session](../../README.md), examining th
 - [Supplementary appendix](HC2020-MD-SuppAppendix.pdf), especially section B.4.4, equations (B.30)–(B.41), printed/PDF page 17.
 - [Workshop examples and run instructions](code/README.md).
 - The fuller pre-GFC [historical-decomposition example](code/historical_decomposition/hc_monetary_historical_decomposition.mod) reuses its supplied mode by default; full rerun commands are commented in the code.
-- [Equation comparison and limitations](code/EQUATION_REVIEW.md).
+- [Exercises and paper benchmarks](code/BENCHMARKS.md).
 
-The examples preserve selected research specifications rather than impose a new common calibration. The paper's full reserve-market model and the simplified extension on [NK slide 35](../../slides/NKM-dynare-slides.pdf) should be distinguished. Read the equation review before comparing results across examples.
+The examples preserve selected research specifications rather than impose a new common calibration. The paper's full reserve-market model and the simplified extension on [NK slide 35](../../slides/NKM-dynare-slides.pdf) should be distinguished. Use the run instructions and benchmark notes to distinguish the available examples.

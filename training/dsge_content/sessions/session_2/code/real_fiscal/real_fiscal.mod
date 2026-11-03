@@ -1,6 +1,6 @@
 // Workshop simulation of ntdsge_real.mod: fixed inherited calibration.
 // Original model equations and parameter assignments are retained.
-// See README.md and MODEL_REVIEW.md before changing steady-state calibration.
+// See README.md before changing steady-state calibration.
 %Flexible price equilibrium for the NT-DSGE model Small open economy model for SA with extended fiscal sector
 %Dynare Version 6 used for calculations
 %December, 2024

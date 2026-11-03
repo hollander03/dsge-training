@@ -26,7 +26,7 @@ Use the [New Keynesian slides](slides/NKM-dynare-slides.pdf) to discuss nominal-
 
 ## Monetary-regime extension
 
-The [Hollander–Christensen examples](code/HC_NK_monetary) provide simulation, optimal simple rules, 2020 estimation and conditional forecasting. Read their [equation comparison](code/HC_NK_monetary/code/EQUATION_REVIEW.md) before relating the full reserve-market model to the reduced extension on slide 35. Historical originals are retained alongside a separately identified OSR teaching adaptation.
+The [Hollander–Christensen examples](code/HC_NK_monetary) provide simulation, optimal simple rules, 2020 estimation and conditional forecasting. Use the [paper benchmarks](code/HC_NK_monetary/code/BENCHMARKS.md) to choose an exercise and relate its full reserve-market model to the reduced extension on slide 35.
 
 ## Group practical
 

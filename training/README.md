@@ -75,5 +75,3 @@ The core pathway is **growth → RBC → New Keynesian models**. Folder numbers 
 Each practical follows the same sequence: run and understand the baseline; state a question and predict its mechanism; make a focused change or comparison; interpret the result and limitations; present the main finding.
 
 The [detailed workshop schedule](admin/README.md) specifies which examples and exercises will be used.
-
-- **Optional supplementary resource:** [Practicing_Dynare_Fiscal_Policy](https://github.com/hollander03/Practicing-Dynare-NT) contains fiscal-policy exercises based on Ljungqvist and Sargent. These small DSGE/RBC models provide practice with taxes, government spending and anticipated versus unanticipated policy changes. The accompanying Overleaf project is named “Practicing Dynare Fiscal Policy”, with the main TeX file `practice_dynare_FP.tex`. These exercises supplement the core workshop materials.

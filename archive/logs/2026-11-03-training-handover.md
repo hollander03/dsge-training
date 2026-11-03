@@ -40,3 +40,10 @@
 - MATLAB R2024a / Dynare 6.1 checks passed. All 210 stored IRFs match the original-source simulation exactly; six fiscal-shock output IRFs are finite, foreign-shock output effects are zero, persistence comparison solves and restores baseline structures. Plot exports were visually checked.
 - Important economic qualifications are documented: inherited open-economy steady-state weights and two resource constraints are preserved, not rederived for a new closed economy; consumption-tax scaling needs reconciliation before percentage-point shocks or quantitative multipliers. No structural simplification was made.
 - Fiscal practical README now offers an accessible growth-model fiscal extension and the optional advanced real-model route. Keep experiments focused on one mechanism and distinguish innovation persistence from instrument smoothing; selecting a shock does not deactivate other fiscal financing rules.
+
+## Participant-facing scope correction
+
+- Public repository guidance must address participants. Keep internal source audits, validation histories, provenance and obsolete research variants under `archive`, without making them required participant reading. Applied this to the real-fiscal and monetary-regime additions; archived recent duplicate RBC build products while retaining sources and teaching decks.
+- Refocused session 2 fiscal practical on extending the Hansen/WM RBC code or the session 1 optimising growth/fiscal examples. A shock added to Solow alone does not produce an optimising RBC model. The fuller real-fiscal model is no longer the required practical route.
+- Removed links to the NT-specific fiscal repository from public participant guidance. No `training_2025` files had been imported into this public repository. The facilitator states that this material belongs in the separate `dsge-training-nt` repository.
+- Clarification requested on whether the optional real-fiscal model should also move to the NT repository and whether to copy `training_2025` there. Pending response, retained the previously authorised runnable real-fiscal model as optional and did not copy or modify the external fiscal repository.

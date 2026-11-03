@@ -19,7 +19,7 @@ Supporting readings include the [RCK notes](RCK_model/2020_Carroll_RamseyCassKoo
 
 ## Group practical
 
-For the group practical, work through selected fiscal applications in the [Practicing Dynare document](https://www.overleaf.com/project/692d6b9a27db12d5acaeb198), extending Solow and interpreting the resulting transition paths. The facilitator will identify the exercises for the available time. [Associated fiscal-policy code](https://github.com/hollander03/Practicing-Dynare-NT) provides related applications.
+For the group practical, work through selected fiscal applications in the [Practicing Dynare document](https://www.overleaf.com/project/692d6b9a27db12d5acaeb198), extending Solow and interpreting the resulting transition paths. The facilitator will identify the exercises for the available time.
 
 Understand the baseline, choose a focused fiscal experiment, predict its mechanism, run the comparison and explain the result. The next core session, [RBC](../session_2), extends the analysis to business-cycle fluctuations and offers fiscal applications or a model–data comparison.
 

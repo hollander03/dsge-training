@@ -1,6 +1,6 @@
 # Benchmarks against the paper
 
-These are teaching benchmarks against the **approach and qualitative results** of Hollander and Christensen (2022), not a certified numerical replication of the publication. See the [paper](../2022-HC-monetary-regimes-PRINT.pdf), [appendix](../HC2020-MD-SuppAppendix.pdf), and [equation review](EQUATION_REVIEW.md). Recorded runs use MATLAB R2024a and Dynare 6.1 on 3 November 2026.
+These are teaching benchmarks against the **approach and qualitative results** of Hollander and Christensen (2022), not a certified numerical replication of the publication. See the [paper](../2022-HC-monetary-regimes-PRINT.pdf), [appendix](../HC2020-MD-SuppAppendix.pdf). Recorded runs use MATLAB R2024a and Dynare 6.1 on 3 November 2026.
 
 | Example | Published benchmark | What to compare and what was checked |
 |---|---|---|
@@ -30,5 +30,3 @@ For comparison, Table 2 reports output shares `15.7 / 38.5 / 35.1 / 10.8` in the
 ## OSR check and limits
 
 With the documented bounds and fixed seed, the paper-based teaching OSR reduced the weighted stationary-target variance from approximately `9.39281e-5` to `3.18672e-6`. The reported solution was `rho_h=0.04432`, `nu_h=0.1`, `rho_i=0.68665`, `kapa_pi=5`, `kapa_y=2`. Several coefficients reach the imposed bounds, so the solution depends materially on those teaching bounds. It is not an estimate of the paper's reported welfare gains or proof of a global optimum. The loss is computed with unconditional variances, following Dynare's OSR implementation; it is not a recomputed discounted lifetime welfare sum from a historical initial state.
-
-The archived historical OSR can execute and report an optimiser result despite its disconnected parameters. Successful execution therefore does not validate that experiment as an optimal policy rule.

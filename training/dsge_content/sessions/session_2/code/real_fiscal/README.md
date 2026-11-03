@@ -34,16 +34,15 @@ Other questions can consider one debt-feedback coefficient, one spending instrum
 
 ## Calibration and units
 
-The `.mod` file includes the inherited steady-state/calibration coefficients, so its linear steady state can be computed directly. The legacy nonlinear steady-state routines in `reference` are **not** used by this simulation. Changing shock persistence, innovation size or a policy feedback is different from recalibrating steady-state taxes, expenditure shares or household composition. Such structural recalibration requires a separate steady-state review; do not assume the embedded coefficients automatically adjust.
+The `.mod` file includes the inherited steady-state/calibration coefficients, so its linear steady state can be computed directly. No legacy nonlinear steady-state routine is used by this simulation. Changing shock persistence, innovation size or a policy feedback is different from recalibrating steady-state taxes, expenditure shares or household composition. Such structural recalibration requires a separate steady-state review; do not assume the embedded coefficients automatically adjust.
 
 The default shocks use their source standard deviations, which differ across instruments. A one-standard-deviation spending shock is not directly comparable to a one-standard-deviation tax shock as an equal-cost policy intervention. The helper plots `100 × model deviation`; quantity variables generally represent log deviations, rates are shown as scaled model units without annualisation, and `by=b-y` is a log debt/output-ratio deviation, not a change in the debt ratio in percentage points.
 
-Keep tax-rate responses in raw model units until their normalisation has been checked. In particular, the consumption-tax coefficient in the household FOC uses `tauCbar/(1+tauCbar)`, while the budget equation contains an unscaled `tauC` term. This inherited convention needs reconciliation before labelling a tax innovation as a one-percentage-point rate change or computing comparable fiscal multipliers. See [model review](MODEL_REVIEW.md).
+Keep tax-rate responses in raw model units until their normalisation has been checked. In particular, the consumption-tax coefficient in the household FOC uses `tauCbar/(1+tauCbar)`, while the budget equation contains an unscaled `tauC` term. This inherited convention needs reconciliation before labelling a tax innovation as a one-percentage-point rate change or computing comparable fiscal multipliers.
 
 ## Scope and references
 
 External dynamics are decoupled from domestic real outcomes in this source; the inherited foreign variables/reporting equations remain. The source's open-economy steady-state coefficients and both resource constraints are retained. This package does not claim to have rederived a new closed-economy steady state or to replicate the full nominal model by switching off a single rigidity parameter.
 
-The [model review](MODEL_REVIEW.md) records comparisons with the embedded real block and the later JPM research files. The [validation record](VALIDATION.md) gives runtime checks. [Source provenance](provenance.csv) records the original hashes; [reference sources](reference/README.md) are retained separately and are not prerequisites for the workshop simulation.
 
 For the group exercise and the simpler NCG/RCK alternative, see the [fiscal practical](../../tutorials/fiscal_applications/README.md).

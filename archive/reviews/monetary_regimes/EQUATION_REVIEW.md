@@ -51,7 +51,7 @@ The current workshop baseline also uses `iss=1/betta` in its money-demand intere
 
 `simulation/hc_monetary_optimal_benchmark.mod` implements equation (19) for the **market rate**, not merely `int_T`. It removes the reserve-supply subsystem (`h`, `fr`, `int_T` and their closure), retains money demand as a passive determination of nominal money, and adds `int=rn+kapa_pi*pii+kapa_y*ytilde`. The replaced policy-target innovation is removed. It retains shock processes for money supply/free reserves as inherited diagnostics, which no longer feed back under this benchmark closure. It also uses identity-consistent velocity and adds nominal income. Technology changes natural output, while inflation and the output gap remain zero; money-demand shocks are accommodated by nominal money. This is the efficient interest-rate benchmark, not a separate claim about the reserve implementation of that benchmark.
 
-The [benchmark record](BENCHMARKS.md) distinguishes paper-motivated checks from exact numerical replication. In particular the selected 2020 estimation source uses 94 observations, compared with 95 reported for the corresponding Table 1 sample; this is preserved and flagged rather than silently changed.
+The [benchmark record](../../../training/dsge_content/sessions/session_4/code/HC_NK_monetary/code/BENCHMARKS.md) distinguishes paper-motivated checks from exact numerical replication. In particular the selected 2020 estimation source uses 94 observations, compared with 95 reported for the corresponding Table 1 sample; this is preserved and flagged rather than silently changed.
 
 ## Fuller historical-decomposition example and execution defaults
 
