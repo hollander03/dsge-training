@@ -46,4 +46,12 @@
 - Public repository guidance must address participants. Keep internal source audits, validation histories, provenance and obsolete research variants under `archive`, without making them required participant reading. Applied this to the real-fiscal and monetary-regime additions; archived recent duplicate RBC build products while retaining sources and teaching decks.
 - Refocused session 2 fiscal practical on extending the Hansen/WM RBC code or the session 1 optimising growth/fiscal examples. A shock added to Solow alone does not produce an optimising RBC model. The fuller real-fiscal model is no longer the required practical route.
 - Removed links to the NT-specific fiscal repository from public participant guidance. No `training_2025` files had been imported into this public repository. The facilitator states that this material belongs in the separate `dsge-training-nt` repository.
-- Clarification requested on whether the optional real-fiscal model should also move to the NT repository and whether to copy `training_2025` there. Pending response, retained the previously authorised runnable real-fiscal model as optional and did not copy or modify the external fiscal repository.
+- Clarification resolved: retain the optional real-fiscal model publicly with internal notes archived, and also copy its runnable files to the NT repository. Move the historical 2025 collections out of Practicing-Dynare-NT into dsge-training-nt.
+
+## NT repository copies and 2025 migration completed
+
+- NT destination commit `1e84c9d` was pushed and verified before deleting any source files. Runnable real fiscal copy: `training/ntdsge_content/sessions/session_2/code/real_fiscal`. All three runnable files match the public version exactly; its README is adapted to the NT layout.
+- Historical participant collection: `training/2025`, with fiscal, presentation and RBC/MIU examples. README links to the maintained Practicing Dynare repository and its Overleaf read link. Internal logs, errata and provenance are under `archive/training_2025` in the NT repository.
+- All 32 files from both `Code/training_2025` and `Code/archive/training_2025` were preserved and verified against the pushed NT Git blobs using SHA-256. Per-folder Git attributes preserve their original bytes. The earlier source manifest is retained in the NT archive.
+- Source removal commit `6ffd082` was pushed to Practicing-Dynare-NT. Both historical folders were removed, and README/review references updated. Maintained workbook TeX, current section examples and full replications were unchanged.
+- NT team training starts 30 November 2026. Both NT additions are linked from its root/training READMEs; they do not replace the current public workshop exercises.
