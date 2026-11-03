@@ -48,7 +48,7 @@ For the group exercise and the simpler NCG/RCK alternative, see the [fiscal prac
 
 ## Research applications and background
 
-The model supplied here is a fixed-calibration, flexible-price version of the South African NT-DSGE model developed from Kemp and Hollander's (2020) working paper. That model has since been extended and applied to fiscal stimulus, fiscal stress, basic income grants and, most recently, fiscal r-star and monetary–fiscal coordination in Havemann and Hollander (2026), “Monetary–Fiscal Coordination in South Africa: Aligning the Stars.”
+The model supplied here is a fixed-calibration, flexible-price version of the South African NT-DSGE model developed from Kemp and Hollander's (2020) working paper. That model has since been refined, adapted and extended, and applied to fiscal stimulus, fiscal stress, basic income grants and, most recently, fiscal r-star and monetary–fiscal coordination in Havemann and Hollander (2026), “Monetary–Fiscal Coordination in South Africa: Aligning the Stars.”
 
 The papers below document this development and its policy applications, including versions with nominal rigidities and an open economy. The real model supplied for this practical retains the flexible-price core; specifications and calibrations differ across the papers, so it should not be treated as the replication code for every application.
 
