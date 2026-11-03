@@ -192,10 +192,22 @@ varobs ytilde_obs pii_obs int_obs m_obs;  // rr_obs
 //conditional_variance_decomposition=[1:20], forecast=8,  mode_file=CH2017mvpyEst5907Hetzel_mode,
 // //
 
-estimation(datafile=hc_monetary_data, first_obs=101 , nobs=94, mh_nblocks=3, mh_drop=0.5, mh_replic=100000, mh_jscale=0.375, // load_mh_file,
-           mode_compute=0, mode_file=hc_monetary_mode, mode_check, bayesian_irf, irf=20, moments_varendo, conditional_variance_decomposition=[1:20],
-           graph_format=fig) m v p y int pii r ytilde h fr n;
+// Default: reuse the supplied posterior mode; no mode optimisation or MCMC.
+estimation(datafile=hc_monetary_data, first_obs=101, nobs=94,
+           mode_compute=0, mode_file=hc_monetary_mode, mh_replic=0,
+           smoother, graph_format=fig, nodisplay) m v p y int pii r ytilde h fr n;
 
+// Optional full estimation: comment the default command above and uncomment this block.
+// Reoptimises the posterior mode from the supplied starting mode, then samples the posterior.
+// estimation(datafile=hc_monetary_data, first_obs=101, nobs=94,
+//            mode_compute=4, mode_file=hc_monetary_mode, mode_check,
+//            mh_nblocks=3, mh_drop=0.5, mh_replic=100000, mh_jscale=0.375,
+//            bayesian_irf, irf=20, moments_varendo, conditional_variance_decomposition=[1:20],
+//            smoother, graph_format=fig, nodisplay) m v p y int pii r ytilde h fr n;
+
+
+// Decomposition at the posterior mode works without an MCMC chain.
+// After a full rerun, change parameter_set to posterior_mean if desired.
 // Shock Decomposition option
 
 shock_groups(name=groups);
@@ -206,9 +218,10 @@ shock_groups(name=groups);
 end;
 
 //// Shock Decomposition option
- shock_decomposition(colormap=jet) m v p y int_obs pii_obs r ytilde_obs m_obs;    // rr_obs
+shock_decomposition(parameter_set=posterior_mode, colormap=jet) m v p y int_obs pii_obs r ytilde_obs m_obs;    // rr_obs
  plot_shock_decomposition(graph_format=(fig), use_shock_groups=groups, colormap=jet, steadystate) m v p y int_obs pii_obs r ytilde_obs m_obs;
 
 // //see HLbEstIdentification.mod for identification example
 // //identification(parameter set = prior mode);
-identification(advanced=1, max_dim_cova_group=2);
+// Optional identification after full estimation:
+// identification(advanced=1, max_dim_cova_group=2);

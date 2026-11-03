@@ -23,3 +23,9 @@
 - At the facilitator's request, demoted the old velocity-offset/markup-shock OSR to `osr/reference`; added paper-based five-parameter OSR, three Table-2-style regimes and equation-(19) efficient Taylor-rule benchmark. The new OSR uses baseline shocks, not a markup shock. Teaching bounds and derived changes are explicit.
 - MATLAB R2024a / Dynare 6.1 checks passed for simulation, all regimes, efficient benchmark, OSR and calibrated forecast; saved-mode/no-MCMC checks passed for estimation and estimated forecasting. Conditional paths were numerically checked. Full posterior runs were not repeated. See `VALIDATION.md` and `BENCHMARKS.md`.
 - Exact replication remains distinct: selected estimation source uses 94 observations versus 95 in Table 1; interest-targeting output variance shares do not exactly reproduce Table 2. Preserve these discrepancies for review instead of silently tuning the originals.
+
+## Saved-mode historical decompositions and forecasts
+
+- Added the fuller pre-GFC source `CH2020Est5907m4.mod` as `historical_decomposition/hc_monetary_historical_decomposition.mod`, with its numeric dataset and distinct paired `CH2018mvpyEst5907Hetzel_mode.mat` (renamed `hc_monetary_historical_mode.mat`). Retained the source's 194 observations; the endpoint caveat remains explicit.
+- Changed the actual defaults for the fuller decomposition, Great Moderation estimation and estimated forecast to `mode_compute=0`, `mh_replic=0`, saved-mode smoothing and explicit posterior-mode downstream analysis. The previous validation had only changed temporary copies; the shipped defaults now match that quick workflow.
+- Added commented full reoptimisation/MCMC commands, with posterior-mean forecast alternative. Default examples all passed MATLAB R2024a / Dynare 6.1, including 10,000 forecast draws and finite shock decompositions. Full-rerun alternatives passed preprocessing only; no full MCMC reruns were performed.

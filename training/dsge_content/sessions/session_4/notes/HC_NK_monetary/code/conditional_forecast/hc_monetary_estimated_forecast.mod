@@ -183,9 +183,17 @@ end;
 varobs ytilde_obs pii_obs int_obs m_obs;  // rr_obs
 
 // hc_monetary_mode
-estimation(datafile=hc_monetary_forecast_data, mh_nblocks=3, mh_replic=50000, mh_drop=0.5, mh_jscale=0.375,
-           mode_compute=0, mode_file=hc_monetary_mode,
-           graph_format=fig, forecast=12, nodisplay) m v p y int pii r ytilde h fr n ytilde_obs pii_obs int_obs m_obs int_T int_gap;
+// Default: reuse the saved mode and run the smoother/forecast without re-estimation.
+estimation(datafile=hc_monetary_forecast_data,
+           mode_compute=0, mode_file=hc_monetary_mode, mh_replic=0,
+           smoother, forecast=12, graph_format=fig, nodisplay) m v p y int pii r ytilde h fr n ytilde_obs pii_obs int_obs m_obs int_T int_gap;
+
+// Optional full estimation: comment the default command and uncomment this block.
+// estimation(datafile=hc_monetary_forecast_data,
+//            mode_compute=4, mode_file=hc_monetary_mode, mode_check,
+//            mh_nblocks=3, mh_replic=50000, mh_drop=0.5, mh_jscale=0.375,
+//            smoother, forecast=12, graph_format=fig, nodisplay) m v p y int pii r ytilde h fr n ytilde_obs pii_obs int_obs m_obs int_T int_gap;
+
 
 // Paper section 5.2, Figure 7: active interest-rate path.
 // Figure 8 alternative: comment the int_obs block and uncomment the pii_obs block below.
@@ -204,7 +212,10 @@ values 0.00094359;
 //periods 1:12;
 //values 0.02;
 end;
-conditional_forecast(parameter_set = posterior_mean, controlled_varexo = (epsil_i), replic = 10000, periods=12);
-%%conditional_forecast(parameter_set = posterior_mean, controlled_varexo = (epsil_ms), replic = 5000, periods=12); %% test with epsil_ms with pii_obs constrained path
+conditional_forecast(parameter_set = posterior_mode, controlled_varexo = (epsil_i), replic = 10000, periods=12);
+//conditional_forecast(parameter_set = posterior_mode, controlled_varexo = (epsil_ms), replic = 5000, periods=12); %% test with epsil_ms with pii_obs constrained path
+
+// After a full MCMC rerun, replace the active conditional_forecast command above with:
+// conditional_forecast(parameter_set=posterior_mean, controlled_varexo=(epsil_i), replic=10000, periods=12);
 
 plot_conditional_forecast(periods = 12) ytilde_obs pii_obs int_obs int m_obs int_T y m v int_gap;
