@@ -40,9 +40,18 @@ The default shocks use their source standard deviations, which differ across ins
 
 Keep tax-rate responses in raw model units until their normalisation has been checked. In particular, the consumption-tax coefficient in the household FOC uses `tauCbar/(1+tauCbar)`, while the budget equation contains an unscaled `tauC` term. This inherited convention needs reconciliation before labelling a tax innovation as a one-percentage-point rate change or computing comparable fiscal multipliers.
 
-## Scope and references
+## Scope
 
 External dynamics are decoupled from domestic real outcomes in this source; the inherited foreign variables/reporting equations remain. The source's open-economy steady-state coefficients and both resource constraints are retained. This package does not claim to have rederived a new closed-economy steady state or to replicate the full nominal model by switching off a single rigidity parameter.
 
-
 For the group exercise and the simpler NCG/RCK alternative, see the [fiscal practical](../../tutorials/fiscal_applications/README.md).
+
+## Research applications and background
+
+The papers below develop and apply the broader South African fiscal DSGE model family, including versions with nominal rigidities and an open economy. They provide context for the mechanisms in this practical; the fixed-calibration real model supplied here is a teaching version, and specifications and calibrations differ across the papers.
+
+- **Kemp, J. H. and Hollander, H. (2020).** “A medium-sized, open-economy, fiscal DSGE model of South Africa.” *WIDER Working Paper 2020/92*. The foundational model description. [DOI](https://doi.org/10.35188/UNU-WIDER/2020/849-8).
+- **Havemann, R. and Hollander, H. (2026).** “Monetary–Fiscal Coordination in South Africa: Aligning the Stars.” *South African Journal of Economics*, **94**(3), e70019. [DOI](https://doi.org/10.1111/saje.70019).
+- **Havemann, R. and Hollander, H. (2024).** “Fiscal policy in times of fiscal stress (or what to do when r > g).” *Journal of Policy Modeling*, **46**(5), 1020–1054. [DOI](https://doi.org/10.1016/j.jpolmod.2024.07.001) · [Longer working-paper version](https://doi.org/10.35188/UNU-WIDER/2022/183-9).
+- **Hollander, H., Havemann, R. and Steenkamp, D. (2024).** “The macroeconomics of establishing a basic income grant in South Africa.” *South African Journal of Economics*, **92**(1), 57–68. [DOI](https://doi.org/10.1111/saje.12363) · [Longer technical paper](https://mpra.ub.uni-muenchen.de/id/eprint/114614).
+- **Hollander, H. (2024).** “Debt-financed fiscal stimulus in South Africa.” *Studies in Economics and Econometrics*, **48**(1), 87–112. [DOI](https://doi.org/10.1080/03796205.2024.2321628).
