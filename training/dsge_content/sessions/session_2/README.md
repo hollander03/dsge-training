@@ -1,6 +1,6 @@
 # RBC models and practical
 
-Start with the [RBC slides](slides/Hansen_basicrbc_slides.pdf) and [model notes](notes/Hansen_basicrbc_FULL.pdf). Run `dynare basicrbc` from `code/basic_rbc`. The [manual examples](../../codes/Basic_RBC) provide additional run instructions and a fresh posterior-mode estimation example. The session's `basicrbc_est.mod` instead performs a longer posterior-sampling exercise.
+Start with the [RBC slides](slides/Hansen_basicrbc_slides.pdf) and [model notes](notes/Hansen_basicrbc_FULL.pdf). The [Hansen reader source and build instructions](../../codes/Basic_RBC/compile%20reader) are also available. Run `dynare basicrbc` from `code/basic_rbc`. The [manual examples](../../codes/Basic_RBC) provide additional run instructions and a fresh posterior-mode estimation example. The session's `basicrbc_est.mod` instead performs a longer posterior-sampling exercise.
 
 ## Slides and teaching sequence
 
