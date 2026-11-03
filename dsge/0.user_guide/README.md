@@ -1,6 +1,6 @@
-# DSGE User Guide
+# DSGE Practical Training Manual
 
-This folder contains the user guide, the Dynare Manual, and additional resources to understand and implement DSGE models in Dynare. The main version of **Applied DSGE Modelling with Dynare: A Practical Training Manual** is maintained in [Overleaf](https://www.overleaf.com/project/6ad72ce5d978a419cd107ac1). Consult this project for the latest guide and future revisions.
+This folder contains the practical training manual, the Dynare Manual, and additional resources to understand and implement DSGE models in Dynare. The main version of **Applied DSGE Modelling with Dynare: A Practical Training Manual** is maintained in [Overleaf](https://www.overleaf.com/project/6ad72ce5d978a419cd107ac1). Consult this project for the latest manual and future revisions.
 
 **Version transition — 2 November 2026:** the [Google Docs version](https://docs.google.com/document/d/1mAzQPIP47KYYNsGOvcBHuVgZHptjEdJH/edit) and the local DOCX are retained as legacy references, frozen as of this date. Future guide updates will be maintained in Overleaf.
 

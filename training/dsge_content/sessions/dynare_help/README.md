@@ -2,9 +2,9 @@
 
 Use these resources to prepare for running models and to interpret Dynare output. See the [workshop administration guidance](../../../admin/README.md) for preparation requirements.
 
-## User guide
+## Practical Training Manual
 
-**Applied DSGE Modelling with Dynare: A Practical Training Manual** is maintained in [Overleaf — latest version](https://www.overleaf.com/project/6ad72ce5d978a419cd107ac1). The [user-guide folder](../../../../dsge/0.user_guide) contains supporting references and the Dynare reference manual. The [Basic RBC examples](../../codes/Basic_RBC) provide runnable simulation and estimation files with instructions.
+**Applied DSGE Modelling with Dynare: A Practical Training Manual** is maintained in [Overleaf — latest version](https://www.overleaf.com/project/6ad72ce5d978a419cd107ac1). The [manual and reference folder](../../../../dsge/0.user_guide) contains supporting references and the Dynare reference manual. The [Basic RBC examples](../../codes/Basic_RBC) provide runnable simulation and estimation files with instructions.
 
 For a downloaded PDF, check its revision date and follow its “latest version” link to check for updates. A current PDF export is not yet included here.
 

@@ -10,9 +10,9 @@ Start with the [training overview](training/README.md) for the course outline an
 - **Advanced macroeconomics course:** [`training/macro_course_material`](training/macro_course_material) is a standalone course based on Romer's *Advanced Macroeconomics*, with MATLAB and Dynare exercises integrated into the teaching material.
 - **Macroeconometrics:** [`training/metrics`](training/metrics) contains training and capacity-building material on econometric methods for macroeconomics. This material will be developed in due course to complement the DSGE training.
 
-## User guide and supporting resources
+## Practical Training Manual and supporting resources
 
-The [user-guide folder](dsge/0.user_guide) contains the guide and supplementary references. The latest guide is maintained in [Overleaf](https://www.overleaf.com/project/6ad72ce5d978a419cd107ac1). Runnable examples for the guide are available in [Basic RBC](training/dsge_content/codes/Basic_RBC).
+The [manual and reference folder](dsge/0.user_guide) contains the manual and supplementary references. The latest manual is maintained in [Overleaf](https://www.overleaf.com/project/6ad72ce5d978a419cd107ac1). Runnable examples for the manual are available in [Basic RBC](training/dsge_content/codes/Basic_RBC).
 
 The [`dsge`](dsge) folder also retains supporting MATLAB utilities, policy papers and application resources. Use the training overview to find the workshop exercises.
 
