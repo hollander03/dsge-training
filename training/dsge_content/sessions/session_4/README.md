@@ -22,11 +22,11 @@ The plotting script shows each shock separately and a combined monetary-transmis
 
 The non-stationarity of nominal money and the price level is an explicit teaching point. Compare their impulse responses with inflation, real money balances and real activity: under the baseline policy rule, nominal levels need not return to their initial values, even when inflation and real variables do. Their undefined unconditional variances illustrate this distinction rather than a failed simulation.
 
-Use the [New Keynesian slides](slides/NKM-dynare-slides.pdf) to discuss nominal-level determination and monetary policy regimes, followed by Hollander and Christensen (2022): [paper](notes/HC_NK_monetary/2022-HC-monetary-regimes-PRINT.pdf) and [supplementary appendix](notes/HC_NK_monetary/HC2020-MD-SuppAppendix.pdf).
+Use the [New Keynesian slides](slides/NKM-dynare-slides.pdf) to discuss nominal-level determination and monetary policy regimes, followed by Hollander and Christensen (2022): [paper](code/HC_NK_monetary/2022-HC-monetary-regimes-PRINT.pdf) and [supplementary appendix](code/HC_NK_monetary/HC2020-MD-SuppAppendix.pdf).
 
 ## Monetary-regime extension
 
-The [Hollander–Christensen examples](notes/HC_NK_monetary) provide simulation, optimal simple rules, 2020 estimation and conditional forecasting. Read their [equation comparison](notes/HC_NK_monetary/code/EQUATION_REVIEW.md) before relating the full reserve-market model to the reduced extension on slide 35. Historical originals are retained alongside a separately identified OSR teaching adaptation.
+The [Hollander–Christensen examples](code/HC_NK_monetary) provide simulation, optimal simple rules, 2020 estimation and conditional forecasting. Read their [equation comparison](code/HC_NK_monetary/code/EQUATION_REVIEW.md) before relating the full reserve-market model to the reduced extension on slide 35. Historical originals are retained alongside a separately identified OSR teaching adaptation.
 
 ## Group practical
 
