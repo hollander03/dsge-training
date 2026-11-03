@@ -1,0 +1,421 @@
+\renewcommand{\theequation}{A.\arabic{equation}}
+\setcounter{equation}{0}
+
+\section{Appendix A: First Order Conditions}
+\begin{frame}
+\frametitle{Appendix A: First Order Conditions} \vskip 0.1in
+
+Value function:
+\begin{eqnarray}\label{Eq4a.1}
+V(k_{t-1}, b_{t-1}, m_{t-1}, z_{t}, \mu_{t})&=& \max
+[u(\frac{c_{t}^{1-\eta_{c}}}{1-\eta_{c}}+\frac{(1-n_{t})^{1-\eta_{n}}}{1-\eta_{n}})
++\beta E_{t}V(k_{t}, m_{t}) \nonumber\\ & &  +
+\lambda_{t}(\omega_{t}- c_{t}-m_{t}-k_{t})  \nonumber\\ & & +
+\Lambda_{t}(\frac{m_{t-1}}{1+\pi_{t}}+\tau_{t}-c_{t})]
+\end{eqnarray}
+
+where the maximization is with respect to
+$\{c_{t},n_{t},k_{t},m_{t}\}$.
+
+\vskip 0.1in \pause
+
+\textcolor{blue}{FOCs:}
+
+\begin{itemize}
+\item $c_{t}$
+\begin{eqnarray}
+\frac{\partial V(k_{t-1}, b_{t-1},m_{t-1})}{\partial c_{t}} &=&
+c^{-\eta_{c}}-\lambda_{t}-\Lambda_{t}\label{Eq4a.2}\\
+\lambda_{t}+\Lambda_{t} &=& c^{-\eta_{c}}\label{Eq4a.3}
+\end{eqnarray}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Appendix A: First Order Conditions} \vskip 0.1in
+\textcolor{blue}{FOCs:}
+
+\begin{itemize}
+\item $n_{t}\footnote{$k_{t-1}=f(k_{t-1},n_{t},z_{t})+(1-\delta)k_{t-1}+\tau_{t}+\frac{m_{t-1}}{1+\pi_{t}}$,
+where
+$f(k_{t-1},n_{t},z_{t})=z_{t}k_{t-1}^{\alpha}n_{t}^{1-\alpha}$}$
+\begin{eqnarray}
+\frac{\partial V(k_{t-1}, b_{t-1}, m_{t-1}, z_{t},
+\mu_{t})}{\partial n_{t}} &=& -(1-n_{t})^{-\eta_{n}} +
+(1-\alpha)z_{t}k_{t-1}^{\alpha}n_{t}^{-\alpha}\lambda_{t} ~~~~~~
+\label{Eq4a.4} ~~~\\
+(1-\alpha)z_{t}k_{t-1}^{\alpha}n_{t}^{-\alpha}\lambda_{t} &=&
+(1-n_{t})^{-\eta_{n}} \label{Eq4a.5}
+\end{eqnarray}
+
+\pause
+\item $k_{t}$
+\begin{equation}\label{Eq4a.6}
+\frac{\partial V(k_{t-1}, b_{t-1}, m_{t-1}, z_{t},
+\mu_{t})}{\partial k_{t}} = \frac{\partial \beta E_{t}
+V_{k}(k_{t},m_{t})}{\partial k_{t}} - \lambda_{t}
+\end{equation}
+
+The associated envelope condition:
+\begin{equation}\label{Eq4a.7}
+\frac{\partial V(k_{t-1}, b_{t-1}, m_{t-1}, z_{t},
+\mu_{t})}{\partial k_{t-1}} =
+V_{k}(k_{t-1},m_{t-1})[f_{k}(k_{t-1},n_{t},z_{t})+(1-\delta)]
+\end{equation}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Appendix A: First Order Conditions} \vskip 0.1in
+\textcolor{blue}{FOCs:}
+
+\begin{itemize}
+\item $k_{t}$\\
+
+Updating \eqref{Eq4a.7}:
+
+\begin{equation}\label{Eq4a.8}
+\frac{\partial V_{k}(k_{t},m_{t})}{\partial k_{t}} =
+V_{k}(k_{t},m_{t})[f_{k}(k_{t},n_{t+1},z_{t+1})+(1-\delta)]
+\end{equation}
+
+where $f_{k}(k_{t},n_{t+1},z_{t+1})+(1-\delta)=R_{t}$, the gross
+real rate of return \footnote{Note, the real rate of return of
+capital stock $r_{t}^k$ is equal to the real rate of interest
+$r_{t}$ (no other assets such as bond in the model).} ($1+r_{t}$),
+which is 1 plus the $MP_{k}$ net of depreciation.
+
+\vskip 0.1in
+
+Substitute \eqref{Eq4a.8} into \eqref{Eq4a.6} and set equal to zero:
+
+\begin{equation}\label{Eq4a.9}
+\beta R_{t}E_{t} V_{k}(k_{t},m_{t})= \lambda_{t}
+\end{equation}
+
+\end {itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Appendix A: First Order Conditions} \vskip 0.1in
+\textcolor{blue}{FOCs:}
+
+{\footnotesize{
+
+\begin{itemize}
+\item $b_{t}$
+
+\begin{equation}\label{Eq4a.9a}
+\frac{\partial V(k_{t-1}, b_{t-1}, m_{t-1}, z_{t},
+\mu_{t})}{\partial b_{t}} = -\lambda_{t} - \Lambda_{t} +
+\frac{\partial \beta E_{t} V_{b}(k_{t}, m_{t})}{\partial b_{t}}
+\end{equation}
+
+The associated envelope condition
+\footnote{$k_{t-1}=f(k_{t-1},n_{t},z_{t})+(1-\delta)k_{t-1}+\tau_{t}+\frac{m_{t-1}}{1+\pi_{t}}
++\frac{b_{t-1}(1+i_{t-1})}{1+\pi_{t}}$; and the CIA constraint:
+$c_{t} = \frac{m_{t-1}}{1+\pi_{t}} + \tau_{t} - b_{t}$; that is, BC
+is as Eq 3.17 and CIA constraint is as 3.20 in the 3rd edition. Take
+note, later on Walsh changed BC to 3.36. The FOC w.r.t. $b_{t}$ here
+is derived based on the assumption that BC (Eq.~\ref{Eq4.5}) and CIA
+constraint (Eq.~\ref{Eq4.6}).}:
+
+\begin{equation}\label{Eq4a.9b}
+\frac{\partial V(k_{t-1}, b_{t-1}, m_{t-1}, z_{t},
+\mu_{t})}{\partial b_{t-1}} = \lambda_{t}V_{b}(k_{t-1}, b_{t-1},
+m_{t-1})(\frac{1+i_{t-1}}{1+\pi_{t}})
+\end{equation}
+
+Update \eqref{Eq4a.9b} and substitute into \eqref{Eq4a.9a} and set
+equal to zero:
+
+\begin{equation}\label{Eq4a.9c}
+\lambda_{t} + \Lambda_{t} = \beta R_{t} E_{t} V_{b} (k_{t}, m_{t})
+\lambda_{t+1}
+\end{equation}
+
+
+\end{itemize}
+}}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Appendix A: First Order Conditions} \vskip 0.1in
+\textcolor{blue}{FOCs:}
+
+\begin{itemize}
+\item $m_{t}$
+
+\begin{equation}\label{Eq4a.10}
+\frac{\partial V(k_{t-1}, b_{t-1}, m_{t-1}, z_{t},
+\mu_{t})}{\partial m_{t}} = \frac{\partial \beta E_{t} V_{k}(k_{t},
+m_{t})}{\partial m_{t}} - \lambda_{t}
+\end{equation}
+
+{\scriptsize{
+
+The associated envelope condition
+\footnote{$k_{t-1}=f(k_{t-1},n_{t},z_{t})+(1-\delta)k_{t-1}+\tau_{t}+\frac{m_{t-1}}{1+\pi_{t}}$}:
+
+\begin{eqnarray}
+\frac{\partial V(k_{t-1}, b_{t-1}, m_{t-1}, z_{t},
+\mu_{t})}{\partial m_{t-1}} &=& \frac{\partial \lambda_{t}(k_{t-1},
+b_{t-1}, m_{t-1}, z_{t}, \mu_{t})}{\partial m_{t-1}} +
+\frac{\partial
+\Lambda_{t}(\frac{m_{t-1}}{1+\pi_{t}}+\tau_{t}-c_{t})}{\partial
+m_{t-1}} \label{Eq4a.11}\\
+ &=&
+\frac{1}{1+\pi_{t}}\lambda_{t} +
+\frac{1}{1+\pi_{t}}\Lambda_{t}\label{Eq4a.12}
+\end{eqnarray}
+
+Update \eqref{Eq4a.12} and substitute into \eqref{Eq4a.10}:
+
+\begin{equation}\label{Eq4a.13}
+\beta E_{t} [\frac{\lambda_{t+1}+\Lambda_{t+1}}{1+\pi_{t+1}}] =
+\lambda_{t}
+\end{equation}}}
+\end{itemize}
+
+\end{frame}
+
+
+
+\renewcommand{\theequation}{B.\arabic{equation}}
+\setcounter{equation}{0}
+
+\section{Appendix B: Steady State}
+
+\begin{frame}
+\frametitle{Appendix B: Steady State} \vskip 0.1in
+\textcolor{blue}{$\blacktriangleright$} $R^{ss}$\\
+
+Recall \eqref{Eq4.16}, $\beta R_{t}E_{t}\lambda_{t+1} =
+\lambda_{t}$, in steady state, $\lambda_{t+1} =
+\lambda_{t}=\lambda^{ss}$, therefore we have:
+
+\begin{equation}\label{Eq4b.1}
+R^{ss}=\frac{1}{\beta}
+\end{equation}
+
+\textcolor{blue}{$\blacktriangleright$} $\frac{y^{ss}}{k^{ss}}$\\
+
+Given the production function, we have:
+
+\begin{eqnarray}
+f_{k}(k_{t},n_{t+1},z_{t+1}) &=& \frac{\partial y_{t+1}}{\partial
+k_{t}}\label{Eq4b.2}\\
+\frac{\partial y_{t+1}}{\partial
+k_{t}} &=& \alpha z_{t+1}k_{t}^{\alpha-1}N_{t+1}^{1-\alpha}\label{Eq4b.3}\\
+\frac{\partial y_{t+1}}{\partial k_{t}} &=& \alpha
+\frac{y_{t+1}}{k_{t}}\label{Eq4b.4}
+\end{eqnarray}
+\end{frame}
+
+\begin{frame}
+\frametitle{Appendix B: Steady State} \vskip 0.1in
+
+\textcolor{blue}{$\blacktriangleright$} $\frac{y^{ss}}{k^{ss}}$\\
+substitute \eqref{Eq4b.4} into
+$f_{k}(k_{t},n_{t+1},z_{t+1})+1-\delta =R_{t}$, we have:
+
+\begin{equation}\label{Eq4b.5}
+R_{t}=\alpha \frac{y_{t+1}}{k_{t}}+1-\delta
+\end{equation}
+
+\pause
+
+Substitute \eqref{Eq4b.1} into \eqref{Eq4b.5} gives us the steady
+state output-capital ratio:
+
+\begin{eqnarray}
+\frac{1}{\beta} &=& \alpha \frac{y^{ss}}{k^{ss}} +1-\delta
+\label{Eq4b.6}\\
+\frac{y^{ss}}{k^{ss}} &=& \frac{1}{\alpha}(\frac{1}{\beta}
+-1+\delta)\label{Eq4b.7}\\
+or ~~ \frac{y^{ss}}{k^{ss}} &=& \frac{1}{\alpha}(R^{ss}
+-1+\delta)\label{Eq4b.8}
+\end{eqnarray}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Appendix B: Steady State} \vskip 0.1in
+
+\textcolor{blue}{$\blacktriangleright$}  $\frac{c^{ss}}{k^{ss}}$\\
+
+From the resource constraint we know:
+\begin{eqnarray}
+y_{t} &=& c_{t}+x_{t}\label{Eq4b.9}\\
+y_{t} &=& c_{t}+k_{t} - (1-\delta)k_{t-1}\label{Eq4b.10}\\
+y_{t} &=& c_{t}+k_{t} - k_{t-1}+\delta k_{t-1}\label{Eq4b.11}
+\end{eqnarray}
+
+In steady state \eqref{Eq4b.10} becomes:
+
+\begin{eqnarray}
+y^{s} &=& c^{ss}+k^{ss} - k^{ss}+\delta k^{ss} \label{Eq4b.12}\\
+\frac{c^{ss}}{k^{ss}} &=& \frac{y^{ss}}{k^{ss}}-\delta
+\label{Eq4b.13}
+\end{eqnarray}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Appendix B: Steady State} \vskip 0.1in
+
+\textcolor{blue}{$\blacktriangleright$}  $\frac{n^{ss}}{k^{ss}}$\\
+
+In steady state the production function
+$y_{t}=z_{t}k_{t-1}^{\alpha}n_{t}^{1-\alpha}$ becomes:
+
+\begin{equation}\label{Eq4b.14}
+y^{ss}=(k^{ss})^{\alpha}(n^{ss})^{1-\alpha}
+\end{equation}
+
+and
+
+\begin{eqnarray}
+\frac{y^{ss}}{k^{ss}} &=& (k^{ss})^{\alpha-1} (n^{ss})^{1-\alpha}
+\label{Eq4b.15}\\
+\frac{y^{ss}}{k^{ss}} &=& (\frac{n^{ss}}{k^{ss}})^{1-\alpha}
+\label{Eq4b.16}\\
+\frac{n^{ss}}{k^{ss}} &=&
+(\frac{y^{ss}}{k^{ss}})^{\frac{1}{1-\alpha}} \label{Eq4b.17}
+\end{eqnarray}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Appendix B: Steady State} \vskip 0.1in
+
+\textcolor{blue}{$\blacktriangleright$}  $n^{ss}$\\
+
+Recall the FOC of $n_{t}$ \eqref{Eq4a.5}:
+
+\begin{equation}\tag{\eqref{Eq4a.5}}
+(1-\alpha)z_{t}k_{t-1}^{\alpha}n_{t}^{-\alpha}\lambda_{t} =
+(1-n_{t})^{-\eta_{n}}
+\end{equation}
+
+and
+
+\begin{eqnarray}
+(1-n_{t})^{-\eta_{n}} &=&
+((1-\alpha)z_{t}k_{t-1}^{\alpha}n_{t}^{1-\alpha}
+\frac{1}{n_{t}}\lambda_{t}
+\label{Eq4b.18}\\
+(1-n_{t})^{-\eta_{n}} &=& (1-\alpha)\frac{y_{t}}{n_{t}}\lambda_{t}
+\label{Eq4b.19}
+\end{eqnarray}
+
+In steady state, we have:
+
+\begin{eqnarray}
+(1-n^{ss})^{-\eta_{n}} &=&
+(1-\alpha)\frac{y^{ss}}{n^{ss}}\lambda^{ss} \label{Eq4b.20}\\
+(1-n^{ss})^{-\eta_{n}} &=& (1-\alpha)\frac{y^{ss}}{k^{ss}}
+(\frac{n^{ss}}{k^{ss}})^{-1} \lambda^{ss} \label{Eq4b.21}
+\end{eqnarray}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Appendix B: Steady State} \vskip 0.1in
+
+\textcolor{blue}{$\blacktriangleright$}  $n^{ss}$\\
+
+As we know the steady states of the FOCs of \eqref{Eq4a.3} and
+\eqref{Eq4a.13} are
+
+\begin{eqnarray}
+c^{ss} &=& \lambda^{ss}+\Lambda_{ss} \label{Eq4b.22}\\
+\lambda_{ss} &=& \beta
+(\frac{\lambda^{ss}+\Lambda^{ss}}{1+\pi^{ss}}) \label{Eq4b.23}
+\end{eqnarray}
+
+Substitute \eqref{Eq4b.22} into \eqref{Eq4b.23}, we have:
+
+\begin{equation}\label{Eq4b.24}
+\lambda^{ss} = \beta \frac{(c^{ss})^{-\eta_{c}}}{1+\pi^{ss}}
+\end{equation}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Appendix B: Steady State} \vskip 0.1in
+
+\textcolor{blue}{$\blacktriangleright$}  $n^{ss}$\\
+
+Now substitute \eqref{Eq4b.24} into \eqref{Eq4b.21} and replace
+$(c^{ss})^{-\eta_{c}}$ with $(\frac{c^{ss}}{k^{ss}})^{-\eta_{c}}
+(\frac{k^{ss}}{n^{ss}})^{-\eta_{c}} (n^{ss})^{-\eta_{c}}$, we have:
+
+{\scriptsize{
+\begin{eqnarray}
+(1-n^{ss})^{-\eta_{n}} &=& (1-\alpha) \frac{\beta}{1+\pi^{ss}}
+(\frac{y^{ss}}{k^{ss}}) (\frac{n^{ss}}{k^{ss}})^{-1}
+(\frac{c^{ss}}{k^{ss}})^{-\eta_{c}}
+(\frac{k^{ss}}{n^{ss}})^{-\eta_{c}}
+(n^{ss})^{-\eta_{c}} ~~~ ~~~ ~~~\label{Eq4b.25}\\
+(1-n^{ss})^{-\eta_{n}} (n^{ss})^{\eta_{c}} &=& (1-\alpha)
+\frac{\beta}{1+\pi^{ss}} (\frac{y^{ss}}{k^{ss}})
+(\frac{c^{ss}}{k^{ss}})^{-\eta_{c}}
+(\frac{n^{ss}}{k^{ss}})^{\eta_{c}-1} \label{Eq4b.26}
+\end{eqnarray}
+}}
+
+Substitute \eqref{Eq4b.17} into \eqref{Eq4b.26}, we have:
+
+{\scriptsize{
+\begin{eqnarray}
+(1-n^{ss})^{-\eta_{n}} (n^{ss})^{\eta_{c}} &=& (1-\alpha)
+\frac{\beta}{1+\pi^{ss}} (\frac{y^{ss}}{k^{ss}})
+(\frac{c^{ss}}{k^{ss}})^{-\eta_{c}}
+(\frac{y^{ss}}{k^{ss}})^{\frac{\eta_{c}-1}{1-\alpha}} \label{Eq4b.27}\\
+(1-n^{ss})^{-\eta_{n}} (n^{ss})^{\eta_{c}} &=& (1-\alpha)
+\frac{\beta}{1+\pi^{ss}} (\frac{c^{ss}}{k^{ss}})^{-\eta_{c}}
+(\frac{y^{ss}}{k^{ss}})^{\frac{\eta_{c}-\alpha}{1-\alpha}}
+\label{Eq4b.28}
+\end{eqnarray}
+}}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Appendix B: Steady State} \vskip 0.1in
+
+\textcolor{blue}{$\blacktriangleright$}  $\pi^{ss}=\theta^{ss}$\\
+
+Recall the CIA constraint in nominal term:
+
+\begin{equation}\label{Eq4b.29}
+C_{t}=M_{t-1}+T_{t}
+\end{equation}
+
+in real term:
+\begin{equation}\label{Eq4b.30}
+c_{t}=M_{t-1}/P_{t}+\tau_{t}
+\end{equation}
+
+Substitute $\tau_{t}=\frac{M_{t}-M_{t-1}}{P_{t}}$ into
+\eqref{Eq4b.30}, we have:
+
+\begin{equation}\label{Eq4b.31}
+c_{t}=m_{t}
+\end{equation}
+
+and in steady state:
+
+\begin{equation}\label{Eq4b.32}
+c^{ss}=m^{ss}
+\end{equation}
+
+\end{frame}
