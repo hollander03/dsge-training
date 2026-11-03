@@ -7,3 +7,21 @@ Choose a technology, cost-push or monetary-policy shock, a policy-rule change, o
 Compare inflation and real activity with nominal money and the price level. Discuss why nominal levels need not return to their original values, drawing on the monetary-regimes paper and appendix linked in the [session guide](../README.md). This is a teaching feature of the model, not an error to remove.
 
 For optimal simple rules, run the separate model from `../code/optimal_policy` after discussing the objective and weights. Prepare one clear result, explain the mechanism and limitations, and follow the [presentation guidance](../../../../admin/README.md).
+
+## Optional monetary-regime exercise
+
+Use the appendix on **slide 35** of the [NK slides](../slides/NKM-dynare-slides.pdf) to introduce the distinction between the market interest rate and the policy-rate target, and the role of reserve supply. Then choose one focused application from the [Hollander–Christensen examples](../code/HC_NK_monetary/code/README.md):
+
+| Route | Question and suggested comparison |
+|---|---|
+| Simulation: two monetary regimes | Use `simulation/hc_monetary_regimes.mod` with `REGIME=1` and `REGIME=2`. How does reducing reserve elasticities from `(12,12)` to `(1,1)` change the output and inflation responses to a money-supply shock? Relate the comparison to paper section 5.1 / Table 2. |
+| Flexible-price benchmark | Compare `REGIME=2` with `REGIME=3`, which keeps the monetary regime fixed and makes prices nearly flexible. What happens to the real effects of monetary shocks? This is a price-flexibility benchmark, not a third monetary regime. |
+| Optimal policy | Compare the paper-based `osr/hc_monetary_osr.mod` with `simulation/hc_monetary_optimal_benchmark.mod`. Discuss the inflation/output-gap loss, policy bounds and the role of the natural rate in the efficient Taylor rule. See section 5.3 / Figures 9–10. |
+| Historical decomposition | Run `historical_decomposition/hc_monetary_historical_decomposition.mod` using its supplied mode. Choose one episode and interpret contributions from technology, policy-target, money-supply and money-demand shocks. Relate the approach to section 4.3 / Figures 4–6, retaining the documented sample-endpoint caveat. |
+| Conditional forecast | Start with the calibrated forecast, or use `conditional_forecast/hc_monetary_estimated_forecast.mod` with its saved mode. Compare the imposed interest-rate path with the commented inflation-path alternative, using one constraint at a time. See section 5.2 / Figures 7–8. |
+
+Paths in the table are relative to the extension's [code folder](../code/HC_NK_monetary/code). Follow its run instructions and [benchmark notes](../code/HC_NK_monetary/code/BENCHMARKS.md). The estimated forecast and historical-decomposition defaults reuse saved modes without optimisation or MCMC; commented alternatives allow full estimation reruns. These mode-based exercises do not integrate over posterior parameter uncertainty.
+
+The supplied research examples retain the **full paper model**, including free reserves. They have not been reduced to slide 35's simplified extension, which omits free reserves and places the money-supply shock differently. The separately named teaching variants and their differences are explained in the [equation review](../code/HC_NK_monetary/code/EQUATION_REVIEW.md). Treat the slide as a conceptual introduction; use the supplied files for the selected exercise rather than assume exact equivalence to the baseline `NKM.mod`.
+
+Keep the group exercise bounded: state one question, predict the mechanism, present one interpretable comparison and explain its limitations. Longer estimation and forecasting applications can be reserved for further study.
