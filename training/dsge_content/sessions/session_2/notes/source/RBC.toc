@@ -1,0 +1,9 @@
+\beamer@sectionintoc {1}{Introduction: Economic Growth and Business Cycles}{4}{0}{1}
+\beamer@sectionintoc {2}{Hansen's Benchmark Real Business Cycle Model}{9}{0}{2}
+\beamer@subsectionintoc {2}{1}{The Environment}{9}{0}{2}
+\beamer@subsectionintoc {2}{2}{The FOCs}{12}{0}{2}
+\beamer@subsectionintoc {2}{3}{The Complete Model Economy}{14}{0}{2}
+\beamer@subsectionintoc {2}{4}{The Steady State}{15}{0}{2}
+\beamer@subsectionintoc {2}{5}{The linearized Model}{16}{0}{2}
+\beamer@sectionintoc {3}{Calibrating a Specific Model Economy}{17}{0}{3}
+\beamer@sectionintoc {4}{The Dynamics of the Model}{21}{0}{4}
