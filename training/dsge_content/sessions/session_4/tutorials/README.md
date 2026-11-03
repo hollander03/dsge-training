@@ -4,6 +4,12 @@ Run the baseline from `../code/baseline` and use the [slides](../slides/NKM-dyna
 
 Choose a technology, cost-push or monetary-policy shock, a policy-rule change, or a monetary-regime comparison supported by the model. Separate interest-rate smoothing from shock persistence. Use the [course comparison script](../../../../macro_course_material/matlab-dynare/4.session_nk/run_and_plot_dual_rhoi.m) for the smoothing exercise, running it from its own course folder.
 
+For a focused core group question, choose one:
+
+- How does a monetary-policy tightening affect the nominal rate, real rate, output gap and inflation? Predict the sequence and explain the transmission mechanism.
+- How does interest-rate smoothing change the technology-shock response? Use the course comparison script and hold shock persistence fixed.
+- How do the inflation/output-gap responses to a cost-push shock differ from those to a monetary-policy shock? Explain the source of the policy trade-off.
+
 Compare inflation and real activity with nominal money and the price level. Discuss why nominal levels need not return to their original values, drawing on the monetary-regimes paper and appendix linked in the [session guide](../README.md). This is a teaching feature of the model, not an error to remove.
 
 For optimal simple rules, run the separate model from `../code/optimal_policy` after discussing the objective and weights. Prepare one clear result, explain the mechanism and limitations, and follow the [presentation guidance](../../../../admin/README.md).

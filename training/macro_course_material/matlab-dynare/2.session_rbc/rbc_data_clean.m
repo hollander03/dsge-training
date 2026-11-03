@@ -1,9 +1,23 @@
+% US and South African output: saved data by default; optional FRED CSV download.
+% MATLAB example: requires Econometrics Toolbox for hpfilter.
+% Set download_data=true to learn the HTTP/CSV workflow; no FRED API key is used.
+% New downloads go into downloaded_data, preserving the supplied offline snapshots.
+download_data = false;
+script_dir = fileparts(mfilename('fullpath'));
+data_dir = script_dir; % saved CSVs accompanying the course example
+if download_data
+    data_dir = fullfile(script_dir, 'downloaded_data');
+    if ~exist(data_dir, 'dir'), mkdir(data_dir); end
+end
+sample_start = datetime(1993,1,1);
+sample_end = datetime(2024,10,1); % 2024Q4: common saved-data endpoint
+
 % Download FRED data (A939RX0Q048SBEA = Real GDP per capita)
 url = 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=A939RX0Q048SBEA';
-filename = 'rgdp_pc.csv';
-websave(filename, url);
+filename = fullfile(data_dir, 'rgdp_pc.csv');
+if download_data, websave(filename, url); end
 
-% comment out above once data is downloaded and saved
+% With download_data=false, read the saved CSV instead of accessing the network.
 
 % Read the data
 data = readtable(filename);
@@ -11,6 +25,7 @@ data = data(:, {'observation_date', 'A939RX0Q048SBEA'});
 data.Properties.VariableNames = {'Date', 'RGDPpc'};
 data.Date = datetime(data.Date, 'InputFormat', 'yyyy-MM-dd');
 data = rmmissing(data);  % drop missing values
+data = data(data.Date >= sample_start & data.Date <= sample_end, :);
 
 % Log of real GDP per capita
 log_rgdp = log(data.RGDPpc);
@@ -51,8 +66,8 @@ sgtitle('US Real GDP per Capita: Transformation Comparison')
 %%
 % Download U.S. real GDP per capita data from FRED
 url_us = 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=A939RX0Q048SBEA';
-filename_us = 'us_rgdp_pc.csv';
-websave(filename_us, url_us);
+filename_us = fullfile(data_dir, 'us_rgdp_pc.csv');
+if download_data, websave(filename_us, url_us); end
 
 % Read and log-transform the data
 us_data = readtable(filename_us);
@@ -60,20 +75,21 @@ us_data = us_data(:, {'observation_date', 'A939RX0Q048SBEA'});
 us_data.Properties.VariableNames = {'Date', 'RGDPpc'};
 us_data.Date = datetime(us_data.Date, 'InputFormat', 'yyyy-MM-dd');
 us_data = rmmissing(us_data);
+us_data = us_data(us_data.Date >= sample_start & us_data.Date <= sample_end, :);
 log_us = log(us_data.RGDPpc);
 
-% Apply two-sided HP filter
-[cycle_hp, trend_hp] = hpfilter(log_us, Smoothing=1600);  % Quarterly lambda = 1600
+% hpfilter returns [trend, cycle]. Apply the two-sided HP filter
+[trend_hp, cycle_hp] = hpfilter(log_us, Smoothing=1600);  % Quarterly lambda = 1600
 
 % One-sided HP filter (recursive estimation)
 trend_one_sided_manual = NaN(size(log_us));
 for t = 8:length(log_us)
-    [~, trend_temp] = hpfilter(log_us(1:t), Smoothing=1600);
+    [trend_temp, ~] = hpfilter(log_us(1:t), Smoothing=1600);
     trend_one_sided_manual(t) = trend_temp(end);
 end
 cycle_one_sided_manual = log_us - trend_one_sided_manual;
 
-[cycle_one_sided, trend_one_sided] = hpfilter(log_us, Smoothing=1600, FilterType="one-sided");
+[trend_one_sided, cycle_one_sided] = hpfilter(log_us, Smoothing=1600, FilterType="one-sided");
 
 % Plotting
 figure('Position', [100, 100, 1000, 400])
@@ -100,8 +116,8 @@ hold off
 %%
 % Download South Africa real GDP (constant prices) from FRED
 url_sa = 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=NGDPRSAXDCZAQ';
-filename_sa = 'sa_rgdp.csv';
-websave(filename_sa, url_sa);
+filename_sa = fullfile(data_dir, 'sa_rgdp.csv');
+if download_data, websave(filename_sa, url_sa); end
 
 % Read and log-transform the data  (growth rate: NAEXKP01ZAQ657S)
 sa_data = readtable(filename_sa);
@@ -109,20 +125,21 @@ sa_data = sa_data(:, {'observation_date', 'NGDPRSAXDCZAQ'});
 sa_data.Properties.VariableNames = {'Date', 'RGDP'};
 sa_data.Date = datetime(sa_data.Date, 'InputFormat', 'yyyy-MM-dd');
 sa_data = rmmissing(sa_data);
+sa_data = sa_data(sa_data.Date >= sample_start & sa_data.Date <= sample_end, :);
 log_sa = log(sa_data.RGDP);
 
-% Two-sided HP
-[cycle_sa_hp, trend_sa_hp] = hpfilter(log_sa, Smoothing=1600);
+% Two-sided HP: outputs are [trend, cycle].
+[trend_sa_hp, cycle_sa_hp] = hpfilter(log_sa, Smoothing=1600);
 
 % One-sided HP
 trend_sa_1s = NaN(size(log_sa));
 for t = 8:length(log_sa)
-    [~, trend_temp] = hpfilter(log_sa(1:t), Smoothing=1600);
+    [trend_temp, ~] = hpfilter(log_sa(1:t), Smoothing=1600);
     trend_sa_1s(t) = trend_temp(end);
 end
 cycle_sa_1s = log_sa - trend_sa_1s;
 
-[cycle_sa_one_sided, trend_sa_one_sided] = hpfilter(log_sa, Smoothing=1600, FilterType="one-sided");
+[trend_sa_one_sided, cycle_sa_one_sided] = hpfilter(log_sa, Smoothing=1600, FilterType="one-sided");
 
 % Plotting
 figure('Position', [100, 100, 1000, 400])

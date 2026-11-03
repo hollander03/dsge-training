@@ -19,7 +19,9 @@ Supporting readings include the [RCK notes](RCK_model/2020_Carroll_RamseyCassKoo
 
 ## Group practical
 
-For the group practical, work through selected fiscal applications in the [Practicing Dynare document](https://www.overleaf.com/project/692d6b9a27db12d5acaeb198), extending Solow and interpreting the resulting transition paths. The facilitator will identify the exercises for the available time.
+For the group practical, work through one fiscal application in the [Practicing Dynare document](https://www.overleaf.com/project/692d6b9a27db12d5acaeb198), connecting the optimising growth model, steady states and transition paths.
+
+Suggested starting points are **4.3.1: a permanent increase in government purchases** or **4.3.2: a permanent consumption-tax increase**. Predict consumption, capital and the financing adjustment before running the chosen exercise. If time permits, compare the corresponding anticipated change in **5.3.1** or **5.3.2**, or the temporary government-purchases pulse in **4.3.5**. These are choices for the facilitator and groups, not a requirement to complete every exercise; another instrument in sections 4–5 can be chosen for a clearly stated question.
 
 Understand the baseline, choose a focused fiscal experiment, predict its mechanism, run the comparison and explain the result. The next core session, [RBC](../session_2), extends the analysis to business-cycle fluctuations and offers fiscal applications or a model–data comparison.
 
