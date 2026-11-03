@@ -24,6 +24,10 @@ The non-stationarity of nominal money and the price level is an explicit teachin
 
 Use the [New Keynesian slides](slides/NKM-dynare-slides.pdf) to discuss nominal-level determination and monetary policy regimes, followed by Hollander and Christensen (2022): [paper](notes/HC_NK_monetary/2022-HC-monetary-regimes-PRINT.pdf) and [supplementary appendix](notes/HC_NK_monetary/HC2020-MD-SuppAppendix.pdf).
 
+## Monetary-regime extension
+
+The [Hollander–Christensen examples](notes/HC_NK_monetary) provide simulation, optimal simple rules, 2020 estimation and conditional forecasting. Read their [equation comparison](notes/HC_NK_monetary/code/EQUATION_REVIEW.md) before relating the full reserve-market model to the reduced extension on slide 35. Historical originals are retained alongside a separately identified OSR teaching adaptation.
+
 ## Group practical
 
 Use the [tutorial](tutorials/README.md) to investigate a shock, policy-rule change or monetary-regime comparison. This session follows RBC directly; the flexible-price CIA/MIU and nonlinear RBC examples in [session 3](../session_3) are optional reference.
