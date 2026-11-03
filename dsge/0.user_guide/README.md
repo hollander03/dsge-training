@@ -15,3 +15,5 @@ The `other` folder contains:
 - A description of Dynare's graph outputs
 - A guide to deal with observation equations for estimation
 - A guide on installing and configuring Dynare for Octave (a free MATLAB-alternative)
+
+A downloadable [Practical Training Manual (PDF)](../../training/dsge_content/sessions/dynare_help/Applied_DSGE_Modelling_with_Dynare_A_Practical_Training_Manual.pdf) is available in the workshop Dynare help folder. Check its revision date against the latest Overleaf version.
