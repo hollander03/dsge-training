@@ -36,7 +36,3 @@ The broader fiscal DSGE model family includes nominal rigidities and an open eco
 - **Havemann, R. and Hollander, H. (2024).** “Fiscal policy in times of fiscal stress (or what to do when r > g).” *Journal of Policy Modeling*, **46**(5), 1020–1054. [DOI](https://doi.org/10.1016/j.jpolmod.2024.07.001) · [Longer working-paper version](https://doi.org/10.35188/UNU-WIDER/2022/183-9).
 - **Hollander, H., Havemann, R. and Steenkamp, D. (2024).** “The macroeconomics of establishing a basic income grant in South Africa.” *South African Journal of Economics*, **92**(1), 57–68. [DOI](https://doi.org/10.1111/saje.12363) · [Longer technical paper](https://mpra.ub.uni-muenchen.de/id/eprint/114614).
 - **Hollander, H. (2024).** “Debt-financed fiscal stimulus in South Africa.” *Studies in Economics and Econometrics*, **48**(1), 87–112. [DOI](https://doi.org/10.1080/03796205.2024.2321628).
-
-Related empirical evidence provides a useful comparison with structural model results:
-
-- **Terblanche, J., Hollander, H. and van Lill, D. (2024).** “Fiscal policy and dimensions of inequality in South Africa: A time-varying coefficient approach.” *South African Journal of Economics*, **92**(1), 105–119. Uses a time-varying parameter VAR to study distributional effects, rather than the fiscal DSGE model. [DOI](https://doi.org/10.1111/saje.12369).
