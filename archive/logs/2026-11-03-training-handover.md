@@ -31,3 +31,12 @@
 - Added commented full reoptimisation/MCMC commands, with posterior-mean forecast alternative. Default examples all passed MATLAB R2024a / Dynare 6.1, including 10,000 forecast draws and finite shock decompositions. Full-rerun alternatives passed preprocessing only; no full MCMC reruns were performed.
 
 - Moved the complete `HC_NK_monetary` extension from session 4 `notes` to `code/HC_NK_monetary` at the facilitator’s request. Internal layout and model dependencies are unchanged; session links updated. This is the current location, superseding earlier paths in these notes.
+
+## Real fiscal DSGE practical (to-do item 2)
+
+- Facilitator supplied the Havemann fiscal r-star research directory, then selected `ntdsge_real.mod` as the fixed-calibration baseline. The appended Practicing-Dynare GitHub link was set aside at the facilitator's request.
+- Added `session_2/code/real_fiscal/real_fiscal.mod`: original model block and calibration retained, estimation workflow replaced by first-order simulation. No external data, saved mode or nonlinear steady-state solver is needed at this calibration. Added plotting and shock-persistence comparison helpers, run guide, model review, source hashes and legacy references.
+- All 54 embedded real-block equations match the standalone source after `_n`/comment/whitespace normalisation; six fiscal rules match both JPM references. The older `_flexible_n` source fails preprocessing due to an undefined `fiscalr_n` and its legacy steady-state routines were not attached or repaired.
+- MATLAB R2024a / Dynare 6.1 checks passed. All 210 stored IRFs match the original-source simulation exactly; six fiscal-shock output IRFs are finite, foreign-shock output effects are zero, persistence comparison solves and restores baseline structures. Plot exports were visually checked.
+- Important economic qualifications are documented: inherited open-economy steady-state weights and two resource constraints are preserved, not rederived for a new closed economy; consumption-tax scaling needs reconciliation before percentage-point shocks or quantitative multipliers. No structural simplification was made.
+- Fiscal practical README now offers an accessible growth-model fiscal extension and the optional advanced real-model route. Keep experiments focused on one mechanism and distinguish innovation persistence from instrument smoothing; selecting a shock does not deactivate other fiscal financing rules.

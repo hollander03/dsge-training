@@ -18,7 +18,7 @@ The [editable course slide source and figures](slides/source/macro_course_rbc) a
 
 For the 60–90-minute group practical, choose one route:
 
-- **[Fiscal applications](tutorials/fiscal_applications):** investigate a focused fiscal question using the facilitator-supplied flexible-price DSGE model.
+- **[Fiscal applications](tutorials/fiscal_applications):** choose a fiscal growth-model extension or a focused experiment with the [fixed-calibration real fiscal DSGE model](code/real_fiscal/README.md). The fuller model is an optional advanced route; study one mechanism at a time.
 - **[Model–data comparison](tutorials/model_data_comparison):** compare RBC moments with empirical moments, then investigate one calibration change.
 
 For either route: understand the baseline; state one question and predict its mechanism; run a focused experiment; interpret the result and limitations; present the main finding. Use the [workshop guidance](../../../admin/README.md) for presentation requirements.
