@@ -20,4 +20,10 @@ The [`dsge`](dsge) folder also retains supporting MATLAB utilities, policy paper
 
 - [Day 1 survey](https://www.surveymonkey.com/r/636QCVY) (2026)
 - [Day 5 survey](https://www.surveymonkey.com/r/27PR6JS) (2026)
-- Suggestions for future workshops: hollander03@gmail.com
+
+We are also testing Google Forms as an alternative survey platform. Please complete both the SurveyMonkey survey above and the Google Forms survey below for the relevant day. Some questions differ between the two platforms.
+
+- [Day 1 survey — Google Forms](https://docs.google.com/forms/d/e/1FAIpQLSdbJ5ELlbW17N5oTBqXDPfboPaR58eZdaUUYxNCqLzw6pYxCg/viewform) (2026)
+- [Day 5 survey — Google Forms](https://docs.google.com/forms/d/e/1FAIpQLScknbkkpXFloFysUYiQzhO0hvCaK6wjq5JmpOClhsG4VB6zTA/viewform) (2026)
+
+Suggestions for future workshops: hollander03@gmail.com
