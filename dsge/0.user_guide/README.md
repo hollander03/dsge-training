@@ -1,8 +1,8 @@
 # DSGE Practical Training Manual
 
-This folder contains the practical training manual, the Dynare Manual, and additional resources to understand and implement DSGE models in Dynare. The main version of **Applied DSGE Modelling with Dynare: A Practical Training Manual** is maintained in [Overleaf](https://www.overleaf.com/project/6ad72ce5d978a419cd107ac1). Consult this project for the latest manual and future revisions.
+This folder contains the [Practical Training Manual (PDF)](Applied_DSGE_Modelling_with_Dynare_A_Practical_Training_Manual.pdf), the Dynare reference manual, and supplementary resources. The PDF includes a live link to the maintained Overleaf version. The existing `0.user_guide` path is retained so earlier links continue to work. The main version of **Applied DSGE Modelling with Dynare: A Practical Training Manual** is maintained in [Overleaf](https://www.overleaf.com/project/6ad72ce5d978a419cd107ac1). Consult this project for the latest manual and future revisions.
 
-**Version transition — 2 November 2026:** the [Google Docs version](https://docs.google.com/document/d/1mAzQPIP47KYYNsGOvcBHuVgZHptjEdJH/edit) and the local DOCX are retained as legacy references, frozen as of this date. Future guide updates will be maintained in Overleaf.
+**Version transition — 2 November 2026:** the [Google Docs version](https://docs.google.com/document/d/1mAzQPIP47KYYNsGOvcBHuVgZHptjEdJH/edit) and the [archived DOCX](../../archive/user_guide/Applied%20DSGE%20Modelling%20with%20Dynare%20-%20A%20Practical%20Training%20Manual.docx) are legacy references, frozen as of this date. Future guide updates will be maintained in Overleaf.
 
 The guide presents the model code; the runnable files are available in [`training/dsge_content/codes/Basic_RBC`](https://github.com/hollander03/dsge-training/tree/main/training/dsge_content/codes/Basic_RBC).
 
@@ -16,4 +16,4 @@ The `other` folder contains:
 - A guide to deal with observation equations for estimation
 - A guide on installing and configuring Dynare for Octave (a free MATLAB-alternative)
 
-A downloadable [Practical Training Manual (PDF)](../../training/dsge_content/sessions/dynare_help/Applied_DSGE_Modelling_with_Dynare_A_Practical_Training_Manual.pdf) is available in the workshop Dynare help folder. Check its revision date against the latest Overleaf version.
+The local PDF is a downloadable snapshot. Use its Overleaf link, or the link above, for the latest revisions.

@@ -12,7 +12,7 @@ Start with the [training overview](training/README.md) for the course outline an
 
 ## Practical Training Manual and supporting resources
 
-The [manual and reference folder](dsge/0.user_guide) contains the manual and supplementary references. The latest manual is maintained in [Overleaf](https://www.overleaf.com/project/6ad72ce5d978a419cd107ac1). Runnable examples for the manual are available in [Basic RBC](training/dsge_content/codes/Basic_RBC).
+Download the [Practical Training Manual (PDF)](dsge/0.user_guide/Applied_DSGE_Modelling_with_Dynare_A_Practical_Training_Manual.pdf), which includes a live link to Overleaf. The [manual and reference folder](dsge/0.user_guide) also contains supplementary references. The latest manual is maintained in [Overleaf](https://www.overleaf.com/project/6ad72ce5d978a419cd107ac1). Runnable examples for the manual are available in [Basic RBC](training/dsge_content/codes/Basic_RBC).
 
 The [`dsge`](dsge) folder also retains supporting MATLAB utilities, policy papers and application resources. Use the training overview to find the workshop exercises.
 
