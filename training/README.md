@@ -1,6 +1,6 @@
 # DSGE - Training
 
-[`Overview`](#overview) | [`Resources`](#resources) | [`Schedule`](#schedule) | [`Tutorials`](#tutorials) |
+[`Overview`](#overview) | [`Resources`](#resources) | [`Pre-work`](#pre-work) | [`Schedule`](#schedule) | [`Tutorials`](#tutorials) |
 
 Training materials for modern macroeconomic theory and computational methods, supporting research and capacity building.
 
@@ -21,6 +21,10 @@ The practical training manual can be found in the [`dsge/0.user_guide`](https://
 - See supplementary material on [macroeconomic theory by Sang Seok Lee](https://sites.google.com/site/ssleeeconomist/teaching/506?authuser=0).
 - This [HANDBOOK OF MACROECONOMICS (CHAPTER 9)](https://www.sas.upenn.edu/~jesusfv/FVRS_Handbook.pdf) provides an overview of solution and estimation techniques for DSGE models. The authors cover the foundations of numerical approximation techniques as well as statistical inference and they survey the latest developments in the field. This is an advanced reference for further study.
 - The [`dsge_content/readers`](dsge_content/readers) folder contains additional material on the DSGE and empirical topics covered in the training.
+
+## Pre-work
+
+Before the workshop, complete the thesis logic document in the [pre-work folder](pre-work), available in Markdown and Word formats. Use your own research project or a focused exercise with an existing model to set out your economic question, method, mechanism, results or hypotheses, and a feasible workshop task. Bring your completed answers to guide the individual project sessions and final presentation.
 
 ## Schedule
 ### DSGE training and tutorial sessions
