@@ -23,7 +23,7 @@
 
 ## Teaching practicals
 
-- Growth: selected Practicing Dynare fiscal applications extending Solow; interpret steady states and transition paths. Practice project: https://www.overleaf.com/project/692d6b9a27db12d5acaeb198 . Related code: https://github.com/hollander03/Practicing-Dynare-NT . Facilitator still needs to select precise exercises.
+- Growth: selected Practicing Dynare fiscal applications extending Solow; interpret steady states and transition paths. Practice project: https://www.overleaf.com/project/692d6b9a27db12d5acaeb198/share#4abca1ec01aed4a2ec6e1706dd917adaf43dbbe1998c2139 . Related code: https://github.com/hollander03/Practicing-Dynare-NT . Facilitator still needs to select precise exercises.
 - RBC: groups choose flexible-price DSGE fiscal applications OR model–data moment comparison. Broad choice of fiscal experiments, bounded by one question and an interpretable result. Facilitator supplies data and/or participants use the FRED download example.
 - NK: shocks, rules and monetary-regime comparisons, including nominal-level determination. Optional optimal simple rules after discussing targets and weights.
 - Follow existing workshop administration guidance for presentation length and participation.
