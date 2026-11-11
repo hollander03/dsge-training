@@ -1,0 +1,58 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=22mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{document}
+\section*{CIA: model notes}
+Based on \texttt{CIA.mod}; Walsh (2010), Appendix 3.6, pp. 128--130.
+
+\subsection*{Underlying preferences}
+\[
+U(c,1-n)=\frac{c^{1-\eta_c}}{1-\eta_c}
+ +\Psi\frac{(1-n)^{1-\eta_n}}{1-\eta_n}.
+\]
+At $\eta_n=1$, the leisure term is $\Psi\log(1-n)$.
+The binding cash-in-advance constraint implies $c_t=m_t$ in equilibrium.
+The variable $\lambda$ (\texttt{lambdda}) is the marginal value of wealth,
+not marginal utility of consumption: the cash constraint creates a wedge.
+
+\subsection*{Scope and calibration}
+These are stationary, log-linear business-cycle equations. Quantities are
+log deviations; $r$, $i$ and $\pi$ are level deviations of net rates.
+The system uses small-rate approximations, not exact gross-rate scaling.
+The leisure curvature implies a Frisch elasticity
+$(1-n^{ss})/(\eta_n n^{ss})$.
+
+The code fixes \texttt{nss}; $\Psi$ is implicit. Changing trend inflation
+while retaining \texttt{nss} changes the implied leisure weight. It does not
+trace steady-state hours with preferences fixed. Additive leisure preferences
+also generally do not support constant hours along balanced growth unless
+consumption-composite curvature is one; these exercises abstract from growth.
+\newpage
+
+\section*{Linear equations implemented in the code}
+All equations are conditional on information at $t$; future variables in
+Dynare imply conditional expectations. Hats are suppressed, as in the code.
+Write $YK=y^{ss}/k^{ss}$, $CK=YK-\delta$ and $NL=n^{ss}/(1-n^{ss})$.
+\begin{align*}
+y_t&=z_t+\alpha k_{t-1}+(1-\alpha)n_t,\\
+YK\,y_t&=CK\,c_t+\delta x_t,\\
+k_t&=(1-\delta)k_{t-1}+\delta x_t,\\
+r_t&=\alpha YK(E_ty_{t+1}-k_t),\\
+c_t&=m_t,\\
+\lambda_t&=E_t\lambda_{t+1}+r_t,\\
+y_t+\lambda_t&=(1+\eta_n NL)n_t,\\
+i_t&=r_t+E_t\pi_{t+1},\\
+\lambda_t&=-E_t(\eta_c m_{t+1}+\pi_{t+1}),\\
+m_t&=m_{t-1}-\pi_t+\mu_t,\\
+z_t&=\rho_z z_{t-1}+\epsilon_{z,t},\\
+\mu_t&=\rho_\mu\mu_{t-1}+\phi_z z_{t-1}+\epsilon_{\mu,t}.
+\end{align*}
+In code: $\alpha=\texttt{alppha}$, $\beta=\texttt{betta}$,
+$i=\texttt{int}$, $\pi=\texttt{pii}$, investment is \texttt{x}.
+The current calibration sets $\phi_z=0$.
+\end{document}

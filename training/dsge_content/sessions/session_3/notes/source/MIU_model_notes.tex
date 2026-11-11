@@ -1,0 +1,65 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=22mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{document}
+\section*{MIU: model notes}
+Based on \texttt{MIU.mod}; Walsh (2010), Eq. 2.64 and Appendix 2.7, p. 85.
+
+\subsection*{Underlying preferences}
+\[
+S=ac^{1-\eta_m}+(1-a)m^{1-\eta_m},\qquad
+U=\frac{S^{(1-\eta_c)/(1-\eta_m)}}{1-\eta_c}
+ +\Psi\frac{(1-n)^{1-\eta_n}}{1-\eta_n}.
+\]
+Walsh's $\Phi,b,\eta$ map to $\eta_c,\eta_m,\eta_n$.
+At $\eta_n=1$, use $\Psi\log(1-n)$. The weight $a$ is on consumption.
+Money affects marginal consumption utility unless $\eta_m=\eta_c$.
+\begin{align*}
+MC&=\left[\frac{a}{1-a}\frac{i^{ss}}{1+i^{ss}}\right]^{-1/\eta_m},&
+\gamma&=\left[1+\frac{1-a}{a}MC^{1-\eta_m}\right]^{-1},\\
+\omega_1&=\gamma\eta_c+(1-\gamma)\eta_m,&
+\omega_2&=(\eta_m-\eta_c)(1-\gamma).
+\end{align*}
+Here $MC=m^{ss}/c^{ss}$, not marginal cost. Walsh's $\Omega_1=-\omega_1$
+and $\Omega_2=\omega_2$.
+
+\subsection*{Scope and calibration}
+These are stationary, log-linear business-cycle equations. Quantities are
+log deviations; $r$, $i$ and $\pi$ are level deviations of net rates.
+The system uses small-rate approximations, not exact gross-rate scaling.
+The leisure curvature implies a Frisch elasticity
+$(1-n^{ss})/(\eta_n n^{ss})$.
+
+The code fixes \texttt{nss}; $\Psi$ is implicit. Changing trend inflation
+while retaining \texttt{nss} changes the implied leisure weight. It does not
+trace steady-state hours with preferences fixed. Additive leisure preferences
+also generally do not support constant hours along balanced growth unless
+consumption-composite curvature is one; these exercises abstract from growth.
+\newpage
+
+\section*{Linear equations implemented in the code}
+All equations are conditional on information at $t$; future variables in
+Dynare imply conditional expectations. Hats are suppressed, as in the code.
+Write $YK=y^{ss}/k^{ss}$, $CK=YK-\delta$ and $NL=n^{ss}/(1-n^{ss})$.
+\begin{align*}
+y_t&=z_t+\alpha k_{t-1}+(1-\alpha)n_t,\\
+YK\,y_t&=CK\,c_t+\delta x_t,\\
+k_t&=(1-\delta)k_{t-1}+\delta x_t,\\
+r_t&=\alpha YK(E_ty_{t+1}-k_t),\\
+\omega_1c_t&=\omega_1E_tc_{t+1}-r_t-\omega_2(E_tm_{t+1}-m_t),\\
+y_t-\omega_1c_t+\omega_2m_t&=(1+\eta_n NL)n_t,\\
+i_t&=r_t+E_t\pi_{t+1},\\
+m_t&=c_t-\frac{i_t}{\eta_m i^{ss}},\\
+m_t&=m_{t-1}-\pi_t+\mu_t,\\
+z_t&=\rho_z z_{t-1}+\epsilon_{z,t},\\
+\mu_t&=\rho_\mu\mu_{t-1}+\phi_z z_{t-1}+\epsilon_{\mu,t}.
+\end{align*}
+In code: $\alpha=\texttt{alppha}$, $\beta=\texttt{betta}$,
+$i=\texttt{int}$, $\pi=\texttt{pii}$, investment is \texttt{x}.
+The current calibration sets $\phi_z=0$.
+\end{document}

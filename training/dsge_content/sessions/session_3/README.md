@@ -7,3 +7,5 @@ This material is retained for further study. The core workshop proceeds from [RB
 - [CIA and MIU](code/cia_miu): run `dynare CIA` or `dynare MIU` from this folder to compare flexible-price monetary environments. [Comparison figures](code/cia_miu) support interpretation. CIA and MIU impose different assumptions and need not produce equivalent outcomes.
 
 The [CIA and MIU slide sources](slides/source) include their appendices and required figures, retained for future teaching. These models remain optional: the core RBC → NK sequence already introduces money in utility. CIA can provide intuition about how a constraint and its multiplier affect decisions, before separately introducing borrowing or collateral constraints.
+
+[Model notes](notes/README.md) distinguish the two RBC preference variants and provide CIA/MIU equation handouts aligned with the current code.

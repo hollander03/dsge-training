@@ -73,3 +73,23 @@ The leisure weight is omitted from the displayed historical slide formula
 preference specification and the calibration of steady-state hours explicit.
 These corrections document the preferences already implied by the MIU model;
 they do not alter its equations or calibration.
+
+## CIA preferences and scope of both models
+
+CIA uses `c^(1-eta_c)/(1-eta_c) + Psi*(1-n)^(1-eta_n)/(1-eta_n)`,
+with the log limit for unit curvature. Its `lambdda` is the marginal value
+of wealth; the cash constraint separates it from marginal consumption utility.
+The leisure-curvature/Frisch interpretation above also applies to CIA.
+
+Both models abstract from trend growth and use Walsh-style small-rate
+approximations. They are linear teaching systems, not exact nonlinear models.
+In particular, the CIA Fisher equation omits gross-rate scaling retained in
+Walsh's Eq. 3.73; the MIU money-demand coefficient also uses a small-rate
+approximation.
+
+Both calibrate `nss`. Changing trend inflation while retaining `nss` implicitly
+changes the leisure weight needed to support those hours. Such runs compare
+local dynamics around calibrated steady states; they do not measure how
+steady-state hours respond to inflation with preferences held fixed.
+
+[Equation notes](../../notes) list the systems implemented in the code.
