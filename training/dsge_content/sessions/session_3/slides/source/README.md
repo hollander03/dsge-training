@@ -1,6 +1,6 @@
 # CIA and MIU slide sources
 
-Historical sources retained from the Stellenbosch Dynamic Economic Theory course. These are optional references; the core workshop proceeds from RBC to the New Keynesian model, which already includes money in utility.
+Historical CIA and MIU teaching sources. These are optional references; the core workshop proceeds from RBC to the New Keynesian model, which already includes money in utility.
 
 - `CIA.tex` includes `App_CIA.tex` and uses `CIA_tech.jpg` and `CIA_money.jpg`.
 - `MIU.tex` includes `App_MIU.tex` and uses `CIA-MIUtechshock.jpg` and `CIA-MIUmoneyshock.jpg`.
@@ -12,3 +12,5 @@ Content, attribution and historical figure calibrations are preserved. Compilati
 CIA provides an example of a constraint on transactions and an associated multiplier. This can support later discussion of borrowing and collateral constraints, whose timing, economic role and binding conditions must be introduced separately.
 
 [Session 3 guidance](../../README.md) · [CIA and MIU model code](../../code/cia_miu)
+
+Compiled handout PDFs are available one folder above as `CIA.pdf` and `MIU.pdf`. University affiliations have been removed from the sources and compiled slides.

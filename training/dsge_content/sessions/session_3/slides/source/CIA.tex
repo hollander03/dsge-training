@@ -15,11 +15,10 @@
 \title [Money in Flexible Price Environments: CIA]{Money in Flexible Price Environments: CIA}
 \vskip 0.1in
 
-\subtitle{Dynamic Economic Theory (871)}
+\subtitle{Cash-in-Advance Model}
 \author[H Hollander]{Hylton Hollander}
 
-\institute[University of Stellenbosch]{\large{Department of Economics\\
-University of Stellenbosch}}
+\institute{}
 
 
 \date[March 19, 2015]{March 19, 2015}
@@ -424,6 +423,8 @@ CIA constraint binding, in steady state $\pi^{ss}=\theta^{ss}$)
 
 
 \begin{frame}
+\small
+
 \frametitle{Steady States}
 
 $\square$ The superneutrality of money \\
@@ -435,8 +436,7 @@ variables.
 \item In \eqref{Eq4.19} $\backsim$ \eqref{Eq4.22}, none of the steady
 state values/ratios depend on the growth rate of nominal money
 supply --- CIA model exhibits superneutrality iff labor supply is
-inelastic\footnote{As shown in \eqref{Eq4.23}, labor supply is
-affected by money supply!}, that is, $n\equiv1$.
+inelastic (fixed hours, $n=\bar n$). With endogenous labour and fixed preferences, \eqref{Eq4.23} implies that trend inflation changes steady-state hours.
 \end{itemize}
 \pause
 
@@ -459,6 +459,32 @@ rate that achieves a zero nominal rate of interest --- deflation
 
 
 
+
+
+\begin{frame}
+\frametitle{CIA: interpreting the code and Walsh}
+\footnotesize
+\begin{itemize}
+\item Walsh (2010), Appendix 3.6, pp.~128--130, uses utility over
+consumption and leisure, not power disutility of hours. Thus the code's
+$1+\eta_n n^{ss}/(1-n^{ss})$ is consistent with leisure curvature.
+The utility comment in \texttt{CIA.mod} describes different preferences.
+\item $\lambda$ (\texttt{lambdda}) is the marginal value of wealth;
+with binding cash constraints it differs from marginal utility of consumption.
+The two multipliers in the nonlinear derivation must not be conflated.
+\item The code uses $i_t=r_t+E_t\pi_{t+1}$ for rate deviations,
+a small-rate approximation. Exact Fisher scaling gives
+$i_t/(1+i^{ss})=r_t/(1+r^{ss})+E_t\pi_{t+1}/(1+\pi^{ss})$.
+Walsh's collected CIA equations retain $1/(1+i^{ss})$ in Eq.~3.73.
+\item Forward leads in Dynare represent conditional expectations here.
+The code retains the direct return-on-capital equation; Walsh eliminates
+expected output to obtain his equivalent reduced representation,
+subject to the stated rate approximations.
+\item \texttt{nss} is calibrated. Inflation comparisons at fixed
+\texttt{nss} implicitly recalibrate the leisure weight, rather than tracing
+steady states under fixed preferences.
+\end{itemize}
+\end{frame}
 
 \section{Dynamics}
 
@@ -489,8 +515,8 @@ To complete the model, we add the disturbances:
 
 \begin{eqnarray}
 \hat{z}_{t} &=& \rho_{z} \hat{z}_{t-1}+\epsilon_{z,t} \label{Eq4.34}\\
-\hat{\mu}_{t} &=& \rho_{m}\hat{\mu}_{t-1}+\phi
-\hat{z}_{t-1}+\epsilon_{m,t} ~ , ~~~ \phi = 0 \label{Eq4.35}
+\hat{\mu}_{t} &=& \rho_{\mu}\hat{\mu}_{t-1}+\phi_z
+\hat{z}_{t-1}+\epsilon_{\mu,t} ~ , ~~~ \phi_z = 0 \label{Eq4.35}
 \end{eqnarray}
 }}
 
@@ -506,13 +532,11 @@ into \eqref{Eq4.32}, and combining \eqref{Eq4.30}, we have:
 
 \begin{equation}\label{Eq4.36}
 \hat{y}_{t} = (1+\eta_{n}\frac{n^{ss}}{1-n^{ss}})\hat{n}_{t} +
-(\hat{m}_{t}+E_{t}\mu_{t+1})
+\eta_c(\hat{m}_{t}+E_{t}\mu_{t+1})
+-(\eta_c-1)E_t\hat{\pi}_{t+1}
 \end{equation}
 
-It implies that given output, a positive shock in money supply in
-\emph{t} will result a higher expected money growth in \emph{$t+1$},
-and therefore higher expected inflation. This, in turn, results in a
-fall in labor supply.\\\vskip 0.1in
+The substitution retains both $\eta_c$ and expected inflation. For $\eta_c=1$, it reduces to the familiar expression without the inflation term. With the calibrated $\eta_c=2$, the full expression is required; the labour response must be determined jointly with the other equilibrium conditions.\\\vskip 0.1in
 
 \pause
 
@@ -529,7 +553,7 @@ technology)}\vskip 0.1in
 
 %ref: McCandless (2008): 210-211.
 
-\includegraphics[width = 5.0in]{CIA_tech.jpg}
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio]{CIA_tech.jpg}
 
 \end{frame}
 

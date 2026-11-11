@@ -6,7 +6,7 @@ download_data = false;
 script_dir = fileparts(mfilename('fullpath'));
 data_dir = fullfile(script_dir, 'data');
 if download_data
-    data_dir = fullfile(script_dir, 'downloaded_data');
+    data_dir = fullfile(script_dir, 'downloaded_data'); %#ok<UNRCH> Download mode is optional.
     if ~exist(data_dir, 'dir'), mkdir(data_dir); end
 end
 sample_start = datetime(1993,1,1);
@@ -15,7 +15,7 @@ sample_end = datetime(2024,10,1); % 2024Q4: common saved-data endpoint
 % Download FRED data (A939RX0Q048SBEA = Real GDP per capita)
 url = 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=A939RX0Q048SBEA';
 filename = fullfile(data_dir, 'rgdp_pc.csv');
-if download_data, websave(filename, url); end
+if download_data, websave(filename, url); end %#ok<UNRCH> Download mode is optional.
 
 % With download_data=false, read the saved CSV instead of accessing the network.
 
@@ -67,7 +67,7 @@ sgtitle('US Real GDP per Capita: Transformation Comparison')
 % Download U.S. real GDP per capita data from FRED
 url_us = 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=A939RX0Q048SBEA';
 filename_us = fullfile(data_dir, 'us_rgdp_pc.csv');
-if download_data, websave(filename_us, url_us); end
+if download_data, websave(filename_us, url_us); end %#ok<UNRCH> Download mode is optional.
 
 % Read and log-transform the data
 us_data = readtable(filename_us);
@@ -117,7 +117,7 @@ hold off
 % Download South Africa real GDP (constant prices) from FRED
 url_sa = 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=NGDPRSAXDCZAQ';
 filename_sa = fullfile(data_dir, 'sa_rgdp.csv');
-if download_data, websave(filename_sa, url_sa); end
+if download_data, websave(filename_sa, url_sa); end %#ok<UNRCH> Download mode is optional.
 
 % Read and log-transform the data  (growth rate: NAEXKP01ZAQ657S)
 sa_data = readtable(filename_sa);

@@ -13,7 +13,6 @@
 %\subtitle{Dynamic Economic Theory (871)}
 %\author[H Hollander]{Hylton Hollander}
 
-%\institute[University of Stellenbosch]{\large{Department of Economics\\ University of Stellenbosch}}
 
 %\date[March 26, 2015]{March 26, 2015}
 
@@ -293,12 +292,12 @@ E_{0}\sum_{t=0}^{\infty} \beta^{t}
 \end{equation}
 }}
 
-$\blacktriangleright$ Separable utility ($\eta_{c}=1$):\\
+$\blacktriangleright$ Separable utility ($\eta_{c}=\eta_{m}$):\\
 In the special case that $\eta_{c}=\eta_{m}=1$, preferences over
 consumption and real balances are log linear and the utility
 function \eqref{Eq5.4} becomes:
 
-{\scriptsize{
+{\tiny{
 \begin{equation}\label{Eq5.20}
 E_{0}\sum_{t=0}^{\infty} \beta^{t} U(c_{t},m_{t},1-n_{t}) =
 E_{0}\sum_{t=0}^{\infty} \beta^{t} [a \ln(c_{t})+ (1-a) \ln(m_{t})  +
@@ -370,6 +369,8 @@ lnMRS_{m,c})}=-{1}/{\eta_{m}}$}
 \end{frame}
 
 \begin{frame}
+\small
+
 \frametitle{Function Forms}\vskip 0.1in
 
 $\square$ \textcolor{blue}{Money demand function:}\\
@@ -398,12 +399,56 @@ function:
 
 The real demand for money is a negative function of the nominal
 interest rate and a positive function of consumption. The
-coefficient $\frac{1}{\eta_{m}}$ is the \emph{interest elasticity of
-money demand}.
+coefficient $1/\eta_m$ is the magnitude of the elasticity with respect to the opportunity cost $i/(1+i)$. The elasticity with respect to $i$ is $-1/[\eta_m(1+i)]$; with rate deviations, the slides and code use the small-rate approximation $-1/(\eta_m i^{ss})$.
 
 \end{frame}
 
 
+
+
+\begin{frame}
+\frametitle{Preferences, growth and the code}
+\small
+Let $Q=[ac^{1-\eta_m}+(1-a)m^{1-\eta_m}]^{1/(1-\eta_m)}$.
+Walsh (2010), Eq.~2.64, uses
+\[
+ U=\frac{Q^{1-\eta_c}}{1-\eta_c}
+   +\Psi\frac{(1-n)^{1-\eta_n}}{1-\eta_n}.
+\]
+\begin{itemize}
+\item Code mapping: $\Phi=\eta_c$, $b=\eta_m$, $\eta=\eta_n$;
+$a$ weights consumption. At $\eta_n=1$, use $\Psi\log(1-n)$.
+\item Along balanced growth with $c,m,w$ proportional to a trend $A$,
+$wU_c$ scales as $A^{1-\eta_c}$, while leisure utility is unchanged
+at fixed hours. Constant hours therefore require $\eta_c=1$
+under these additive preferences.
+\item This restriction concerns trend growth, not a stationary business-cycle
+model. Walsh abstracts from growth; so do these code files.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{The simpler utility and Appendix 2.7}
+\footnotesize
+\begin{itemize}
+\item Additive CRRA consumption and money utility with hours disutility
+has the same growth restriction: $w c^{-\eta_c}$ scales as
+$A^{1-\eta_c}$. It also removes consumption--money complementarity.
+\item A growth-compatible alternative is
+$U=[Qv(1-n)]^{1-\eta_c}/(1-\eta_c)$.
+The wage-weighted consumption marginal utility and the marginal cost of labour then share the trend factor;
+at $\eta_c=1$ its limit is $\log Q+\log v(1-n)$.
+\item Appendix 2.7, p.~85: Walsh's $\Omega_1$ equals
+$-\texttt{omega\_one}$; his $\Omega_2=\texttt{omega\_two}$.
+Our Euler equation substitutes out marginal utility.
+\item Hatted quantities are log deviations; $r$, $i$ and $\pi$ are
+level deviations of net rates. The code follows Walsh's small-rate
+approximations, rather than exact gross-rate scaling.
+\item The code fixes \texttt{nss}; its implicit $\Psi$ supports that
+steady state. Changing trend inflation at fixed \texttt{nss} does not
+implement the slide's fixed-preference steady-state comparison.
+\end{itemize}
+\end{frame}
 
 \section{Steady State}
 
@@ -425,7 +470,7 @@ R^{ss} &=& \frac{1}{\beta} \label{Eq5.28}\\
 {\scriptsize{In addition to these, in steady state we have:
 \begin{eqnarray}
 \frac{m^{ss}}{c^{ss}} &=& (\frac{a}{1-a})^{-\frac{1}{\eta_{m}}} (\frac{1+\pi^{ss}-\beta}{1+\pi^{ss}})^{-\frac{1}{\eta_{m}}}  \label{Eq5.32}\\
-\frac{(n^{ss})^{\eta_{c}}}{(1-n^{ss})^{\eta_{c}}} &=&
+\frac{(n^{ss})^{\eta_{c}}}{(1-n^{ss})^{\eta_{n}}} &=&
 a^{\frac{1-\eta_{c}}{1-\eta_{m}}}
 (1-\alpha)(\frac{y^{ss}}{k^{ss}})^{\frac{-\alpha}{1-\alpha}}
 (\frac{c^{ss}}{k^{ss}})^{-\eta_{c}}
@@ -448,7 +493,7 @@ a^{\frac{1-\eta_{c}}{1-\eta_{m}}}
 \item {\small{The MIU model {\textcolor{blue}{(\eqref{Eq5.28} -\eqref{Eq5.31}) exhibits neutrality property}}: proportional
 changes in the level of nominal money balances do not affect real
 variables;}}
-\item {\small{The MIU model {\textcolor{blue}{(\eqref{Eq5.28} -\eqref{Eq5.31}) exhibits superneutrality property}}: steady state values/ratios are not affected by changes in the rate of money growth;}}
+\item {\small{The MIU model {\textcolor{blue}{(\eqref{Eq5.28} -\eqref{Eq5.31}) exhibits superneutrality property}}: the ratios in these four equations are invariant to money growth; full superneutrality additionally requires invariant labour, as when $\eta_c=\eta_m$;}}
 \item {\small{\eqref{Eq5.33} states that, {\textcolor{blue}{if $\eta_{m}-\eta_{c}>0$}} (money and consumption are complements), $\Rightarrow$
 $\pi^{ss}(\theta^{ss}) \uparrow$, $i^{ss} \uparrow$, which will
 result the RHS of \eqref{Eq5.33} to fall. Therefore
@@ -459,8 +504,8 @@ substitute toward leisure and to decrease labor supply \footnote{If
 c and m are substitutes, the effects will be opposite.}.\\
 
 {\textcolor{blue}{If $\eta_{m}=\eta_{c}$}}, $n^{ss}$ is independent of money growth.
-However, $m^{ss}/c^{ss}$ still depends on the growth rate of real
-balances.}}
+However, $m^{ss}/c^{ss}$ still depends on the growth rate of nominal
+money.}}
 \end{itemize}
 
 \end{frame}
@@ -478,7 +523,7 @@ balances.}}
 \hat{k}_{t} -(1-\delta)\hat{k}_{t-1}\label{Eq5.35}\\
 \hat{r}_{t} &=& \alpha (\frac{y^{ss}}{k^{ss}})
 (E_{t}\hat{y}_{t+1}-\hat{k}_{t})\label{Eq5.36}\\
-\Omega_{1}\hat{c}_{t} &=& \Omega_{1} E_{t} \hat{c}_{t+1} - [\hat{r}_{t}+ \Omega_{2}  (\hat{m}_{t+1}-\hat{m}_{t})]\label{Eq5.37}\\
+\Omega_{1}\hat{c}_{t} &=& \Omega_{1} E_{t} \hat{c}_{t+1} - [\hat{r}_{t}+ \Omega_{2}  (E_t\hat{m}_{t+1}-\hat{m}_{t})]\label{Eq5.37}\\
 \hat{y}_{t} - (\Omega_{1}\hat{c}_{t}- \Omega_{2}\hat{m}_{t}) &=&
 (1+\eta_{n}\frac{n^{ss}}{1-n^{ss}})\hat{n}_{t}\label{Eq5.38}
 \footnote{{\scriptsize{$\Omega_{1}=\gamma \eta_{c}+(1-\gamma)\eta_{m}, ~~
@@ -490,8 +535,8 @@ balances.}}
 \hat{m}_{t} &=& \hat{m}_{t-1} - \hat{\pi}_{t} +
 \mu_{t}\label{Eq5.41}\\
 \hat{z}_{t} &=& \rho_{z} \hat{z}_{t-1}+\epsilon_{z,t} \label{Eq5.42}\\
-\hat{\mu}_{t} &=& \rho_{m}\hat{\mu}_{t-1}+\phi
-\hat{z}_{t-1}+\epsilon_{m,t} \label{Eq5.43}
+\hat{\mu}_{t} &=& \rho_{\mu}\hat{\mu}_{t-1}+\phi_z
+\hat{z}_{t-1}+\epsilon_{\mu,t} \label{Eq5.43}
 \end{eqnarray}
 }}
 

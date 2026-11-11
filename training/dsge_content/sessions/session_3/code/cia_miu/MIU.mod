@@ -1,4 +1,16 @@
 //Money in flexible price environments: MIU model with labour
+//Based on Walsh Chapter 2
+//This is a MIU model with labour supply and money demand. It is a simple model that can be used to illustrate the effects of money shocks on the economy.
+// Walsh-style nonseparable consumption-money utility, separable in leisure:
+// S = a*c^(1-eta_m) + (1-a)*m^(1-eta_m)
+// U(c,m,1-n) = S^((1-eta_c)/(1-eta_m))/(1-eta_c)
+//              + Psi*(1-n)^(1-eta_n)/(1-eta_n)
+// Walsh notation: eta_c = Phi, eta_m = b, eta_n = eta.
+// Use the continuous log limits at unit curvature (eta_n=1 gives Psi*log(1-n)).
+// These are the underlying LEVEL preferences; this file implements log-linear equations.
+// Psi is implicit in the calibration of nss, rather than declared separately.
+// See README.md for the marginal utilities and the omega coefficients.
+// A simpler seperable utility function is: U(c,m,n) = (c^(1-eta_c)/(1-eta_c)) + a*(m^(1-eta_m)/(1-eta_m)) - Psi*(n^(1+eta_n)/(1+eta_n))
 
 var y c x k n m r int pii z mu;
 
@@ -6,14 +18,14 @@ varexo epsilon_z epsilon_mu;
 
 parameters alppha betta delta eta_c eta_m eta_n theta_m nss rho_z rho_mu phi_z sigmaz sigmamu a ;
 
-a = 0.01;        // require less than 0.01 for MIU to match money shock in CIA // 0.9 cons share relative to money in utility func
+a = 0.01;        // Consumption weight in the CES aggregate; money weight is 1-a
 alppha = 0.36;  //0.33
 betta = 0.989;   //
 delta = 0.019;  //0.025
 
 eta_c = 2;      //2
 eta_m = 3;      //
-eta_n = 1;      // Inverse of the Frisch elasticity of labour supply
+eta_n = 1;      // Leisure curvature; Frisch elasticity = (1-nss)/(eta_n*nss)
 theta_m = 0.01; // steady state money growth rate
 nss = 0.3333;       // steady state labour 1/3 p. 71 Walsh.
 

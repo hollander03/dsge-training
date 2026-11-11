@@ -1,4 +1,7 @@
 //Money in flexible price environments: CIA model with labour
+//Based on Walsh Chapter 3
+//This is a CIA model with labour supply and money demand. It is a simple model that can be used to illustrate the effects of money shocks on the economy.
+//The Utility function is given by: (c^(1-eta_c)/(1-eta_c)) - Psi*(n^(1+eta_n)/(1+eta_n))
 
 var y c x k n lambdda m r int pii z mu;
 
