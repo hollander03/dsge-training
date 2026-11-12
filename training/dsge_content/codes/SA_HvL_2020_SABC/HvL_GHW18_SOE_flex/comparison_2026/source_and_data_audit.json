@@ -1,0 +1,39 @@
+{
+  "rows_7obs": 90,
+  "rows_10obs": 90,
+  "common_series_by_row": {
+    "y_star_obs": {
+      "max_abs_difference": 5.004677228193088e-16,
+      "rows_differing_over_1e_10": 0
+    },
+    "pi_star_obs": {
+      "max_abs_difference": 5.004677228193088e-16,
+      "rows_differing_over_1e_10": 0
+    },
+    "int_b_star_obs": {
+      "max_abs_difference": 5.0133508455729725e-16,
+      "rows_differing_over_1e_10": 0
+    },
+    "y_obs": {
+      "max_abs_difference": 0.0006969571766616001,
+      "rows_differing_over_1e_10": 5
+    },
+    "pi_tot_obs": {
+      "max_abs_difference": 5.030698080332741e-16,
+      "rows_differing_over_1e_10": 0
+    },
+    "int_b_obs": {
+      "max_abs_difference": 7.899339395101013e-06,
+      "rows_differing_over_1e_10": 1
+    }
+  },
+  "sample_dates": "90 rows; 1995Q1-2017Q2 stated in legacy 10-observable model header; no explicit date column to independently verify",
+  "sha256": {
+    "SA_GHW_2019_SOEoil/GHW2026_SOEoil.mod": "3b418dd8b6daa96f22f94cda0dfa14c6cc64e0cdbc139a493d85a4d51684bb0e",
+    "SA_GHW_2019_SOEoil/GHWEstimation7.m": "7fe5aa2c45992ae4098091e51449fef3a0aa3ca4368ef788027e47981e25cea2",
+    "SA_HvL_2020_SABC/HvL_GHW18_SOE_flex/HvL_GHW18nooil_SWshocks_rep.mod": "79c58ea41d393eea06d5039e141e02af9d5ab9d8233dbc4937679665e10841ff",
+    "SA_HvL_2020_SABC/HvL_GHW18_SOE_flex/GHWEstimation10SW.m": "16d46521881ce29536828b9e056555c686e9e3cfd688dd47951d0440f5b882a9",
+    "SA_HvL_2020_SABC/HvL_GHW18_SOE_flex/GHW2026_SOEnooil_SWshocks_flex.mod": "ae082dca7adb5a1ae5123567b1fa7c1d7a05f887ca342fef147b251f90b7eb15"
+  },
+  "verification": "New model block differs from original only by sigma_c*phi -> sigma_c_star*phi_star in foreign marginal cost."
+}

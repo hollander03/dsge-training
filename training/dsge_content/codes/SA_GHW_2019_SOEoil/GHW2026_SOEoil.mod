@@ -6,9 +6,10 @@
 %%% oil l.o.p gap = 0 full pass-through to productiona and consumption bundles as in Sanchez and others                   
 %%% Topic: Small open economy New Keynesian DSGE model of South Africa with Oil in consumption and production
 %%% 2021 - corrected timing on physical capital
+%%% 2026-11-06 - corrected foreign marginal-cost parameters: sigma_c_star*phi_star (Supplementary Eq. S.32).
+%%% Recompute the posterior mode and MCMC for this specification: This code runs from scracth and on datafile GHWEstimation7.m
+%%% Use GHWEstimation7.m to see how results differ from original due to correction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%% this code runs from scracth
 
 %------------------------------------------------------------------------------------------------------------------------
 % 0. 
@@ -491,12 +492,12 @@ varobs pr_o_star_obs y_star_obs pi_star_obs int_b_star_obs y_obs pi_tot_obs int_
 %% uncomment below after first run so priors not plotted
 % options_.plot_priors=0;
 
-// Bayesian DSGE estimation: 2000Q1-2025Q4.
+// Bayesian DSGE estimation: 2000Q1-2018Q4 (confirm).
 // Three Metropolis-Hastings chains; 240,000 draws per chain.
 // Current settings load existing MCMC draws for posterior analysis.
 // The first two-thirds of each chain are discarded as burn-in.
  estimation(
-    datafile=GHWEstimation7_2000Q1_2025Q4_WORKING,
+    datafile=GHWEstimation7,
     % mode_file=GHW2018b_SOEoil_HHtest_mode, %% uncomment after finding mode... coopy and paste mode from "output" folder into the main directory where the mod file is.
     mode_compute=5, %% set to 0 after first succesful run. 
     mode_check,     %% can comment out after first run

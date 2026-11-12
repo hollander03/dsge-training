@@ -6,9 +6,11 @@
 %%% oil l.o.p gap = 0 full pass-through to productiona and consumption bundles as in Sanchez and others                   
 %%% Topic: Small open economy New Keynesian DSGE model of South Africa with Oil in consumption and production
 %%% 2021 - corrected timing on physical capital
+%%% 2026 - fixes parameter typo in foreign block
+%%% This code runs from scracth and on datafile GHWEstimation7.m
+%%% Needs to update this code with flexprice equilibrium before estimating with GHWEstimation10SW.m
+%%% Or: simply correct HvL_GHW18nooil_SWshocks_rep.mod typo in foreign block and run GHWEstimation10SW.m with that code
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%% this code runs from scracth
 
 %------------------------------------------------------------------------------------------------------------------------
 % 0. 
@@ -496,8 +498,8 @@ varobs pr_o_star_obs y_star_obs pi_star_obs int_b_star_obs y_obs pi_tot_obs int_
 // Current settings load existing MCMC draws for posterior analysis.
 // The first two-thirds of each chain are discarded as burn-in.
  estimation(
-    datafile=GHWEstimation7_2000Q1_2025Q4_WORKING,
-    % mode_file=GHW2018b_SOEoil_HHtest_mode, %% uncomment after finding mode... coopy and paste mode from "output" folder into the main directory where the mod file is.
+    datafile=GHWEstimation7,
+    % mode_file=GHW2026_SOEoil, %% uncomment after finding mode... coopy and paste mode from "output" folder into the main directory where the mod file is.
     mode_compute=5, %% set to 0 after first succesful run. 
     mode_check,     %% can comment out after first run
     mh_nblocks=3,

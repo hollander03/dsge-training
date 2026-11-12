@@ -6,9 +6,11 @@
 %%% oil l.o.p gap = 0 full pass-through to productiona and consumption bundles as in Sanchez and others                   
 %%% Topic: Small open economy New Keynesian DSGE model of South Africa with Oil in consumption and production
 %%% 2021 - corrected timing on physical capital
+%%% 2026 - fixes parameter typo in foreign block
+%%% This code runs from scracth and on datafile GHWEstimation7.m
+%%% Needs to update this code with flexprice equilibrium before estimating with GHWEstimation10SW.m
+%%% Or: simply correct HvL_GHW18nooil_SWshocks_rep.mod typo in foreign block and run GHWEstimation10SW.m with that code
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%% this code runs from scracth
 
 %------------------------------------------------------------------------------------------------------------------------
 % 0. 

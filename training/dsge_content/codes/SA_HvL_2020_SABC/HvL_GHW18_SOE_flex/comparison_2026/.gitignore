@@ -1,0 +1,5 @@
++fixed_mode_*/
+fixed_mode_legacy/
+fixed_mode_corrected/
+*.log
+*.mat

@@ -11,6 +11,7 @@
 %%%%%%%%% same as Gerali eta l2010, GHW2018; similar to Ireland2011
 %%%%%%%%% For comparison w/ SW (2007): add shocks to investment, wage setting and exogenous spending
 %%%%%%%%% Exogenous spending shock proxies for Ireland's preference shock: both are "demand shocks"
+%%%%%%%%% Adds the flex-price equilibrium to the model for comparison with the sticky-price equilibrium
 %% Estimation Period: 1995Q1 - 2017Q2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
